@@ -41,7 +41,6 @@ public class LevelLoader : MonoBehaviour
                 break;
         }
 
-        GameManager.CURRENT_SCENE_PROGRESS = sceneIndex;
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 

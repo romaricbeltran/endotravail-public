@@ -3,25 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public enum ScenarioCode
-{
-    Start,
-    Scene_1_Popup_1,
-    Scene_1_Dialogue_1,
-    Scene_1_Action_1,
-    Scene_1_Mission_1
-}
-
 public class GameManager : MonoBehaviour
 {
-    public static ScenarioCode CURRENT_SCENARIO_PROGRESS;
-    public static int CURRENT_SCENE_PROGRESS;
     public static GameManager instance;
-
-    public PopupManager popupManager;
-    public DialogueManager dialogueManager;
-    public ActionManager actionManager;
-    public MissionManager missionManager;
+    public string GAME_PROGRESSION;
     public TimelineManager timelineManager;
     public GameObject player;
 
@@ -43,49 +28,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        GAME_PROGRESSION = "Start";
         playerInput = player.GetComponent<PlayerInput>();
     }
 
-    public void Start_Scenario()
-    {
-        CURRENT_SCENARIO_PROGRESS = ScenarioCode.Start;
+    public void updateProgression(int nextNodeCode) {
+        Debug.Log("ixi");
+        GAME_PROGRESSION = timelineManager.scenario[nextNodeCode].GetName();
+        Debug.Log("Playing Node :" + GAME_PROGRESSION);
+        timelineManager.PlayScenario(nextNodeCode);
     }
 
-    public void Scene_1_Popup_1_Scenario()
+    public void SwitchPlayerInput(bool availability)
     {
-        CURRENT_SCENARIO_PROGRESS = ScenarioCode.Scene_1_Popup_1;
-        Debug.Log("fnc + "+ CURRENT_SCENARIO_PROGRESS);
-        popupManager.updatePopup(0);
-    }
-
-    public void Scene_1_Dialogue_1_Scenario()
-    {
-        CURRENT_SCENARIO_PROGRESS = ScenarioCode.Scene_1_Dialogue_1;
-        dialogueManager.updateDialogue(0);
-
         if (playerInput != null)
         {
-            playerInput.enabled = false;
-        }
-    }
-
-    public void Scene_1_Action_1_Scenario()
-    {
-        CURRENT_SCENARIO_PROGRESS = ScenarioCode.Scene_1_Action_1;
-        timelineManager.SwitchTimelineClip();
-        if (playerInput != null)
-        {
-            playerInput.enabled = true;
-        }
-    }
-
-    public void Scene_1_Mission_1_Scenario()
-    {
-        CURRENT_SCENARIO_PROGRESS = ScenarioCode.Scene_1_Mission_1;
-
-        if (playerInput != null)
-        {
-            playerInput.enabled = true;
+            playerInput.enabled = availability;
         }
     }
 }
