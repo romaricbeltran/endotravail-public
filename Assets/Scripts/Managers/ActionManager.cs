@@ -14,18 +14,29 @@ public class ActionManager : MonoBehaviour
     public List<TextMeshProUGUI> buttonsText;
 
     public List<Action> actions;
-    private int indexAction;
+    public Dictionary<int, Action> actionDictionary;
+
+    private Action currentAction;
 
     private Queue<string> choices;
     private int indexChoices;
 
-    public void updateAction(int indexAction) {
-        foreach(string choice in actions[indexAction].GetChoices())
+    private void Awake()
+    {
+        actionDictionary = new Dictionary<int, Action>();
+        foreach (Action action in actions)
         {
-            buttonsText[indexChoices].text = choice;
-            indexChoices++;
+            actionDictionary.Add(action.code, action);
         }
     }
+
+    // public void updateAction(int indexAction) {
+    //     foreach(string choice in actions[indexAction].GetChoices())
+    //     {
+    //         buttonsText[indexChoices].text = choice;
+    //         indexChoices++;
+    //     }
+    // }
 
     public void StartAction()
     {
@@ -38,5 +49,17 @@ public class ActionManager : MonoBehaviour
         indexChoices = 0;
         // GameObject.Find("Player").GetComponent<PlayerInput>().actions.Enable();
         // Cursor.lockState = CursorLockMode.None;
+    }
+
+    public Action FindActionByCode(int actionCode) {
+        if (actionDictionary.ContainsKey(actionCode))
+        {
+            return actionDictionary[actionCode];
+        }
+        else
+        {
+            Debug.LogError("Code d'Action invalide");
+            return null;
+        }
     }
 }

@@ -13,7 +13,7 @@ public class LevelLoader : MonoBehaviour
 
     // CrossFade transition
     public Animator loadingScreenTransition;
-    public float transitionTime = 5.0f;
+    public float transitionTime = 3.0f;
     public GameObject retardedUI;
 
     public void LoadLevel(int sceneIndex)
@@ -28,12 +28,6 @@ public class LevelLoader : MonoBehaviour
                 levelTitleText.text = "Chapitre 1";
                 break;
             case 2:
-                levelTitleText.text = "Chapitre 2";
-                break;
-            case 3:
-                levelTitleText.text = "Chapitre 3";
-                break;
-            case 4:
                 levelTitleText.text = "Fin du jeu";
                 break;
             default:
@@ -41,6 +35,7 @@ public class LevelLoader : MonoBehaviour
                 break;
         }
 
+        GameManager.GAME_PROGRESSION = levelTitleText.text;
         StartCoroutine(LoadAsynchronously(sceneIndex));
     }
 

@@ -14,11 +14,22 @@ public class PopupManager : MonoBehaviour
     public Button nextButton;
 
     public List<Popup> popups;
+    public Dictionary<int, Popup> popupDictionary;
+
     private Popup currentPopup;
     private int indexPopup;
 
+    private void Awake()
+    {
+        popupDictionary = new Dictionary<int, Popup>();
+        foreach (Popup popup in popups)
+        {
+            popupDictionary.Add(popup.code, popup);
+        }
+    }
+
     public void LoadPopup(int popupCode) {
-        idiotSearchPopup(popupCode);
+        currentPopup = FindPopupByCode(popupCode);
         mainText.text = currentPopup.GetMainText();
         sourceText.text = currentPopup.GetSourceText();
     }
@@ -31,12 +42,18 @@ public class PopupManager : MonoBehaviour
     public void EndPopup()
     {
         popupCanvas.SetActive(false);
-        gameManager.updateProgression(2);
-        // //Cursor.lockState = CursorLockMode.None;
+        gameManager.updateProgression(currentPopup.nextScenarioNodeCode);
     }
 
-    // Les éléments doivent être dans l'ordre (plus performant que Find ou de faire un map)
-    public void idiotSearchPopup(int popupCode) {
-        currentPopup = popups[popupCode];
+    public Popup FindPopupByCode(int popupCode) {
+        if (popupDictionary.ContainsKey(popupCode))
+        {
+            return popupDictionary[popupCode];
+        }
+        else
+        {
+            Debug.LogError("Code de Popup invalide");
+            return null;
+        }
     }
 }

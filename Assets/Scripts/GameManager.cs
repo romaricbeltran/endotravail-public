@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public string GAME_PROGRESSION;
+    public static string GAME_PROGRESSION;
     public TimelineManager timelineManager;
     public GameObject player;
 
@@ -26,17 +26,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // GAME_PROGRESSION
     private void Start()
     {
         GAME_PROGRESSION = "Start";
+        updateProgression(0); // Start Progression From Beginning
         playerInput = player.GetComponent<PlayerInput>();
+
     }
 
-    public void updateProgression(int nextNodeCode) {
-        Debug.Log("ixi");
-        GAME_PROGRESSION = timelineManager.scenario[nextNodeCode].GetName();
-        Debug.Log("Playing Node :" + GAME_PROGRESSION);
-        timelineManager.PlayScenario(nextNodeCode);
+    public void updateProgression(int nodeCode) {
+        timelineManager.PlayScenario(nodeCode);
     }
 
     public void SwitchPlayerInput(bool availability)

@@ -1,22 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using Cinemachine;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-public enum EventType {
-    popup,
-    dialogue,
-    mission,
-    action
-}
-
 public class TimelineManager : MonoBehaviour
 {
-    public PlayableAsset[] timelineClips;
-
-// New
+    public LevelLoader levelLoader;
     public GameManager gameManager;
     public PopupManager popupManager;
     public DialogueManager dialogueManager;
@@ -25,50 +17,75 @@ public class TimelineManager : MonoBehaviour
     public GameObject player;
 
     public List<ScenarioNode> scenario;
+    public Dictionary<int, ScenarioNode> scenarioNodeDictionary;
 
     private PlayableDirector director;
 
-    private void Start()
+    private void Awake()
     {
+        scenarioNodeDictionary = new Dictionary<int, ScenarioNode>();
+        foreach (ScenarioNode node in scenario)
+        {
+            scenarioNodeDictionary.Add(node.scenarioNodeCode, node);
+        }
+
         director = GetComponent<PlayableDirector>();
     }
 
     public void PlayScenario(int scenarioNodeCode)
     {
-        // Scenario Node
-        ScenarioNode scenarioNode = idiotSearchScenarioNode(scenarioNodeCode);
-        NodeEvent nodeEvent = scenarioNode.GetNodeEvent();
-        PlayableAsset currentClip = scenarioNode.GetTimelineClip();
+        ScenarioNode node = SearchScenarioNodeByCode(scenarioNodeCode);
+        GameManager.GAME_PROGRESSION = node.GetName();
+        Debug.Log("Playing Node :" + node.GetName());
 
-        if (currentClip)
+        PlayableAsset clip = node.GetTimelineClip();
+        EventType eventType = node.GetEventType();
+        int eventIndex = node.GetEventIndex();
+        
+        if (clip)
         {
-            director.playableAsset = currentClip;
+            director.playableAsset = clip;
             director.Play();
         }
 
         // Node Event
-        Debug.Log("EventType + " + nodeEvent.type.ToString());
+        Debug.Log("EventType + " + eventType.ToString());
 
-        switch (nodeEvent.type)
+        switch (eventType)
         {
-            case EventType.popup:
-                popupManager.LoadPopup(nodeEvent.code);
+            case EventType.Popup:
+                Debug.Log("Load Popup " + eventIndex);
+                popupManager.LoadPopup(eventIndex);
+                gameManager.SwitchPlayerInput(false);
+                break;
+            case EventType.Dialogue:
+                Debug.Log("Load Dialogue " + eventIndex);
+                dialogueManager.LoadDialogue(eventIndex);
+                gameManager.SwitchPlayerInput(false);
+                break;
+            case EventType.Mission:
+                Debug.Log("Load Mission " + eventIndex);
+                missionManager.LoadMission(eventIndex);
                 gameManager.SwitchPlayerInput(true);
                 break;
-            case EventType.dialogue:
-                dialogueManager.LoadDialogue(nodeEvent.code);
-                gameManager.SwitchPlayerInput(true);
-                break;
-            case EventType.mission:
-                missionManager.LoadMission(nodeEvent.code);
-                gameManager.SwitchPlayerInput(true);
+            case EventType.End:
+                Debug.Log("End of chapter");
+                levelLoader.LoadLevel(2);
                 break;
             default:
                 break;
         }
     }
 
-    public ScenarioNode idiotSearchScenarioNode(int nodeCode) {
-        return scenario[nodeCode];
+    public ScenarioNode SearchScenarioNodeByCode(int nodeCode) {
+        if (scenarioNodeDictionary.ContainsKey(nodeCode))
+        {
+            return scenarioNodeDictionary[nodeCode];
+        }
+        else
+        {
+            Debug.LogError("Code de ScenarioNode invalide");
+            return null;
+        }
     }
 }

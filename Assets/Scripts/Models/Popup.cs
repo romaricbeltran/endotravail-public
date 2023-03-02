@@ -1,12 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Popup
+public class Popup : EventNode
 {
-    public int nodeCode;
-    public int nextNodeCode;
     [TextArea] [SerializeField] private string mainText;
     [TextArea] [SerializeField] private string sourceText;
 

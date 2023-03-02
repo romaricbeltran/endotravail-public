@@ -21,6 +21,8 @@ public class DialogueManager : MonoBehaviour
 
     // Liste des dialogues de la scène
     public List<Dialogue> dialogues;
+    public Dictionary<int, Dialogue> dialogueDictionary;
+
     private Dialogue currentDialogue;
 
     // Liste des phrases d'un dialogue (nom + texte)
@@ -29,9 +31,18 @@ public class DialogueManager : MonoBehaviour
     private int indexDialogue;
     private int indexSentence;
 
+    private void Awake()
+    {
+        dialogueDictionary = new Dictionary<int, Dialogue>();
+        foreach (Dialogue dialogue in dialogues)
+        {
+            dialogueDictionary.Add(dialogue.code, dialogue);
+        }
+    }
+
     // On précharge le dialogue avec la première phrase
     public void LoadDialogue(int dialogueCode) {
-        idiotSearchDialogue(dialogueCode);
+        currentDialogue = FindDialogueByCode(dialogueCode);
         indexSentence = 0;
         sentences = currentDialogue.GetSentences();
         DisplayNextSentence();
@@ -55,8 +66,7 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
 
         Debug.Log("END Dialogue");
-        gameManager.updateProgression(currentDialogue.nextNodeCode);
-        // Cursor.lockState = CursorLockMode.None;
+        gameManager.updateProgression(currentDialogue.nextScenarioNodeCode);
     }
 
     public bool HasNextSentence()
@@ -88,8 +98,15 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    // Les éléments doivent être dans l'ordre (plus performant que Find ou de faire un map)
-    public void idiotSearchDialogue(int dialogueCode) {
-        currentDialogue = dialogues[0];
+    public Dialogue FindDialogueByCode(int dialogueCode) {
+        if (dialogueDictionary.ContainsKey(dialogueCode))
+        {
+            return dialogueDictionary[dialogueCode];
+        }
+        else
+        {
+            Debug.LogError("Code de Dialogue invalide");
+            return null;
+        }
     }
 }

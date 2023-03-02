@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
+public enum EventType {
+    Popup,
+    Dialogue,
+    Mission,
+    Action,
+    End
+}
+
 [System.Serializable]
 public class ScenarioNode
 {
-    public int code;
-    public int nextCode;
+    public int scenarioNodeCode;
     [SerializeField] private string name;
     [SerializeField] private PlayableAsset timelineClip;
-    [SerializeField] private NodeEvent nodeEvent;
+    [SerializeField] private EventType eventType;
+    [SerializeField] private int eventIndex;
 
     public string GetName()
     {
@@ -22,8 +30,13 @@ public class ScenarioNode
         return timelineClip;
     }
 
-    public NodeEvent GetNodeEvent()
+    public EventType GetEventType()
     {
-        return nodeEvent;
+        return eventType;
+    }
+
+    public int GetEventIndex()
+    {
+        return eventIndex;
     }
 }
