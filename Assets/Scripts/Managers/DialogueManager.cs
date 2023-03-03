@@ -14,10 +14,12 @@ public class DialogueManager : MonoBehaviour
     
     // UI
     public GameObject dialogueCanvas;
+    public Image characterImage;
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
     public Button nextButton;
     public float typingLetterInterval = 0.05f;
+    public float timeBeetweenSentencesInterval = 3.0f;
 
     // Liste des dialogues de la scène
     public List<Dialogue> dialogues;
@@ -45,11 +47,11 @@ public class DialogueManager : MonoBehaviour
         currentDialogue = FindDialogueByCode(dialogueCode);
         indexSentence = 0;
         sentences = currentDialogue.GetSentences();
-        DisplayNextSentence();
     }
 
     public void StartDialogue() {
         dialogueBoxAnimator.SetBool("IsOpen", true);
+        DisplayNextSentence();
     }
 
     public void EndDialogue() {
@@ -73,10 +75,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        StopAllCoroutines();
         if (HasNextSentence())
         {
-            StopAllCoroutines();
             nameText.text = sentences[indexSentence].GetCharacter();
+            characterImage.sprite = sentences[indexSentence].GetCharacterImage();
             StartCoroutine(TypeSentence(sentences[indexSentence].GetText()));
             indexSentence++;
         } else
@@ -93,6 +96,8 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingLetterInterval);
         }
+        yield return new WaitForSeconds(timeBeetweenSentencesInterval);
+        DisplayNextSentence();
     }
 
     public Dialogue FindDialogueByCode(int dialogueCode) {
