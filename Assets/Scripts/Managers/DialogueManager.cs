@@ -11,6 +11,7 @@ public class DialogueManager : MonoBehaviour
     public MissionManager missionManager;
     public GameObject player;
     public Animator dialogueBoxAnimator;
+    public AudioSource audioSource;
     
     // UI
     public GameObject dialogueCanvas;
@@ -76,16 +77,34 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         StopAllCoroutines();
+        
         if (HasNextSentence())
         {
             nameText.text = sentences[indexSentence].GetCharacter();
             characterImage.sprite = sentences[indexSentence].GetCharacterImage();
-            StartCoroutine(TypeSentence(sentences[indexSentence].GetText()));
+            dialogueText.text = sentences[indexSentence].GetText();
+            audioSource.clip = sentences[indexSentence].GetAudioClip();
             indexSentence++;
+            StartCoroutine(PlayAudio());
         } else
         {
             EndDialogue();
         }
+    }
+
+    IEnumerator PlayAudio()
+    {
+        if (audioSource.clip)
+        {
+            Debug.Log("Playing audio clip : " + audioSource.clip);
+            audioSource.Play();
+            while (audioSource.isPlaying)
+            {
+                yield return null;
+            }
+        }
+        yield return new WaitForSeconds(timeBeetweenSentencesInterval);
+        DisplayNextSentence();
     }
 
     IEnumerator TypeSentence(string sentence)
