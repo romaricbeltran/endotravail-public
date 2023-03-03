@@ -5,13 +5,19 @@ using UnityEngine;
 [System.Serializable]
 public class Mission : EventNode
 {
-    [TextArea] [SerializeField] private string mainText;
+    [TextArea] [SerializeField] private string missionTitle;
+    [TextArea] [SerializeField] private string missionText;
     [SerializeField] private List<TargetMission> targetMissions;
     [SerializeField] private bool isAccomplished;
 
-    public string GetMainText()
+    public string GetMissionTitle()
     {
-        return mainText;
+        return missionTitle;
+    }
+
+    public string GetMissionText()
+    {
+        return missionText;
     }
 
     public List<TargetMission> GetTargetMissions()

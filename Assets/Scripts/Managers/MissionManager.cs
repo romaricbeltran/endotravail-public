@@ -25,7 +25,11 @@ public class MissionManager : MonoBehaviour
 
     // UI
     public GameObject missionCanvas;
-    public TextMeshProUGUI mainText;
+    public GameObject shadowBackground;
+    public GameObject missionBox;
+    public TextMeshProUGUI missionTitle;
+    public TextMeshProUGUI missionText;
+    public Button acceptButton;
 
     public List<Mission> missions;
     public Dictionary<int, Mission> missionDictionary;
@@ -46,7 +50,8 @@ public class MissionManager : MonoBehaviour
     public void LoadMission(int missionCode) {
         currentMission = FindMissionByCode(missionCode);
         currentTargetMissions = currentMission.GetTargetMissions();
-        mainText.text = currentMission.GetMainText();
+        missionTitle.text = currentMission.GetMissionTitle();
+        missionText.text = currentMission.GetMissionText();
 
         int indexMission = 0;
 
@@ -102,7 +107,18 @@ public class MissionManager : MonoBehaviour
 
     public void StartMission()
     {
+        shadowBackground.SetActive(true);
+        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 200f);
+        acceptButton.gameObject.SetActive(true);
         missionCanvas.SetActive(true);
+    }
+
+    public void AcceptMission()
+    {
+        acceptButton.gameObject.SetActive(false);
+        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 115f);
+        shadowBackground.SetActive(false);
+        gameManager.SwitchPlayerInput(true);
     }
 
     // A la fin de la mission on lance le node qui suit la fin de la mission ! (entre les deux on a les nodes des targetMissions)

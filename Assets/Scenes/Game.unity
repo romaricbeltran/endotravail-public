@@ -7442,6 +7442,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 876751114254015668, guid: a62be2ce175f31e40a17efd22e72129c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 876751114620735906, guid: a62be2ce175f31e40a17efd22e72129c,
         type: 3}
       propertyPath: m_RootOrder
@@ -7495,6 +7500,11 @@ PrefabInstance:
     - target: {fileID: 876751114620735906, guid: a62be2ce175f31e40a17efd22e72129c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 876751114628218721, guid: a62be2ce175f31e40a17efd22e72129c,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -11509,12 +11519,12 @@ MonoBehaviour:
   player: {fileID: 182828177373169617}
   scenario:
   - scenarioNodeCode: -2
-    name: Fin de popup sans transition
+    name: Fin de popup sans transition (en mission)
     timelineClip: {fileID: 11400000, guid: 40cdd20e8d20f0c4c8139e81a1ede41c, type: 2}
     eventType: 4
     eventIndex: 1
   - scenarioNodeCode: -1
-    name: Fin de dialogue sans transition
+    name: Fin de dialogue sans transition (en mission)
     timelineClip: {fileID: 11400000, guid: 8c7563a6fccb44a448b1efef778c9607, type: 2}
     eventType: 4
     eventIndex: 1
@@ -11539,6 +11549,11 @@ MonoBehaviour:
     eventType: 0
     eventIndex: 2
   - scenarioNodeCode: 4
+    name: Dernier Dialogue OKLM
+    timelineClip: {fileID: 11400000, guid: ffa28ea0afaa4bf43abba889246a0c30, type: 2}
+    eventType: 1
+    eventIndex: 2
+  - scenarioNodeCode: 5
     name: Fin du chapitre
     timelineClip: {fileID: 0}
     eventType: 5
@@ -18097,7 +18112,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28714
+  m_Name: pb_Mesh765216
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -54138,6 +54153,46 @@ PrefabInstance:
       propertyPath: missionManager
       value: 
       objectReference: {fileID: 1349749540}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].code
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].nextScenarioNodeCode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0].text
+      value: C'est notre dialogue
+      objectReference: {fileID: 0}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1].text
+      value: Le dernier
+      objectReference: {fileID: 0}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[0].character
+      value: Catherine
+      objectReference: {fileID: 0}
+    - target: {fileID: 531741880217955575, guid: fd108879676291f408c608185b8ddf29,
+        type: 3}
+      propertyPath: dialogues.Array.data[1].sentences.Array.data[1].character
+      value: Boris
+      objectReference: {fileID: 0}
     - target: {fileID: 3520379409461772722, guid: fd108879676291f408c608185b8ddf29,
         type: 3}
       propertyPath: m_RootOrder
@@ -54552,6 +54607,11 @@ PrefabInstance:
       propertyPath: missionManager
       value: 
       objectReference: {fileID: 1349749540}
+    - target: {fileID: 5987483185667107140, guid: 430da1e88676da9498b95e9ed025ed82,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7238980449547110071, guid: 430da1e88676da9498b95e9ed025ed82,
         type: 3}
       propertyPath: m_RootOrder
@@ -54624,17 +54684,17 @@ PrefabInstance:
     - target: {fileID: 4898987462000399255, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.772903
+      value: 533.875
       objectReference: {fileID: 0}
     - target: {fileID: 4898987462000399255, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0560817
+      value: 221
       objectReference: {fileID: 0}
     - target: {fileID: 4898987462000399255, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.973518
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4898987462000399255, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}

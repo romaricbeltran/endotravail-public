@@ -70,7 +70,6 @@ public class TimelineManager : MonoBehaviour
             case EventType.Mission:
                 Debug.Log("Load Mission " + eventIndex);
                 missionManager.LoadMission(eventIndex);
-                gameManager.SwitchPlayerInput(true);
                 break;
             case EventType.Camera:
                 Debug.Log("Load Camera");
