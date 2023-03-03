@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4629678349967364387}
   - component: {fileID: 3098857798560194}
   - component: {fileID: 5987483185728921017}
+  - component: {fileID: 8370343172343292440}
   m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
@@ -97,7 +98,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
@@ -134,6 +135,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &8370343172343292440
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2788478188362227834}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e2683c5b97637d4aa76c9de5c5aef1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &3572783313084586598
 GameObject:
   m_ObjectHideFlags: 0
@@ -510,7 +531,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5987483183773797831}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 533.875, y: 220.99997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -532,6 +553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  missionManager: {fileID: 0}
   popupCanvas: {fileID: 5987483185667107140}
   mainText: {fileID: 5987483185689219805}
   sourceText: {fileID: 5987483185532706277}
@@ -546,6 +568,10 @@ MonoBehaviour:
     sourceText: "Sources : Enqu\xEAte Endovie 2020 IPSOS & Gedeon Richter en collaboration
       avec EndoFrance et Enqu\xEAte \"Endotravail\" par le Centre d\u2019\xE9tudes
       de l\u2019emploi et du travail (CEET) en 2020"
+  - code: 2
+    nextScenarioNodeCode: -2
+    mainText: Deuxieme popoupp
+    sourceText: Test de la 2e
 --- !u!1 &5987483185667107140
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.74509805}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
+  missionManager: {fileID: 0}
   player: {fileID: 0}
   dialogueBoxAnimator: {fileID: 4467112101505917489}
-  isAnimated: 1
   dialogueCanvas: {fileID: 4467112101673743324}
   nameText: {fileID: 531741880217955528}
   dialogueText: {fileID: 531741880217955529}
@@ -56,19 +56,12 @@ MonoBehaviour:
   typingLetterInterval: 0.05
   dialogues:
   - code: 1
-    nextScenarioNodeCode: 3
+    nextScenarioNodeCode: -1
     sentences:
-    - character: Late
-      text: 
-    - character: Late
-      text: 
-  - code: 0
-    nextScenarioNodeCode: 0
-    sentences:
-    - character: Late
-      text: 
-    - character: Late
-      text: 
+    - character: Catherine
+      text: Pas bien
+    - character: Boris
+      text: Bien
 --- !u!1 &1661332074459359121
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,6 +74,7 @@ GameObject:
   - component: {fileID: 6287192448389078318}
   - component: {fileID: 3200858962319712173}
   - component: {fileID: 531741880217955530}
+  - component: {fileID: 1900529197927741194}
   m_Layer: 0
   m_Name: NextButton
   m_TagString: Untagged
@@ -166,7 +160,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
@@ -203,6 +197,26 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!95 &1900529197927741194
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661332074459359121}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e2683c5b97637d4aa76c9de5c5aef1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2252261680241937771
 GameObject:
   m_ObjectHideFlags: 0

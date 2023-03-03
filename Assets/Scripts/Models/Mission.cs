@@ -6,7 +6,7 @@ using UnityEngine;
 public class Mission : EventNode
 {
     [TextArea] [SerializeField] private string mainText;
-    [SerializeField] private GameObject triggerObject;
+    [SerializeField] private List<TargetMission> targetMissions;
     [SerializeField] private bool isAccomplished;
 
     public string GetMainText()
@@ -14,9 +14,9 @@ public class Mission : EventNode
         return mainText;
     }
 
-    public GameObject GetTriggerObject()
+    public List<TargetMission> GetTargetMissions()
     {
-        return triggerObject;
+        return targetMissions;
     }
 
     public bool IsAccomplished()

@@ -185,12 +185,22 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   timelineManager: {fileID: 0}
   player: {fileID: 0}
+  triggerEvents: []
   missionCanvas: {fileID: 6161747237651271346}
   mainText: {fileID: 6161747236602555112}
   missions:
   - code: 1
-    nextScenarioNodeCode: 2
+    nextScenarioNodeCode: 4
     mainText: Trouver Boris
+    targetMissions:
+    - name: "Aller parler \xE0 L\xE9onard"
+      triggerObject: {fileID: 0}
+      eventType: 1
+      scenarioNodeCode: 2
+    - name: "Aller parler \xE0 Lewis"
+      triggerObject: {fileID: 0}
+      eventType: 0
+      scenarioNodeCode: 3
     isAccomplished: 0
 --- !u!1 &6161747237651271346
 GameObject:

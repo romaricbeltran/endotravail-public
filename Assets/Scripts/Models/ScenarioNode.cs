@@ -8,6 +8,7 @@ public enum EventType {
     Dialogue,
     Mission,
     Action,
+    Camera,
     End
 }
 

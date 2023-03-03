@@ -5,13 +5,23 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using System;
 
+
+// Au lancement d'une mission, on crée dynamiquement des composants TriggerEvent sur tous les GameObjects TargetMission concernés.
+// On active tous les écouteurs qui pointent sur les TriggerEvent de nos TargetMission.
+// Lorsqu'un trigger est déclenché on détruit l'écouteur vers le TriggerEvent concerné.
+// Si c'était le dernier écouteur, on set ON_MISSION_END à true pour lancer EndMission sur un prochain call de Manager.
 public class MissionManager : MonoBehaviour
 {
     public GameManager gameManager;
     public TimelineManager timelineManager;
     public GameObject player;
-    private TriggerEvent triggerEvent;
+    public static bool ON_MISSION_END;
+
+    public List<TriggerEvent> triggerEvents;
+    private List<TargetMission> currentTargetMissions;
+    private int currentTriggerMissionIndex;
 
     // UI
     public GameObject missionCanvas;
@@ -32,34 +42,62 @@ public class MissionManager : MonoBehaviour
         }
     }
 
+    // On va charger la mission courante, assigner et écouter tous les TriggerEvents
     public void LoadMission(int missionCode) {
         currentMission = FindMissionByCode(missionCode);
+        currentTargetMissions = currentMission.GetTargetMissions();
         mainText.text = currentMission.GetMainText();
 
-        // Ajouter le composant TriggerEvent à l'objet qui déclenchera l'événement onTriggerEnter
-        triggerEvent = currentMission.GetTriggerObject().AddComponent<TriggerEvent>();
-        EnableTriggerEvent();
-    }
+        int indexMission = 0;
 
-    void OnTriggerEnterEvent(Collider other)
-    {
-        // Vérifier si le joueur est entré en collision avec l'objet spécifié
-        if (other.gameObject == player)
+        foreach (TargetMission targetMission in currentTargetMissions)
         {
-            EndMission();
+            TriggerEvent newTriggerEvent = targetMission.GetTriggerObject().AddComponent<TriggerEvent>();
+            // Ajouter aussi l'index de la mission pour pouvoir l'identifier au trigger
+            newTriggerEvent.SetIndexMission(indexMission);
+            indexMission++;
+            
+            AddTriggerEvent(newTriggerEvent);
+            Debug.Log("Add Trigger Event for Target Mission:" + targetMission.GetName() + " on " + targetMission.GetTriggerObject());
         }
     }
 
-    void DisableTriggerEvent()
-    {
-        // Désactiver l'événement onTriggerEnter
-        triggerEvent.onTriggerEnterEvent.RemoveAllListeners();
+    // Lorsqu'on trigger un TriggerEvent, on pointe sur le scénario node cible du TriggerMission
+    // Puis on détruit l'écouteur du TriggerEvent (pourquoi pas détruire directement le composant plutot ? au cas où on a besoin de le réactiver ?)
+    void OnTriggerEnterEvent(Tuple<GameObject, Collider> args)
+    {   
+        // Récupère l'objet qui porte le trigger
+        GameObject sender = args.Item1;
+        Collider other = args.Item2;
+
+        // Vérifier si le joueur est entré en collision avec l'objet spécifié
+        if (other.gameObject == player)
+        {
+            TriggerEvent currentTriggerEvent = sender.GetComponent<TriggerEvent>();
+            int currentTriggerMissionIndex = currentTriggerEvent.GetIndexMission();
+
+            gameManager.updateProgression(currentTargetMissions[currentTriggerMissionIndex].GetScenarioNodeCode());
+            
+            RemoveTriggerEvent(currentTriggerEvent);
+            Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + other.gameObject.name);
+
+            if (triggerEvents.Count == 0)
+            {
+                ON_MISSION_END = true;
+            }
+        }
     }
 
-    void EnableTriggerEvent()
+    void AddTriggerEvent(TriggerEvent triggerEvent)
     {
-        // Réactiver l'événement onTriggerEnter
         triggerEvent.onTriggerEnterEvent.AddListener(OnTriggerEnterEvent);
+        triggerEvents.Add(triggerEvent);
+    }
+
+    void RemoveTriggerEvent(TriggerEvent triggerEvent)
+    {
+        triggerEvent.onTriggerEnterEvent.RemoveAllListeners();
+        triggerEvents.Remove(triggerEvent);
     }
 
     public void StartMission()
@@ -67,11 +105,12 @@ public class MissionManager : MonoBehaviour
         missionCanvas.SetActive(true);
     }
 
+    // A la fin de la mission on lance le node qui suit la fin de la mission ! (entre les deux on a les nodes des targetMissions)
     public void EndMission()
     {
-        DisableTriggerEvent();
         missionCanvas.SetActive(false);
         gameManager.updateProgression(currentMission.nextScenarioNodeCode);
+        ON_MISSION_END = false;
     }
 
     public Mission FindMissionByCode(int missionCode) {

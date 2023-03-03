@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public GameManager gameManager;
+    public MissionManager missionManager;
     public GameObject player;
     public Animator dialogueBoxAnimator;
-    public bool isAnimated;
     
     // UI
     public GameObject dialogueCanvas;
@@ -49,24 +49,21 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void StartDialogue() {
-        if (isAnimated) {
-            dialogueBoxAnimator.SetBool("IsOpen", true);
-        } else {
-            dialogueCanvas.SetActive(true);
-        }
+        dialogueBoxAnimator.SetBool("IsOpen", true);
     }
 
     public void EndDialogue() {
-        if (isAnimated) {
-            dialogueBoxAnimator.SetBool("IsOpen", false);
-        } else {
-            dialogueCanvas.SetActive(false);
-        }
-
+        dialogueBoxAnimator.SetBool("IsOpen", false);
         StopAllCoroutines();
 
-        Debug.Log("END Dialogue");
-        gameManager.updateProgression(currentDialogue.nextScenarioNodeCode);
+        if (MissionManager.ON_MISSION_END)
+        {
+            missionManager.EndMission();
+        }
+        else
+        {
+            gameManager.updateProgression(currentDialogue.nextScenarioNodeCode);
+        }
     }
 
     public bool HasNextSentence()

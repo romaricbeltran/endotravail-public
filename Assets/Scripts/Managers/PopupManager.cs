@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PopupManager : MonoBehaviour
 {
     public GameManager gameManager;
+    public MissionManager missionManager;
 
     // UI
     public GameObject popupCanvas;
@@ -42,7 +43,15 @@ public class PopupManager : MonoBehaviour
     public void EndPopup()
     {
         popupCanvas.SetActive(false);
-        gameManager.updateProgression(currentPopup.nextScenarioNodeCode);
+
+        if (MissionManager.ON_MISSION_END)
+        {
+            missionManager.EndMission();
+        }
+        else
+        {
+            gameManager.updateProgression(currentPopup.nextScenarioNodeCode);
+        }
     }
 
     public Popup FindPopupByCode(int popupCode) {

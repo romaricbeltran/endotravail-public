@@ -48,6 +48,10 @@ public class TimelineManager : MonoBehaviour
             director.Play();
         }
 
+        LoadEvent(eventType, eventIndex);
+    }
+
+    public void LoadEvent(EventType eventType, int eventIndex) {
         // Node Event
         Debug.Log("EventType + " + eventType.ToString());
 
@@ -66,6 +70,10 @@ public class TimelineManager : MonoBehaviour
             case EventType.Mission:
                 Debug.Log("Load Mission " + eventIndex);
                 missionManager.LoadMission(eventIndex);
+                gameManager.SwitchPlayerInput(true);
+                break;
+            case EventType.Camera:
+                Debug.Log("Load Camera");
                 gameManager.SwitchPlayerInput(true);
                 break;
             case EventType.End:
