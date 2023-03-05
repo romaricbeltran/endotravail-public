@@ -12,19 +12,19 @@ public class GameManager : MonoBehaviour
 
     private PlayerInput playerInput;
 
-    void Awake()
-    {
-        // Vérifie si une autre instance de GameManager existe déjà, dans ce cas détruit cet objet pour s'assurer qu'il n'y a qu'une seule instance
-        if (instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // L'objet ne sera pas détruit lorsqu'une nouvelle scène sera chargée
-        }
-    }
+    // void Awake()
+    // {
+    //     // Vérifie si une autre instance de GameManager existe déjà, dans ce cas détruit cet objet pour s'assurer qu'il n'y a qu'une seule instance
+    //     if (instance != null)
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    //     else
+    //     {
+    //         instance = this;
+    //         DontDestroyOnLoad(gameObject); // L'objet ne sera pas détruit lorsqu'une nouvelle scène sera chargée
+    //     }
+    // }
 
     // GAME_PROGRESSION
     private void Start()

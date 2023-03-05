@@ -27,6 +27,7 @@ public class TimelineManager : MonoBehaviour
         foreach (ScenarioNode node in scenario)
         {
             scenarioNodeDictionary.Add(node.scenarioNodeCode, node);
+            Debug.Log(node.scenarioNodeCode);
         }
 
         director = GetComponent<PlayableDirector>();
