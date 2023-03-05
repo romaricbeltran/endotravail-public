@@ -71,6 +71,11 @@ public class TimelineManager : MonoBehaviour
                 Debug.Log("Load Mission " + eventIndex);
                 missionManager.LoadMission(eventIndex);
                 break;
+            case EventType.Action:
+                Debug.Log("Load Action " + eventIndex);
+                actionManager.LoadAction(eventIndex);
+                gameManager.SwitchPlayerInput(false);
+                break;
             case EventType.Camera:
                 Debug.Log("Load Camera");
                 gameManager.SwitchPlayerInput(true);

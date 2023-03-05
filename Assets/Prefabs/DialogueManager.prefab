@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3520379409461772722}
   - component: {fileID: 531741880217955575}
+  - component: {fileID: 4224234225287082082}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -49,32 +50,133 @@ MonoBehaviour:
   missionManager: {fileID: 0}
   player: {fileID: 0}
   dialogueBoxAnimator: {fileID: 4467112101505917489}
+  audioSource: {fileID: 4224234225287082082}
   dialogueCanvas: {fileID: 4467112101673743324}
   characterImage: {fileID: 2046282326622025609}
   nameText: {fileID: 531741880217955528}
   dialogueText: {fileID: 531741880217955529}
   nextButton: {fileID: 0}
   typingLetterInterval: 0.05
-  timeBeetweenSentencesInterval: 3
+  timeBeetweenSentencesInterval: 5
   dialogues:
   - code: 1
     nextScenarioNodeCode: -1
     sentences:
     - character: Catherine
       characterImage: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: aaae93ec3edbfde49b7efb23d87b0a5d, type: 3}
       text: Pas bien
     - character: Boris
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 0}
       text: Bien
   - code: 2
     nextScenarioNodeCode: 5
     sentences:
     - character: Catherine
       characterImage: {fileID: 0}
+      audioClip: {fileID: 0}
       text: C'est notre dialogue
     - character: Boris
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 0}
       text: Le dernier
+--- !u!82 &4224234225287082082
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531741880217955531}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2252261680241937771
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -20}
+  m_AnchoredPosition: {x: 0, y: -37.5}
   m_SizeDelta: {x: 0, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8785358400350811752
@@ -142,8 +244,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "S\xE9rieux ? J'ai d\xE9j\xE0 une tonne de travail ! Pourquoi c'est nous
-    qui devons faire ton travail en plus ? A chaque fois que tu t'absentes, c'est
-    nous qui devons assumer !"
+    qui devons faire ton travail en plus ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -248,7 +349,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 30, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6926046606901646597
 CanvasRenderer:
@@ -323,7 +424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -17.5}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2256583595605404865
@@ -462,7 +563,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: -220}
-  m_SizeDelta: {x: -200, y: 150}
+  m_SizeDelta: {x: -160, y: 100}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &3670182212637007727
 CanvasRenderer:
@@ -658,6 +759,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 65, y: 0}
-  m_SizeDelta: {x: -190, y: 100}
+  m_AnchoredPosition: {x: 45, y: 0}
+  m_SizeDelta: {x: -150, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

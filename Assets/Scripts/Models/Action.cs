@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,25 @@ using UnityEngine;
 [System.Serializable]
 public class Action : EventNode
 {
-    [TextArea(3,10)] [SerializeField] private string[] choices;
-    [TextArea(3,10)] [SerializeField] private int choosenIndex;
+    [TextArea(3,10)] [SerializeField] private List<string> choices;
+    [SerializeField] private List<int> scenarioNodeNextCodes;
+    [SerializeField] private int choosenActionIndex;
 
-    public string[] GetChoices() {
+    public List<string> GetChoices() {
         return choices;
     }
 
-    public int GetChoosenIndex() {
-        return choosenIndex;
+    public List<int> GetScenarioNodeNextCodes() {
+        return scenarioNodeNextCodes;
+    }
+
+    public int GetChoosenActionIndex()
+    {
+        return choosenActionIndex;
+    }
+
+    public void SetChoosenActionIndex(int choosenActionIndex)
+    {
+        this.choosenActionIndex = choosenActionIndex;
     }
 }

@@ -6,20 +6,22 @@ using UnityEngine.UI;
 
 public class ActionManager : MonoBehaviour
 {
+    public GameManager gameManager;
     public GameObject player;
 
     // UI
     public GameObject actionBox;
-    public List<Button> buttons;
-    public List<TextMeshProUGUI> buttonsText;
+    public List<GameObject> actionButtons;
 
+    // Liste des actions de la scène
     public List<Action> actions;
     public Dictionary<int, Action> actionDictionary;
 
     private Action currentAction;
 
-    private Queue<string> choices;
-    private int indexChoices;
+    // Liste des choix d'une action
+    private List<string> choices;
+    private List<int> scenarioNodeNextCodes;
 
     private void Awake()
     {
@@ -30,13 +32,31 @@ public class ActionManager : MonoBehaviour
         }
     }
 
-    // public void updateAction(int indexAction) {
-    //     foreach(string choice in actions[indexAction].GetChoices())
-    //     {
-    //         buttonsText[indexChoices].text = choice;
-    //         indexChoices++;
-    //     }
-    // }
+    public void LoadAction(int actionCode)
+    {
+        currentAction = FindActionByCode(actionCode);
+        choices = currentAction.GetChoices();
+        scenarioNodeNextCodes = currentAction.GetScenarioNodeNextCodes();
+        for (int i = 0; i < choices.Count; i++)
+        {
+            int indexChoices = i;
+
+            actionButtons[indexChoices].SetActive(true);
+
+            Button buttonComponent = actionButtons[indexChoices].GetComponent<Button>();
+            buttonComponent.onClick.AddListener(() => OnActionChoice(indexChoices));
+
+            TextMeshProUGUI buttonText = actionButtons[indexChoices].GetComponentInChildren<TextMeshProUGUI>();
+            buttonText.text = choices[indexChoices];
+        }
+    }
+
+    private void OnActionChoice(int choiceIndex)
+    {
+        Debug.Log("Action choisie : " + choices[choiceIndex]);
+        currentAction.SetChoosenActionIndex(scenarioNodeNextCodes[choiceIndex]);
+        EndAction();
+    }
 
     public void StartAction()
     {
@@ -45,10 +65,14 @@ public class ActionManager : MonoBehaviour
 
     public void EndAction()
     {
+        for (int i = 0; i < actionButtons.Count; i++)
+        {
+            actionButtons[i].SetActive(false);
+        }
+        
         actionBox.SetActive(false);
-        indexChoices = 0;
-        // GameObject.Find("Player").GetComponent<PlayerInput>().actions.Enable();
-        // Cursor.lockState = CursorLockMode.None;
+
+        gameManager.updateProgression(currentAction.GetChoosenActionIndex());
     }
 
     public Action FindActionByCode(int actionCode) {
