@@ -28,6 +28,9 @@ public class DialogueManager : MonoBehaviour
 
     private Dialogue currentDialogue;
 
+    private bool isSentenceWritingFinished = false;
+    private bool isAudioPlayingFinished = false;
+
     // Liste des phrases d'un dialogue (nom + texte)
     private List<Sentence> sentences;
 
@@ -84,8 +87,9 @@ public class DialogueManager : MonoBehaviour
             characterImage.sprite = sentences[indexSentence].GetCharacterImage();
             dialogueText.text = sentences[indexSentence].GetText();
             audioSource.clip = sentences[indexSentence].GetAudioClip();
-            indexSentence++;
+            StartCoroutine(TypeSentence(sentences[indexSentence].GetText()));
             StartCoroutine(PlayAudio());
+            indexSentence++;
         } else
         {
             EndDialogue();
@@ -103,8 +107,9 @@ public class DialogueManager : MonoBehaviour
                 yield return null;
             }
         }
-        yield return new WaitForSeconds(timeBeetweenSentencesInterval);
-        DisplayNextSentence();
+
+        isAudioPlayingFinished = true;
+        StartCoroutine(CheckIfWeCanDisplayNextSentence());
     }
 
     IEnumerator TypeSentence(string sentence)
@@ -115,8 +120,17 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingLetterInterval);
         }
-        yield return new WaitForSeconds(timeBeetweenSentencesInterval);
-        DisplayNextSentence();
+        isSentenceWritingFinished = true;
+        StartCoroutine(CheckIfWeCanDisplayNextSentence());
+    }
+
+    IEnumerator CheckIfWeCanDisplayNextSentence()
+    {
+        if (isSentenceWritingFinished && isAudioPlayingFinished)
+        {
+            yield return new WaitForSeconds(timeBeetweenSentencesInterval);
+            DisplayNextSentence();
+        }
     }
 
     public Dialogue FindDialogueByCode(int dialogueCode) {

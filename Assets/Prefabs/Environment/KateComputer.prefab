@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6556482962026327480
+--- !u!1 &7212553499877240480
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,12 +8,12 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6553009004400987072}
-  - component: {fileID: 6534570667746702408}
-  - component: {fileID: 3233548307520059176}
-  - component: {fileID: 7917743544458342455}
-  - component: {fileID: 1680046575791568571}
-  - component: {fileID: 6556892533789703071}
+  - component: {fileID: 7211841136432105688}
+  - component: {fileID: 7226615848573515600}
+  - component: {fileID: 1313558746237531184}
+  - component: {fileID: 5981928712206086959}
+  - component: {fileID: 3005542249468458403}
+  - component: {fileID: 7213551302962722951}
   m_Layer: 0
   m_Name: KateComputer
   m_TagString: Untagged
@@ -21,28 +21,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 69
   m_IsActive: 1
---- !u!4 &6553009004400987072
+--- !u!4 &7211841136432105688
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556482962026327480}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_GameObject: {fileID: 7212553499877240480}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -3.2623053, y: 0.6572449, z: 0.31912684}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!23 &6534570667746702408
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &7226615848573515600
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556482962026327480}
+  m_GameObject: {fileID: 7212553499877240480}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,13 +79,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3233548307520059176
+--- !u!114 &1313558746237531184
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556482962026327480}
+  m_GameObject: {fileID: 7212553499877240480}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8233d90336aea43098adf6dbabd606a2, type: 3}
@@ -2436,18 +2436,18 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 34
+  m_VersionIndex: 64
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!328 &7917743544458342455
+--- !u!328 &5981928712206086959
 VideoPlayer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556482962026327480}
+  m_GameObject: {fileID: 7212553499877240480}
   m_Enabled: 1
   m_VideoClip: {fileID: 32900000, guid: 65ee8c5e269e35b419e43479af80f70d, type: 3}
   m_TargetCameraAlpha: 1
@@ -2476,21 +2476,21 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
---- !u!33 &1680046575791568571
+--- !u!33 &3005542249468458403
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556482962026327480}
+  m_GameObject: {fileID: 7212553499877240480}
   m_Mesh: {fileID: 0}
---- !u!328 &6556892533789703071
+--- !u!328 &7213551302962722951
 VideoPlayer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6556482962026327480}
+  m_GameObject: {fileID: 7212553499877240480}
   m_Enabled: 0
   m_VideoClip: {fileID: 32900000, guid: 65ee8c5e269e35b419e43479af80f70d, type: 3}
   m_TargetCameraAlpha: 1
