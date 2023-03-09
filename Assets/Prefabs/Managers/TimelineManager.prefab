@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1081660832027882520
+--- !u!1 &3827039982694680581
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,10 +8,10 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1081660832027882523}
-  - component: {fileID: 1081660832027882525}
-  - component: {fileID: 1081660832027882524}
-  - component: {fileID: 1081660832027882527}
+  - component: {fileID: 5731558071261623834}
+  - component: {fileID: 7502942474527489745}
+  - component: {fileID: 4650038604874891781}
+  - component: {fileID: 8225932588996913083}
   m_Layer: 0
   m_Name: TimelineManager
   m_TagString: Untagged
@@ -19,31 +19,31 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1081660832027882523
+--- !u!4 &5731558071261623834
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081660832027882520}
+  m_GameObject: {fileID: 3827039982694680581}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 533.875, y: 220.99997, z: 0}
+  m_LocalPosition: {x: 545.6479, y: 219.9439, z: 2.973518}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!320 &1081660832027882525
+--- !u!320 &7502942474527489745
 PlayableDirector:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081660832027882520}
+  m_GameObject: {fileID: 3827039982694680581}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 548d108a8e05c6242a3ce8ad730ee11c, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
   m_InitialState: 1
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -77,33 +77,181 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -7820909266366731486, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 8412465803331104660, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3768325976852484997, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 4604809415824636715, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1180872792098801373, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1314995845166257757, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3346038371301041223, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -9152119252059393453, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -939743128228593498, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -9152119252059393453, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5534352614718370737, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 6713204370466322207, guid: e0c52cedaa34bfd4399af3151422c8e6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6242534999038042685, guid: e0c52cedaa34bfd4399af3151422c8e6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: -7151537054128488817, guid: 1585dba0d35ec0f46a74600b7f57cfae, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 8517928219162567722, guid: 92784f5333069ed419bac046f248278b, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5076194569582344484, guid: 92784f5333069ed419bac046f248278b, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2623920380098072163, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5623238391372470390, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 269812926009082135, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5756365171246715973, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5339680037895395331, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5278057656421409761, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7393774558879958831, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3497542117126942529, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4966176309118365537, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 5355374988407944457, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 4977539634743650617, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5278057656421409761, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7393774558879958831, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3497542117126942529, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3987011771866498478, guid: 548d108a8e05c6242a3ce8ad730ee11c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 334814876023993577, guid: 548d108a8e05c6242a3ce8ad730ee11c, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3430533104842467037, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1549909096018165663, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2124744212705763815, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 822507262577216861, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2839352616889082282, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 4041848426840944275, guid: e0c52cedaa34bfd4399af3151422c8e6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2512031503792327771, guid: e0c52cedaa34bfd4399af3151422c8e6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2006028121391980446, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6637440736481411861, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5448140683680227587, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7433633257920950512, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: -2185662266974214610, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6553581209687694120, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
+    - 31549964cfcfe2e4992e4969647f3a51: {fileID: 0}
+    - f8f03587c530be34e99c053f0efd6f8c: {fileID: 0}
+    - 4bbc67c206867a949b7ffa9bd7d6b19e: {fileID: 0}
     - 01dbbcb36acfcb34984b77a451663c73: {fileID: 0}
+    - 5310cde0d54236c488adcdd26dfb212e: {fileID: 0}
     - c3bf9fa08b94c2b4e9c5e78d24b02041: {fileID: 0}
+    - 7940011d39e2cc7408c6d0e00928e9f0: {fileID: 0}
+    - 59442c080a1348c47ab035b765330b1a: {fileID: 0}
     - 4f41170782fccc2468f34771a9a85b9e: {fileID: 0}
     - 495c9498cd5169440b27edccd5c25005: {fileID: 0}
     - f42a4cea6d5be784682dfbd07ec07d8d: {fileID: 0}
+    - 5b5e7dfc0c4d58b4e9fd79ef7b3d10a0: {fileID: 0}
     - 6b0a4a3ddfddd304196efee7ed9bcf94: {fileID: 0}
     - bb8713916c73d4f4492a80171907783b: {fileID: 0}
+    - c2e0f0ea5467f6a49b02d194f5faba82: {fileID: 0}
     - 32326d44b6661704484849bd7ea38705: {fileID: 0}
+    - e75d41b185526104db8821f86fd6db6a: {fileID: 0}
     - 36cca19e81d012147a2902f2ef4a39cc: {fileID: 0}
     - edae6d12d72a186459c9add6698bd309: {fileID: 0}
+    - 26cdc64ac825e704699d052fcef56183: {fileID: 0}
+    - d26fed9280082a645b28036abe25c054: {fileID: 0}
     - 6d97c375870004a4cb7e835347ace369: {fileID: 0}
+    - f5d793b362aecec4a9c807db1e85f2a4: {fileID: 0}
     - 6dbc29af23b556847bf5d4f31f8b3848: {fileID: 0}
+    - 3d27ee85e7ebde940898ec494c6aabd4: {fileID: 0}
+    - 2edfbd256f1247844b332191b004c482: {fileID: 0}
+    - f6d934adbc3234f4c9196a2bf8971366: {fileID: 0}
     - 135ccf55995458043bad62d865cd3bf4: {fileID: 0}
+    - 34caf17aaf3b41f44bd4faf55b863d1d: {fileID: 0}
+    - 70fb0898bb9fd9c419f16fad23399225: {fileID: 0}
     - 717a94b8415556946a0e27d454cba6c3: {fileID: 0}
+    - e97e9f7af29ad7643a41ddbff398caf7: {fileID: 0}
     - 292e7f625e1a8b648ac0f6a7197ab6fb: {fileID: 0}
+    - cab563736d4ef7a418379c694b855995: {fileID: 0}
+    - 80e396e7e83552d4aa2808ebe310d033: {fileID: 0}
+    - 204d5e7085d4aed44a9112f45cc87910: {fileID: 0}
     - 3c08f441e44dcaf45b558df5699a6c39: {fileID: 0}
     - 9ddd8900bead11f4690a9838a99f42b4: {fileID: 0}
     - 8cb3fbf8f7301ec4c9157ed435b84b24: {fileID: 0}
---- !u!114 &1081660832027882524
+    - d87012b8b5e5332409e8159be82caeb0: {fileID: 0}
+--- !u!114 &4650038604874891781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081660832027882520}
+  m_GameObject: {fileID: 3827039982694680581}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00d45ec2b0152ed49a0bc27b1f482ade, type: 3}
@@ -117,58 +265,73 @@ MonoBehaviour:
   missionManager: {fileID: 0}
   player: {fileID: 0}
   scenario:
-  - scenarioNodeCode: -2
-    name: Fin de popup sans transition (en mission)
-    timelineClip: {fileID: 11400000, guid: 40cdd20e8d20f0c4c8139e81a1ede41c, type: 2}
-    eventType: 4
-    eventIndex: 1
-  - scenarioNodeCode: -1
-    name: Fin de dialogue sans transition (en mission)
-    timelineClip: {fileID: 11400000, guid: 8c7563a6fccb44a448b1efef778c9607, type: 2}
-    eventType: 4
-    eventIndex: 1
   - scenarioNodeCode: 0
-    name: Premier Popup
-    timelineClip: {fileID: 11400000, guid: 548d108a8e05c6242a3ce8ad730ee11c, type: 2}
+    name: Introduction
+    timelineClip: {fileID: 11400000, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
+    directorWrapMode: 0
     eventType: 0
     eventIndex: 1
   - scenarioNodeCode: 1
-    name: Premiere Mission
-    timelineClip: {fileID: 11400000, guid: 411e84b23aa506043bca7c9942dfdb8a, type: 2}
-    eventType: 2
-    eventIndex: 1
-  - scenarioNodeCode: 2
-    name: Dialogue de Mission
-    timelineClip: {fileID: 11400000, guid: ffa28ea0afaa4bf43abba889246a0c30, type: 2}
-    eventType: 1
-    eventIndex: 1
-  - scenarioNodeCode: 3
-    name: Popup de Mission
-    timelineClip: {fileID: 11400000, guid: 70fea47d5812c2b4193e3bc9fa70db27, type: 2}
-    eventType: 0
-    eventIndex: 2
-  - scenarioNodeCode: 4
-    name: Dernier Dialogue OKLM
-    timelineClip: {fileID: 11400000, guid: ffa28ea0afaa4bf43abba889246a0c30, type: 2}
-    eventType: 1
-    eventIndex: 2
-  - scenarioNodeCode: 5
-    name: Action
-    timelineClip: {fileID: 11400000, guid: 7da5858775e831044a4410bf5b8aef06, type: 2}
+    name: "Rappeler \xE0 mon manager mon RDV ou Annuler mon RDV"
+    timelineClip: {fileID: 11400000, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+    directorWrapMode: 0
     eventType: 3
     eventIndex: 1
-  - scenarioNodeCode: 6
-    name: Fin du chapitre
-    timelineClip: {fileID: 0}
-    eventType: 5
+  - scenarioNodeCode: 2
+    name: Briefer Louis ou Annuler mon RDV
+    timelineClip: {fileID: 11400000, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
+    directorWrapMode: 0
+    eventType: 3
+    eventIndex: 2
+  - scenarioNodeCode: 3
+    name: Briefer Louis
+    timelineClip: {fileID: 11400000, guid: e0c52cedaa34bfd4399af3151422c8e6, type: 2}
+    directorWrapMode: 2
+    eventType: 2
     eventIndex: 1
---- !u!114 &1081660832027882527
+  - scenarioNodeCode: 4
+    name: Discussion avec Louis (composant mission)
+    timelineClip: {fileID: 11400000, guid: 1585dba0d35ec0f46a74600b7f57cfae, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 1
+  - scenarioNodeCode: 5
+    name: Popup de fin de chapitre (1)
+    timelineClip: {fileID: 11400000, guid: 92784f5333069ed419bac046f248278b, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 2
+  - scenarioNodeCode: 6
+    name: "Annulation du RDV au t\xE9l\xE9phone"
+    timelineClip: {fileID: 11400000, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 2
+  - scenarioNodeCode: 7
+    name: Popup de fin de chapitre (2)
+    timelineClip: {fileID: 11400000, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 3
+  - scenarioNodeCode: 8
+    name: Maintenir mon absence et briefer Louis
+    timelineClip: {fileID: 11400000, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+    directorWrapMode: 0
+    eventType: 3
+    eventIndex: 3
+  - scenarioNodeCode: 9
+    name: Fin du chapitre 1
+    timelineClip: {fileID: 0}
+    directorWrapMode: 0
+    eventType: 5
+    eventIndex: 0
+--- !u!114 &8225932588996913083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1081660832027882520}
+  m_GameObject: {fileID: 3827039982694680581}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}

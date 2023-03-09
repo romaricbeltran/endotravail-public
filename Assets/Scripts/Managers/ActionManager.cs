@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ActionManager : MonoBehaviour
 {
     public GameManager gameManager;
+    public MissionManager missionManager;
     public GameObject player;
 
     // UI
@@ -72,6 +73,12 @@ public class ActionManager : MonoBehaviour
         
         actionBox.SetActive(false);
 
+        if (MissionManager.ON_MISSION_END)
+        {
+            MissionManager.WAS_ACTION_MISSION_COMPONENT = true;
+            missionManager.EndMission();
+        }
+        
         gameManager.updateProgression(currentAction.GetChoosenActionIndex());
     }
 

@@ -18,6 +18,7 @@ public class MissionManager : MonoBehaviour
     public TimelineManager timelineManager;
     public GameObject player;
     public static bool ON_MISSION_END;
+    public static bool WAS_ACTION_MISSION_COMPONENT = false;
 
     public List<TriggerEvent> triggerEvents;
     private List<TargetMission> currentTargetMissions;
@@ -125,7 +126,13 @@ public class MissionManager : MonoBehaviour
     public void EndMission()
     {
         missionCanvas.SetActive(false);
-        gameManager.updateProgression(currentMission.nextScenarioNodeCode);
+
+        if (!WAS_ACTION_MISSION_COMPONENT)
+        {
+            gameManager.updateProgression(currentMission.nextScenarioNodeCode);  
+        }
+
+        WAS_ACTION_MISSION_COMPONENT = false;
         ON_MISSION_END = false;
     }
 

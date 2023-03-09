@@ -64,10 +64,12 @@ public class DialogueManager : MonoBehaviour
 
         if (MissionManager.ON_MISSION_END)
         {
+            Debug.Log("PASSE PAS LA");
             missionManager.EndMission();
         }
         else
         {
+            Debug.Log("PASSE PAS LA");
             gameManager.updateProgression(currentDialogue.nextScenarioNodeCode);
         }
     }

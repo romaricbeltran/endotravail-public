@@ -25,9 +25,18 @@ public class LevelLoader : MonoBehaviour
                 levelTitleText.text = "Début du jeu";
                 break;
             case 1:
-                levelTitleText.text = "Chapitre 1";
+                levelTitleText.text = "CHAPITRE 1 : L'absence";
                 break;
             case 2:
+                levelTitleText.text = "CHAPITRE 2 : Une journée type dans la peau d'une personne atteinte d'endométriose";
+                break;
+            case 3:
+                levelTitleText.text = "CHAPITRE 3 : L'annonce au manager";
+                break;
+            case 4:
+                levelTitleText.text = "CHAPITRE 4 : Le rendez-vous avec la médecine du travail";
+                break;
+            case 5:
                 levelTitleText.text = "Fin du jeu";
                 break;
             default:
