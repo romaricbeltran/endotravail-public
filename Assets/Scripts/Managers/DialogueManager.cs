@@ -80,7 +80,9 @@ public class DialogueManager : MonoBehaviour
     public void DisplayNextSentence()
     {
         StopAllCoroutines();
-        
+        isAudioPlayingFinished = false;        
+        isSentenceWritingFinished = false;
+
         if (HasNextSentence())
         {
             nameText.text = sentences[indexSentence].GetCharacter();

@@ -18,6 +18,7 @@ public class ScenarioNode
     public int scenarioNodeCode;
     [SerializeField] private string name;
     [SerializeField] private PlayableAsset timelineClip;
+    [SerializeField] private DirectorWrapMode directorWrapMode;
     [SerializeField] private EventType eventType;
     [SerializeField] private int eventIndex;
 
@@ -29,6 +30,11 @@ public class ScenarioNode
     public PlayableAsset GetTimelineClip()
     {
         return timelineClip;
+    }
+
+    public DirectorWrapMode GetDirectorWrapMode()
+    {
+        return directorWrapMode;
     }
 
     public EventType GetEventType()
