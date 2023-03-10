@@ -53,6 +53,12 @@ public class MissionManager : MonoBehaviour
         currentTargetMissions = currentMission.GetTargetMissions();
         missionTitle.text = currentMission.GetMissionTitle();
         missionText.text = currentMission.GetMissionText();
+        gameManager.SwitchPlayerInput(false);
+
+        // Reinit UI ! Start_XXX never call on managers (exception for DialogueManager with a SignalEmitter)
+        shadowBackground.SetActive(true);
+        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 200f);
+        acceptButton.gameObject.SetActive(true);
         
         indexMission = 0;
 
@@ -112,9 +118,6 @@ public class MissionManager : MonoBehaviour
 
     public void StartMission()
     {
-        shadowBackground.SetActive(true);
-        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 200f);
-        acceptButton.gameObject.SetActive(true);
         missionCanvas.SetActive(true);
     }
 
