@@ -234,7 +234,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-71824
+  m_Name: pb_Mesh-335964
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -624,7 +624,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-71816
+  m_Name: pb_Mesh-335956
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5187,7 +5187,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-71806
+  m_Name: pb_Mesh-335946
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6840,7 +6840,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh633968
+  m_Name: pb_Mesh879394
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7053,7 +7053,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-71846
+  m_Name: pb_Mesh-335986
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15607,41 +15607,59 @@ MonoBehaviour:
   - code: 1
     nextScenarioNodeCode: -10
     mainText: "Tout\xB7e salari\xE9\xB7e peut obtenir un rendez-vous \xE0 la m\xE9decine
-      du travail \xE0 sa simple demande. \r\nLa m\xE9decine du travail est tenue
-      au secret m\xE9dical, comme le reste de la profession ! \r\nPourtant, seulement
-      66 % des personnes atteintes d'endom\xE9triose ont fait part de leur maladie
-      \xE0 la m\xE9decine du travail."
+      du travail \xE0 sa simple demande. La m\xE9decine du travail est tenue au secret
+      m\xE9dical, comme le reste de la profession ! Pourtant, seulement 66 % des
+      personnes atteintes d'endom\xE9triose ont fait part de leur maladie \xE0 la
+      m\xE9decine du travail."
     sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
   - code: 2
-    nextScenarioNodeCode: 0
+    nextScenarioNodeCode: 12
     mainText: "Ces \xAB petites \xBB solutions peuvent para\xEEtre insignifiantes,
-      mais elles impacteront\r\npositivement la sant\xE9 mentale de la personne atteinte
+      mais elles impacteront positivement la sant\xE9 mentale de la personne atteinte
       d\u2019endom\xE9triose et lui garantiront\r\nmoins de fatigue. Se sentir entendue
       dans ses difficult\xE9s est le premier pas vers une relation \xAB gagnant-gagnant
       \xBB."
     sourceText: 
   - code: 3
-    nextScenarioNodeCode: 0
+    nextScenarioNodeCode: 24
     mainText: "A l\u2019issue du mi-temps th\xE9rapeutique, certaines personnes font
-      le choix de r\xE9duire\r\nvolontairement leur temps de travail, parce que c\u2019est
+      le choix de r\xE9duire volontairement leur temps de travail, parce que c\u2019est
       ce qui leur permet de g\xE9rer les\r\ncontraintes li\xE9es \xE0 la maladie,
-      de se reposer et de continuer \xE0 \xEAtre socialement actives.\r\nC\u2019est
+      de se reposer et de continuer \xE0 \xEAtre socialement actives. C\u2019est
       un choix que d\u2019autres ne peuvent pas se permettre malheureusement.\r\nAinsi,
-      elles peuvent aussi demander une annualisation de leur mi-temps, afin de g\xE9rer\r\nplus
-      librement des p\xE9riodes difficiles."
+      elles peuvent aussi demander une annualisation de leur mi-temps, afin de g\xE9rer
+      plus librement des p\xE9riodes difficiles."
     sourceText: 
   - code: 4
-    nextScenarioNodeCode: 0
+    nextScenarioNodeCode: 21
     mainText: "Les entreprises sont d\xE9sormais sensibilis\xE9es \xE0 l\u2019int\xE9gration
-      de personnes en fonction de leur handicap.\r\nLa RQTH permet d\u2019acc\xE9der
+      de personnes en fonction de leur handicap. La RQTH permet d\u2019acc\xE9der
       aux offres d\u2019emploi d\xE9di\xE9es aux personnes handicap\xE9es dans les
-      entreprises, \r\nafin qu\u2019elles soient en conformit\xE9 avec la loi de
-      2005 (et l\u2019obligation d\u2019employer 6 % de travailleurs handicap\xE9s)."
+      entreprises, afin qu\u2019elles soient en conformit\xE9 avec la loi de 2005
+      (et l\u2019obligation d\u2019employer 6 % de travailleurs handicap\xE9s)."
     sourceText: 
   - code: 5
-    nextScenarioNodeCode: 0
+    nextScenarioNodeCode: 20
     mainText: "65 % des personnes atteintes d\u2019endom\xE9triose reconnaissent
       un impact n\xE9gatif de la maladie sur leur quotidien professionnel."
+    sourceText: 
+  - code: 6
+    nextScenarioNodeCode: 18
+    mainText: "A l\u2019issue du mi-temps th\xE9rapeutique, certaines personnes font
+      le choix de r\xE9duire volontairement leur temps de travail, parce que c\u2019est
+      ce qui leur permet de g\xE9rer les\r\ncontraintes li\xE9es \xE0 la maladie,
+      de se reposer et de continuer \xE0 \xEAtre socialement actives. C\u2019est
+      un choix que d\u2019autres ne peuvent pas se permettre malheureusement.\r\nAinsi,
+      elles peuvent aussi demander une annualisation de leur mi-temps, afin de g\xE9rer
+      plus librement des p\xE9riodes difficiles."
+    sourceText: 
+  - code: 7
+    nextScenarioNodeCode: 18
+    mainText: "Les entreprises sont d\xE9sormais sensibilis\xE9es \xE0 l\u2019int\xE9gration
+      de personnes en fonction de leur handicap. La RQTH permet d\u2019acc\xE9der
+      aux offres d\u2019emploi d\xE9di\xE9es aux personnes handicap\xE9es dans les
+      entreprises, afin qu\u2019elles soient en conformit\xE9 avec la loi de 2005
+      (et l\u2019obligation d\u2019employer 6 % de travailleurs handicap\xE9s)."
     sourceText: 
 --- !u!1 &2468237857272803379
 GameObject:
@@ -85279,15 +85297,21 @@ MonoBehaviour:
   - code: 2
     nextScenarioNodeCode: 0
     choices:
-    - Maintenir mon absence
-    - "Annuler mon rendez-vous m\xE9dical"
-    scenarioNodeNextCodes: 0300000006000000
+    - "J'ai une chirurgie qui est planifi\xE9e dans 6 mois."
+    - "J'ai entendu que l'endom\xE9triose \xE9tait reconnu en tant qu'handicap."
+    scenarioNodeNextCodes: 0e00000010000000
     choosenActionIndex: 0
   - code: 3
     nextScenarioNodeCode: 0
     choices:
-    - Maintenir mon absence
-    scenarioNodeNextCodes: 03000000
+    - "J'ai une chirurgie qui est planifi\xE9e dans 6 mois."
+    scenarioNodeNextCodes: 16000000
+    choosenActionIndex: 0
+  - code: 4
+    nextScenarioNodeCode: 0
+    choices:
+    - "J'ai entendu que l'endom\xE9triose \xE9tait reconnu en tant qu'handicap."
+    scenarioNodeNextCodes: 19000000
     choosenActionIndex: 0
 --- !u!1 &3202180556586947550
 GameObject:
@@ -105777,6 +105801,42 @@ MonoBehaviour:
     directorWrapMode: 0
     eventType: 5
     eventIndex: 0
+  - scenarioNodeCode: 21
+    name: A-Chirurgie (bouton unique)
+    timelineClip: {fileID: 11400000, guid: 42b138f606bcc0449ac65d831417909b, type: 2}
+    directorWrapMode: 0
+    eventType: 3
+    eventIndex: 3
+  - scenarioNodeCode: 22
+    name: A-Chirurgie et temps partiels
+    timelineClip: {fileID: 11400000, guid: cdb6866fd92117b4aa94083b4fcf1e42, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 13
+  - scenarioNodeCode: 23
+    name: "A-Mi-temps th\xE9rapeutique"
+    timelineClip: {fileID: 11400000, guid: eaa4fcbcd7f82454cbfefa5da47535ec, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 6
+  - scenarioNodeCode: 24
+    name: B-Handicap (bouton unique)
+    timelineClip: {fileID: 11400000, guid: 42b138f606bcc0449ac65d831417909b, type: 2}
+    directorWrapMode: 0
+    eventType: 3
+    eventIndex: 4
+  - scenarioNodeCode: 25
+    name: B-Handicap
+    timelineClip: {fileID: 11400000, guid: 87875c6cad2b1594cbb1577cc24b83a9, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 14
+  - scenarioNodeCode: 26
+    name: B-Reconnaissance du handicap
+    timelineClip: {fileID: 11400000, guid: 96f933d846877684faf450086edad73a, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 7
 --- !u!4 &5733229679021193510
 Transform:
   m_ObjectHideFlags: 0
@@ -106425,7 +106485,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 16
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -117289,26 +117349,227 @@ MonoBehaviour:
       text: "C'est not\xE9 ! Avez-vous d\xE9j\xE0 pens\xE9 \xE0 des am\xE9nagements
         qui pourraient faciliter votre \"confort\" au travail ?"
   - code: 2
-    nextScenarioNodeCode: 3
+    nextScenarioNodeCode: 11
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "L'endom\xE9triose peut engendrer des sympt\xF4mes difficiles \xE0 g\xE9rer
+        en entreprise comme les troubles digestifs ou les troubles urinaires."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "Avoir acc\xE8s facilement et rapidement \xE0 des sanitaires pourra vous
+        aider !"
+  - code: 3
+    nextScenarioNodeCode: 11
+    sentences:
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "Rester assise me fait mal au bout de quelques heures, car \xE7a r\xE9veille
+        mes douleurs."
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: J'ai aussi mal dans le bas du dos.
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Il existe des chaises faites dans des mat\xE9riaux plus souples, ou
+        un ballon de gym pour mobiliser le bassin aussi."
+  - code: 4
+    nextScenarioNodeCode: 11
     sentences:
     - character: "M\xE9decin"
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
       audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
-      text: Bonjour, pouvez-vous m'expliquer le motif de notre rendez-vous ?
-    - character: Catherine
-      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
-      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
-      text: "Bonjour, j'ai annonc\xE9 \xE0 mon manager que je suis atteinte d'endom\xE9triose."
-    - character: Catherine
-      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
-      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
-      text: "Il m'a conseill\xE9 de prendre rendez-vous afin de voir si des am\xE9nagements
-        sont possibles."
+      text: "Acc\xE9der \xE0 une salle de repos d\xE8s que vous en ressentez le besoin,
+        disposer d'une bouillotte ou pouvoir vous allonger en attendant qu'un m\xE9dicament
+        agisse peut-\xEAtre un confort pour vous."
+  - code: 5
+    nextScenarioNodeCode: 11
+    sentences:
     - character: "M\xE9decin"
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
       audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
-      text: "C'est not\xE9 ! Avez-vous d\xE9j\xE0 pens\xE9 \xE0 des am\xE9nagements
-        qui pourraient faciliter votre \"confort\" au travail ?"
+      text: "A compl\xE9ter"
+  - code: 6
+    nextScenarioNodeCode: 11
+    sentences:
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "L\u2019endom\xE9triose g\xE9n\xE8re des crises violentes, souvent la
+        nuit, qui font que mon sommeil est difficile, voire impossible..."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: Est-ce que des horaires de travail flexibles seraient compatibles avec
+        votre poste ?
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Mis \xE0 part pour les r\xE9unions en \xE9quipe ou avec les clients,
+        cela n'est pas bloquant."
+  - code: 7
+    nextScenarioNodeCode: 11
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Le t\xE9l\xE9travail partiel avec 1 \xE0 2 jours la semaine ou en cas
+        de difficult\xE9 \r\nmomentan\xE9e, permet d'\xE9viter la fatigue des transports,
+        les facteurs \r\nenvironnementaux aggravant, et vous aider \xE0 concilier
+        travail et soin."
+  - code: 8
+    nextScenarioNodeCode: 11
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Quelles sont les missions qui vous g\xEAnent le plus dans votre travail
+        ?"
+  - code: 9
+    nextScenarioNodeCode: 13
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Comme vous avez d\xE9j\xE0 fait part de votre \xE9tat de sant\xE9 \xE0
+        votre manager, je vais lui faire remonter les mesures que nous avons d\xE9finies
+        ensemble. \r\n"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Ce que la m\xE9decine du travail pr\xE9conise doit \xEAtre appliqu\xE9
+        par l\u2019employeur. Ce n\u2019est pas une simple possibilit\xE9 pour lui
+        !"
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: Merci pour votre aide !
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: Souhaitez-vous aborder d'autres sujets ?
+  - code: 10
+    nextScenarioNodeCode: 15
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Apr\xE8s votre chirurgie, vous pouvez avoir recours \xE0 la reprise
+        \xE0 temps partiel \xE0 titre th\xE9rapeutique."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Cela peut \xEAtre envisag\xE9e sous la proposition de votre m\xE9decin
+        traitant et apr\xE8s avis du m\xE9decin-conseil de la S\xE9curit\xE9 sociale."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Ensuite, c'est \xE0 l'employeur de donner son accord.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Le temps partiel th\xE9rapeutique est une situation transitoire qui
+        permet de se r\xE9adapter progressivement au travail, sa dur\xE9e est habituellement
+        de quelques semaines \xE0 quelques mois.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Vous recevez une partie du salaire au prorata de votre temps de pr\xE9sence,
+        et les indemnit\xE9s journali\xE8res de la S\xE9curit\xE9 sociale en compl\xE9ment
+        pour que vous touchiez votre salaire plein."
+  - code: 11
+    nextScenarioNodeCode: 17
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "En effet, pour obtenir la reconnaissance de la qualit\xE9 de travailleur
+        handicap\xE9 (RQTH)\r vous pouvez remplir le dossier ad\xE9quat avec votre
+        m\xE9decin traitant."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Il convient de bien d\xE9tailler les difficult\xE9s rencontr\xE9es au
+        quotidien \xE0 cause de votre maladie, les soins, les traitements qui vous
+        concernent.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Ensuite, la Maison d\xE9partementale des personnes handicap\xE9es (MDPH)
+        accordera, ou non, cette reconnaissance, en fonction de la s\xE9v\xE9rit\xE9
+        de votre dossier.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "\xC0 savoir que la RQTH est provisoire, elle est donn\xE9e pour une
+        dur\xE9e de 1 \xE0 5 ans."
+  - code: 12
+    nextScenarioNodeCode: 19
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: Merci pour votre aide !
+  - code: 13
+    nextScenarioNodeCode: 23
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Apr\xE8s votre chirurgie, vous pouvez avoir recours \xE0 la reprise
+        \xE0 temps partiel \xE0 titre th\xE9rapeutique."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Cela peut \xEAtre envisag\xE9e sous la proposition de votre m\xE9decin
+        traitant et apr\xE8s avis du m\xE9decin-conseil de la S\xE9curit\xE9 sociale."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Ensuite, c'est \xE0 l'employeur de donner son accord.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Le temps partiel th\xE9rapeutique est une situation transitoire qui
+        permet de se r\xE9adapter progressivement au travail, sa dur\xE9e est habituellement
+        de quelques semaines \xE0 quelques mois.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Vous recevez une partie du salaire au prorata de votre temps de pr\xE9sence,
+        et les indemnit\xE9s journali\xE8res de la S\xE9curit\xE9 sociale en compl\xE9ment
+        pour que vous touchiez votre salaire plein."
+  - code: 14
+    nextScenarioNodeCode: 26
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "En effet, pour obtenir la reconnaissance de la qualit\xE9 de travailleur
+        handicap\xE9 (RQTH)\r vous pouvez remplir le dossier ad\xE9quat avec votre
+        m\xE9decin traitant."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Il convient de bien d\xE9tailler les difficult\xE9s rencontr\xE9es au
+        quotidien \xE0 cause de votre maladie, les soins, les traitements qui vous
+        concernent.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "Ensuite, la Maison d\xE9partementale des personnes handicap\xE9es (MDPH)
+        accordera, ou non, cette reconnaissance, en fonction de la s\xE9v\xE9rit\xE9
+        de votre dossier.\r"
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: "\xC0 savoir que la RQTH est provisoire, elle est donn\xE9e pour une
+        dur\xE9e de 1 \xE0 5 ans."
 --- !u!1 &9105444971977928405
 GameObject:
   m_ObjectHideFlags: 0
