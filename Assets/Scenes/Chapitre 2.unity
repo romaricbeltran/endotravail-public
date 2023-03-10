@@ -12180,8 +12180,6 @@ PlayableDirector:
     value: {fileID: 502729138}
   - key: {fileID: 2137025204744173404, guid: edc32c6a7cc64694bb6aa6cb88f38e05, type: 2}
     value: {fileID: 3432250295813346633}
-  - key: {fileID: 8279122760840426334, guid: eab460b1548984f489e7170387ea4785, type: 2}
-    value: {fileID: 0}
   - key: {fileID: 1237674618860690663, guid: feacaf59a980213489f575079b67bab4, type: 2}
     value: {fileID: 4203963087950050027}
   - key: {fileID: -2221391685639106107, guid: 62f73fef4281dcc4981d3699962f3dd7, type: 2}
@@ -12247,6 +12245,10 @@ PlayableDirector:
   - key: {fileID: -3041184851047767869, guid: c4246b112a541974db195507bcc80a71, type: 2}
     value: {fileID: 1907258036759530113}
   - key: {fileID: -4231504496629793372, guid: c4246b112a541974db195507bcc80a71, type: 2}
+    value: {fileID: 1907258036759530113}
+  - key: {fileID: 3911675700704249297, guid: eab460b1548984f489e7170387ea4785, type: 2}
+    value: {fileID: 1907258036759530113}
+  - key: {fileID: -1533754132734865082, guid: eab460b1548984f489e7170387ea4785, type: 2}
     value: {fileID: 1907258036759530113}
   m_ExposedReferences:
     m_References:
@@ -13287,7 +13289,13 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig1:LeftHandThumb1'\n\tTransform 'mixamorig1:LeftHandPinky2'\n\tTransform
+    'mixamorig1:RightHand'\n\tTransform 'mixamorig1:LeftHandMiddle2'\n\tTransform
+    'mixamorig1:RightFoot'\n\tTransform 'mixamorig1:Spine1'\n\tTransform 'mixamorig1:RightLeg'\n\tTransform
+    'mixamorig1:RightHandMiddle2'\n\tTransform 'mixamorig1:Hips'\n\tTransform 'mixamorig1:RightArm'\n\tand
+    more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
