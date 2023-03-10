@@ -45,6 +45,7 @@ public class ActionManager : MonoBehaviour
             actionButtons[indexChoices].SetActive(true);
 
             Button buttonComponent = actionButtons[indexChoices].GetComponent<Button>();
+            buttonComponent.onClick.RemoveAllListeners();
             buttonComponent.onClick.AddListener(() => OnActionChoice(indexChoices));
 
             TextMeshProUGUI buttonText = actionButtons[indexChoices].GetComponentInChildren<TextMeshProUGUI>();

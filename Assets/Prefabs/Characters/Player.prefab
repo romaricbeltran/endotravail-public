@@ -69,7 +69,7 @@ Transform:
   - {fileID: 2607767374070633407}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!95 &3159989196451745047
 Animator:
   serializedVersion: 5
@@ -1830,6 +1830,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.012852232
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 792510aac60e34b4685e36f14c0a0079,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6000407479487422213, guid: 792510aac60e34b4685e36f14c0a0079,
         type: 3}

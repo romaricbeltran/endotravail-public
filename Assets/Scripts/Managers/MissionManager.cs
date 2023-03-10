@@ -53,16 +53,16 @@ public class MissionManager : MonoBehaviour
         currentTargetMissions = currentMission.GetTargetMissions();
         missionTitle.text = currentMission.GetMissionTitle();
         missionText.text = currentMission.GetMissionText();
-
-        int indexMission = 0;
+        
+        indexMission = 0;
 
         foreach (TargetMission targetMission in currentTargetMissions)
         {
             TriggerEvent newTriggerEvent = targetMission.GetTriggerObject().AddComponent<TriggerEvent>();
-            // Ajouter aussi l'index de la mission pour pouvoir l'identifier au trigger
             newTriggerEvent.SetIndexMission(indexMission);
+
+            // Ajouter aussi l'index de la mission pour pouvoir l'identifier au trigger
             indexMission++;
-            
             AddTriggerEvent(newTriggerEvent);
             Debug.Log("Add Trigger Event for Target Mission:" + targetMission.GetName() + " on " + targetMission.GetTriggerObject());
         }
@@ -82,17 +82,19 @@ public class MissionManager : MonoBehaviour
             TriggerEvent currentTriggerEvent = sender.GetComponent<TriggerEvent>();
             int currentTriggerMissionIndex = currentTriggerEvent.GetIndexMission();
 
-            gameManager.updateProgression(currentTargetMissions[currentTriggerMissionIndex].GetScenarioNodeCode());
-            
             RemoveTriggerEvent(currentTriggerEvent);
+            
             Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + other.gameObject.name);
 
             if (triggerEvents.Count == 0)
             {
+                Debug.Log("End of mission");
                 missionCanvas.SetActive(false);
                 currentMission.SetIsAccomplished(true);
                 ON_MISSION_END = true;
             }
+
+            gameManager.updateProgression(currentTargetMissions[currentTriggerMissionIndex].GetScenarioNodeCode());
         }
     }
 
