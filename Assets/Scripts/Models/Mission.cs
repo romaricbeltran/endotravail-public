@@ -29,4 +29,9 @@ public class Mission : EventNode
     {
         return isAccomplished;
     }
+
+    public void SetIsAccomplished(bool boolean)
+    {
+        isAccomplished = boolean;
+    }
 }

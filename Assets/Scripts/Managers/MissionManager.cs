@@ -89,6 +89,8 @@ public class MissionManager : MonoBehaviour
 
             if (triggerEvents.Count == 0)
             {
+                missionCanvas.SetActive(false);
+                currentMission.SetIsAccomplished(true);
                 ON_MISSION_END = true;
             }
         }
@@ -125,8 +127,6 @@ public class MissionManager : MonoBehaviour
     // A la fin de la mission on lance le node qui suit la fin de la mission ! (entre les deux on a les nodes des targetMissions)
     public void EndMission()
     {
-        missionCanvas.SetActive(false);
-
         if (!WAS_ACTION_MISSION_COMPONENT)
         {
             gameManager.updateProgression(currentMission.nextScenarioNodeCode);  
