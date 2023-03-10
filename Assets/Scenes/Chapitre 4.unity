@@ -234,7 +234,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-171888
+  m_Name: pb_Mesh-71824
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -624,7 +624,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-171834
+  m_Name: pb_Mesh-71816
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5187,7 +5187,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-171502
+  m_Name: pb_Mesh-71806
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6840,7 +6840,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh582326
+  m_Name: pb_Mesh633968
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7053,7 +7053,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-171910
+  m_Name: pb_Mesh-71846
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15605,28 +15605,43 @@ MonoBehaviour:
   nextButton: {fileID: 1152775089687131870}
   popups:
   - code: 1
-    nextScenarioNodeCode: 1
-    mainText: "L'endom\xE9triose est une maladie gyn\xE9cologique fr\xE9quente qui
-      concerne une femme sur dix."
-    sourceText: 'Source : INSERM'
+    nextScenarioNodeCode: -10
+    mainText: "Tout\xB7e salari\xE9\xB7e peut obtenir un rendez-vous \xE0 la m\xE9decine
+      du travail \xE0 sa simple demande. \r\nLa m\xE9decine du travail est tenue
+      au secret m\xE9dical, comme le reste de la profession ! \r\nPourtant, seulement
+      66 % des personnes atteintes d'endom\xE9triose ont fait part de leur maladie
+      \xE0 la m\xE9decine du travail."
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
   - code: 2
-    nextScenarioNodeCode: 9
-    mainText: "L'absent\xE9isme r\xE9gulier et \"impr\xE9visible\" li\xE9 \xE0 l'endom\xE9triose,
-      en dehors des rendez-vous m\xE9dicaux, peut cr\xE9er un dysfonctionnement pour
-      l'entreprise (remplacer la salari\xE9e au pied lev\xE9, g\xE9rer les retards,
-      perdre en qualit\xE9 de service, en image de marque)."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le Centre d\u2019\xE9tudes
-      de l\u2019emploi et du travail (CEET) en 2020"
+    nextScenarioNodeCode: 0
+    mainText: "Ces \xAB petites \xBB solutions peuvent para\xEEtre insignifiantes,
+      mais elles impacteront\r\npositivement la sant\xE9 mentale de la personne atteinte
+      d\u2019endom\xE9triose et lui garantiront\r\nmoins de fatigue. Se sentir entendue
+      dans ses difficult\xE9s est le premier pas vers une relation \xAB gagnant-gagnant
+      \xBB."
+    sourceText: 
   - code: 3
-    nextScenarioNodeCode: 8
-    mainText: "Avant une op\xE9ration, il y a plusieurs rendez-vous \xE0 prendre
-      en compte : \rl'anesth\xE9siste qui prescrit un bilan sanguin, \xE9ventuellement
-      un radiologue pour refaire une IRM pr\xE9op\xE9ratoire qui va dresser une cartographie
-      des l\xE9sions. Selon les localisations des l\xE9sions d'endom\xE9triose et
-      selon les gestes chirurgicaux, il faut rencontrer les sp\xE9cialistes qui peuvent
-      intervenir pendant la chirurgie : chirurgien digestif, urologue...\r\n\nAnnuler
-      un rendez-vous peut retarder la prise en charge et l'\xE9tat de sant\xE9 g\xE9n\xE9ral
-      de la personne atteinte d'endom\xE9triose."
+    nextScenarioNodeCode: 0
+    mainText: "A l\u2019issue du mi-temps th\xE9rapeutique, certaines personnes font
+      le choix de r\xE9duire\r\nvolontairement leur temps de travail, parce que c\u2019est
+      ce qui leur permet de g\xE9rer les\r\ncontraintes li\xE9es \xE0 la maladie,
+      de se reposer et de continuer \xE0 \xEAtre socialement actives.\r\nC\u2019est
+      un choix que d\u2019autres ne peuvent pas se permettre malheureusement.\r\nAinsi,
+      elles peuvent aussi demander une annualisation de leur mi-temps, afin de g\xE9rer\r\nplus
+      librement des p\xE9riodes difficiles."
+    sourceText: 
+  - code: 4
+    nextScenarioNodeCode: 0
+    mainText: "Les entreprises sont d\xE9sormais sensibilis\xE9es \xE0 l\u2019int\xE9gration
+      de personnes en fonction de leur handicap.\r\nLa RQTH permet d\u2019acc\xE9der
+      aux offres d\u2019emploi d\xE9di\xE9es aux personnes handicap\xE9es dans les
+      entreprises, \r\nafin qu\u2019elles soient en conformit\xE9 avec la loi de
+      2005 (et l\u2019obligation d\u2019employer 6 % de travailleurs handicap\xE9s)."
+    sourceText: 
+  - code: 5
+    nextScenarioNodeCode: 0
+    mainText: "65 % des personnes atteintes d\u2019endom\xE9triose reconnaissent
+      un impact n\xE9gatif de la maladie sur leur quotidien professionnel."
     sourceText: 
 --- !u!1 &2468237857272803379
 GameObject:
@@ -85250,11 +85265,16 @@ MonoBehaviour:
   - {fileID: 5060727596179656961}
   actions:
   - code: 1
-    nextScenarioNodeCode: 0
+    nextScenarioNodeCode: -10
     choices:
-    - "? \xE0 mon manager que j'ai un rendez-vous m\xE9dical sur ce cr\xE9neau"
-    - "Annuler mon rendez-vous m\xE9dical"
-    scenarioNodeNextCodes: 0200000006000000
+    - Un bureau plus proche des toilettes
+    - Une chaise de bureau plus confortable
+    - "Un acc\xE8s \xE0 une salle de repos"
+    - "Une place de parking proche de l\u2019\xE9tablissement"
+    - "Une flexibilit\xE9 des horaires de travail"
+    - "Du t\xE9l\xE9travail"
+    - Revoir la fiche de poste
+    scenarioNodeNextCodes: 0400000005000000060000000700000008000000090000000a000000
     choosenActionIndex: 0
   - code: 2
     nextScenarioNodeCode: 0
@@ -105633,60 +105653,126 @@ MonoBehaviour:
   scenario:
   - scenarioNodeCode: 0
     name: Introduction
-    timelineClip: {fileID: 11400000, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
+    timelineClip: {fileID: 11400000, guid: 529d31d07089b224fbf1c3bf587eb2d3, type: 2}
     directorWrapMode: 0
-    eventType: 0
-    eventIndex: 1
-  - scenarioNodeCode: 1
-    name: "Rappeler \xE0 mon manager mon RDV ou Annuler mon RDV"
-    timelineClip: {fileID: 11400000, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
-    directorWrapMode: 0
-    eventType: 3
-    eventIndex: 1
-  - scenarioNodeCode: 2
-    name: Briefer Louis ou Annuler mon RDV
-    timelineClip: {fileID: 11400000, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
-    directorWrapMode: 0
-    eventType: 3
-    eventIndex: 2
-  - scenarioNodeCode: 3
-    name: Briefer Louis
-    timelineClip: {fileID: 11400000, guid: e0c52cedaa34bfd4399af3151422c8e6, type: 2}
-    directorWrapMode: 2
     eventType: 2
     eventIndex: 1
-  - scenarioNodeCode: 4
-    name: Discussion avec Louis (composant mission)
-    timelineClip: {fileID: 11400000, guid: 1585dba0d35ec0f46a74600b7f57cfae, type: 2}
+  - scenarioNodeCode: 1
+    name: "M\xE9decine du travail"
+    timelineClip: {fileID: 11400000, guid: a780f63d19bcbde479511b8858a94d08, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 1
+  - scenarioNodeCode: 2
+    name: Motif du RDV
+    timelineClip: {fileID: 11400000, guid: 3b96e6a6830da024e953d92d11264c5d, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 1
-  - scenarioNodeCode: 5
-    name: Popup de fin de chapitre (1)
-    timelineClip: {fileID: 11400000, guid: 92784f5333069ed419bac046f248278b, type: 2}
-    directorWrapMode: 0
-    eventType: 0
-    eventIndex: 2
-  - scenarioNodeCode: 6
-    name: "Annulation du RDV au t\xE9l\xE9phone"
-    timelineClip: {fileID: 11400000, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
+  - scenarioNodeCode: 3
+    name: "Am\xE9nagements"
+    timelineClip: {fileID: 11400000, guid: 30d2663687777574aa172989de555167, type: 2}
+    directorWrapMode: 2
+    eventType: 3
+    eventIndex: 1
+  - scenarioNodeCode: 4
+    name: Bureau proche des toilettes
+    timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 2
+  - scenarioNodeCode: 5
+    name: Meilleure chaise de bureau
+    timelineClip: {fileID: 11400000, guid: 2bd39e9e26d3b3849905bd4dde0b6cdc, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 3
+  - scenarioNodeCode: 6
+    name: Salle de repos
+    timelineClip: {fileID: 11400000, guid: abea522a5df875d4eb4ab06308e593f3, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 4
   - scenarioNodeCode: 7
-    name: Popup de fin de chapitre (2)
-    timelineClip: {fileID: 11400000, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
+    name: Place de parking
+    timelineClip: {fileID: 11400000, guid: 204de012a9823774db53a88d4dab0b98, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 5
+  - scenarioNodeCode: 8
+    name: Horaires flexibles
+    timelineClip: {fileID: 11400000, guid: 7fa269c735dfafb45a7e6343f315053e, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 6
+  - scenarioNodeCode: 9
+    name: "T\xE9l\xE9travail"
+    timelineClip: {fileID: 11400000, guid: cc5c373e4b51cd44184a5758d3f2fc4f, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 7
+  - scenarioNodeCode: 10
+    name: Fiche de poste
+    timelineClip: {fileID: 11400000, guid: 9f08433a805698244ae7c72cb76fb2dc, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 8
+  - scenarioNodeCode: 11
+    name: Petites solutions
+    timelineClip: {fileID: 11400000, guid: 14f83b5a122880d45bf2bf4ee26b242a, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 2
+  - scenarioNodeCode: 12
+    name: Autres sujets
+    timelineClip: {fileID: 11400000, guid: 39a9ec70612c02f44b3134e7e5776071, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 9
+  - scenarioNodeCode: 13
+    name: Chirurgie handicap
+    timelineClip: {fileID: 11400000, guid: 42b138f606bcc0449ac65d831417909b, type: 2}
+    directorWrapMode: 0
+    eventType: 3
+    eventIndex: 2
+  - scenarioNodeCode: 14
+    name: Chirurgie et temps partiels
+    timelineClip: {fileID: 11400000, guid: cdb6866fd92117b4aa94083b4fcf1e42, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 10
+  - scenarioNodeCode: 15
+    name: "Mi-temps th\xE9rapeutique"
+    timelineClip: {fileID: 11400000, guid: eaa4fcbcd7f82454cbfefa5da47535ec, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 3
-  - scenarioNodeCode: 8
-    name: Maintenir mon absence et briefer Louis
-    timelineClip: {fileID: 11400000, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+  - scenarioNodeCode: 16
+    name: Handicap
+    timelineClip: {fileID: 11400000, guid: 87875c6cad2b1594cbb1577cc24b83a9, type: 2}
     directorWrapMode: 0
-    eventType: 3
-    eventIndex: 3
-  - scenarioNodeCode: 9
-    name: Fin du chapitre 1
+    eventType: 1
+    eventIndex: 11
+  - scenarioNodeCode: 17
+    name: Reconnaissance du handicap
+    timelineClip: {fileID: 11400000, guid: 96f933d846877684faf450086edad73a, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 4
+  - scenarioNodeCode: 18
+    name: Merci pour votre aide
+    timelineClip: {fileID: 11400000, guid: 8c85f92ef4ad952468a93f848e3a05f5, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 12
+  - scenarioNodeCode: 19
+    name: Dernier Popup
+    timelineClip: {fileID: 11400000, guid: 7075ef4f725ea3544999d9df5f5312a9, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 5
+  - scenarioNodeCode: 20
+    name: Fin du chapitre 4
     timelineClip: {fileID: 0}
     directorWrapMode: 0
     eventType: 5
@@ -111234,7 +111320,7 @@ PlayableDirector:
   m_GameObject: {fileID: 4187983017606911372}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 529d31d07089b224fbf1c3bf587eb2d3, type: 2}
   m_InitialState: 1
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -111393,6 +111479,16 @@ PlayableDirector:
   - key: {fileID: -2185662266974214610, guid: 00c7facdbe458974cb7c9fa3007ef196, type: 2}
     value: {fileID: 0}
   - key: {fileID: -6553581209687694120, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2613725785642848355, guid: 529d31d07089b224fbf1c3bf587eb2d3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7683912251356040641, guid: 529d31d07089b224fbf1c3bf587eb2d3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7840737439021266691, guid: 529d31d07089b224fbf1c3bf587eb2d3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3383242462413920961, guid: 529d31d07089b224fbf1c3bf587eb2d3, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1594701130787274733, guid: 529d31d07089b224fbf1c3bf587eb2d3, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References:
@@ -113634,14 +113730,14 @@ MonoBehaviour:
   acceptButton: {fileID: 767372349571260506}
   missions:
   - code: 1
-    nextScenarioNodeCode: 5
-    missionTitle: Briefer Louis
-    missionText: Trouve Louis pour le briefer sur la situation
+    nextScenarioNodeCode: 2
+    missionTitle: "Aller au rendez-vous avec la m\xE9decine du travail"
+    missionText: "Diriger vous dans le bureau du m\xE9decin du travail"
     targetMissions:
-    - name: "Dire \xE0 Louis que je serais absente (\xE9tape analytics)"
+    - name: "Aller au rendez-vous avec la m\xE9decine du travail (\xE9tape analytics)"
       triggerObject: {fileID: 0}
-      eventType: 1
-      scenarioNodeCode: 4
+      eventType: 0
+      scenarioNodeCode: 1
     isAccomplished: 0
 --- !u!1 &7829243469785378706
 GameObject:
@@ -117172,36 +117268,47 @@ MonoBehaviour:
   timeBeetweenSentencesInterval: 2
   dialogues:
   - code: 1
-    nextScenarioNodeCode: -10
+    nextScenarioNodeCode: 3
     sentences:
-    - character: Louis
+    - character: "M\xE9decin"
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
       audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
-      text: "S\xE9rieux ? J'ai d\xE9j\xE0 une tonne de travail ! Pourquoi c'est nous
-        qui devons faire ton travail en plus ?"
-    - character: Louis
-      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
-      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
-      text: A chaque fois que tu t'absentes, c'est nous qui devons assumer !
-  - code: 2
-    nextScenarioNodeCode: 7
-    sentences:
+      text: Bonjour, pouvez-vous m'expliquer le motif de notre rendez-vous ?
     - character: Catherine
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
-      audioClip: {fileID: 0}
-      text: "Bonjour, je suis d\xE9sol\xE9e, je vais devoir annuler notre rendez-vous
-        car mon manager a planifi\xE9 une r\xE9union sur le m\xEAme cr\xE9neau..."
-    - character: "Gyn\xE9cologue"
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "Bonjour, j'ai annonc\xE9 \xE0 mon manager que je suis atteinte d'endom\xE9triose."
+    - character: Catherine
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
-      audioClip: {fileID: 0}
-      text: "Je comprends. N\xE9anmoins je vous rappelle que ce rendez-vous est essentiel
-        pour la planification de votre prochaine op\xE9ration."
-    - character: "Gyn\xE9cologue"
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "Il m'a conseill\xE9 de prendre rendez-vous afin de voir si des am\xE9nagements
+        sont possibles."
+    - character: "M\xE9decin"
       characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
-      audioClip: {fileID: 0}
-      text: "Si nous annulons ce rendez-vous, on va devoir repousser votre op\xE9ration
-        \xE0 6 mois car je n\u2019ai pas d\u2019autres cr\xE9neaux de disponibles
-        !"
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "C'est not\xE9 ! Avez-vous d\xE9j\xE0 pens\xE9 \xE0 des am\xE9nagements
+        qui pourraient faciliter votre \"confort\" au travail ?"
+  - code: 2
+    nextScenarioNodeCode: 3
+    sentences:
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      text: Bonjour, pouvez-vous m'expliquer le motif de notre rendez-vous ?
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "Bonjour, j'ai annonc\xE9 \xE0 mon manager que je suis atteinte d'endom\xE9triose."
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "Il m'a conseill\xE9 de prendre rendez-vous afin de voir si des am\xE9nagements
+        sont possibles."
+    - character: "M\xE9decin"
+      characterImage: {fileID: 21300000, guid: 31abca44913df7246b5013e4cc8114b8, type: 3}
+      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      text: "C'est not\xE9 ! Avez-vous d\xE9j\xE0 pens\xE9 \xE0 des am\xE9nagements
+        qui pourraient faciliter votre \"confort\" au travail ?"
 --- !u!1 &9105444971977928405
 GameObject:
   m_ObjectHideFlags: 0
