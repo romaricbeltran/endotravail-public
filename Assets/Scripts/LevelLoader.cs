@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class LevelLoader : MonoBehaviour
 {
     public TextMeshProUGUI levelTitleText;
+    public TextMeshProUGUI levelSubtitleText;
     public Slider loadingBar;
     public TextMeshProUGUI loadingBarProgressText;
 
@@ -25,16 +26,20 @@ public class LevelLoader : MonoBehaviour
                 levelTitleText.text = "Début du jeu";
                 break;
             case 1:
-                levelTitleText.text = "CHAPITRE 1 : L'absence";
+                levelTitleText.text = "CHAPITRE 1";
+                levelSubtitleText.text = "L'absence";
                 break;
             case 2:
-                levelTitleText.text = "CHAPITRE 2 : Une journée type dans la peau d'une personne atteinte d'endométriose";
+                levelTitleText.text = "CHAPITRE 2";
+                levelSubtitleText.text = "Une journée type dans la peau d'une personne atteinte d'endométriose";
                 break;
             case 3:
-                levelTitleText.text = "CHAPITRE 3 : L'annonce au manager";
+                levelTitleText.text = "CHAPITRE 3";
+                levelSubtitleText.text = "L'annonce au manager";
                 break;
             case 4:
-                levelTitleText.text = "CHAPITRE 4 : Le rendez-vous avec la médecine du travail";
+                levelTitleText.text = "CHAPITRE 4";
+                levelSubtitleText.text = "Le rendez-vous avec la médecine du travail";
                 break;
             case 5:
                 levelTitleText.text = "Fin du jeu";

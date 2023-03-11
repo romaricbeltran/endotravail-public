@@ -81,7 +81,7 @@ public class TimelineManager : MonoBehaviour
                 break;
             case EventType.End:
                 Debug.Log("End of chapter");
-                levelLoader.LoadLevel(2);
+                levelLoader.LoadLevel(eventIndex);
                 break;
             default:
                 break;
