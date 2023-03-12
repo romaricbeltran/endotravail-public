@@ -404,6 +404,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6114d07b9de7151489026755e7ae4f54, type: 3}
+--- !u!114 &2098324247 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6697760096743055851, guid: 6114d07b9de7151489026755e7ae4f54,
+    type: 3}
+  m_PrefabInstance: {fileID: 2098324246}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fe1a1127fb79e47a5a558956b46ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8411402761365239990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,6 +537,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 2098324247}
+    - target: {fileID: 8411402761024491042, guid: 83fe568bef01ab948b1f6c4919a6c6bb,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83fe568bef01ab948b1f6c4919a6c6bb, type: 3}
