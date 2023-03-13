@@ -42,7 +42,7 @@ public class LevelLoader : MonoBehaviour
                 levelSubtitleText.text = "Le rendez-vous avec la médecine du travail";
                 break;
             case 5:
-                levelTitleText.text = "Fin du jeu";
+                levelTitleText.text = "";
                 break;
             default:
                 levelTitleText.text = null;
