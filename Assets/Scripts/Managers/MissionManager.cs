@@ -124,7 +124,7 @@ public class MissionManager : MonoBehaviour
     public void AcceptMission()
     {
         acceptButton.gameObject.SetActive(false);
-        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 115f);
+        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 130f);
         shadowBackground.SetActive(false);
         gameManager.SwitchPlayerInput(true);
     }
