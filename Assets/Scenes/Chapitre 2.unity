@@ -3452,10 +3452,10 @@ RectTransform:
   m_Father: {fileID: 1231727780}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -103.04148}
+  m_SizeDelta: {x: 500, y: 126.95853}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &590661384
 MonoBehaviour:
@@ -3688,7 +3688,7 @@ PrefabInstance:
     - target: {fileID: 6697760096451800314, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6697760096743055852, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -3748,7 +3748,7 @@ PrefabInstance:
     - target: {fileID: 6697760096750260015, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6114d07b9de7151489026755e7ae4f54, type: 3}
@@ -9917,10 +9917,10 @@ RectTransform:
   m_Father: {fileID: 1231727780}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: 0}
+  m_SizeDelta: {x: 500, y: 103.04148}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1921357950
 MonoBehaviour:
@@ -89893,13 +89893,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig8:Hips'\n\tTransform 'mixamorig8:LeftLeg'\n\tTransform
-    'mixamorig8:RightHandRing2'\n\tTransform 'mixamorig8:RightHandThumb2'\n\tTransform
-    'mixamorig8:LeftShoulder'\n\tTransform 'mixamorig8:LeftHandRing1'\n\tTransform
-    'mixamorig8:LeftHandThumb2'\n\tTransform 'mixamorig8:RightHandRing3'\n\tTransform
-    'mixamorig8:LeftHandPinky1'\n\tTransform 'mixamorig8:LeftArm'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -106185,12 +106179,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig12:RightLeg'\n\tTransform 'mixamorig12:LeftHandPinky1'\n\tTransform
-    'mixamorig12:RightHandRing3'\n\tTransform 'mixamorig12:Hips'\n\tTransform 'mixamorig12:LeftHandMiddle1'\n\tTransform
-    'mixamorig12:LeftLeg'\n\tTransform 'mixamorig12:LeftToeBase'\n\tTransform 'mixamorig12:LeftFoot'\n\tTransform
-    'mixamorig12:LeftArm'\n\tTransform 'mixamorig12:RightToeBase'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -106223,14 +106212,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig9:LeftHandRing3'\n\tTransform 'mixamorig9:RightHandRing1'\n\tTransform
-    'mixamorig9:LeftHandPinky3'\n\tTransform 'mixamorig9:LeftHandIndex2'\n\tTransform
-    'mixamorig9:RightHandThumb2'\n\tTransform 'mixamorig9:LeftForeArm'\n\tTransform
-    'mixamorig9:LeftFoot'\n\tTransform 'mixamorig9:RightHandThumb3'\n\tTransform
-    'mixamorig9:RightHandPinky1'\n\tTransform 'mixamorig9:RightHandMiddle1'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -106250,13 +106232,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig:LeftFoot'\n\tTransform 'mixamorig:LeftHandThumb2'\n\tTransform
-    'mixamorig:LeftHandIndex1'\n\tTransform 'mixamorig:LeftHandPinky2'\n\tTransform
-    'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-    'mixamorig:LeftHandThumb3'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
