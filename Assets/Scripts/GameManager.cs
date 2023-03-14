@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static string GAME_PROGRESSION;
     public TimelineManager timelineManager;
+    public GameObject UI_Analog;
     public GameObject player;
 
     private PlayerInput playerInput;
@@ -45,5 +46,7 @@ public class GameManager : MonoBehaviour
         {
             playerInput.enabled = availability;
         }
+
+        UI_Analog.SetActive(availability);
     }
 }
