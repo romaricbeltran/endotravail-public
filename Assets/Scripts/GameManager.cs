@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using StarterAssets;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
@@ -46,7 +48,9 @@ public class GameManager : MonoBehaviour
         {
             playerInput.enabled = availability;
         }
-
+        
+        EventSystem.current.SetSelectedGameObject(null);
+        MyUICanvasControllerInput.VirtualResetMove();
         analogicButtons.SetActive(availability);
     }
 }
