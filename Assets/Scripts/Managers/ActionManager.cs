@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -58,6 +59,9 @@ public class ActionManager : MonoBehaviour
         Debug.Log("Action choisie : " + choices[choiceIndex]);
         currentAction.SetChoosenActionIndex(scenarioNodeNextCodes[choiceIndex]);
         EndAction();
+
+        // Désactive le focus sur le bouton qui a été cliqué
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void StartAction()

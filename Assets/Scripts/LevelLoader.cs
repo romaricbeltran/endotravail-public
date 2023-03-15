@@ -10,7 +10,6 @@ public class LevelLoader : MonoBehaviour
     public TextMeshProUGUI levelTitleText;
     public TextMeshProUGUI levelSubtitleText;
     public Slider loadingBar;
-    public TextMeshProUGUI loadingBarProgressText;
 
     // CrossFade transition
     public Animator loadingScreenTransition;
@@ -68,7 +67,6 @@ public class LevelLoader : MonoBehaviour
             float progress = Mathf.Clamp01(operation.progress / .9f);
             
             loadingBar.value = progress;
-            loadingBarProgressText.text = progress * 100f + "%";
 
             yield return null;
         }
