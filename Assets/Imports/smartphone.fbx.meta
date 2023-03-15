@@ -3,7 +3,27 @@ guid: e66400150b6c1404884b70fb3058f81d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Boutons
+    second: {fileID: 2100000, guid: e551eadb242f54f44af87479f4b31329, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Coque
+    second: {fileID: 2100000, guid: 97f7911361406834e8401bdb0fae9936, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ecran
+    second: {fileID: 2100000, guid: ae99bad06e321464e9a03be55b25d52c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Photo
+    second: {fileID: 2100000, guid: 3526344817ed53a41bbe9fe5c47642c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -35,15 +55,15 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.009
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -88,7 +108,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 0.000089999994
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
