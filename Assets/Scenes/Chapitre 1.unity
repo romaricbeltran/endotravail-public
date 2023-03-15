@@ -385,7 +385,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1107638
+  m_Name: pb_Mesh-1342592
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1247,7 +1247,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1107630
+  m_Name: pb_Mesh-1342584
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1858,6 +1858,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 289736670}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &289736672 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8619902073201743155, guid: 6114d07b9de7151489026755e7ae4f54,
+    type: 3}
+  m_PrefabInstance: {fileID: 289736670}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fe1a1127fb79e47a5a558956b46ace, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &335178732
 GameObject:
   m_ObjectHideFlags: 0
@@ -2088,7 +2100,17 @@ PrefabInstance:
     - target: {fileID: 7971272021645192931, guid: f6ab01273d8ef734b8e8fd47e1db066b,
         type: 3}
       propertyPath: m_Looping
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971272021645192931, guid: f6ab01273d8ef734b8e8fd47e1db066b,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7971272021645192931, guid: f6ab01273d8ef734b8e8fd47e1db066b,
+        type: 3}
+      propertyPath: m_WaitForFirstFrame
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6ab01273d8ef734b8e8fd47e1db066b, type: 3}
@@ -3242,7 +3264,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -2.790001}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677860273
 MonoBehaviour:
@@ -4726,7 +4748,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: -2.790001}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1101755305
 MonoBehaviour:
@@ -7422,7 +7444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00d45ec2b0152ed49a0bc27b1f482ade, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLoader: {fileID: 0}
+  levelLoader: {fileID: 289736672}
   gameManager: {fileID: 952696518}
   popupManager: {fileID: 1450022678}
   dialogueManager: {fileID: 4224234225287082080}
@@ -7490,6 +7512,12 @@ MonoBehaviour:
     directorWrapMode: 2
     eventType: 5
     eventIndex: 2
+--- !u!328 &1344078512 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 7971272021645192931, guid: f6ab01273d8ef734b8e8fd47e1db066b,
+    type: 3}
+  m_PrefabInstance: {fileID: 346835719}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1354912891
 GameObject:
   m_ObjectHideFlags: 0
@@ -7531,7 +7559,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1107622
+  m_Name: pb_Mesh-1342576
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -8622,9 +8650,9 @@ RectTransform:
   m_Father: {fileID: 677860272}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -33.605}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 380, y: 47.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1589528866
@@ -10120,7 +10148,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh3491442
+  m_Name: pb_Mesh5367726
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10409,7 +10437,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1107654
+  m_Name: pb_Mesh-1342608
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10734,6 +10762,12 @@ Transform:
 --- !u!4 &4000011534729788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7211841136432105688, guid: 81511336e4d03184aae5c72a451eaab4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7213551303316064996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!328 &4000011534729791 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
     type: 3}
   m_PrefabInstance: {fileID: 7213551303316064996}
   m_PrefabAsset: {fileID: 0}
@@ -14426,9 +14460,9 @@ RectTransform:
   m_Father: {fileID: 1101755304}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -33.605}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 380, y: 47.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1267400533864623958
@@ -85055,7 +85089,7 @@ PlayableDirector:
   m_GameObject: {fileID: 8472434110559052693}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 2a930648592d2ab40bbae126398cfe94, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: be1f250ad8a85814f8c9b0d6ed7abba3, type: 2}
   m_InitialState: 1
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -87241,6 +87275,12 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 53053f60a1eddb545866c7271149f207, type: 2}
+    - {fileID: 11400000, guid: 25971ac67487e42479321bbd074c2575, type: 2}
+    - {fileID: 11400000, guid: 896aa6f1b35166149932a1cfa03c8971, type: 2}
+    - {fileID: 11400000, guid: d977438510488094eb56268e49647817, type: 2}
+    - {fileID: 11400000, guid: 963a1a5a3e6feea4bad86bb6053477c9, type: 2}
+    - {fileID: 11400000, guid: c2d2e2df3ac0f844786767a77289114f, type: 2}
+    - {fileID: 11400000, guid: 813ad51c819bf8b4dabf9e874a359eb5, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -87251,6 +87291,129 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1344078512}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4000011534729791}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: set_clip
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 32900000, guid: a84a16c81ea90874c82e0c3d11910d68,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4000011534729791}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4000011534729791}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: set_clip
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 32900000, guid: 3e6ac9ab93239254c9977d440f06984e,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4000011534729791}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4000011534729791}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: set_clip
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 32900000, guid: 3812810dffac5a24f901d545d2f32a70,
+              type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4000011534729791}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8472434110559052693}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8472434110559052693}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: 
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -88979,12 +89142,12 @@ MonoBehaviour:
     sentences:
     - character: Louis
       characterImage: {fileID: 21300000, guid: 861a61ee798a578468cdb450aeb5a49c, type: 3}
-      audioClip: {fileID: 8300000, guid: 2969320d101985344a5621bc04547264, type: 3}
+      audioClip: {fileID: 0}
       text: "S\xE9rieux ? J'ai d\xE9j\xE0 une tonne de travail ! Pourquoi c'est nous
         qui devons faire ton travail en plus ?"
     - character: Louis
       characterImage: {fileID: 21300000, guid: 861a61ee798a578468cdb450aeb5a49c, type: 3}
-      audioClip: {fileID: 8300000, guid: 4390bee2d5fa2da429099a5babad24eb, type: 3}
+      audioClip: {fileID: 0}
       text: "\xC0 chaque fois que tu t'absentes, c'est nous qui devons assumer !"
   - code: 2
     nextScenarioNodeCode: 7
@@ -109010,6 +109173,21 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1980985548}
+    - target: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
+        type: 3}
+      propertyPath: m_VideoClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
+        type: 3}
+      propertyPath: m_WaitForFirstFrame
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7211841136432105688, guid: 81511336e4d03184aae5c72a451eaab4,
         type: 3}
       propertyPath: m_RootOrder
@@ -109070,7 +109248,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: KateComputer
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7213551302962722951, guid: 81511336e4d03184aae5c72a451eaab4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81511336e4d03184aae5c72a451eaab4, type: 3}
 --- !u!1 &7216375829720163760
 GameObject:
