@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static string GAME_PROGRESSION;
     public TimelineManager timelineManager;
+    public MyUICanvasControllerInput myUICanvasControllerInput;
     public GameObject analogicButtons;
     public GameObject player;
 
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
         }
         
         EventSystem.current.SetSelectedGameObject(null);
-        MyUICanvasControllerInput.VirtualResetMove();
+        myUICanvasControllerInput.VirtualResetMove();
         analogicButtons.SetActive(availability);
     }
 }

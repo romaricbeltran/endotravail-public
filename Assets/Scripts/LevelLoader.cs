@@ -22,7 +22,7 @@ public class LevelLoader : MonoBehaviour
         switch (sceneIndex)
         {
             case 0:
-                levelTitleText.text = "Début du jeu";
+                levelTitleText.text = "";
                 break;
             case 1:
                 levelTitleText.text = "CHAPITRE 1";

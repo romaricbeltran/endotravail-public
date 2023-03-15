@@ -3419,6 +3419,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 583057624}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &583057627 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 991102427649137146, guid: 42d866fe8645fcd499a06084d2ad9489,
+    type: 3}
+  m_PrefabInstance: {fileID: 583057624}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583057626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67364670eb9a8546a7263dd404b3e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &590661382
 GameObject:
   m_ObjectHideFlags: 0
@@ -4063,6 +4075,11 @@ PrefabInstance:
       propertyPath: timelineManager
       value: 
       objectReference: {fileID: 2047653669080242798}
+    - target: {fileID: 8438685537658233519, guid: 47d34a587b68197468d33cba2bc0da36,
+        type: 3}
+      propertyPath: myUICanvasControllerInput
+      value: 
+      objectReference: {fileID: 583057627}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47d34a587b68197468d33cba2bc0da36, type: 3}
 --- !u!4 &705657715 stripped
@@ -7575,7 +7592,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: 100
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
@@ -87091,7 +87108,7 @@ MonoBehaviour:
       consulter un\xB7e m\xE9decin."
     sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
   - code: 2
-    nextScenarioNodeCode: 2
+    nextScenarioNodeCode: 0
     mainText: "82 % des personnes atteintes d'endom\xE9triose ont des r\xE9ticences
       \xE0 demander des arr\xEAts-maladies \xE0 leur m\xE9decin pendant des crises
       (perte de salaire associ\xE9e aux jours de carence, crainte de recevoir des
@@ -89040,7 +89057,7 @@ MonoBehaviour:
   - code: 2
     nextScenarioNodeCode: 15
     missionTitle: Appeler mon amie
-    missionText: "Va en salle de pause pout t\xE9l\xE9phoner \xE0 ton amie"
+    missionText: "Va en salle de pause pour t\xE9l\xE9phoner \xE0 ton amie"
     targetMissions:
     - name: Appeler mon amie
       triggerObject: {fileID: 2693525032888564259}
@@ -91010,7 +91027,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3432250297528042815}
         m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
         m_MethodName: EndPopup
         m_Mode: 1
@@ -93067,7 +93084,7 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: Mince, je n'ai plus de jours de RTT...
   - code: 2
-    nextScenarioNodeCode: 2
+    nextScenarioNodeCode: 0
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}

@@ -5,7 +5,7 @@ namespace StarterAssets
     public class MyUICanvasControllerInput : MonoBehaviour
     {
         [Header("Output")]
-        public static StarterAssetsInputs starterAssetsInputs;
+        public StarterAssetsInputs starterAssetsInputs;
         public float speedLookRotation = 1.0f;
 
         public void VirtualMoveUpInput(bool virtualMoveUpState)
@@ -32,7 +32,7 @@ namespace StarterAssets
             starterAssetsInputs.LookInput(virtualMoveRightState ? new Vector2(1, 0) * speedLookRotation : Vector2.zero);
         }
 
-        public static void VirtualResetMove()
+        public void VirtualResetMove()
         {
             starterAssetsInputs.MoveInput(Vector2.zero);
             starterAssetsInputs.LookInput(Vector2.zero);

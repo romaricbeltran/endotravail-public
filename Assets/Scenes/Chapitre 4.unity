@@ -5059,6 +5059,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1255746163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1255746166 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 991102427649137146, guid: 42d866fe8645fcd499a06084d2ad9489,
+    type: 3}
+  m_PrefabInstance: {fileID: 1255746163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1255746165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67364670eb9a8546a7263dd404b3e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1354912891
 GameObject:
   m_ObjectHideFlags: 0
@@ -6567,17 +6579,17 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.21625
+      value: -0.4683876
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.1861515
+      value: 14.911151
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.91346
+      value: 18.97054
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -76990,6 +77002,11 @@ PrefabInstance:
       propertyPath: timelineManager
       value: 
       objectReference: {fileID: 5731558069918506892}
+    - target: {fileID: 8438685537658233519, guid: 47d34a587b68197468d33cba2bc0da36,
+        type: 3}
+      propertyPath: myUICanvasControllerInput
+      value: 
+      objectReference: {fileID: 1255746166}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47d34a587b68197468d33cba2bc0da36, type: 3}
 --- !u!4 &2885100370500630213 stripped
@@ -78073,7 +78090,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2468237855221538885}
         m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
         m_MethodName: EndPopup
         m_Mode: 1
