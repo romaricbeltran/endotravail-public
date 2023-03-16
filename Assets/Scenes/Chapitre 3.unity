@@ -5482,17 +5482,17 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4683876
+      value: 1.5201349
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.911151
+      value: 15.031151
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.97054
+      value: 16.320541
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -5686,7 +5686,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1656196
+  m_Name: pb_Mesh-22898
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -10298,15 +10298,14 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 7213551303316064997}
           m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
-          m_MethodName: set_clip
-          m_Mode: 2
+          m_MethodName: set_url
+          m_Mode: 5
           m_Arguments:
-            m_ObjectArgument: {fileID: 32900000, guid: a5f7c74f102d470448895502e6391378,
-              type: 3}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Video.VideoClip, UnityEngine
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/3.email-RH.mp4
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 7213551303316064997}
@@ -99245,13 +99244,18 @@ PrefabInstance:
       objectReference: {fileID: 1980985548}
     - target: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
         type: 3}
+      propertyPath: m_DataSource
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
+        type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
         type: 3}
       propertyPath: m_WaitForFirstFrame
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7211841136432105688, guid: 81511336e4d03184aae5c72a451eaab4,
         type: 3}
