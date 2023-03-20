@@ -1362,8 +1362,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502729133}
-  m_LocalRotation: {x: -0, y: 0.061735637, z: -0, w: 0.99809253}
-  m_LocalPosition: {x: 10.41455, y: 14.900719, z: 14.209276}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 1.0316124, y: 14.911151, z: 19.04554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4569,7 +4569,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 16
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5315,7 +5315,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-275782
+  m_Name: pb_Mesh-79016
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -78768,9 +78768,10 @@ MonoBehaviour:
     nextScenarioNodeCode: -10
     mainText: "Favoriser la formation des employ\xE9\xB7e\xB7s, des managers, de
       la Direction est un v\xE9ritable levier pour favoriser l'inclusion et la diversit\xE9
-      et s'inscrit compl\xE8tement dans une strat\xE9gie RSE. D'autant plus quand
-      on sait que partager sa situation am\xE9liore la vie au travail pour 73 % des
-      personnes atteintes de maladie chronique."
+      et s'inscrit compl\xE8tement dans une strat\xE9gie de Responsabilit\xE9 Soci\xE9tale
+      des Entreprises (RSE). D'autant plus quand on sait que partager sa situation
+      am\xE9liore la vie au travail pour 73 % des personnes atteintes de maladie
+      chronique."
     sourceText: "Source : Chiffres issus de l\u2019observatoire qualit\xE9 de vie
       au travail 1&2 ariane Conseil en 2015-2017"
   - code: 4
@@ -96093,13 +96094,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig4:RightHandMiddle2'\n\tTransform 'mixamorig4:LeftToeBase'\n\tTransform
-    'mixamorig4:LeftHandThumb2'\n\tTransform 'mixamorig4:RightHandRing2'\n\tTransform
-    'mixamorig4:RightToeBase'\n\tTransform 'mixamorig4:RightHandThumb1'\n\tTransform
-    'mixamorig4:RightArm'\n\tTransform 'mixamorig4:LeftHandIndex1'\n\tTransform 'mixamorig4:RightHandIndex3'\n\tTransform
-    'mixamorig4:RightFoot'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0

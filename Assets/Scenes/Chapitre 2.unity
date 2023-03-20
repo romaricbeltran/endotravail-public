@@ -344,8 +344,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58344170}
-  m_LocalRotation: {x: 0.029815804, y: 0.04385327, z: -0.001309364, w: 0.99859214}
-  m_LocalPosition: {x: 10.713613, y: 15.161151, z: 17.390541}
+  m_LocalRotation: {x: -0.007114099, y: -0.9707414, z: 0.028984243, w: -0.2382657}
+  m_LocalPosition: {x: -12.057908, y: 15.161151, z: 12.396491}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -737,7 +737,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1092392
+  m_Name: pb_Mesh-36260
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -987,7 +987,7 @@ GameObject:
   - component: {fileID: 368246206}
   - component: {fileID: 368246207}
   m_Layer: 0
-  m_Name: BlackScreeCamera
+  m_Name: BlackScreenCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5134,8 +5134,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528336235}
-  m_LocalRotation: {x: 0.026988577, y: 0.9037544, z: -0.05762175, w: 0.4232959}
-  m_LocalPosition: {x: -0.27070808, y: 15.036151, z: 17.11685}
+  m_LocalRotation: {x: 0.026988585, y: 0.90375435, z: -0.057621747, w: 0.42329592}
+  m_LocalPosition: {x: -0.2683878, y: 15.036151, z: 17.12054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5732,7 +5732,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840825429}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0.52}
+  m_LocalPosition: {x: 0, y: 0, z: 0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5741,7 +5741,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -542.7113, y: -225.44563}
+  m_AnchoredPosition: {x: -542.7113, y: -225.45}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!64 &1840825431
@@ -6374,7 +6374,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 16
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10018,7 +10018,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2047653669436434028}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 24dd9464fffa23a49b76381b502570ba, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -10712,10 +10712,6 @@ PlayableDirector:
     value: {fileID: 502729138}
   - key: {fileID: 496201554899261579, guid: cea3fc65e77893949ad6e0ede3d4a9c2, type: 2}
     value: {fileID: 502729138}
-  - key: {fileID: 7147116935325118364, guid: cea3fc65e77893949ad6e0ede3d4a9c2, type: 2}
-    value: {fileID: 512099366}
-  - key: {fileID: -7643808919979583063, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
-    value: {fileID: 512099366}
   - key: {fileID: 2559248122438073859, guid: db16227ff8640c94db72377606901738, type: 2}
     value: {fileID: 1840825429}
   - key: {fileID: 7960660051300337253, guid: cea3fc65e77893949ad6e0ede3d4a9c2, type: 2}
@@ -10778,6 +10774,28 @@ PlayableDirector:
     value: {fileID: 512099366}
   - key: {fileID: -8815442071044943458, guid: 336f7df87b00a164bb16680ac66e399e, type: 2}
     value: {fileID: 2696788401373308040}
+  - key: {fileID: 7931308696004628506, guid: db16227ff8640c94db72377606901738, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: 5900894594391895105, guid: 561e24d168b473649b8a672329acd737, type: 2}
+    value: {fileID: 502729138}
+  - key: {fileID: -2197907480697012784, guid: 561e24d168b473649b8a672329acd737, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: 1355905813875982022, guid: 561e24d168b473649b8a672329acd737, type: 2}
+    value: {fileID: 1840825429}
+  - key: {fileID: 1887414116401588457, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: -2769880671805462671, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: 828753553842661176, guid: cea3fc65e77893949ad6e0ede3d4a9c2, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: -1074191451745565588, guid: cea3fc65e77893949ad6e0ede3d4a9c2, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: 2661374855317695148, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4944415213179535620, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5952325128335841756, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 1528336237}
@@ -11816,131 +11834,143 @@ MonoBehaviour:
     eventIndex: 1
   - scenarioNodeCode: 3
     name: "Arr\xEAt maladie"
-    timelineClip: {fileID: 11400000, guid: db16227ff8640c94db72377606901738, type: 2}
+    timelineClip: {fileID: 11400000, guid: 561e24d168b473649b8a672329acd737, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 2
   - scenarioNodeCode: 4
-    name: "T\xE9l\xE9travail"
+    name: "D\xE9j\xE0 demand\xE9 un arr\xEAt maladie"
     timelineClip: {fileID: 11400000, guid: db16227ff8640c94db72377606901738, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 3
   - scenarioNodeCode: 5
+    name: "T\xE9l\xE9travail"
+    timelineClip: {fileID: 11400000, guid: 561e24d168b473649b8a672329acd737, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 4
+  - scenarioNodeCode: 6
     name: "R\xE9ticences \xE0 demander des arr\xEAts maladies"
     timelineClip: {fileID: 11400000, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 2
-  - scenarioNodeCode: 6
+  - scenarioNodeCode: 7
+    name: "D\xE9j\xE0 utilis\xE9 ma journ\xE9e de t\xE9l\xE9travail"
+    timelineClip: {fileID: 11400000, guid: db16227ff8640c94db72377606901738, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 5
+  - scenarioNodeCode: 8
     name: Aller au travail
     timelineClip: {fileID: 11400000, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 3
-  - scenarioNodeCode: 7
+  - scenarioNodeCode: 9
     name: Je n'ai pas bonne mine
     timelineClip: {fileID: 11400000, guid: 90c1ee564fb56bd4abf944788e43b1b5, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 4
-  - scenarioNodeCode: 8
+    eventIndex: 6
+  - scenarioNodeCode: 10
     name: "J'ai des erreurs \xE0 corriger"
     timelineClip: {fileID: 11400000, guid: c4246b112a541974db195507bcc80a71, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 5
-  - scenarioNodeCode: 9
+    eventIndex: 7
+  - scenarioNodeCode: 11
     name: J'en ai marre
     timelineClip: {fileID: 11400000, guid: eab460b1548984f489e7170387ea4785, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 2
-  - scenarioNodeCode: 10
+  - scenarioNodeCode: 12
     name: Trouver Victor
     timelineClip: {fileID: 11400000, guid: 5f9f5c5262d901b46a93f1d9c778798b, type: 2}
     directorWrapMode: 2
     eventType: 2
     eventIndex: 1
-  - scenarioNodeCode: 11
+  - scenarioNodeCode: 13
     name: "Difficult\xE9s \xE0 aider lors des \xE9v\xE8nements"
     timelineClip: {fileID: 11400000, guid: ff009021ef0049a49bee9eab9284eda3, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 6
-  - scenarioNodeCode: 12
+    eventIndex: 8
+  - scenarioNodeCode: 14
     name: "Stations debouts prolong\xE9s et d\xE9placements"
     timelineClip: {fileID: 11400000, guid: 15876f6730b1eef428e7f2947fb7079f, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 4
-  - scenarioNodeCode: 13
+  - scenarioNodeCode: 15
     name: Aller en salle de pause pour appeler
     timelineClip: {fileID: 11400000, guid: 77d4e880557f9c04f9a59a0fe34d84ec, type: 2}
     directorWrapMode: 2
     eventType: 2
     eventIndex: 2
-  - scenarioNodeCode: 14
+  - scenarioNodeCode: 16
     name: "Appel \xE0 une amie"
     timelineClip: {fileID: 11400000, guid: b3cd4a71ecbcc1c478b1385e4e1521c9, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 7
-  - scenarioNodeCode: 15
+    eventIndex: 9
+  - scenarioNodeCode: 17
     name: "D\xE9j\xE0 que tu as loup\xE9 la r\xE9union"
     timelineClip: {fileID: 11400000, guid: feacaf59a980213489f575079b67bab4, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 8
-  - scenarioNodeCode: 16
+    eventIndex: 10
+  - scenarioNodeCode: 18
     name: "Capacit\xE9s r\xE9duites"
     timelineClip: {fileID: 11400000, guid: 336f7df87b00a164bb16680ac66e399e, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 5
-  - scenarioNodeCode: 17
+  - scenarioNodeCode: 19
     name: "Aller \xE0 la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 4dac6db9aa5f54145ab4f6eb09ebe59d, type: 2}
     directorWrapMode: 2
     eventType: 2
     eventIndex: 3
-  - scenarioNodeCode: 18
+  - scenarioNodeCode: 20
     name: "Crise pendant la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 24dd9464fffa23a49b76381b502570ba, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 3
-  - scenarioNodeCode: 19
+  - scenarioNodeCode: 21
     name: J'entends en sourdine
     timelineClip: {fileID: 11400000, guid: 76baf38ca58b95346a6268f4ad700b73, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 9
-  - scenarioNodeCode: 20
+    eventIndex: 11
+  - scenarioNodeCode: 22
     name: "Aller au toilette pendant la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 3ef07a6b3e1bbf14687ee62322a380d8, type: 2}
     directorWrapMode: 2
     eventType: 2
     eventIndex: 4
-  - scenarioNodeCode: 21
+  - scenarioNodeCode: 23
     name: "Retourner \xE0 la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 45f7eba458c47bf4eb1ad12d3f620a6b, type: 2}
     directorWrapMode: 2
     eventType: 2
     eventIndex: 5
-  - scenarioNodeCode: 22
+  - scenarioNodeCode: 24
     name: "O\xF9 \xE9tiez vous pendant tout ce temps ? (composant mission)"
     timelineClip: {fileID: 11400000, guid: 76baf38ca58b95346a6268f4ad700b73, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 10
-  - scenarioNodeCode: 23
+    eventIndex: 12
+  - scenarioNodeCode: 25
     name: Le symptome principal est la douleur
     timelineClip: {fileID: 11400000, guid: 83370080258be6e4fa5ca7615019a266, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 6
-  - scenarioNodeCode: 24
+  - scenarioNodeCode: 26
     name: Fin du chapitre 2
     timelineClip: {fileID: 0}
     directorWrapMode: 2
@@ -77972,7 +78002,7 @@ MonoBehaviour:
       consulter un\xB7e m\xE9decin."
     sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
   - code: 2
-    nextScenarioNodeCode: 0
+    nextScenarioNodeCode: 7
     mainText: "82 % des personnes atteintes d'endom\xE9triose ont des r\xE9ticences
       \xE0 demander des arr\xEAts-maladies \xE0 leur m\xE9decin pendant des crises
       (perte de salaire associ\xE9e aux jours de carence, crainte de recevoir des
@@ -77981,7 +78011,7 @@ MonoBehaviour:
       leurs coll\xE8gues ou pour elle \xE0 leur retour)."
     sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
   - code: 3
-    nextScenarioNodeCode: 7
+    nextScenarioNodeCode: 9
     mainText: "Pour 62 % des personnes atteintes d'endom\xE9triose se lever le matin
       est parfois presque impossible. Ainsi, 36 % d\u2019entre elles d\xE9clarent
       se rendre au travail malgr\xE9 des sympt\xF4mes qu\u2019elles estiment incapacitants
@@ -77989,14 +78019,14 @@ MonoBehaviour:
     sourceText: "Sources : Enqu\xEAtes Endovie 2020 IPSOS&Gedeon Richter et \"Endotravail\"
       par le CEET en 2020"
   - code: 4
-    nextScenarioNodeCode: 13
+    nextScenarioNodeCode: 15
     mainText: "Pour les personnes atteintes d'endom\xE9triose, il peut \xEAtre difficile
       d'exercer leur m\xE9tier surtout, s\u2019il exige des stations debout prolong\xE9es
       ou des d\xE9placements fr\xE9quents.\r"
     sourceText: "Source : Livre blanc Endom\xE9triose et emploi par EndoFrance et
       K\xE9rialis"
   - code: 5
-    nextScenarioNodeCode: 17
+    nextScenarioNodeCode: 19
     mainText: "62 % des personnes atteintes d'endom\xE9triose notent des capacit\xE9s
       physiques et intellectuelles r\xE9duites pour travailler, 53 % une diminution
       de leur capacit\xE9 de travail et 60 % un pouvoir de concentration \xE0 la
@@ -78004,7 +78034,7 @@ MonoBehaviour:
     sourceText: "Source : Enqu\xEAte Endovie 2020 IPSOS&Gedeon Richter en collaboration
       avec EndoFrance"
   - code: 6
-    nextScenarioNodeCode: 24
+    nextScenarioNodeCode: 26
     mainText: "Pour 70 % des personnes atteintes d'endom\xE9triose, le sympt\xF4me
       principal est la douleur ! La douleur est amplifi\xE9e par le stress ! 58 %
       des personnes atteintes d'endom\xE9triose ont un niveau de stress plus \xE9lev\xE9. "
@@ -79694,7 +79724,7 @@ MonoBehaviour:
   acceptButton: {fileID: 7861263002839659181}
   missions:
   - code: 1
-    nextScenarioNodeCode: 12
+    nextScenarioNodeCode: 14
     missionTitle: Trouver Victor
     missionText: "Va voir ton coll\xE8gue Victor \xE0 son bureau pour lui parler
       de l'\xE9v\xE9nement"
@@ -79702,17 +79732,18 @@ MonoBehaviour:
     - name: Trouver Victor
       triggerObject: {fileID: 919132148334163830}
       eventType: 1
-      scenarioNodeCode: 11
+      scenarioNodeCode: 13
     isAccomplished: 0
   - code: 2
-    nextScenarioNodeCode: 15
+    nextScenarioNodeCode: 17
     missionTitle: Appeler mon amie
-    missionText: "Va en salle de pause pour t\xE9l\xE9phoner \xE0 ton amie"
+    missionText: "Va en salle de pause pour t\xE9l\xE9phoner \xE0 ton amie, c'est
+      au fond du couloir"
     targetMissions:
     - name: Appeler mon amie
       triggerObject: {fileID: 2693525032888564259}
       eventType: 1
-      scenarioNodeCode: 14
+      scenarioNodeCode: 16
     isAccomplished: 0
   - code: 3
     nextScenarioNodeCode: -10
@@ -79722,27 +79753,28 @@ MonoBehaviour:
     - name: "Aller \xE0 la r\xE9union\t"
       triggerObject: {fileID: 2693525034107598052}
       eventType: 3
-      scenarioNodeCode: 18
+      scenarioNodeCode: 20
     isAccomplished: 0
   - code: 4
     nextScenarioNodeCode: -10
     missionTitle: Aller aux toilettes
-    missionText: "Rends-toi aux toilettes pour g\xE9rer la douleur"
+    missionText: "Rends-toi aux toilettes pour g\xE9rer tes troubles digestifs, c'est
+      au fond du couloir"
     targetMissions:
     - name: Aller aux toilettes
       triggerObject: {fileID: 2693525033826028358}
       eventType: 2
-      scenarioNodeCode: 21
+      scenarioNodeCode: 23
     isAccomplished: 0
   - code: 5
-    nextScenarioNodeCode: 23
+    nextScenarioNodeCode: 25
     missionTitle: "Retouner \xE0 la r\xE9union"
     missionText: "Retourne \xE0 la salle de r\xE9union avec tes coll\xE8gues"
     targetMissions:
     - name: "Retouner \xE0 la r\xE9union"
       triggerObject: {fileID: 2693525034107598052}
       eventType: 1
-      scenarioNodeCode: 22
+      scenarioNodeCode: 24
     isAccomplished: 0
 --- !u!1 &3948484670021900856
 GameObject:
@@ -82031,7 +82063,7 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: Mince, je n'ai plus de jours de RTT...
   - code: 2
-    nextScenarioNodeCode: 0
+    nextScenarioNodeCode: 4
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -82042,15 +82074,37 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: "Je vais voir mon m\xE9decin dans la journ\xE9e !"
   - code: 3
-    nextScenarioNodeCode: 5
+    nextScenarioNodeCode: 8
+    sentences:
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: "J'ai d\xE9j\xE0 demand\xE9 un arr\xEAt maladie hier..."
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: Pas le choix je vais devoir aller au travail...
+  - code: 4
+    nextScenarioNodeCode: 6
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
       audioClip: {fileID: 0}
       text: "Bonjour, je ne suis pas vraiment en forme pour venir au bureau mais
         je peux g\xE9rer mes dossiers \xE0 distance."
-  - code: 4
+  - code: 5
     nextScenarioNodeCode: 8
+    sentences:
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: "J'ai d\xE9j\xE0 utilis\xE9 ma journ\xE9e de t\xE9l\xE9travail hier..."
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: Pas le choix je vais devoir aller au bureau aujourd'hui...
+  - code: 6
+    nextScenarioNodeCode: 10
     sentences:
     - character: Djibril
       characterImage: {fileID: 21300000, guid: 695496c4c116cda41b9fe0ceec75fc86, type: 3}
@@ -82069,8 +82123,8 @@ MonoBehaviour:
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
       audioClip: {fileID: 0}
       text: "Non, j'ai juste tr\xE8s mal dormi..."
-  - code: 5
-    nextScenarioNodeCode: 9
+  - code: 7
+    nextScenarioNodeCode: 11
     sentences:
     - character: Elisabeth
       characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
@@ -82082,7 +82136,7 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: "Je t'ai mis quelques commentaires. Tu peux m'envoyer une version corrig\xE9e
         aujourd'hui ?"
-  - code: 6
+  - code: 8
     nextScenarioNodeCode: -10
     sentences:
     - character: Catherine
@@ -82100,7 +82154,7 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: Oui, ben moi aussi, j'ai mal au dos et je le fais. T'as toujours un truc
         qui ne va pas toi !
-  - code: 7
+  - code: 9
     nextScenarioNodeCode: -10
     sentences:
     - character: Catherine
@@ -82143,8 +82197,8 @@ MonoBehaviour:
       characterImage: {fileID: 21300000, guid: 5649dd2ee48f24f4b858ec8c8d35e979, type: 3}
       audioClip: {fileID: 0}
       text: Ce n'est pas de ta faute !
-  - code: 8
-    nextScenarioNodeCode: 16
+  - code: 10
+    nextScenarioNodeCode: 18
     sentences:
     - character: Louise
       characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
@@ -82159,8 +82213,8 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: "D\xE9j\xE0 que tu as loup\xE9 la r\xE9union la plus importante du projet,
         il ne faudrait pas que tu loupes celle-ci !"
-  - code: 9
-    nextScenarioNodeCode: 23
+  - code: 11
+    nextScenarioNodeCode: 25
     sentences:
     - character: Michael
       characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
@@ -82175,7 +82229,7 @@ MonoBehaviour:
       characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
       audioClip: {fileID: 0}
       text: "Catherine, vous \xE9coutez ?"
-  - code: 10
+  - code: 12
     nextScenarioNodeCode: -10
     sentences:
     - character: Michael
@@ -102393,21 +102447,21 @@ MonoBehaviour:
     - "Demander un arr\xEAt-maladie"
     - "Demander \xE0 faire du t\xE9l\xE9travail"
     - Aller au travail
-    scenarioNodeNextCodes: 030000000400000006000000
+    scenarioNodeNextCodes: 030000000500000008000000
     choosenActionIndex: 0
   - code: 2
     nextScenarioNodeCode: -10
     choices:
     - Pff, je vais voir ce que je peux faire...
     - D'acc...
-    scenarioNodeNextCodes: 0a0000000a000000
+    scenarioNodeNextCodes: 0c0000000c000000
     choosenActionIndex: 0
   - code: 3
     nextScenarioNodeCode: -10
     choices:
     - Attendre que la crise passe
     - Sortir et aller aux toilettes
-    scenarioNodeNextCodes: 1300000014000000
+    scenarioNodeNextCodes: 1500000016000000
     choosenActionIndex: 0
 --- !u!1 &7984738224544126048
 GameObject:
