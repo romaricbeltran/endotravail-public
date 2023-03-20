@@ -1362,8 +1362,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502729133}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 1.0316124, y: 14.911151, z: 19.04554}
+  m_LocalRotation: {x: -0, y: 0.061735637, z: -0, w: 0.99809253}
+  m_LocalPosition: {x: 10.41455, y: 14.900719, z: 14.209276}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1658,10 +1658,10 @@ RectTransform:
   m_Father: {fileID: 1176776630}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: -103.04148}
+  m_SizeDelta: {x: 500, y: 126.95853}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &693309351
 MonoBehaviour:
@@ -4724,10 +4724,10 @@ RectTransform:
   m_Father: {fileID: 1176776630}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 250, y: 0}
+  m_SizeDelta: {x: 500, y: 103.04148}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1789149349
 MonoBehaviour:
@@ -9903,7 +9903,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2047653669436434028}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a6b49bf0377ef4f4e969188831569218, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: b60bd86eff2f1c34e88f651bf6b0a897, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -10541,6 +10541,10 @@ PlayableDirector:
     value: {fileID: 700302721}
   - key: {fileID: -3459479655176530965, guid: 68907e14e0ec8cb44bc7906808aeeba2, type: 2}
     value: {fileID: 700302717}
+  - key: {fileID: -3211168729102880760, guid: 56441900ba190c145bcdb373f159b2a5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8225328311637426400, guid: 56441900ba190c145bcdb373f159b2a5, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 626151648}
@@ -96089,7 +96093,13 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig4:RightHandMiddle2'\n\tTransform 'mixamorig4:LeftToeBase'\n\tTransform
+    'mixamorig4:LeftHandThumb2'\n\tTransform 'mixamorig4:RightHandRing2'\n\tTransform
+    'mixamorig4:RightToeBase'\n\tTransform 'mixamorig4:RightHandThumb1'\n\tTransform
+    'mixamorig4:RightArm'\n\tTransform 'mixamorig4:LeftHandIndex1'\n\tTransform 'mixamorig4:RightHandIndex3'\n\tTransform
+    'mixamorig4:RightFoot'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
