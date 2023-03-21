@@ -89,7 +89,9 @@ public class MissionManager : MonoBehaviour
             int currentTriggerMissionIndex = currentTriggerEvent.GetIndexMission();
 
             RemoveTriggerEvent(currentTriggerEvent);
-            
+            Destroy(currentTriggerEvent);
+
+
             Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + other.gameObject.name);
 
             if (triggerEvents.Count == 0)
