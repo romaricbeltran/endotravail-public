@@ -1879,7 +1879,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -4147,7 +4147,7 @@ MonoBehaviour:
     eventType: 1
     eventIndex: 2
   - scenarioNodeCode: 8
-    name: Popup de fin de chapitre (2)
+    name: "Avant une op\xE9ration"
     timelineClip: {fileID: 11400000, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
     directorWrapMode: 0
     eventType: 0
@@ -4800,7 +4800,7 @@ MonoBehaviour:
       perdre en qualit\xE9 de service, en image de marque).\r\n"
     sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
   - code: 4
-    nextScenarioNodeCode: 10
+    nextScenarioNodeCode: 9
     mainText: "Avant une op\xE9ration, il y a plusieurs rendez-vous \xE0 prendre
       en compte (anesth\xE9siste, radiologue, chirurgien digestif, urologue... selon
       les localisations des l\xE9sions). Annuler un rendez-vous peut retarder la
@@ -5806,7 +5806,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0316124
+      value: -3.6945019
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -5816,7 +5816,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.04554
+      value: 18.678654
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -6620,6 +6620,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887274690565301, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887274690565301, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887274690565301, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887274690565301, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887275071599799, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887275071599799, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887275071599799, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887275071599799, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887276070972664, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887276070972664, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887276070972664, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6939887276070972664, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 033b8eba01b5d034a8bec71c2d71e9a8, type: 3}
@@ -58181,7 +58241,7 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: "\xC0 chaque fois que tu t'absentes, c'est nous qui devons assumer !"
   - code: 2
-    nextScenarioNodeCode: 9
+    nextScenarioNodeCode: 8
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}

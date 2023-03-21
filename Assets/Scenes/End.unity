@@ -255,7 +255,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -797,6 +797,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2098324247}
+    - target: {fileID: 8072705967303742978, guid: aa4e10051aa835e4c8b38998bb12f0a6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 'https://www.endofrance.org/la-maladie-endometriose/travailler-avec-lendometriose/ '
+      objectReference: {fileID: 0}
     - target: {fileID: 8274643295761996818, guid: aa4e10051aa835e4c8b38998bb12f0a6,
         type: 3}
       propertyPath: m_AnchorMax.y

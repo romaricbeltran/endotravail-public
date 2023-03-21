@@ -74,6 +74,6 @@ public class LevelLoader : MonoBehaviour
 
     public void OpenLink(string openURL)
     {
-        Application.OpenURL(openURL);
+        OpenLinks.OpenURL(openURL);
     }
 }

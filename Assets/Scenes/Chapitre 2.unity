@@ -807,7 +807,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-384898
+  m_Name: pb_Mesh-689976
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
-  m_Antialiasing: 0
+  m_Antialiasing: 1
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -3260,7 +3260,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &975103843
 Transform:
   m_ObjectHideFlags: 0
@@ -3313,7 +3313,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 11
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
@@ -4120,8 +4120,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528336235}
-  m_LocalRotation: {x: 0.026988577, y: 0.9037544, z: -0.05762175, w: 0.4232959}
-  m_LocalPosition: {x: -0.27070808, y: 15.036151, z: 17.11685}
+  m_LocalRotation: {x: 0.026988583, y: 0.90375435, z: -0.057621747, w: 0.42329592}
+  m_LocalPosition: {x: -0.2683878, y: 15.036151, z: 17.12054}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9093,7 +9093,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2047653669436434028}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: b3cd4a71ecbcc1c478b1385e4e1521c9, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 15876f6730b1eef428e7f2947fb7079f, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -9909,8 +9909,6 @@ PlayableDirector:
     value: {fileID: 67265677}
   - key: {fileID: -1267987664169521526, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
     value: {fileID: 67265677}
-  - key: {fileID: -3027322410844044395, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
-    value: {fileID: 67265677}
   - key: {fileID: 126352320767599383, guid: 3ef07a6b3e1bbf14687ee62322a380d8, type: 2}
     value: {fileID: 67265677}
   - key: {fileID: -1945763305327213777, guid: 90c1ee564fb56bd4abf944788e43b1b5, type: 2}
@@ -9955,6 +9953,48 @@ PlayableDirector:
     value: {fileID: 512099366}
   - key: {fileID: -6017512457509813480, guid: 561e24d168b473649b8a672329acd737, type: 2}
     value: {fileID: 164745046}
+  - key: {fileID: 6472349795927974125, guid: db16227ff8640c94db72377606901738, type: 2}
+    value: {fileID: 33810853}
+  - key: {fileID: 5900894594391895105, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
+    value: {fileID: 502729138}
+  - key: {fileID: 2559248122438073859, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
+    value: {fileID: 1840825429}
+  - key: {fileID: 7931308696004628506, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: -2197907480697012784, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: 3735633507043715638, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
+    value: {fileID: 67265677}
+  - key: {fileID: 6472349795927974125, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
+    value: {fileID: 33810853}
+  - key: {fileID: 241413692382567815, guid: 2588ed48d1459ac4895b7d2483e64302, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8225328311637426400, guid: 2588ed48d1459ac4895b7d2483e64302, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1063312109899651597, guid: 24dd9464fffa23a49b76381b502570ba, type: 2}
+    value: {fileID: 975103842}
+  - key: {fileID: 8465944764872029043, guid: 76baf38ca58b95346a6268f4ad700b73, type: 2}
+    value: {fileID: 975103842}
+  - key: {fileID: 678920832073319544, guid: 83370080258be6e4fa5ca7615019a266, type: 2}
+    value: {fileID: 975103842}
+  - key: {fileID: -5688495493058064211, guid: e57049323be6a274a9af42e47aa1a85b, type: 2}
+    value: {fileID: 975103842}
+  - key: {fileID: -4191033204507048037, guid: 3ef07a6b3e1bbf14687ee62322a380d8, type: 2}
+    value: {fileID: 975103842}
+  - key: {fileID: 8596677524636793118, guid: 3ef07a6b3e1bbf14687ee62322a380d8, type: 2}
+    value: {fileID: 975103842}
+  - key: {fileID: 3811991684668161293, guid: 3ef07a6b3e1bbf14687ee62322a380d8, type: 2}
+    value: {fileID: 975103842}
+  - key: {fileID: 8712798775281051008, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
+    value: {fileID: 4700025836871829864}
+  - key: {fileID: -3973616805397171548, guid: 24dd9464fffa23a49b76381b502570ba, type: 2}
+    value: {fileID: 4700025836871829864}
+  - key: {fileID: 4383757042940520320, guid: 24dd9464fffa23a49b76381b502570ba, type: 2}
+    value: {fileID: 4700025836871829864}
+  - key: {fileID: 8054825135488650635, guid: 76baf38ca58b95346a6268f4ad700b73, type: 2}
+    value: {fileID: 4700025836871829864}
+  - key: {fileID: 4163864453902496612, guid: 90c1ee564fb56bd4abf944788e43b1b5, type: 2}
+    value: {fileID: 1840825429}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 1528336237}
@@ -10977,7 +11017,7 @@ MonoBehaviour:
   scenario:
   - scenarioNodeCode: 0
     name: Introduction
-    timelineClip: {fileID: 11400000, guid: db16227ff8640c94db72377606901738, type: 2}
+    timelineClip: {fileID: 11400000, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 1
@@ -11163,7 +11203,7 @@ MonoBehaviour:
     eventIndex: 14
   - scenarioNodeCode: 31
     name: Le symptome principal est la douleur
-    timelineClip: {fileID: 11400000, guid: 83370080258be6e4fa5ca7615019a266, type: 2}
+    timelineClip: {fileID: 11400000, guid: e57049323be6a274a9af42e47aa1a85b, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 8
@@ -77193,10 +77233,9 @@ MonoBehaviour:
     nextScenarioNodeCode: 2
     mainText: "Plus d\u2019un quart des personnes atteintes d'endom\xE9triose d\xE9clarent
       avoir demand\xE9 au moins 5 jours de cong\xE9s ou de RTT au cours des 12 derniers
-      mois en anticipant les sympt\xF4mes incapacitants de leur endom\xE9triose,
-      pendant leurs r\xE8gles par exemple. Un tiers d'entre elles quittent pr\xE9cipitamment
-      au moins une fois par mois leur travail pour rentrer \xE0 leur domicile, ou
-      consulter un\xB7e m\xE9decin."
+      mois en anticipant les sympt\xF4mes incapacitants de leur endom\xE9triose.
+      Un tiers d'entre elles quittent pr\xE9cipitamment au moins une fois par mois
+      leur travail pour rentrer \xE0 leur domicile, ou consulter un\xB7e m\xE9decin."
     sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
   - code: 2
     nextScenarioNodeCode: 7
@@ -78938,8 +78977,7 @@ MonoBehaviour:
   - code: 1
     nextScenarioNodeCode: 12
     missionTitle: Aller aux toilettes
-    missionText: "Rends-toi aux toilettes pour g\xE9rer tes troubles digestifs, c'est
-      au fond du couloir"
+    missionText: Rends-toi aux toilettes, c'est au fond du couloir
     targetMissions:
     - name: Aller au toilettes 1/3
       triggerObject: {fileID: 2693525033826028358}
@@ -78949,8 +78987,7 @@ MonoBehaviour:
   - code: 2
     nextScenarioNodeCode: 15
     missionTitle: Aller aux toilettes
-    missionText: "Rends-toi aux toilettes pour g\xE9rer tes troubles digestifs, c'est
-      au fond du couloir"
+    missionText: Rends-toi aux toilettes, c'est au fond du couloir
     targetMissions:
     - name: Aller au toilettes 2/3
       triggerObject: {fileID: 2693525033826028358}
@@ -78960,8 +78997,7 @@ MonoBehaviour:
   - code: 3
     nextScenarioNodeCode: 18
     missionTitle: Trouver Victor
-    missionText: "Va voir ton coll\xE8gue Victor \xE0 son bureau pour lui parler
-      de l'\xE9v\xE9nement"
+    missionText: "Va voir ton coll\xE8gue Victor \xE0 son bureau"
     targetMissions:
     - name: Trouver Victor
       triggerObject: {fileID: 919132148334163830}
@@ -78971,8 +79007,7 @@ MonoBehaviour:
   - code: 4
     nextScenarioNodeCode: 23
     missionTitle: Appeler mon amie
-    missionText: "Va en salle de pause pour t\xE9l\xE9phoner \xE0 ton amie, c'est
-      au fond du couloir"
+    missionText: Va en salle de pause, c'est au fond du couloir
     targetMissions:
     - name: Appeler mon amie
       triggerObject: {fileID: 2693525032888564259}
@@ -78992,8 +79027,7 @@ MonoBehaviour:
   - code: 6
     nextScenarioNodeCode: -10
     missionTitle: Aller aux toilettes
-    missionText: "Rends-toi aux toilettes pour g\xE9rer tes troubles digestifs, c'est
-      au fond du couloir"
+    missionText: Rends-toi aux toilettes, c'est au fond du couloir
     targetMissions:
     - name: Aller aux toilettes
       triggerObject: {fileID: 2693525033826028358}
@@ -81314,6 +81348,10 @@ MonoBehaviour:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
       audioClip: {fileID: 0}
+      text: Mes douleurs persistent !
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
       text: "J'ai d\xE9j\xE0 demand\xE9 un arr\xEAt maladie hier..."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -81330,6 +81368,10 @@ MonoBehaviour:
   - code: 5
     nextScenarioNodeCode: 8
     sentences:
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: J'ai encore super mal !
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
       audioClip: {fileID: 0}
@@ -81420,7 +81462,7 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: "Tu as l'air fatigu\xE9e, \xE7a va ?"
     - character: Catherine
-      characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
       audioClip: {fileID: 0}
       text: "\xC0 vrai dire, j'ai de l'endom\xE9triose donc c'est assez compliqu\xE9..."
     - character: Elisabeth
@@ -81434,7 +81476,7 @@ MonoBehaviour:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
       audioClip: {fileID: 0}
-      text: "Euh, \xE7a n'agit pas chez moi...Et tu sais, mais toutes les femmes
+      text: "Euh, \xE7a n'agit pas chez moi... Et tu sais, mais toutes les femmes
         ont une endom\xE9triose diff\xE9rente..."
     - character: Elisabeth
       characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
@@ -81479,25 +81521,25 @@ MonoBehaviour:
       text: "J'ai l'impression que je ne sais plus rien faire, que je n'arrive plus
         \xE0 r\xE9fl\xE9chir..."
     - character: Amie
-      characterImage: {fileID: 21300000, guid: 5649dd2ee48f24f4b858ec8c8d35e979, type: 3}
+      characterImage: {fileID: 21300000, guid: 079a15bd7d91c3e4398d9ff331e5a0a5, type: 3}
       audioClip: {fileID: 0}
       text: "J'ai lu le livre que tu m'as conseill\xE9 \"Id\xE9es re\xE7ues sur l'endom\xE9triose\"
         d'EndoFrance !"
     - character: Amie
-      characterImage: {fileID: 21300000, guid: 5649dd2ee48f24f4b858ec8c8d35e979, type: 3}
+      characterImage: {fileID: 21300000, guid: 079a15bd7d91c3e4398d9ff331e5a0a5, type: 3}
       audioClip: {fileID: 0}
       text: "Ils disent bien que c'est compliqu\xE9 au travail avec l'endom\xE9triose."
     - character: Amie
-      characterImage: {fileID: 21300000, guid: 5649dd2ee48f24f4b858ec8c8d35e979, type: 3}
+      characterImage: {fileID: 21300000, guid: 079a15bd7d91c3e4398d9ff331e5a0a5, type: 3}
       audioClip: {fileID: 0}
       text: "La fatigue et les douleurs, c'est normal que \xE7a joue sur la concentration
         !\r"
     - character: Amie
-      characterImage: {fileID: 21300000, guid: 5649dd2ee48f24f4b858ec8c8d35e979, type: 3}
+      characterImage: {fileID: 21300000, guid: 079a15bd7d91c3e4398d9ff331e5a0a5, type: 3}
       audioClip: {fileID: 0}
       text: "Ne culpabilise pas, ta maladie est bien r\xE9elle !"
     - character: Amie
-      characterImage: {fileID: 21300000, guid: 5649dd2ee48f24f4b858ec8c8d35e979, type: 3}
+      characterImage: {fileID: 21300000, guid: 079a15bd7d91c3e4398d9ff331e5a0a5, type: 3}
       audioClip: {fileID: 0}
       text: Ce n'est pas de ta faute !
   - code: 12
