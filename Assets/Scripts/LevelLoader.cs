@@ -71,4 +71,9 @@ public class LevelLoader : MonoBehaviour
             yield return null;
         }
     }
+
+    public void OpenLink(string openURL)
+    {
+        Application.OpenURL(openURL);
+    }
 }

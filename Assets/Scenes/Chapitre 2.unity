@@ -737,7 +737,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-36260
+  m_Name: pb_Mesh-98236
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6374,7 +6374,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
+  m_fontSize: 24
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10018,7 +10018,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2047653669436434028}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 6236e3285b4f1374a960e29b10944873, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -10326,9 +10326,9 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -6459255254020812013, guid: 8273425849c23fc43b34d33263edbec3, type: 2}
     value: {fileID: 0}
-  - key: {fileID: -3041184851047767869, guid: c4246b112a541974db195507bcc80a71, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 1907258036759530113}
-  - key: {fileID: -4231504496629793372, guid: c4246b112a541974db195507bcc80a71, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 1907258036759530113}
   - key: {fileID: -8939662080941348416, guid: e492b381d4e20d1468366d9c22080ec6, type: 2}
     value: {fileID: 512099366}
@@ -10796,6 +10796,34 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -5952325128335841756, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -4880401584861189634, guid: c4246b112a541974db195507bcc80a71, type: 2}
+    value: {fileID: 33810853}
+  - key: {fileID: 992886413980733059, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4880401584861189634, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8399410451829903801, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7289773646757926500, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -6196749856389899538, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4231504496629793372, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3041184851047767869, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -7814225705020557016, guid: c4246b112a541974db195507bcc80a71, type: 2}
+    value: {fileID: 4203963087950050027}
+  - key: {fileID: -2074090917229566951, guid: c4246b112a541974db195507bcc80a71, type: 2}
+    value: {fileID: 4203963087950050027}
+  - key: {fileID: 740226196983397714, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
+    value: {fileID: 502729138}
+  - key: {fileID: 3815729492395992380, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
+    value: {fileID: 3948484669531964596}
+  - key: {fileID: 4172558639654467747, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
+    value: {fileID: 512099366}
+  - key: {fileID: 3009147290267163957, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
+    value: {fileID: 512099366}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 1528336237}
@@ -10821,6 +10849,7 @@ PlayableDirector:
     - 59442c080a1348c47ab035b765330b1a: {fileID: 0}
     - 4f41170782fccc2468f34771a9a85b9e: {fileID: 0}
     - 495c9498cd5169440b27edccd5c25005: {fileID: 0}
+    - f32ec3d9c3225f947b432f7f354e51d7: {fileID: 2097207268}
     - 8981522497d0fa841aa82a41770ddd3e: {fileID: 335178734}
     - dbbe94c6211cfa9469f3efa765807f3c: {fileID: 1872336436}
     - f42a4cea6d5be784682dfbd07ec07d8d: {fileID: 0}
@@ -11630,7 +11659,13 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig1:LeftHandThumb1'\n\tTransform 'mixamorig1:LeftHandPinky2'\n\tTransform
+    'mixamorig1:RightHand'\n\tTransform 'mixamorig1:LeftHandMiddle2'\n\tTransform
+    'mixamorig1:RightFoot'\n\tTransform 'mixamorig1:Spine1'\n\tTransform 'mixamorig1:RightLeg'\n\tTransform
+    'mixamorig1:RightHandMiddle2'\n\tTransform 'mixamorig1:Hips'\n\tTransform 'mixamorig1:RightArm'\n\tand
+    more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -11875,102 +11910,138 @@ MonoBehaviour:
     eventType: 1
     eventIndex: 6
   - scenarioNodeCode: 10
-    name: "J'ai des erreurs \xE0 corriger"
-    timelineClip: {fileID: 11400000, guid: c4246b112a541974db195507bcc80a71, type: 2}
+    name: Aller au toilettes 1/3
+    timelineClip: {fileID: 11400000, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
+    directorWrapMode: 2
+    eventType: 2
+    eventIndex: 1
+  - scenarioNodeCode: 11
+    name: "J'ai des erreurs \xE0 corriger (composant mission)"
+    timelineClip: {fileID: 11400000, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 7
-  - scenarioNodeCode: 11
+  - scenarioNodeCode: 12
     name: J'en ai marre
     timelineClip: {fileID: 11400000, guid: eab460b1548984f489e7170387ea4785, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 2
-  - scenarioNodeCode: 12
+  - scenarioNodeCode: 13
+    name: Aller au toilettes 2/3
+    timelineClip: {fileID: 11400000, guid: 07b2ba6592a3d5747b275591c3a432c0, type: 2}
+    directorWrapMode: 2
+    eventType: 2
+    eventIndex: 2
+  - scenarioNodeCode: 14
+    name: Tu vas beaucoup aux toilettes (composant mission)
+    timelineClip: {fileID: 11400000, guid: c4246b112a541974db195507bcc80a71, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 8
+  - scenarioNodeCode: 15
+    name: Troubles digestifs et urinaires
+    timelineClip: {fileID: 11400000, guid: 336f7df87b00a164bb16680ac66e399e, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 4
+  - scenarioNodeCode: 16
     name: Trouver Victor
     timelineClip: {fileID: 11400000, guid: 5f9f5c5262d901b46a93f1d9c778798b, type: 2}
     directorWrapMode: 2
     eventType: 2
-    eventIndex: 1
-  - scenarioNodeCode: 13
-    name: "Difficult\xE9s \xE0 aider lors des \xE9v\xE8nements"
+    eventIndex: 3
+  - scenarioNodeCode: 17
+    name: "Difficult\xE9s \xE0 aider lors des \xE9v\xE8nements (composant mission)"
     timelineClip: {fileID: 11400000, guid: ff009021ef0049a49bee9eab9284eda3, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 8
-  - scenarioNodeCode: 14
+    eventIndex: 9
+  - scenarioNodeCode: 18
     name: "Stations debouts prolong\xE9s et d\xE9placements"
     timelineClip: {fileID: 11400000, guid: 15876f6730b1eef428e7f2947fb7079f, type: 2}
     directorWrapMode: 0
     eventType: 0
-    eventIndex: 4
-  - scenarioNodeCode: 15
+    eventIndex: 5
+  - scenarioNodeCode: 19
+    name: "Tu as qu'\xE0 te faire op\xE9rer"
+    timelineClip: {fileID: 11400000, guid: eab460b1548984f489e7170387ea4785, type: 2}
+    directorWrapMode: 0
+    eventType: 1
+    eventIndex: 10
+  - scenarioNodeCode: 20
+    name: Asymptomatiques
+    timelineClip: {fileID: 11400000, guid: 336f7df87b00a164bb16680ac66e399e, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 6
+  - scenarioNodeCode: 21
     name: Aller en salle de pause pour appeler
     timelineClip: {fileID: 11400000, guid: 77d4e880557f9c04f9a59a0fe34d84ec, type: 2}
     directorWrapMode: 2
     eventType: 2
-    eventIndex: 2
-  - scenarioNodeCode: 16
-    name: "Appel \xE0 une amie"
+    eventIndex: 4
+  - scenarioNodeCode: 22
+    name: "Appel \xE0 une amie (composant mission)"
     timelineClip: {fileID: 11400000, guid: b3cd4a71ecbcc1c478b1385e4e1521c9, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 9
-  - scenarioNodeCode: 17
+    eventIndex: 11
+  - scenarioNodeCode: 23
     name: "D\xE9j\xE0 que tu as loup\xE9 la r\xE9union"
     timelineClip: {fileID: 11400000, guid: feacaf59a980213489f575079b67bab4, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 10
-  - scenarioNodeCode: 18
+    eventIndex: 12
+  - scenarioNodeCode: 24
     name: "Capacit\xE9s r\xE9duites"
     timelineClip: {fileID: 11400000, guid: 336f7df87b00a164bb16680ac66e399e, type: 2}
     directorWrapMode: 0
     eventType: 0
-    eventIndex: 5
-  - scenarioNodeCode: 19
+    eventIndex: 7
+  - scenarioNodeCode: 25
     name: "Aller \xE0 la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 4dac6db9aa5f54145ab4f6eb09ebe59d, type: 2}
     directorWrapMode: 2
     eventType: 2
-    eventIndex: 3
-  - scenarioNodeCode: 20
+    eventIndex: 5
+  - scenarioNodeCode: 26
     name: "Crise pendant la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 24dd9464fffa23a49b76381b502570ba, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 3
-  - scenarioNodeCode: 21
+  - scenarioNodeCode: 27
     name: J'entends en sourdine
     timelineClip: {fileID: 11400000, guid: 76baf38ca58b95346a6268f4ad700b73, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 11
-  - scenarioNodeCode: 22
+    eventIndex: 13
+  - scenarioNodeCode: 28
     name: "Aller au toilette pendant la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 3ef07a6b3e1bbf14687ee62322a380d8, type: 2}
     directorWrapMode: 2
     eventType: 2
-    eventIndex: 4
-  - scenarioNodeCode: 23
+    eventIndex: 6
+  - scenarioNodeCode: 29
     name: "Retourner \xE0 la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 45f7eba458c47bf4eb1ad12d3f620a6b, type: 2}
     directorWrapMode: 2
     eventType: 2
-    eventIndex: 5
-  - scenarioNodeCode: 24
+    eventIndex: 7
+  - scenarioNodeCode: 30
     name: "O\xF9 \xE9tiez vous pendant tout ce temps ? (composant mission)"
     timelineClip: {fileID: 11400000, guid: 76baf38ca58b95346a6268f4ad700b73, type: 2}
     directorWrapMode: 0
     eventType: 1
-    eventIndex: 12
-  - scenarioNodeCode: 25
+    eventIndex: 14
+  - scenarioNodeCode: 31
     name: Le symptome principal est la douleur
     timelineClip: {fileID: 11400000, guid: 83370080258be6e4fa5ca7615019a266, type: 2}
     directorWrapMode: 0
     eventType: 0
-    eventIndex: 6
-  - scenarioNodeCode: 26
+    eventIndex: 8
+  - scenarioNodeCode: 32
     name: Fin du chapitre 2
     timelineClip: {fileID: 0}
     directorWrapMode: 2
@@ -78019,22 +78090,36 @@ MonoBehaviour:
     sourceText: "Sources : Enqu\xEAtes Endovie 2020 IPSOS&Gedeon Richter et \"Endotravail\"
       par le CEET en 2020"
   - code: 4
-    nextScenarioNodeCode: 15
+    nextScenarioNodeCode: 16
+    mainText: "L'endom\xE9triose peut engendrer des sympt\xF4mes difficiles \xE0
+      g\xE9rer en entreprise comme les troubles digestifs ou les troubles urinaires.
+      Plus d\u2019un quart des personnes atteintes d'endom\xE9triose d\xE9clarent
+      des passages quotidiens aux toilettes g\xEAnants."
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+  - code: 5
+    nextScenarioNodeCode: 19
     mainText: "Pour les personnes atteintes d'endom\xE9triose, il peut \xEAtre difficile
       d'exercer leur m\xE9tier surtout, s\u2019il exige des stations debout prolong\xE9es
       ou des d\xE9placements fr\xE9quents.\r"
     sourceText: "Source : Livre blanc Endom\xE9triose et emploi par EndoFrance et
       K\xE9rialis"
-  - code: 5
-    nextScenarioNodeCode: 19
+  - code: 6
+    nextScenarioNodeCode: 21
+    mainText: "Il existe des endom\xE9trioses asymptomatiques qui se d\xE9veloppent
+      sans bruit, que l'on d\xE9couvre m\xEAme par hasard, ou dans le cadre d'un
+      bilan de fertilit\xE9. Dans 1/3 des cas, l\u2019endom\xE9triose reste m\xEAme
+      superficielle, se stabilise avec un traitement simple et n'\xE9volue pas."
+    sourceText: 'Source : Evers Edito de Human Reproduction 2013'
+  - code: 7
+    nextScenarioNodeCode: 25
     mainText: "62 % des personnes atteintes d'endom\xE9triose notent des capacit\xE9s
       physiques et intellectuelles r\xE9duites pour travailler, 53 % une diminution
       de leur capacit\xE9 de travail et 60 % un pouvoir de concentration \xE0 la
       baisse."
     sourceText: "Source : Enqu\xEAte Endovie 2020 IPSOS&Gedeon Richter en collaboration
       avec EndoFrance"
-  - code: 6
-    nextScenarioNodeCode: 26
+  - code: 8
+    nextScenarioNodeCode: 32
     mainText: "Pour 70 % des personnes atteintes d'endom\xE9triose, le sympt\xF4me
       principal est la douleur ! La douleur est amplifi\xE9e par le stress ! 58 %
       des personnes atteintes d'endom\xE9triose ont un niveau de stress plus \xE9lev\xE9. "
@@ -79724,7 +79809,29 @@ MonoBehaviour:
   acceptButton: {fileID: 7861263002839659181}
   missions:
   - code: 1
-    nextScenarioNodeCode: 14
+    nextScenarioNodeCode: 12
+    missionTitle: Aller aux toilettes
+    missionText: "Rends-toi aux toilettes pour g\xE9rer tes troubles digestifs, c'est
+      au fond du couloir"
+    targetMissions:
+    - name: Aller au toilettes 1/3
+      triggerObject: {fileID: 2693525033826028358}
+      eventType: 1
+      scenarioNodeCode: 11
+    isAccomplished: 0
+  - code: 2
+    nextScenarioNodeCode: 15
+    missionTitle: Aller aux toilettes
+    missionText: "Rends-toi aux toilettes pour g\xE9rer tes troubles digestifs, c'est
+      au fond du couloir"
+    targetMissions:
+    - name: Aller au toilettes 2/3
+      triggerObject: {fileID: 2693525033826028358}
+      eventType: 1
+      scenarioNodeCode: 14
+    isAccomplished: 0
+  - code: 3
+    nextScenarioNodeCode: 18
     missionTitle: Trouver Victor
     missionText: "Va voir ton coll\xE8gue Victor \xE0 son bureau pour lui parler
       de l'\xE9v\xE9nement"
@@ -79732,10 +79839,10 @@ MonoBehaviour:
     - name: Trouver Victor
       triggerObject: {fileID: 919132148334163830}
       eventType: 1
-      scenarioNodeCode: 13
+      scenarioNodeCode: 17
     isAccomplished: 0
-  - code: 2
-    nextScenarioNodeCode: 17
+  - code: 4
+    nextScenarioNodeCode: 23
     missionTitle: Appeler mon amie
     missionText: "Va en salle de pause pour t\xE9l\xE9phoner \xE0 ton amie, c'est
       au fond du couloir"
@@ -79743,9 +79850,9 @@ MonoBehaviour:
     - name: Appeler mon amie
       triggerObject: {fileID: 2693525032888564259}
       eventType: 1
-      scenarioNodeCode: 16
+      scenarioNodeCode: 22
     isAccomplished: 0
-  - code: 3
+  - code: 5
     nextScenarioNodeCode: -10
     missionTitle: "Aller \xE0 la r\xE9union\t"
     missionText: "Rends-toi \xE0 la salle de r\xE9union avec tes coll\xE8gues"
@@ -79753,9 +79860,9 @@ MonoBehaviour:
     - name: "Aller \xE0 la r\xE9union\t"
       triggerObject: {fileID: 2693525034107598052}
       eventType: 3
-      scenarioNodeCode: 20
+      scenarioNodeCode: 26
     isAccomplished: 0
-  - code: 4
+  - code: 6
     nextScenarioNodeCode: -10
     missionTitle: Aller aux toilettes
     missionText: "Rends-toi aux toilettes pour g\xE9rer tes troubles digestifs, c'est
@@ -79764,17 +79871,17 @@ MonoBehaviour:
     - name: Aller aux toilettes
       triggerObject: {fileID: 2693525033826028358}
       eventType: 2
-      scenarioNodeCode: 23
+      scenarioNodeCode: 29
     isAccomplished: 0
-  - code: 5
-    nextScenarioNodeCode: 25
+  - code: 7
+    nextScenarioNodeCode: 31
     missionTitle: "Retouner \xE0 la r\xE9union"
     missionText: "Retourne \xE0 la salle de r\xE9union avec tes coll\xE8gues"
     targetMissions:
     - name: "Retouner \xE0 la r\xE9union"
       triggerObject: {fileID: 2693525034107598052}
       eventType: 1
-      scenarioNodeCode: 24
+      scenarioNodeCode: 30
     isAccomplished: 0
 --- !u!1 &3948484670021900856
 GameObject:
@@ -80808,7 +80915,13 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig8:Hips'\n\tTransform 'mixamorig8:LeftLeg'\n\tTransform
+    'mixamorig8:RightHandRing2'\n\tTransform 'mixamorig8:RightHandThumb2'\n\tTransform
+    'mixamorig8:LeftShoulder'\n\tTransform 'mixamorig8:LeftHandRing1'\n\tTransform
+    'mixamorig8:LeftHandThumb2'\n\tTransform 'mixamorig8:RightHandRing3'\n\tTransform
+    'mixamorig8:LeftHandPinky1'\n\tTransform 'mixamorig8:LeftArm'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -82124,7 +82237,7 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: "Non, j'ai juste tr\xE8s mal dormi..."
   - code: 7
-    nextScenarioNodeCode: 11
+    nextScenarioNodeCode: -10
     sentences:
     - character: Elisabeth
       characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
@@ -82137,6 +82250,29 @@ MonoBehaviour:
       text: "Je t'ai mis quelques commentaires. Tu peux m'envoyer une version corrig\xE9e
         aujourd'hui ?"
   - code: 8
+    nextScenarioNodeCode: -10
+    sentences:
+    - character: Louise
+      characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
+      audioClip: {fileID: 0}
+      text: "Je t'ai vu aller beaucoup aux toilettes depuis ce matin, \xE7a va ?"
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: "Oui, \xE7a va merci, j'ai juste mal au ventre..."
+    - character: Louise
+      characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
+      audioClip: {fileID: 0}
+      text: Quoi ? Tu as une gastro ? Rentre chez toi, tu vas nous contaminer !
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: "Mais non \xE7a n'a rien \xE0 voir..."
+    - character: Louise
+      characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
+      audioClip: {fileID: 0}
+      text: Bah alors, c'est quoi ? Tu as une cystite ?
+  - code: 9
     nextScenarioNodeCode: -10
     sentences:
     - character: Catherine
@@ -82154,7 +82290,52 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: Oui, ben moi aussi, j'ai mal au dos et je le fais. T'as toujours un truc
         qui ne va pas toi !
-  - code: 9
+  - code: 10
+    nextScenarioNodeCode: 20
+    sentences:
+    - character: Elisabeth
+      characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
+      audioClip: {fileID: 0}
+      text: "Tu as l'air fatigu\xE9e, \xE7a va ?"
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
+      audioClip: {fileID: 0}
+      text: "\xC0 vrai dire, j'ai de l'endom\xE9triose donc c'est assez compliqu\xE9..."
+    - character: Elisabeth
+      characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
+      audioClip: {fileID: 0}
+      text: "Mais je connais quelqu\u2019un qui en a et elle va bien !"
+    - character: Elisabeth
+      characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
+      audioClip: {fileID: 0}
+      text: Tu n'as pas un doliprane ou un spasfon ? C'est la base !
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: "Euh, \xE7a n'agit pas chez moi...Et tu sais, mais toutes les femmes
+        ont une endom\xE9triose diff\xE9rente..."
+    - character: Elisabeth
+      characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
+      audioClip: {fileID: 0}
+      text: "Ah oui ? Bon ... Pourquoi tu te fais pas op\xE9rer ?"
+    - character: Elisabeth
+      characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
+      audioClip: {fileID: 0}
+      text: "Au moins, tu seras tranquille apr\xE8s !"
+    - character: Elisabeth
+      characterImage: {fileID: 21300000, guid: 6507a0ca79a7b514185b422f10dad8f1, type: 3}
+      audioClip: {fileID: 0}
+      text: "Ou alors trouve toi un mec et fais un b\xE9b\xE9... C'est la solution,
+        il parait !"
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: "C'est une id\xE9e re\xE7ue !"
+    - character: Catherine
+      characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
+      audioClip: {fileID: 0}
+      text: Quand tu auras 5 minutes, va consulter le site d'EndoFrance.
+  - code: 11
     nextScenarioNodeCode: -10
     sentences:
     - character: Catherine
@@ -82197,8 +82378,8 @@ MonoBehaviour:
       characterImage: {fileID: 21300000, guid: 5649dd2ee48f24f4b858ec8c8d35e979, type: 3}
       audioClip: {fileID: 0}
       text: Ce n'est pas de ta faute !
-  - code: 10
-    nextScenarioNodeCode: 18
+  - code: 12
+    nextScenarioNodeCode: 24
     sentences:
     - character: Louise
       characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
@@ -82213,8 +82394,8 @@ MonoBehaviour:
       audioClip: {fileID: 0}
       text: "D\xE9j\xE0 que tu as loup\xE9 la r\xE9union la plus importante du projet,
         il ne faudrait pas que tu loupes celle-ci !"
-  - code: 11
-    nextScenarioNodeCode: 25
+  - code: 13
+    nextScenarioNodeCode: 31
     sentences:
     - character: Michael
       characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
@@ -82229,13 +82410,20 @@ MonoBehaviour:
       characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
       audioClip: {fileID: 0}
       text: "Catherine, vous \xE9coutez ?"
-  - code: 12
+  - code: 14
     nextScenarioNodeCode: -10
     sentences:
     - character: Michael
       characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
       audioClip: {fileID: 0}
       text: "O\xF9 \xE9tiez-vous Catherine ?"
+    - character: Michael
+      characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
+      audioClip: {fileID: 0}
+      text: "Vous avez loup\xE9 la partie la plus importante de la r\xE9union !"
+  - code: 15
+    nextScenarioNodeCode: -10
+    sentences:
     - character: Michael
       characterImage: {fileID: 21300000, guid: d124c543607c90b42a8ed46d16724838, type: 3}
       audioClip: {fileID: 0}
@@ -102454,14 +102642,14 @@ MonoBehaviour:
     choices:
     - Pff, je vais voir ce que je peux faire...
     - D'acc...
-    scenarioNodeNextCodes: 0c0000000c000000
+    scenarioNodeNextCodes: 0d0000000d000000
     choosenActionIndex: 0
   - code: 3
     nextScenarioNodeCode: -10
     choices:
     - Attendre que la crise passe
     - Sortir et aller aux toilettes
-    scenarioNodeNextCodes: 1500000016000000
+    scenarioNodeNextCodes: 1b0000001c000000
     choosenActionIndex: 0
 --- !u!1 &7984738224544126048
 GameObject:
@@ -103752,12 +103940,12 @@ PrefabInstance:
     - target: {fileID: 4748007672991137008, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8307317988962659962, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8619902071344497707, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}

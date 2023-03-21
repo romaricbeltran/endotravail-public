@@ -609,7 +609,7 @@ MonoBehaviour:
   m_text: "Pour 62% des femmes atteintes d'endom\xE9triose se lever le matin est
     parfois presque impossible."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 294712347c9f2ee4faed7f6f9a4801d6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
     type: 2}
   m_fontSharedMaterials: []
@@ -4098,6 +4098,12 @@ MonoBehaviour:
     directorWrapMode: 0
     eventType: 0
     eventIndex: 1
+  - scenarioNodeCode: 12345
+    name: Popup trop long
+    timelineClip: {fileID: 11400000, guid: 509f0ec45a2980b4895ca528f3dd1be0, type: 2}
+    directorWrapMode: 0
+    eventType: 0
+    eventIndex: 12345
   - scenarioNodeCode: 1
     name: Introduction
     timelineClip: {fileID: 11400000, guid: ed46eac23d5073949bdbaabbb889071f, type: 2}
@@ -4767,15 +4773,19 @@ MonoBehaviour:
   nextButton: {fileID: 845771911}
   popups:
   - code: 1
-    nextScenarioNodeCode: 1
+    nextScenarioNodeCode: 12345
     mainText: "Ce\_serious\_game\_a pour objectif de sensibiliser les\_salari\xE9\xB7e\xB7s,
       les managers, et la Direction \xE0 l'impact de l'endom\xE9triose sur le quotidien
-      professionnel.\_Il d\xE9crit quelques situations rencontr\xE9es par des personnes\_menstru\xE9es\_atteintes\_d'endom\xE9triose
-      dans le cadre du travail.\_Il donne \xE9galement des pistes pour vous aider
-      \xE0 trouver des solutions.\r Plusieurs sc\xE9narios sont propos\xE9s. Recommencez
-      le jeu autant que\_n\xE9cessaire\_pour tout tester !\r\nBien \xE9videmment,
-      ce\_serious\_game\_ne peut pas \xEAtre exhaustif : chaque\_cas d'endom\xE9triose
-      est unique et chaque situation personnelle aussi.\r\nBonne d\xE9couverte !"
+      professionnel.\_Il d\xE9crit quelques situations rencontr\xE9es par des personnes\_menstru\xE9es
+      atteintes\_d'endom\xE9triose dans le cadre du travail.\_Il donne \xE9galement
+      des pistes pour vous aider \xE0 trouver des solutions."
+    sourceText: 
+  - code: 12345
+    nextScenarioNodeCode: 1
+    mainText: "Plusieurs sc\xE9narios sont propos\xE9s. Recommencez le jeu autant
+      que\_n\xE9cessaire\_pour tout tester !\r\n\r\nBien \xE9videmment, ce\_serious\_game\_ne
+      peut pas \xEAtre exhaustif : chaque\_cas d'endom\xE9triose est unique et chaque
+      situation personnelle aussi.\r\n\r\nBonne d\xE9couverte !"
     sourceText: 
   - code: 2
     nextScenarioNodeCode: 2
@@ -8895,7 +8905,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
+  m_fontSize: 24
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
