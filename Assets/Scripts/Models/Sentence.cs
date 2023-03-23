@@ -8,7 +8,7 @@ public class Sentence
 {
     [SerializeField] private string character;
     [SerializeField] private Sprite characterImage;
-    [SerializeField] private AudioClip audioClip;
+    [SerializeField] private string audioClipURL;
     [TextArea(3,10)] [SerializeField] private string text;
 
     public string GetCharacter()
@@ -21,9 +21,9 @@ public class Sentence
         return characterImage;
     }
 
-    public AudioClip GetAudioClip()
+    public string GetAudioClipURL()
     {
-        return audioClip;
+        return audioClipURL;
     }
 
     public string GetText()

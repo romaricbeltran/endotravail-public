@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 // Gère les dialogues pour une scène
@@ -88,7 +89,6 @@ public class DialogueManager : MonoBehaviour
             nameText.text = sentences[indexSentence].GetCharacter();
             characterImage.sprite = sentences[indexSentence].GetCharacterImage();
             dialogueText.text = sentences[indexSentence].GetText();
-            audioSource.clip = sentences[indexSentence].GetAudioClip();
             StartCoroutine(TypeSentence(sentences[indexSentence].GetText()));
             StartCoroutine(PlayAudio());
             indexSentence++;
@@ -98,15 +98,41 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    IEnumerator LoadAudioClip(string url)
+    {
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.WAV))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error while downloading audio clip : " + www.error);
+            }
+            else
+            {
+                AudioClip audioClip = DownloadHandlerAudioClip.GetContent(www);
+                if (audioClip != null)
+                {
+                    audioSource.clip = audioClip;
+                }
+            }
+        }
+    }
+
     IEnumerator PlayAudio()
     {
-        if (audioSource.clip)
+        if (!string.IsNullOrEmpty(sentences[indexSentence].GetAudioClipURL()))
         {
-            Debug.Log("Playing audio clip : " + audioSource.clip);
-            audioSource.Play();
-            while (audioSource.isPlaying)
+            yield return StartCoroutine(LoadAudioClip(sentences[indexSentence].GetAudioClipURL()));
+        
+            if (audioSource.clip)
             {
-                yield return null;
+                Debug.Log("Playing audio clip : " + audioSource.clip);
+                audioSource.Play();
+                while (audioSource.isPlaying)
+                {
+                    yield return null;
+                }
             }
         }
 

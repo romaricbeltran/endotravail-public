@@ -25,7 +25,7 @@ MonoBehaviour:
     m_Start: 1
     m_ClipIn: 0
     m_Asset: {fileID: -1567745478148761478}
-    m_Duration: 6.294598305597901
+    m_Duration: 12.411264972264561
     m_TimeScale: 1
     m_ParentTrack: {fileID: -9152119252059393453}
     m_EaseInDuration: 0
@@ -34,7 +34,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -55,7 +73,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: DesktopScreenCamera
   - m_Version: 1
-    m_Start: 7.294598305597901
+    m_Start: 13.411264972264561
     m_ClipIn: 0
     m_Asset: {fileID: 3921050688832984042}
     m_Duration: 10.7554016944021
@@ -214,7 +232,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 9
+    m_Start: 15.11666666666666
     m_ClipIn: 0
     m_Asset: {fileID: 1076420557819731015}
     m_Duration: 9.05
@@ -338,7 +356,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -2495248417336596219}
-    m_Duration: 18.05
+    m_Duration: 24.166666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2858783419420742087}
     m_EaseInDuration: 0
@@ -399,7 +417,7 @@ MonoBehaviour:
     m_AnimationCurves: {fileID: 0}
     m_Recordable: 0
     m_PostExtrapolationMode: 4
-    m_PreExtrapolationMode: 1
+    m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0
     m_DisplayName: Typing
@@ -847,7 +865,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 10
+    m_Start: 16.11666666666666
     m_ClipIn: 0
     m_Asset: {fileID: 7873070815728856255}
     m_Duration: 8.05
@@ -940,7 +958,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 9.5
+    m_Start: 15.61666666666666
     m_ClipIn: 0
     m_Asset: {fileID: -5074595077477048141}
     m_Duration: 8.55
@@ -1036,7 +1054,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 2024109723557850427}
-    m_Duration: 18.05
+    m_Duration: 24.166666666666
     m_TimeScale: 1
     m_ParentTrack: {fileID: 7142106017444180181}
     m_EaseInDuration: 0
@@ -1097,7 +1115,7 @@ MonoBehaviour:
     m_AnimationCurves: {fileID: 0}
     m_Recordable: 1
     m_PostExtrapolationMode: 1
-    m_PreExtrapolationMode: 1
+    m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0
     m_DisplayName: Recorded
