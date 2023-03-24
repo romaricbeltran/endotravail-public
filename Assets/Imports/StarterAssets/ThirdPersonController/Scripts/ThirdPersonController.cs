@@ -76,7 +76,7 @@ namespace StarterAssets
         public bool LockCameraPosition = false;
 
         // cinemachine
-        private float _cinemachineTargetYaw;
+        public float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
 
         // player
@@ -387,6 +387,12 @@ namespace StarterAssets
             {
                 AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
             }
+        }
+
+        // Custom function
+        public void SetCinemachineTargetYaw(float target)
+        {
+            _cinemachineTargetYaw = target;
         }
     }
 }

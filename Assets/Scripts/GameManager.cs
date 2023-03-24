@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject analogicButtons;
     public GameObject player;
 
+    private ThirdPersonController playerController;
     private PlayerInput playerInput;
 
     // void Awake()
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         GAME_PROGRESSION = "Start";
         updateProgression(0); // Start Progression From Beginning
+        playerController = player.GetComponent<ThirdPersonController>();
         playerInput = player.GetComponent<PlayerInput>();
 
     }
@@ -53,5 +55,11 @@ public class GameManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         myUICanvasControllerInput.VirtualResetMove();
         analogicButtons.SetActive(availability);
+    }
+
+    // Custom function
+    public void ResetPlayerCamera(float targetRotationY)
+    {
+        playerController.SetCinemachineTargetYaw(targetRotationY);
     }
 }

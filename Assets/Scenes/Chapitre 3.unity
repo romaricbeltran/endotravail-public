@@ -1795,8 +1795,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502729133}
-  m_LocalRotation: {x: -0, y: 0.28075042, z: -0, w: -0.9597808}
-  m_LocalPosition: {x: -9.391906, y: 14.911151, z: 8.381538}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 1.0316124, y: 14.911151, z: 19.04554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7209,7 +7209,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.0316124
+      value: 1.2316122
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -7219,7 +7219,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 19.04554
+      value: 2.345541
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -13160,6 +13160,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 53053f60a1eddb545866c7271149f207, type: 2}
     - {fileID: 11400000, guid: 6d66df8cf0bd1d74baeb79883f66b914, type: 2}
     - {fileID: 11400000, guid: 813ad51c819bf8b4dabf9e874a359eb5, type: 2}
+    - {fileID: 11400000, guid: 2f085fd0168f38644b38b09afb259dc6, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -13217,6 +13218,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1203913771}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: ResetPlayerCamera
+          m_Mode: 4
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1398489603336580721
 Transform:
   m_ObjectHideFlags: 0
@@ -13242,7 +13257,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2047653669436434028}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 7286284b496319642833f715c5fa37f3, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 568f4dd6a72a2144e81e6701b7bfa4c8, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -15935,7 +15950,7 @@ MonoBehaviour:
   missionManager: {fileID: 3948484669634081933}
   player: {fileID: 700302714}
   scenario:
-  - scenarioNodeCode: 0
+  - scenarioNodeCode: 99
     name: "Va voir ton manager dans la salle de r\xE9union"
     timelineClip: {fileID: 11400000, guid: 0bd1c882f5ec017458bcc76fe3d0d6c5, type: 2}
     directorWrapMode: 2
@@ -16013,7 +16028,7 @@ MonoBehaviour:
     directorWrapMode: 0
     eventType: 1
     eventIndex: 6
-  - scenarioNodeCode: 13
+  - scenarioNodeCode: 0
     name: "R\xE9actions n\xE9gatives"
     timelineClip: {fileID: 11400000, guid: ebea071bd4d70274ab89e92f14bef88f, type: 2}
     directorWrapMode: 0
