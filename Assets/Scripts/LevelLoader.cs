@@ -16,6 +16,22 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 3.0f;
     public GameObject retardedUI;
 
+    // Home Screen Transition
+    public Animator homeScreenTransition;
+
+    public void FirstLevel()
+    {
+        homeScreenTransition.SetTrigger("Start");
+        StartCoroutine(LoadFirstLevel());
+    }
+
+    IEnumerator LoadFirstLevel()
+    {
+        // Start CrossFade animation
+        yield return new WaitForSeconds(transitionTime*1.5f);
+        LoadLevel(1);
+    }
+
     public void LoadLevel(int sceneIndex)
     {
         // Changement du texte en fonction de la scène chargée
