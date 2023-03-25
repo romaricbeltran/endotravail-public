@@ -1659,7 +1659,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-831788
+  m_Name: pb_Mesh-912918
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4245,7 +4245,7 @@ MonoBehaviour:
   missionManager: {fileID: 151345029}
   player: {fileID: 8534731508664634236}
   scenario:
-  - scenarioNodeCode: 0
+  - scenarioNodeCode: 99
     name: Disclaimer(1)
     timelineClip: {fileID: 11400000, guid: 509f0ec45a2980b4895ca528f3dd1be0, type: 2}
     directorWrapMode: 0
@@ -4317,6 +4317,12 @@ MonoBehaviour:
     directorWrapMode: 2
     eventType: 5
     eventIndex: 2
+  - scenarioNodeCode: 11
+    name: Post-Appel
+    timelineClip: {fileID: 11400000, guid: 2023c4fad28530341a02746f4bc71674, type: 2}
+    directorWrapMode: 2
+    eventType: 2
+    eventIndex: 1
 --- !u!328 &1344078512 stripped
 VideoPlayer:
   m_CorrespondingSourceObject: {fileID: 7971272021645192931, guid: f6ab01273d8ef734b8e8fd47e1db066b,
@@ -4956,7 +4962,7 @@ MonoBehaviour:
       perdre en qualit\xE9 de service, en image de marque).\r\n"
     sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 4
-    nextScenarioNodeCode: 9
+    nextScenarioNodeCode: 11
     mainText: "Avant une op\xE9ration, il y a plusieurs rendez-vous \xE0 prendre
       en compte (anesth\xE9siste, radiologue, chirurgien digestif, urologue... selon
       les localisations des l\xE9sions). Annuler un rendez-vous peut retarder la
@@ -5941,7 +5947,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6945019
+      value: 1.0316124
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -5951,7 +5957,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.678654
+      value: 19.04554
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -6397,7 +6403,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-831804
+  m_Name: pb_Mesh-912934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6583,7 +6589,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-831796
+  m_Name: pb_Mesh-912926
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6869,7 +6875,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-831780
+  m_Name: pb_Mesh-912910
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -56737,7 +56743,7 @@ PlayableDirector:
   m_GameObject: {fileID: 8472434110559052693}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 8a5aac6d1ed68e54cbd95b406542439f, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: e0c52cedaa34bfd4399af3151422c8e6, type: 2}
   m_InitialState: 1
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -57029,6 +57035,26 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: -4940237004754118362, guid: cea3fc65e77893949ad6e0ede3d4a9c2, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -5278057656421409761, guid: ac052b966b8f5644588cc6067d1ae4b6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7393774558879958831, guid: ac052b966b8f5644588cc6067d1ae4b6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3497542117126942529, guid: ac052b966b8f5644588cc6067d1ae4b6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2661374855317695148, guid: ac052b966b8f5644588cc6067d1ae4b6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -4944415213179535620, guid: ac052b966b8f5644588cc6067d1ae4b6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8528061400470740271, guid: ac052b966b8f5644588cc6067d1ae4b6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6713204370466322207, guid: 2023c4fad28530341a02746f4bc71674, type: 2}
+    value: {fileID: 502729138}
+  - key: {fileID: 6242534999038042685, guid: 2023c4fad28530341a02746f4bc71674, type: 2}
+    value: {fileID: 253716412}
+  - key: {fileID: -2037068032460217874, guid: 2023c4fad28530341a02746f4bc71674, type: 2}
+    value: {fileID: 3159989196450925500}
+  - key: {fileID: 7185644054420774262, guid: 2023c4fad28530341a02746f4bc71674, type: 2}
+    value: {fileID: 7213551303316064998}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 1528336237}
