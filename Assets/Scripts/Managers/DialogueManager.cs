@@ -89,6 +89,7 @@ public class DialogueManager : MonoBehaviour
             nameText.text = sentences[indexSentence].GetCharacter();
             characterImage.sprite = sentences[indexSentence].GetCharacterImage();
             dialogueText.text = sentences[indexSentence].GetText();
+            audioSource.clip = sentences[indexSentence].GetAudioClip();
             StartCoroutine(TypeSentence(sentences[indexSentence].GetText()));
             StartCoroutine(PlayAudio());
             indexSentence++;
@@ -121,18 +122,13 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator PlayAudio()
     {
-        if (!string.IsNullOrEmpty(sentences[indexSentence].GetAudioClipURL()))
+        if (audioSource.clip)
         {
-            yield return StartCoroutine(LoadAudioClip(sentences[indexSentence].GetAudioClipURL()));
-        
-            if (audioSource.clip)
+            Debug.Log("Playing audio clip : " + audioSource.clip);
+            audioSource.Play();
+            while (audioSource.isPlaying)
             {
-                Debug.Log("Playing audio clip : " + audioSource.clip);
-                audioSource.Play();
-                while (audioSource.isPlaying)
-                {
-                    yield return null;
-                }
+                yield return null;
             }
         }
 
