@@ -1681,7 +1681,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368246205}
-  m_LocalRotation: {x: -0.056614235, y: 0.022730624, z: -0.0012892794, w: -0.9981365}
+  m_LocalRotation: {x: -0.056614235, y: 0.022730548, z: -0.0012892751, w: -0.9981365}
   m_LocalPosition: {x: 1.2676125, y: 15.161151, z: 15.830541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3580,7 +3580,6 @@ GameObject:
   - component: {fileID: 590661383}
   - component: {fileID: 590661386}
   - component: {fileID: 590661385}
-  - component: {fileID: 590661384}
   m_Layer: 0
   m_Name: Source Text
   m_TagString: Untagged
@@ -3605,29 +3604,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -160.86934}
-  m_SizeDelta: {x: 500, y: 69.13067}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &590661384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 590661382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: 58.89
-  m_LayoutPriority: 1
+  m_AnchoredPosition: {x: 250, y: -58.81}
+  m_SizeDelta: {x: 500, y: 58.57}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &590661385
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3714,10 +3693,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 62.182007}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &590661386
@@ -5195,9 +5174,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 100
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
@@ -7884,7 +7863,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.743449
+      value: 1.0316124
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -7894,7 +7873,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.88806
+      value: 19.04554
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -8232,7 +8211,6 @@ GameObject:
   - component: {fileID: 1921357949}
   - component: {fileID: 1921357952}
   - component: {fileID: 1921357951}
-  - component: {fileID: 1921357950}
   m_Layer: 0
   m_Name: Main Text
   m_TagString: Untagged
@@ -8258,28 +8236,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 250, y: 0}
-  m_SizeDelta: {x: 500, y: 60.86934}
+  m_SizeDelta: {x: 500, y: 48.81}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1921357950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921357948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: 1
-  m_LayoutPriority: 1
 --- !u!114 &1921357951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8365,10 +8323,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 57.51837}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1921357952
@@ -12353,7 +12311,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2047653669436434028}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: de6cc41bcf32d3743ae8a798d034b026, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 24dd9464fffa23a49b76381b502570ba, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -13545,6 +13503,8 @@ PlayableDirector:
     value: {fileID: 1329440273}
   - key: {fileID: 3795883271523793192, guid: bf3e9a18193178346af4d75c5398a702, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 2021930623226694923, guid: 3ecc3d64f451ebf46b60e87588b70def, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 1528336237}
@@ -14385,13 +14345,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig1:LeftHandThumb1'\n\tTransform 'mixamorig1:LeftHandPinky2'\n\tTransform
-    'mixamorig1:RightHand'\n\tTransform 'mixamorig1:LeftHandMiddle2'\n\tTransform
-    'mixamorig1:RightFoot'\n\tTransform 'mixamorig1:Spine1'\n\tTransform 'mixamorig1:RightLeg'\n\tTransform
-    'mixamorig1:RightHandMiddle2'\n\tTransform 'mixamorig1:Hips'\n\tTransform 'mixamorig1:RightArm'\n\tand
-    more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -14575,7 +14529,7 @@ MonoBehaviour:
   missionManager: {fileID: 3948484669634081933}
   player: {fileID: 512099368}
   scenario:
-  - scenarioNodeCode: 99
+  - scenarioNodeCode: 0
     name: Introduction
     timelineClip: {fileID: 11400000, guid: 9d137e4cf080fe6469d69cf338db741c, type: 2}
     directorWrapMode: 0
@@ -14725,7 +14679,7 @@ MonoBehaviour:
     directorWrapMode: 0
     eventType: 0
     eventIndex: 7
-  - scenarioNodeCode: 0
+  - scenarioNodeCode: 25
     name: "Aller \xE0 la r\xE9union"
     timelineClip: {fileID: 11400000, guid: 4dac6db9aa5f54145ab4f6eb09ebe59d, type: 2}
     directorWrapMode: 2
@@ -80450,7 +80404,7 @@ MonoBehaviour:
       mois en anticipant les sympt\xF4mes incapacitants de leur endom\xE9triose.
       Un tiers d'entre elles quittent pr\xE9cipitamment au moins une fois par mois
       leur travail pour rentrer \xE0 leur domicile, ou consulter un\xB7e m\xE9decin."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 2
     nextScenarioNodeCode: 7
     mainText: "82 % des personnes atteintes d'endom\xE9triose ont des r\xE9ticences
@@ -80459,7 +80413,7 @@ MonoBehaviour:
       reproches de la part de leur direction ou de leurs coll\xE8gues, de voir leur
       contrat non renouvel\xE9, d\u2019entra\xEEner une augmentation du travail pour
       leurs coll\xE8gues ou pour elle \xE0 leur retour)."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 3
     nextScenarioNodeCode: 9
     mainText: "Pour 62 % des personnes atteintes d'endom\xE9triose se lever le matin
@@ -80467,14 +80421,14 @@ MonoBehaviour:
       se rendre au travail malgr\xE9 des sympt\xF4mes qu\u2019elles estiment incapacitants
       au moins deux fois par mois."
     sourceText: "Sources : Enqu\xEAtes Endovie 2020 IPSOS&Gedeon Richter et \"Endotravail\"
-      par le CEET en 2020"
+      par le CEET - CNAM en 2020"
   - code: 4
     nextScenarioNodeCode: 16
     mainText: "L'endom\xE9triose peut engendrer des sympt\xF4mes difficiles \xE0
       g\xE9rer en entreprise comme les troubles digestifs ou les troubles urinaires.
       Plus d\u2019un quart des personnes atteintes d'endom\xE9triose d\xE9clarent
       des passages quotidiens aux toilettes g\xEAnants."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 5
     nextScenarioNodeCode: 19
     mainText: "Pour les personnes atteintes d'endom\xE9triose, il peut \xEAtre difficile
@@ -83905,13 +83859,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'mixamorig8:Hips'\n\tTransform 'mixamorig8:LeftLeg'\n\tTransform
-    'mixamorig8:RightHandRing2'\n\tTransform 'mixamorig8:RightHandThumb2'\n\tTransform
-    'mixamorig8:LeftShoulder'\n\tTransform 'mixamorig8:LeftHandRing1'\n\tTransform
-    'mixamorig8:LeftHandThumb2'\n\tTransform 'mixamorig8:RightHandRing3'\n\tTransform
-    'mixamorig8:LeftHandPinky1'\n\tTransform 'mixamorig8:LeftArm'\n\tand more ..."
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -107148,12 +107096,12 @@ PrefabInstance:
     - target: {fileID: 4748007672991137008, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8307317988962659962, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8619902071344497707, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}

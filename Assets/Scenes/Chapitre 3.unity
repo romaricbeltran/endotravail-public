@@ -2062,7 +2062,6 @@ GameObject:
   - component: {fileID: 693309350}
   - component: {fileID: 693309353}
   - component: {fileID: 693309352}
-  - component: {fileID: 693309351}
   m_Layer: 0
   m_Name: Source Text
   m_TagString: Untagged
@@ -2087,29 +2086,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -107.37076}
-  m_SizeDelta: {x: 500, y: 182.62924}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &693309351
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 693309349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: 58.89
-  m_LayoutPriority: 1
+  m_AnchoredPosition: {x: 250, y: -58.81}
+  m_SizeDelta: {x: 500, y: 58.57}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &693309352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2196,10 +2175,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 62.182007}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &693309353
@@ -4168,8 +4147,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 5}
-  m_SizeDelta: {x: -60, y: -69.999985}
+  m_AnchoredPosition: {x: 0, y: 35.000004}
+  m_SizeDelta: {x: -60, y: -130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1176776631
 MonoBehaviour:
@@ -4189,9 +4168,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
@@ -6798,7 +6777,6 @@ GameObject:
   - component: {fileID: 1789149348}
   - component: {fileID: 1789149351}
   - component: {fileID: 1789149350}
-  - component: {fileID: 1789149349}
   m_Layer: 0
   m_Name: Main Text
   m_TagString: Untagged
@@ -6824,28 +6802,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 250, y: 0}
-  m_SizeDelta: {x: 500, y: 107.37076}
+  m_SizeDelta: {x: 500, y: 48.81}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1789149349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789149347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: 1
-  m_LayoutPriority: 1
 --- !u!114 &1789149350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6931,10 +6889,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 57.51837}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1789149351
@@ -7209,7 +7167,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2316122
+      value: 1.0316124
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -7219,7 +7177,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.345541
+      value: 19.04554
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -13257,7 +13215,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2047653669436434028}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 568f4dd6a72a2144e81e6701b7bfa4c8, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 68907e14e0ec8cb44bc7906808aeeba2, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -15950,7 +15908,7 @@ MonoBehaviour:
   missionManager: {fileID: 3948484669634081933}
   player: {fileID: 700302714}
   scenario:
-  - scenarioNodeCode: 99
+  - scenarioNodeCode: 0
     name: "Va voir ton manager dans la salle de r\xE9union"
     timelineClip: {fileID: 11400000, guid: 0bd1c882f5ec017458bcc76fe3d0d6c5, type: 2}
     directorWrapMode: 2
@@ -16028,7 +15986,7 @@ MonoBehaviour:
     directorWrapMode: 0
     eventType: 1
     eventIndex: 6
-  - scenarioNodeCode: 0
+  - scenarioNodeCode: 13
     name: "R\xE9actions n\xE9gatives"
     timelineClip: {fileID: 11400000, guid: ebea071bd4d70274ab89e92f14bef88f, type: 2}
     directorWrapMode: 0
@@ -82202,12 +82160,12 @@ MonoBehaviour:
       de leur \xE9tat de sant\xE9, 64 % ont parl\xE9 de leur endom\xE9triose \xE0
       leur direction (sup\xE9rieur hi\xE9rarchique, RH) apr\xE8s une absence prolong\xE9e
       ou des arr\xEAts fr\xE9quents."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 2
     nextScenarioNodeCode: 7
     mainText: "25 % des entreprises proposent des am\xE9nagements d\u2019horaires
       ou de poste."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 3
     nextScenarioNodeCode: -10
     mainText: "Favoriser la formation des employ\xE9\xB7e\xB7s, des managers, de
@@ -82224,14 +82182,14 @@ MonoBehaviour:
       d\xE9clarent que celle-ci a r\xE9agi n\xE9gativement en tenant des propos intrusifs,
       inadapt\xE9s ou malveillants ou encore en adoptant des comportements per\xE7us
       comme relevant du harc\xE8lement ou de la \"mise au placard\"."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 5
     nextScenarioNodeCode: 20
     mainText: "Plus d\u2019un quart des personnes atteintes d'endom\xE9triose d\xE9clarent
       avoir chang\xE9 de m\xE9tier ou de statut afin d\u2019adapter leur vie professionnelle
       \xE0 l\u2019endom\xE9triose. Le statut d\u2019ind\xE9pendant appara\xEEt attractif,
       mais affaiblit cependant la protection sociale."
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 6
     nextScenarioNodeCode: 23
     mainText: "Un tiers des personnes atteintes d'endom\xE9triose consid\xE8rent

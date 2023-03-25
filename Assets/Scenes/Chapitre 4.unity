@@ -182,9 +182,9 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 0
+  m_Spacing: 10
   m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
   m_ChildScaleWidth: 0
@@ -5352,7 +5352,6 @@ GameObject:
   - component: {fileID: 1401000073}
   - component: {fileID: 1401000076}
   - component: {fileID: 1401000075}
-  - component: {fileID: 1401000074}
   m_Layer: 0
   m_Name: Main Text
   m_TagString: Untagged
@@ -5378,28 +5377,8 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 250, y: 0}
-  m_SizeDelta: {x: 500, y: 103.04148}
+  m_SizeDelta: {x: 500, y: 48.81}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1401000074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401000072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: 1
-  m_LayoutPriority: 1
 --- !u!114 &1401000075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5424,7 +5403,8 @@ MonoBehaviour:
     parfois presque impossible."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5484,10 +5464,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 57.51837}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1401000076
@@ -5848,7 +5828,6 @@ GameObject:
   - component: {fileID: 1615713575}
   - component: {fileID: 1615713578}
   - component: {fileID: 1615713577}
-  - component: {fileID: 1615713576}
   m_Layer: 0
   m_Name: Source Text
   m_TagString: Untagged
@@ -5873,29 +5852,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -103.04148}
-  m_SizeDelta: {x: 500, y: 126.95853}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1615713576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1615713574}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: -1
-  m_PreferredHeight: -1
-  m_FlexibleWidth: 1
-  m_FlexibleHeight: 58.89
-  m_LayoutPriority: 1
+  m_AnchoredPosition: {x: 250, y: -58.81}
+  m_SizeDelta: {x: 500, y: 171.19002}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1615713577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5921,7 +5880,8 @@ MonoBehaviour:
     de l\u2019emploi et du travail (CEET) en 2020"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5981,10 +5941,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 62.182007}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1615713578
@@ -8375,7 +8335,7 @@ MonoBehaviour:
   m_text: Je vais prendre rendez-vous avec les Ressources Humaines.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -8400,7 +8360,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 19.3
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9260,7 +9220,7 @@ MonoBehaviour:
       m\xE9dical, comme le reste de la profession ! Pourtant, seulement 66 % des
       personnes atteintes d'endom\xE9triose ont fait part de leur maladie \xE0 la
       m\xE9decine du travail.\r"
-    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET en 2020"
+    sourceText: "Source : Enqu\xEAte \"Endotravail\" par le CEET - CNAM en 2020"
   - code: 2
     nextScenarioNodeCode: 12
     mainText: "Ces \xAB petites \xBB solutions peuvent para\xEEtre insignifiantes,
@@ -16798,7 +16758,7 @@ MonoBehaviour:
   m_text: Je vais prendre rendez-vous avec les Ressources Humaines.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16823,7 +16783,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 19.3
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17325,7 +17285,7 @@ MonoBehaviour:
   m_text: Je vais prendre rendez-vous avec les Ressources Humaines.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -17350,7 +17310,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 19.3
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17905,7 +17865,7 @@ MonoBehaviour:
   m_text: Continuer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -18419,7 +18379,8 @@ MonoBehaviour:
   m_text: Briefer Marc
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19048,7 +19009,7 @@ MonoBehaviour:
   m_text: Je vais prendre rendez-vous avec les Ressources Humaines.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19073,7 +19034,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 19.3
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -21464,7 +21425,7 @@ MonoBehaviour:
   m_text: Je vais prendre rendez-vous avec les Ressources Humaines.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -21489,7 +21450,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 19.3
   m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -22002,7 +21963,8 @@ MonoBehaviour:
   m_text: Trouver Marc pour blablabla
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -22824,7 +22786,7 @@ MonoBehaviour:
   m_text: Accepter la mission
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
-  m_sharedMaterial: {fileID: -591118078197784826, guid: 294712347c9f2ee4faed7f6f9a4801d6,
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -23102,7 +23064,7 @@ PlayableDirector:
   m_GameObject: {fileID: 4187983017606911372}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 30c51d9f8588b9a4c9f87b470e375f10, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 3ceced63b490d8b4dbe45f5f2a26c1a6, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -23532,6 +23494,20 @@ PlayableDirector:
     value: {fileID: 5866666020030743413}
   - key: {fileID: 5054190525845750214, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     value: {fileID: 5866666020030743413}
+  - key: {fileID: -921210440014681558, guid: c042cbc1f39f9a24d83502fd412fb6f4, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3383439389374599687, guid: c042cbc1f39f9a24d83502fd412fb6f4, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -1817853030450314965, guid: c042cbc1f39f9a24d83502fd412fb6f4, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -9152119252059393453, guid: 3ceced63b490d8b4dbe45f5f2a26c1a6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -939743128228593498, guid: 3ceced63b490d8b4dbe45f5f2a26c1a6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -2163711022335191985, guid: 3ceced63b490d8b4dbe45f5f2a26c1a6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 8015412297662999859, guid: 3ceced63b490d8b4dbe45f5f2a26c1a6, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 0}
@@ -24488,20 +24464,20 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: Bonjour, pouvez-vous m'expliquer le motif de notre rendez-vous ?
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Bonjour, je suis atteinte d'endom\xE9triose et j'ai de plus en plus
         de difficult\xE9s \xE0 exercer certaines missions au travail."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Je viens donc voir si des am\xE9nagements sont possibles."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Quelle est votre probl\xE9matique au quotidien ? Avez-vous d\xE9j\xE0
         pens\xE9 \xE0 des am\xE9nagements ?"
   - code: 2
@@ -24509,11 +24485,11 @@ MonoBehaviour:
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "J'ai une atteinte digestive et v\xE9sicale."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Avoir acc\xE8s facilement et rapidement \xE0 des sanitaires pourrait
         m'aider !"
   - code: 3
@@ -24521,16 +24497,16 @@ MonoBehaviour:
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Rester assise me fait mal au bout de quelques heures, car \xE7a r\xE9veille
         mes douleurs."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: J'ai aussi mal dans le bas du dos.
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Il existe des chaises faites dans des mat\xE9riaux plus souples, ou
         un ballon de gym pour mobiliser le bassin aussi."
   - code: 4
@@ -24538,46 +24514,46 @@ MonoBehaviour:
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Parfois, la douleur monte, j'ai besoin de m'allonger avec une bouillotte
         le temps qu'un m\xE9dicament agisse."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: Y-a-t-il une salle qui vous permettrait cela ?
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Sinon, je pourrais en discuter avec le responsable des services g\xE9n\xE9raux."
   - code: 5
     nextScenarioNodeCode: 11
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Je\_b\xE9n\xE9ficie d\xE9j\xE0 d'un jour de t\xE9l\xE9travail par semaine."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Mais j'aimerais pouvoir avoir le choix de le prendre le jour o\xF9 je
         vais moins bien."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Travailler en position semi-allong\xE9e est mieux quand j'ai trop mal."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "En\_effet, le t\xE9l\xE9travail pourrait vous permettre de concilier
         vos sympt\xF4mes, vos traitements et votre travail."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Je peux comprendre que les douleurs sont plus faciles \xE0 g\xE9rer
         chez soi."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Vous \xE9viterez aussi la difficult\xE9 suppl\xE9mentaire li\xE9e aux
         transports."
   - code: 6
@@ -24585,29 +24561,29 @@ MonoBehaviour:
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Chaque mois, nous avons des \xE9v\xE9nements clients."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "C'est tr\xE8s difficile pour moi d'\xEAtre debout, de pi\xE9tiner, de
         courir partout..."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "d'aider \xE0 l'installation, de tenir des stands, de porter du mat\xE9riel...\r"
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "\xC7a g\xE9n\xE8re de tr\xE8s grosses douleurs dont je mets plusieurs
         heures \xE0 me remettre !"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Je comprends tr\xE8s bien !"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Je peux pr\xE9coniser \xE0 votre manager de revoir votre fiche de poste
         en supprimant ces missions."
   - code: 7
@@ -24615,62 +24591,62 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Je vais faire remonter \xE0 votre manager mes pr\xE9conisations."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: Mais est-ce qu'il va accepter ?
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Ce que la m\xE9decine du travail pr\xE9conise doit \xEAtre appliqu\xE9
         par l\u2019employeur."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Ce n\u2019est pas une simple possibilit\xE9 pour lui !"
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: Merci pour votre aide !
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: Souhaitez-vous aborder d'autres sujets ?
   - code: 10
     nextScenarioNodeCode: 24
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Apr\xE8s votre chirurgie, vous pouvez avoir recours \xE0 la reprise
         \xE0 temps partiel \xE0 titre th\xE9rapeutique."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Cela peut \xEAtre envisag\xE9 sous la proposition de votre m\xE9decin
         traitant et apr\xE8s avis du m\xE9decin-conseil de la S\xE9curit\xE9 sociale."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Ensuite, c'est \xE0 l'employeur de donner son accord.\r"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Le temps partiel th\xE9rapeutique est une situation transitoire qui
         permet de se r\xE9adapter progressivement au travail."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Sa dur\xE9e est habituellement de quelques semaines \xE0 quelques mois."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Vous recevez une partie du salaire au prorata de votre temps de pr\xE9sence..."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "...et les indemnit\xE9s journali\xE8res de la S\xE9curit\xE9 sociale
         en compl\xE9ment pour que vous touchiez votre salaire plein."
   - code: 11
@@ -24678,28 +24654,28 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: En effet, cela peut faire partie des handicaps invisibles !
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Pour obtenir la reconnaissance de la qualit\xE9 de travailleur handicap\xE9
         (RQTH) vous pouvez remplir le dossier ad\xE9quat avec votre m\xE9decin traitant."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Il convient de bien d\xE9tailler les difficult\xE9s rencontr\xE9es au
         quotidien \xE0 cause de votre maladie, les soins, les traitements qui vous
         concernent."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "La Maison d\xE9partementale des personnes handicap\xE9es (MDPH) peut
         accorder cette reconnaissance, en fonction de la s\xE9v\xE9rit\xE9 de votre
         dossier."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "\xC0 savoir que la RQTH est provisoire, elle est donn\xE9e pour une
         dur\xE9e de 1 \xE0 5 ans renouvelables."
   - code: 12
@@ -24707,41 +24683,41 @@ MonoBehaviour:
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: Merci pour votre aide !
   - code: 13
     nextScenarioNodeCode: 18
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Apr\xE8s votre chirurgie, vous pouvez avoir recours \xE0 la reprise
         \xE0 temps partiel \xE0 titre th\xE9rapeutique."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Cela peut \xEAtre envisag\xE9 sous la proposition de votre m\xE9decin
         traitant et apr\xE8s avis du m\xE9decin-conseil de la S\xE9curit\xE9 sociale."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Ensuite, c'est \xE0 l'employeur de donner son accord.\r"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Le temps partiel th\xE9rapeutique est une situation transitoire qui
         permet de se r\xE9adapter progressivement au travail."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Sa dur\xE9e est habituellement de quelques semaines \xE0 quelques mois."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Vous recevez une partie du salaire au prorata de votre temps de pr\xE9sence..."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "...et les indemnit\xE9s journali\xE8res de la S\xE9curit\xE9 sociale
         en compl\xE9ment pour que vous touchiez votre salaire plein."
   - code: 14
@@ -24749,28 +24725,28 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: En effet, cela peut faire partie des handicaps invisibles !
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Pour obtenir la reconnaissance de la qualit\xE9 de travailleur handicap\xE9
         (RQTH) vous pouvez remplir le dossier ad\xE9quat avec votre m\xE9decin traitant."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "Il convient de bien d\xE9tailler les difficult\xE9s rencontr\xE9es au
         quotidien \xE0 cause de votre maladie, les soins, les traitements qui vous
         concernent."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "La Maison d\xE9partementale des personnes handicap\xE9es (MDPH) peut
         accorder cette reconnaissance, en fonction de la s\xE9v\xE9rit\xE9 de votre
         dossier."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClipURL: 
       text: "\xC0 savoir que la RQTH est provisoire, elle est donn\xE9e pour une
         dur\xE9e de 1 \xE0 5 ans renouvelables."
 --- !u!4 &9202810232902933944
