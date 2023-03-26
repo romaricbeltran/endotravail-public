@@ -49,6 +49,11 @@ public class DialogueManager : MonoBehaviour
 
     // On précharge le dialogue avec la première phrase
     public void LoadDialogue(int dialogueCode) {
+        // Close in case we skipped dialogue trigger
+        dialogueBoxAnimator.SetBool("IsOpen", false);
+        audioSource.Stop();
+        StopAllCoroutines();
+
         currentDialogue = FindDialogueByCode(dialogueCode);
         indexSentence = 0;
         sentences = currentDialogue.GetSentences();

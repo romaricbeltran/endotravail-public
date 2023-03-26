@@ -30,6 +30,7 @@ public class MissionManager : MonoBehaviour
     public GameObject missionBox;
     public TextMeshProUGUI missionTitle;
     public TextMeshProUGUI missionText;
+    public Button missionSkip;
     public Button acceptButton;
 
     public List<Mission> missions;
@@ -37,6 +38,7 @@ public class MissionManager : MonoBehaviour
 
     private Mission currentMission;
     private int indexMission;
+    private int skipTriggerIndex;
 
     private void Awake()
     {
@@ -53,12 +55,14 @@ public class MissionManager : MonoBehaviour
         currentTargetMissions = currentMission.GetTargetMissions();
         missionTitle.text = currentMission.GetMissionTitle();
         missionText.text = currentMission.GetMissionText();
+        skipTriggerIndex = 0;
         gameManager.SwitchPlayerInput(false);
 
         // Reinit UI ! Start_XXX never call on managers (exception for DialogueManager with a SignalEmitter)
         shadowBackground.SetActive(true);
-        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 200f);
+        //missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 200f);
         acceptButton.gameObject.SetActive(true);
+        missionSkip.gameObject.SetActive(false);
         
         indexMission = 0;
 
@@ -72,6 +76,34 @@ public class MissionManager : MonoBehaviour
             AddTriggerEvent(newTriggerEvent);
             Debug.Log("Add Trigger Event for Target Mission:" + targetMission.GetName() + " on " + targetMission.GetTriggerObject());
         }
+    }
+
+    public void SkipTrigger()
+    {
+        WAS_ACTION_MISSION_COMPONENT = false;
+        ON_MISSION_END = false;
+
+        int indexToSkip = skipTriggerIndex;
+        TriggerEvent currentTriggerEvent = currentTargetMissions[indexToSkip].GetTriggerObject().GetComponent<TriggerEvent>();
+        int currentTriggerMissionIndex = currentTriggerEvent.GetIndexMission();
+
+        RemoveTriggerEvent(currentTriggerEvent);
+        Destroy(currentTriggerEvent);
+
+
+        Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + currentTargetMissions[indexToSkip].GetTriggerObject().name);
+        Debug.Log(triggerEvents.Count);
+        if (triggerEvents.Count == 0)
+        {
+            Debug.Log("End of mission");
+            missionCanvas.SetActive(false);
+            currentMission.SetIsAccomplished(true);
+            ON_MISSION_END = true;
+        }
+        
+        skipTriggerIndex++;
+
+        gameManager.updateProgression(currentTargetMissions[indexToSkip].GetScenarioNodeCode());
     }
 
     // Lorsqu'on trigger un TriggerEvent, on pointe sur le scénario node cible du TriggerMission
@@ -126,7 +158,8 @@ public class MissionManager : MonoBehaviour
     public void AcceptMission()
     {
         acceptButton.gameObject.SetActive(false);
-        missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 130f);
+        missionSkip.gameObject.SetActive(true);
+        // missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 130f);
         shadowBackground.SetActive(false);
         gameManager.SwitchPlayerInput(true);
     }
