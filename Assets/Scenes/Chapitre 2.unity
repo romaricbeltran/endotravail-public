@@ -1971,8 +1971,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368246205}
-  m_LocalRotation: {x: -0.056614235, y: 0.022730624, z: -0.0012892794, w: -0.9981365}
-  m_LocalPosition: {x: -0.66738796, y: 15.161151, z: 4.630541}
+  m_LocalRotation: {x: -0.056614235, y: 0.022730548, z: -0.0012892751, w: -0.9981365}
+  m_LocalPosition: {x: 1.2676125, y: 15.161151, z: 15.830541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8153,7 +8153,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.903388
+      value: 1.0316124
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -8163,7 +8163,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.756383
+      value: 19.04554
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -82432,6 +82432,9 @@ MonoBehaviour:
   missionText: {fileID: 3948484669577357997}
   missionSkip: {fileID: 211139729}
   acceptButton: {fileID: 7861263002839659181}
+  tutoOnFirstMission: 0
+  tutoAnalogicBox: {fileID: 0}
+  tutoSkipBox: {fileID: 0}
   missions:
   - code: 1
     nextScenarioNodeCode: 12
@@ -85492,7 +85495,7 @@ MonoBehaviour:
     sentences:
     - character: Sylvie
       characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: cd15e8f7f64fe3a469bfb69ac4ee0ecf, type: 3}
       text: "Je t'ai vu aller beaucoup aux toilettes depuis ce matin, \xE7a va ?"
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -85500,7 +85503,7 @@ MonoBehaviour:
       text: "Oui, \xE7a va merci, j'ai juste mal au ventre..."
     - character: Sylvie
       characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 859d5f9ae147e794db8d30b9f39ba348, type: 3}
       text: Quoi ? Tu as une gastro ? Rentre chez toi, tu vas nous contaminer !
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -85508,7 +85511,7 @@ MonoBehaviour:
       text: "Mais non \xE7a n'a rien \xE0 voir..."
     - character: Sylvie
       characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 3370fe35129104944b01d79c23b2b095, type: 3}
       text: Bah alors, c'est quoi ? Tu as une cystite ?
   - code: 9
     nextScenarioNodeCode: -10
@@ -85618,7 +85621,7 @@ MonoBehaviour:
     sentences:
     - character: Sylvie
       characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: d64550908683e634aac7c458c727a266, type: 3}
       text: "Catherine, tu viens \xE0 la r\xE9union ?"
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -85626,7 +85629,7 @@ MonoBehaviour:
       text: Ha... Oui j'arrive !
     - character: Sylvie
       characterImage: {fileID: 21300000, guid: 3840e908da9c15e49a04303a681b5fd3, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: a1a8161f460cb214299af37548deb280, type: 3}
       text: "D\xE9j\xE0 que tu as loup\xE9 la r\xE9union la plus importante du projet,
         il ne faudrait pas que tu loupes celle-ci !"
   - code: 13

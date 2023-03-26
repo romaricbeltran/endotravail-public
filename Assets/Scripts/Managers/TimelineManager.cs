@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Cinemachine;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
@@ -36,7 +37,10 @@ public class TimelineManager : MonoBehaviour
     {
         ScenarioNode node = SearchScenarioNodeByCode(scenarioNodeCode);
         GameManager.GAME_PROGRESSION = node.GetName();
-        AnalyticsManager.Instance.SendCustomEvent("gameProgress", "gameProgressStepName", GameManager.GAME_PROGRESSION);
+        AnalyticsService.Instance.CustomData("gameProgress", new Dictionary<string, object>
+        {
+            { "gameProgressStepName", GameManager.GAME_PROGRESSION }
+        });
         Debug.Log("Playing Node :" + node.GetName());
 
         PlayableAsset clip = node.GetTimelineClip();

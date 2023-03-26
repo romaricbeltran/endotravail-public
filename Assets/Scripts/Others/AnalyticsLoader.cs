@@ -4,22 +4,8 @@ using Unity.Services.Analytics;
 using System.Collections.Generic;
 using Unity.Services.Core.Environments;
 
-public class AnalyticsManager : MonoBehaviour
+public class AnalyticsLoader : MonoBehaviour
 {
-    public static AnalyticsManager Instance { get; private set; }
-
-    private void Awake() 
-    { 
-        if (Instance != null) 
-        { 
-            Destroy(gameObject); 
-            return; 
-        }
-
-        Instance = this; 
-        DontDestroyOnLoad(gameObject); 
-    }
-
     async void Start()
     {
         try
@@ -35,13 +21,5 @@ public class AnalyticsManager : MonoBehaviour
             Debug.Log("Fail to Initialize Analytics");
           // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
         }
-    }
-
-    public void SendCustomEvent(string eventName, string parameterName, object parameterValue)
-    {
-        AnalyticsService.Instance.CustomData(eventName, new Dictionary<string, object>
-        {
-            { parameterName, parameterValue }
-        });
     }
 }
