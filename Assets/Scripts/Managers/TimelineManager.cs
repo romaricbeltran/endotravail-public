@@ -36,6 +36,7 @@ public class TimelineManager : MonoBehaviour
     {
         ScenarioNode node = SearchScenarioNodeByCode(scenarioNodeCode);
         GameManager.GAME_PROGRESSION = node.GetName();
+        AnalyticsManager.Instance.SendCustomEvent("gameProgress", "gameProgressStepName", GameManager.GAME_PROGRESSION);
         Debug.Log("Playing Node :" + node.GetName());
 
         PlayableAsset clip = node.GetTimelineClip();
