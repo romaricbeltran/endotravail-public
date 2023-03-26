@@ -33,6 +33,11 @@ public class MissionManager : MonoBehaviour
     public Button missionSkip;
     public Button acceptButton;
 
+    public bool tutoOnFirstMission = false;
+
+    public GameObject tutoAnalogicBox;
+    public GameObject tutoSkipBox;
+    
     public List<Mission> missions;
     public Dictionary<int, Mission> missionDictionary;
 
@@ -159,9 +164,40 @@ public class MissionManager : MonoBehaviour
     {
         acceptButton.gameObject.SetActive(false);
         missionSkip.gameObject.SetActive(true);
+        if (tutoOnFirstMission)
+        {
+            StartTuto();
+        }
+        else
+        {
+            shadowBackground.SetActive(false);
+            gameManager.SwitchPlayerInput(true);
+        }
         // missionBox.GetComponent<RectTransform>().sizeDelta = new Vector2(missionBox.GetComponent<RectTransform>().sizeDelta.x, 130f);
+    }
+
+    public void StartTuto()
+    {
+        tutoAnalogicBox.SetActive(true);
+        gameManager.analogicButtons.SetActive(true);
+        gameManager.analogicButtons.GetComponent<GraphicRaycaster>().enabled = false;
+        missionSkip.enabled = false;
+    }
+
+    public void NextTuto()
+    {
+        tutoAnalogicBox.SetActive(false);
+        tutoSkipBox.SetActive(true);
+    }
+
+    public void EndTuto()
+    {
+        tutoSkipBox.SetActive(false);
+        tutoAnalogicBox.SetActive(false);
         shadowBackground.SetActive(false);
         gameManager.SwitchPlayerInput(true);
+        gameManager.analogicButtons.GetComponent<GraphicRaycaster>().enabled = true;
+        missionSkip.enabled = true;
     }
 
     // A la fin de la mission on lance le node qui suit la fin de la mission ! (entre les deux on a les nodes des targetMissions)

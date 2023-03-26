@@ -3,7 +3,6 @@ using Unity.Services.Core;
 using Unity.Services.Analytics;
 using System.Collections.Generic;
 using Unity.Services.Core.Environments;
-using UnityEngine.Analytics;
 
 public class AnalyticsManager : MonoBehaviour
 {
@@ -33,13 +32,14 @@ public class AnalyticsManager : MonoBehaviour
         }
         catch (ConsentCheckException e)
         {
+            Debug.Log("Fail to Initialize Analytics");
           // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
         }
     }
 
     public void SendCustomEvent(string eventName, string parameterName, object parameterValue)
     {
-        Analytics.CustomEvent(eventName, new Dictionary<string, object>
+        AnalyticsService.Instance.CustomData(eventName, new Dictionary<string, object>
         {
             { parameterName, parameterValue }
         });
