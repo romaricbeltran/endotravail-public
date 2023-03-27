@@ -5495,7 +5495,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 406636373}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -7122,7 +7122,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.820405
+      value: -8.3907995
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -7132,7 +7132,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.0932846
+      value: 7.0932837
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -22560,7 +22560,7 @@ MonoBehaviour:
     timelineClip: {fileID: 0}
     directorWrapMode: 2
     eventType: 5
-    eventIndex: 5
+    eventIndex: 4
     hasBadge: 0
     badgeIndex: 0
   - scenarioNodeCode: 21
@@ -22635,7 +22635,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig4:RightHandMiddle2'\n\tTransform 'mixamorig4:LeftToeBase'\n\tTransform
+    'mixamorig4:LeftHandThumb2'\n\tTransform 'mixamorig4:RightHandRing2'\n\tTransform
+    'mixamorig4:RightToeBase'\n\tTransform 'mixamorig4:RightHandThumb1'\n\tTransform
+    'mixamorig4:RightArm'\n\tTransform 'mixamorig4:LeftHandIndex1'\n\tTransform 'mixamorig4:RightHandIndex3'\n\tTransform
+    'mixamorig4:RightFoot'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -25235,7 +25241,7 @@ MonoBehaviour:
       text: "Quelle est votre probl\xE9matique au quotidien ? Avez-vous d\xE9j\xE0
         pens\xE9 \xE0 des am\xE9nagements ?"
   - code: 2
-    nextScenarioNodeCode: 11
+    nextScenarioNodeCode: 9
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -25247,7 +25253,7 @@ MonoBehaviour:
       text: "Avoir acc\xE8s facilement et rapidement \xE0 des sanitaires pourrait
         m'aider !"
   - code: 3
-    nextScenarioNodeCode: 11
+    nextScenarioNodeCode: 9
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -25264,7 +25270,7 @@ MonoBehaviour:
       text: "Il existe des chaises faites dans des mat\xE9riaux plus souples, ou
         un ballon de gym pour mobiliser le bassin aussi."
   - code: 4
-    nextScenarioNodeCode: 11
+    nextScenarioNodeCode: 9
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -25280,7 +25286,7 @@ MonoBehaviour:
       audioClip: {fileID: 8300000, guid: 5d2828cd85ef2bd4caa5cab78ced4b1c, type: 3}
       text: "Sinon, je pourrais en discuter avec le responsable des services g\xE9n\xE9raux."
   - code: 5
-    nextScenarioNodeCode: 11
+    nextScenarioNodeCode: 9
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -25311,7 +25317,7 @@ MonoBehaviour:
       text: "Vous \xE9viterez aussi la difficult\xE9 suppl\xE9mentaire li\xE9e aux
         transports."
   - code: 6
-    nextScenarioNodeCode: 11
+    nextScenarioNodeCode: 9
     sentences:
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}

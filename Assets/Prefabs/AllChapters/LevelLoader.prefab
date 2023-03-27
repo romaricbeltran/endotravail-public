@@ -695,12 +695,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06fe1a1127fb79e47a5a558956b46ace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneAddresses:
+  - Assets/Scenes/Chapitre 1.unity
+  - Assets/Scenes/Chapitre 2.unity
+  - Assets/Scenes/Chapitre 3.unity
+  - Assets/Scenes/Chapitre 4.unity
+  - Assets/Scenes/End.unity
   levelTitleText: {fileID: 2874394126512436456}
   levelSubtitleText: {fileID: 7828472471204487408}
   loadingBar: {fileID: 7320950203274979495}
   loadingScreenTransition: {fileID: 3835043042985382529}
   transitionTime: 4
   retardedUI: {fileID: 3636807475447358250}
+  homeScreenTransition: {fileID: 0}
 --- !u!1 &8456317584592586535
 GameObject:
   m_ObjectHideFlags: 0
