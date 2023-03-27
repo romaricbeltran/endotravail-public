@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Une sur Dix | Le serious game sur l'endométriose au travail</title>
+    <title>Endo'travail - Le jeu qui lève les tabous sur l'endométriose au travail !</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -48,6 +48,7 @@
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      fullscreenButton.classList.add("disabled");
       var warningBanner = document.querySelector("#unity-warning");
 
       // Shows a temporary message banner/ribbon for a few seconds, or
@@ -108,7 +109,7 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        unityShowBanner('WebGL builds are not supported on mobile devices.');
+        unityShowBanner('Ce jeu n\'est pour le moment accessible que par ordinateur.');
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
       }
@@ -124,6 +125,7 @@
           loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
+            fullscreenButton.classList.remove("disabled");
           };
         }).catch((message) => {
           alert(message);

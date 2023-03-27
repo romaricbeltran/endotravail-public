@@ -38,10 +38,10 @@ public class TimelineManager : MonoBehaviour
     {
         ScenarioNode node = SearchScenarioNodeByCode(scenarioNodeCode);
         GameManager.GAME_PROGRESSION = node.GetName();
-        // AnalyticsService.Instance.CustomData("gameProgress", new Dictionary<string, object>
-        // {
-        //     { "gameProgressStepName", GameManager.GAME_PROGRESSION }
-        // });
+        AnalyticsService.Instance.CustomData("gameProgress", new Dictionary<string, object>
+        {
+            { "gameProgressStepName", GameManager.GAME_PROGRESSION }
+        });
         Debug.Log("Playing Node :" + node.GetName());
 
         PlayableAsset clip = node.GetTimelineClip();
