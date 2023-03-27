@@ -15,6 +15,7 @@ public class TimelineManager : MonoBehaviour
     public DialogueManager dialogueManager;
     public ActionManager actionManager;
     public MissionManager missionManager;
+    public BadgeManager badgeManager;
     public GameObject player;
 
     public List<ScenarioNode> scenario;
@@ -37,10 +38,10 @@ public class TimelineManager : MonoBehaviour
     {
         ScenarioNode node = SearchScenarioNodeByCode(scenarioNodeCode);
         GameManager.GAME_PROGRESSION = node.GetName();
-        AnalyticsService.Instance.CustomData("gameProgress", new Dictionary<string, object>
-        {
-            { "gameProgressStepName", GameManager.GAME_PROGRESSION }
-        });
+        // AnalyticsService.Instance.CustomData("gameProgress", new Dictionary<string, object>
+        // {
+        //     { "gameProgressStepName", GameManager.GAME_PROGRESSION }
+        // });
         Debug.Log("Playing Node :" + node.GetName());
 
         PlayableAsset clip = node.GetTimelineClip();
@@ -50,6 +51,12 @@ public class TimelineManager : MonoBehaviour
         if (clip)
         {
             director.Play(clip, node.GetDirectorWrapMode());
+        }
+        
+        badgeManager.EndBadge();
+        if (node.HasBadge())
+        {
+            badgeManager.LoadBadge(node.GetBadgeIndex());
         }
 
         LoadEvent(eventType, eventIndex);

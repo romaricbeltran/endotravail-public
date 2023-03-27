@@ -6,9 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool gameIsPaused = false;
 
-    public GameObject pauseMenuUI;
-    public GameObject politicUI;
-    public GameObject creditsUI;
+    public GameObject pauseMenu;
 
     void Update()
     {
@@ -32,16 +30,14 @@ public class PauseMenu : MonoBehaviour
 
     void Resume()
     {
-        pauseMenuUI.SetActive(false);
-        politicUI.SetActive(false);
-        creditsUI.SetActive(false);
+        pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
 
     void Pause()
     {
-        pauseMenuUI.SetActive(true);
+        pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
     }

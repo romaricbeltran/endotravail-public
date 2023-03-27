@@ -202,7 +202,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-80082
+  m_Name: pb_Mesh-500642
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -443,6 +443,107 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 98078104}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &110629381
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110629382}
+  - component: {fileID: 110629385}
+  - component: {fileID: 110629384}
+  - component: {fileID: 110629383}
+  m_Layer: 0
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &110629382
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110629381}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 432255903}
+  m_Father: {fileID: 1439027517}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &110629383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110629381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &110629384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110629381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &110629385
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110629381}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_TargetDisplay: 0
 --- !u!1 &124083247
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +665,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-80074
+  m_Name: pb_Mesh-500634
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1176,6 +1277,143 @@ Transform:
   m_Father: {fileID: 1354912892}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
+--- !u!1 &406636372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 406636373}
+  - component: {fileID: 406636375}
+  - component: {fileID: 406636374}
+  m_Layer: 0
+  m_Name: Mission Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &406636373
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406636372}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1285809592}
+  m_Father: {fileID: 432255903}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &406636374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406636372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: "Sc\xE9nario \"Suivi m\xE9dical\" valid\xE9"
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
+  m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
+    type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 20
+  m_fontSizeBase: 20
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 16
+  m_fontSizeMax: 20
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &406636375
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 406636372}
+  m_CullTransparentMesh: 1
 --- !u!1001 &429747859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1243,6 +1481,125 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 429747859}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &432255902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 432255903}
+  - component: {fileID: 432255907}
+  - component: {fileID: 432255906}
+  - component: {fileID: 432255905}
+  - component: {fileID: 432255904}
+  m_Layer: 0
+  m_Name: MissionBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &432255903
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432255902}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 406636373}
+  m_Father: {fileID: 110629382}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -110, y: -30}
+  m_SizeDelta: {x: 0, y: 50}
+  m_Pivot: {x: 1, y: 1}
+--- !u!114 &432255904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432255902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 2
+  m_VerticalFit: 0
+--- !u!114 &432255905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432255902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 60
+    m_Right: 30
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &432255906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432255902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5568628, g: 0.19607845, b: 0.28627452, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &432255907
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 432255902}
+  m_CullTransparentMesh: 1
 --- !u!1 &434486613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2560,7 @@ Transform:
   - {fileID: 8147921723333648755}
   - {fileID: 175089697328476429}
   - {fileID: 9051962080798620313}
+  - {fileID: 1439027517}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5106,6 +5464,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67364670eb9a8546a7263dd404b3e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1285809591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285809592}
+  - component: {fileID: 1285809594}
+  - component: {fileID: 1285809593}
+  m_Layer: 0
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1285809592
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285809591}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 406636373}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: -45, y: 0}
+  m_SizeDelta: {x: 50, y: 50}
+  m_Pivot: {x: 0, y: 0.5}
+--- !u!114 &1285809593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285809591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 47508e12efbf5a74a99cc5e57e409c05, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0.04
+    width: 1
+    height: 1
+--- !u!222 &1285809594
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285809591}
+  m_CullTransparentMesh: 1
 --- !u!1 &1295339917
 GameObject:
   m_ObjectHideFlags: 0
@@ -5340,7 +5771,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-80064
+  m_Name: pb_Mesh-500624
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5779,6 +6210,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1436341456}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1439027516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1439027517}
+  - component: {fileID: 1439027518}
+  m_Layer: 0
+  m_Name: BadgeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1439027517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439027516}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 110629382}
+  m_Father: {fileID: 730316206}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1439027518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1439027516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c7ba546dfdc1e45924b6ebd800e225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  badgeCanvas: {fileID: 110629381}
+  mainText: {fileID: 406636374}
+  badges:
+  - "Sc\xE9nario \"Am\xE9nagements\" valid\xE9"
+  - "Sc\xE9nario \"Mi-temps th\xE9rapeutique\" valid\xE9"
+  - "Sc\xE9nario \"RQTH\" valid\xE9"
 --- !u!1 &1554538789
 GameObject:
   m_ObjectHideFlags: 0
@@ -6809,7 +7291,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh368652
+  m_Name: pb_Mesh1690440
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -7198,6 +7680,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6220532381111205024, guid: 6114d07b9de7151489026755e7ae4f54,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6697760096451800314, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -21929,6 +22416,7 @@ MonoBehaviour:
   dialogueManager: {fileID: 9101310923564934915}
   actionManager: {fileID: 3202180556439206866}
   missionManager: {fileID: 7829243469750116267}
+  badgeManager: {fileID: 1439027518}
   player: {fileID: 182828177373169617}
   scenario:
   - scenarioNodeCode: 0
@@ -21937,138 +22425,184 @@ MonoBehaviour:
     directorWrapMode: 2
     eventType: 2
     eventIndex: 1
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 1
     name: "La m\xE9decine du travail (composant mission)"
     timelineClip: {fileID: 11400000, guid: 14f83b5a122880d45bf2bf4ee26b242a, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 1
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 2
     name: Motif du RDV
     timelineClip: {fileID: 11400000, guid: 3b96e6a6830da024e953d92d11264c5d, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 1
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 3
     name: "Am\xE9nagements"
     timelineClip: {fileID: 11400000, guid: 30d2663687777574aa172989de555167, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 1
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 4
     name: Bureau proche des toilettes
     timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 2
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 5
     name: Meilleure chaise de bureau
     timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 3
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 6
     name: Salle de repos
     timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 4
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 7
     name: "T\xE9l\xE9travail"
     timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 5
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 8
     name: Fiche de poste
     timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 6
-  - scenarioNodeCode: 11
+    hasBadge: 0
+    badgeIndex: 0
+  - scenarioNodeCode: 9
     name: Petites solutions
-    timelineClip: {fileID: 11400000, guid: 14f83b5a122880d45bf2bf4ee26b242a, type: 2}
+    timelineClip: {fileID: 11400000, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 2
+    hasBadge: 1
+    badgeIndex: 0
   - scenarioNodeCode: 12
     name: Autres sujets
     timelineClip: {fileID: 11400000, guid: 3b96e6a6830da024e953d92d11264c5d, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 7
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 13
     name: Chirurgie handicap
     timelineClip: {fileID: 11400000, guid: 42b138f606bcc0449ac65d831417909b, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 2
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 14
     name: Chirurgie et temps partiels
-    timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
+    timelineClip: {fileID: 11400000, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 10
+    hasBadge: 1
+    badgeIndex: 1
   - scenarioNodeCode: 16
     name: Handicap
     timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 11
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 17
     name: Reconnaissance du handicap
-    timelineClip: {fileID: 11400000, guid: 14f83b5a122880d45bf2bf4ee26b242a, type: 2}
+    timelineClip: {fileID: 11400000, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 5
+    hasBadge: 1
+    badgeIndex: 2
   - scenarioNodeCode: 18
     name: Merci pour votre aide
     timelineClip: {fileID: 11400000, guid: 3b96e6a6830da024e953d92d11264c5d, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 12
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 19
     name: Dernier Popup
     timelineClip: {fileID: 11400000, guid: 14f83b5a122880d45bf2bf4ee26b242a, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 4
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 20
     name: Fin du chapitre 4
     timelineClip: {fileID: 0}
     directorWrapMode: 2
     eventType: 5
     eventIndex: 5
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 21
     name: A-Chirurgie (bouton unique)
     timelineClip: {fileID: 11400000, guid: 30c51d9f8588b9a4c9f87b470e375f10, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 3
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 22
     name: A-Chirurgie et temps partiels
-    timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
+    timelineClip: {fileID: 11400000, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 13
+    hasBadge: 1
+    badgeIndex: 1
   - scenarioNodeCode: 24
     name: B-Handicap (bouton unique)
     timelineClip: {fileID: 11400000, guid: 30c51d9f8588b9a4c9f87b470e375f10, type: 2}
     directorWrapMode: 0
     eventType: 3
     eventIndex: 4
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 25
     name: B-Handicap
     timelineClip: {fileID: 11400000, guid: cd2cb9c14e178234eb7a03f87f8bdf79, type: 2}
     directorWrapMode: 0
     eventType: 1
     eventIndex: 14
+    hasBadge: 0
+    badgeIndex: 0
   - scenarioNodeCode: 26
     name: B-Reconnaissance du handicap
-    timelineClip: {fileID: 11400000, guid: 14f83b5a122880d45bf2bf4ee26b242a, type: 2}
+    timelineClip: {fileID: 11400000, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
     directorWrapMode: 0
     eventType: 0
     eventIndex: 3
+    hasBadge: 1
+    badgeIndex: 2
 --- !u!1 &5822652604352415528
 GameObject:
   m_ObjectHideFlags: 0
@@ -23258,7 +23792,7 @@ PlayableDirector:
   m_GameObject: {fileID: 4187983017606911372}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 3ceced63b490d8b4dbe45f5f2a26c1a6, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -23702,6 +24236,28 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 8015412297662999859, guid: 3ceced63b490d8b4dbe45f5f2a26c1a6, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 8511671145134851493, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
+    value: {fileID: 502729138}
+  - key: {fileID: -722504827870840574, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
+    value: {fileID: 1961074681}
+  - key: {fileID: -2092843570718977708, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
+    value: {fileID: 8428764143084571143}
+  - key: {fileID: -2138704947823716410, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
+    value: {fileID: 8428764143084571143}
+  - key: {fileID: -5745302843740191140, guid: 0d4ce6518c707d6468604e82fc2f8f08, type: 2}
+    value: {fileID: 110629381}
+  - key: {fileID: 6294577183719603319, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
+    value: {fileID: 502729138}
+  - key: {fileID: 1149989821045887180, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
+    value: {fileID: 8428764143084571143}
+  - key: {fileID: 8469505678436193694, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
+    value: {fileID: 8428764143084571143}
+  - key: {fileID: 5054190525845750214, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
+    value: {fileID: 5866666020030743413}
+  - key: {fileID: -6562014232727278116, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
+    value: {fileID: 5866666020030743413}
+  - key: {fileID: -1726565955221097158, guid: aa69ffab905252e48983b53fc7c33dc6, type: 2}
+    value: {fileID: 110629381}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 0}
@@ -23975,6 +24531,9 @@ MonoBehaviour:
   missionText: {fileID: 6035797485473198682}
   missionSkip: {fileID: 1295339919}
   acceptButton: {fileID: 7193427760528447333}
+  tutoOnFirstMission: 0
+  tutoAnalogicBox: {fileID: 0}
+  tutoSkipBox: {fileID: 0}
   missions:
   - code: 1
     nextScenarioNodeCode: 2
@@ -24659,7 +25218,7 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: b07afeed622e2bc449aef6f22bdd2295, type: 3}
       text: Bonjour, pouvez-vous m'expliquer le motif de notre rendez-vous ?
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -24672,7 +25231,7 @@ MonoBehaviour:
       text: "Je viens donc voir si des am\xE9nagements sont possibles."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: b38a37ce942f21a4cbd6c422f7aae1cd, type: 3}
       text: "Quelle est votre probl\xE9matique au quotidien ? Avez-vous d\xE9j\xE0
         pens\xE9 \xE0 des am\xE9nagements ?"
   - code: 2
@@ -24701,7 +25260,7 @@ MonoBehaviour:
       text: J'ai aussi mal dans le bas du dos.
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 98af9188466570349927132165ffe7ee, type: 3}
       text: "Il existe des chaises faites dans des mat\xE9riaux plus souples, ou
         un ballon de gym pour mobiliser le bassin aussi."
   - code: 4
@@ -24714,11 +25273,11 @@ MonoBehaviour:
         le temps qu'un m\xE9dicament agisse."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: befb4678001fffc4c8494836738828b5, type: 3}
       text: Y-a-t-il une salle qui vous permettrait cela ?
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 5d2828cd85ef2bd4caa5cab78ced4b1c, type: 3}
       text: "Sinon, je pourrais en discuter avec le responsable des services g\xE9n\xE9raux."
   - code: 5
     nextScenarioNodeCode: 11
@@ -24738,17 +25297,17 @@ MonoBehaviour:
       text: "Travailler en position semi-allong\xE9e est mieux quand j'ai trop mal."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: a4d790193b5670d4cb9068c44bb885e1, type: 3}
       text: "En\_effet, le t\xE9l\xE9travail pourrait vous permettre de concilier
         vos sympt\xF4mes, vos traitements et votre travail."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 19715120805e21f44b0b7ffac68f97f8, type: 3}
       text: "Je peux comprendre que les douleurs sont plus faciles \xE0 g\xE9rer
         chez soi."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 9c4afca562599bf4f97ecc6ad5f9cb9b, type: 3}
       text: "Vous \xE9viterez aussi la difficult\xE9 suppl\xE9mentaire li\xE9e aux
         transports."
   - code: 6
@@ -24774,11 +25333,11 @@ MonoBehaviour:
         heures \xE0 me remettre !"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 129c37f7e99d7b144aae867a082ed269, type: 3}
       text: "Je comprends tr\xE8s bien !"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: f076812881d3e1c46aeb4e4e461e659f, type: 3}
       text: "Je peux pr\xE9coniser \xE0 votre manager de revoir votre fiche de poste
         en supprimant ces missions."
   - code: 7
@@ -24786,7 +25345,7 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 52cbe9f2ba0e6b04787eff2b68c0f7ff, type: 3}
       text: "Je vais faire remonter \xE0 votre manager mes pr\xE9conisations."
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -24794,12 +25353,12 @@ MonoBehaviour:
       text: Mais est-ce qu'il va accepter ?
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: dc4c9a662d86cb4439b9eaa9038d18ef, type: 3}
       text: "Ce que la m\xE9decine du travail pr\xE9conise doit \xEAtre appliqu\xE9
         par l\u2019employeur."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 8dcf782e5c54cde49bfd8a8a8e8c7120, type: 3}
       text: "Ce n\u2019est pas une simple possibilit\xE9 pour lui !"
     - character: Catherine
       characterImage: {fileID: 21300000, guid: e43397f6dd33a87479229f11532dd040, type: 3}
@@ -24807,41 +25366,41 @@ MonoBehaviour:
       text: Merci pour votre aide !
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 425e9bfb8e2a44c4e8649653361ebdbf, type: 3}
       text: Souhaitez-vous aborder d'autres sujets ?
   - code: 10
     nextScenarioNodeCode: 24
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: db7981083ee563e46be38ec806ee0517, type: 3}
       text: "Apr\xE8s votre chirurgie, vous pouvez avoir recours \xE0 la reprise
         \xE0 temps partiel \xE0 titre th\xE9rapeutique."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 15123ce62e6309748ae06bc14cedc227, type: 3}
       text: "Cela peut \xEAtre envisag\xE9 sous la proposition de votre m\xE9decin
         traitant et apr\xE8s avis du m\xE9decin-conseil de la S\xE9curit\xE9 sociale."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 2340a83470a73c84dbf3cc2b4facfc66, type: 3}
       text: "Ensuite, c'est \xE0 l'employeur de donner son accord.\r"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 57f70da112fe9a241a44381f780a8319, type: 3}
       text: "Le temps partiel th\xE9rapeutique est une situation transitoire qui
         permet de se r\xE9adapter progressivement au travail."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: df795f58bc78f834e96c125826532b5c, type: 3}
       text: "Sa dur\xE9e est habituellement de quelques semaines \xE0 quelques mois."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 8d518426831318c4991e2be4d665041d, type: 3}
       text: "Vous recevez une partie du salaire au prorata de votre temps de pr\xE9sence..."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 9cfc37b94f100914fb0c35d345d76feb, type: 3}
       text: "...et les indemnit\xE9s journali\xE8res de la S\xE9curit\xE9 sociale
         en compl\xE9ment pour que vous touchiez votre salaire plein."
   - code: 11
@@ -24849,28 +25408,28 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 6d6dc514bae6fce44b7999d3e851fdf4, type: 3}
       text: En effet, cela peut faire partie des handicaps invisibles !
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 758750bbffc9d7f45bfb565302ea7a75, type: 3}
       text: "Pour obtenir la reconnaissance de la qualit\xE9 de travailleur handicap\xE9
         (RQTH) vous pouvez remplir le dossier ad\xE9quat avec votre m\xE9decin traitant."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: b5eb9f8504ffe2f4d82f452fdfcebbff, type: 3}
       text: "Il convient de bien d\xE9tailler les difficult\xE9s rencontr\xE9es au
         quotidien \xE0 cause de votre maladie, les soins, les traitements qui vous
         concernent."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: cf9fc7920a13d5b42aaeee4382f90e81, type: 3}
       text: "La Maison d\xE9partementale des personnes handicap\xE9es (MDPH) peut
         accorder cette reconnaissance, en fonction de la s\xE9v\xE9rit\xE9 de votre
         dossier."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: a91d7df6ed374cd49925d2bc7459908c, type: 3}
       text: "\xC0 savoir que la RQTH est provisoire, elle est donn\xE9e pour une
         dur\xE9e de 1 \xE0 5 ans renouvelables."
   - code: 12
@@ -24885,34 +25444,34 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: db7981083ee563e46be38ec806ee0517, type: 3}
       text: "Apr\xE8s votre chirurgie, vous pouvez avoir recours \xE0 la reprise
         \xE0 temps partiel \xE0 titre th\xE9rapeutique."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 15123ce62e6309748ae06bc14cedc227, type: 3}
       text: "Cela peut \xEAtre envisag\xE9 sous la proposition de votre m\xE9decin
         traitant et apr\xE8s avis du m\xE9decin-conseil de la S\xE9curit\xE9 sociale."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 2340a83470a73c84dbf3cc2b4facfc66, type: 3}
       text: "Ensuite, c'est \xE0 l'employeur de donner son accord.\r"
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 57f70da112fe9a241a44381f780a8319, type: 3}
       text: "Le temps partiel th\xE9rapeutique est une situation transitoire qui
         permet de se r\xE9adapter progressivement au travail."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: df795f58bc78f834e96c125826532b5c, type: 3}
       text: "Sa dur\xE9e est habituellement de quelques semaines \xE0 quelques mois."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 8d518426831318c4991e2be4d665041d, type: 3}
       text: "Vous recevez une partie du salaire au prorata de votre temps de pr\xE9sence..."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 9cfc37b94f100914fb0c35d345d76feb, type: 3}
       text: "...et les indemnit\xE9s journali\xE8res de la S\xE9curit\xE9 sociale
         en compl\xE9ment pour que vous touchiez votre salaire plein."
   - code: 14
@@ -24920,28 +25479,28 @@ MonoBehaviour:
     sentences:
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 6d6dc514bae6fce44b7999d3e851fdf4, type: 3}
       text: En effet, cela peut faire partie des handicaps invisibles !
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: 758750bbffc9d7f45bfb565302ea7a75, type: 3}
       text: "Pour obtenir la reconnaissance de la qualit\xE9 de travailleur handicap\xE9
         (RQTH) vous pouvez remplir le dossier ad\xE9quat avec votre m\xE9decin traitant."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: b5eb9f8504ffe2f4d82f452fdfcebbff, type: 3}
       text: "Il convient de bien d\xE9tailler les difficult\xE9s rencontr\xE9es au
         quotidien \xE0 cause de votre maladie, les soins, les traitements qui vous
         concernent."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: cf9fc7920a13d5b42aaeee4382f90e81, type: 3}
       text: "La Maison d\xE9partementale des personnes handicap\xE9es (MDPH) peut
         accorder cette reconnaissance, en fonction de la s\xE9v\xE9rit\xE9 de votre
         dossier."
     - character: "M\xE9decine du travail"
       characterImage: {fileID: 21300000, guid: cf9ca06736d3c5e45bcf79c2dac17d41, type: 3}
-      audioClip: {fileID: 0}
+      audioClip: {fileID: 8300000, guid: a91d7df6ed374cd49925d2bc7459908c, type: 3}
       text: "\xC0 savoir que la RQTH est provisoire, elle est donn\xE9e pour une
         dur\xE9e de 1 \xE0 5 ans renouvelables."
 --- !u!4 &9202810232902933944
