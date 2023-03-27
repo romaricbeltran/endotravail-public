@@ -13,9 +13,6 @@ public class LevelLoader : MonoBehaviour
     // Tableau contenant les adresses des scènes, indexé par numéro de scène
     public string[] sceneAddresses;
 
-    // Tableau contenant les adresses des assets, indexé par numéro de scène
-    public string[] assetsAddresses;
-
     public TextMeshProUGUI levelTitleText;
     public TextMeshProUGUI levelSubtitleText;
     public Slider loadingBar;
@@ -97,6 +94,23 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
+    IEnumerator LoadAddressableLabelAsynchronously(string labelName)
+    {
+        AsyncOperationHandle<IList<GameObject>> loadingAssetOperation = Addressables.LoadAssetsAsync<GameObject>(labelName, null);
+        Debug.Log("Loading Assets Label " + labelName);
+
+        while (!loadingAssetOperation.IsDone)
+        {
+            float progress = Mathf.Clamp01(loadingAssetOperation.PercentComplete);
+            Debug.Log(loadingAssetOperation.PercentComplete);
+            loadingBar.value = progress;
+
+            yield return null;
+        }
+
+        yield return loadingAssetOperation;
+    }
+
     IEnumerator LoadAddressableAsynchronously(int addressIndex)
     {
         // Start CrossFade animation
@@ -105,21 +119,23 @@ public class LevelLoader : MonoBehaviour
 
         retardedUI.SetActive(true);
         
-        // Load the addressables for the scene
-        if (addressIndex < 4)
+        switch (addressIndex)
         {
-            AsyncOperationHandle<IList<GameObject>> loadingAssetOperation = Addressables.LoadAssetsAsync<GameObject>(assetsAddresses[addressIndex], null);
-            Debug.Log("Loading Assets " + addressIndex);
-
-            while (!loadingAssetOperation.IsDone)
-            {
-                float progress = Mathf.Clamp01(loadingAssetOperation.PercentComplete);
-                Debug.Log(loadingAssetOperation.PercentComplete);
-                loadingBar.value = progress;
-
-                yield return null;
-            }
-            yield return loadingAssetOperation;
+            case 0:
+                yield return StartCoroutine(LoadAddressableLabelAsynchronously("Chapitre1"));
+                yield return StartCoroutine(LoadAddressableLabelAsynchronously("DuplicateAssets"));
+                break;
+            case 1:
+                yield return StartCoroutine(LoadAddressableLabelAsynchronously("Chapitre2"));
+                break;
+            case 2:
+                yield return StartCoroutine(LoadAddressableLabelAsynchronously("Chapitre3"));
+                break;
+            case 3:
+                yield return StartCoroutine(LoadAddressableLabelAsynchronously("Chapitre4"));
+                break;
+            default:
+                break;
         }
 
         AsyncOperationHandle<SceneInstance> loadingSceneOperation = Addressables.LoadSceneAsync(sceneAddresses[addressIndex], LoadSceneMode.Single, false);
