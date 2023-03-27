@@ -13,6 +13,9 @@ public class LevelLoader : MonoBehaviour
     // Tableau contenant les adresses des scènes, indexé par numéro de scène
     public string[] sceneAddresses;
 
+    // Tableau contenant les adresses des assets, indexé par numéro de scène
+    public string[] assetsAddresses;
+
     public TextMeshProUGUI levelTitleText;
     public TextMeshProUGUI levelSubtitleText;
     public Slider loadingBar;
@@ -103,18 +106,21 @@ public class LevelLoader : MonoBehaviour
         retardedUI.SetActive(true);
         
         // Load the addressables for the scene
-        // AsyncOperationHandle<IList<GameObject>> loadingAssetOperation = Addressables.LoadAssetsAsync<GameObject>(sceneAddresses[addressIndex], null);
-        // Debug.Log("Loading Assets " + addressIndex);
+        if (addressIndex < 4)
+        {
+            AsyncOperationHandle<IList<GameObject>> loadingAssetOperation = Addressables.LoadAssetsAsync<GameObject>(assetsAddresses[addressIndex], null);
+            Debug.Log("Loading Assets " + addressIndex);
 
-        // while (!loadingAssetOperation.IsDone)
-        // {
-        //     float progress = Mathf.Clamp01(loadingAssetOperation.PercentComplete);
-        //     Debug.Log(loadingAssetOperation.PercentComplete);
-        //     loadingBar.value = progress;
+            while (!loadingAssetOperation.IsDone)
+            {
+                float progress = Mathf.Clamp01(loadingAssetOperation.PercentComplete);
+                Debug.Log(loadingAssetOperation.PercentComplete);
+                loadingBar.value = progress;
 
-        //     yield return null;
-        // }
-        // yield return loadingAssetOperation;
+                yield return null;
+            }
+            yield return loadingAssetOperation;
+        }
 
         AsyncOperationHandle<SceneInstance> loadingSceneOperation = Addressables.LoadSceneAsync(sceneAddresses[addressIndex], LoadSceneMode.Single, false);
         Debug.Log("Loading Scene " + addressIndex);
