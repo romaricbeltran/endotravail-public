@@ -102,7 +102,7 @@ public class LevelLoader : MonoBehaviour
         while (!loadingAssetOperation.IsDone)
         {
             float progress = Mathf.Clamp01(loadingAssetOperation.PercentComplete);
-            Debug.Log(loadingAssetOperation.PercentComplete);
+            //Debug.Log(loadingAssetOperation.PercentComplete);
             loadingBar.value = progress;
 
             yield return null;
@@ -144,7 +144,7 @@ public class LevelLoader : MonoBehaviour
         while (!loadingSceneOperation.IsDone)
         {
             float progress = Mathf.Clamp01(loadingSceneOperation.PercentComplete);
-            Debug.Log(loadingSceneOperation.PercentComplete);
+            //Debug.Log(loadingSceneOperation.PercentComplete);
             loadingBar.value = progress;
 
             yield return null;

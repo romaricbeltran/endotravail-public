@@ -56,7 +56,7 @@ public class ActionManager : MonoBehaviour
 
     private void OnActionChoice(int choiceIndex)
     {
-        Debug.Log("Action choisie : " + choices[choiceIndex]);
+        //Debug.Log("Action choisie : " + choices[choiceIndex]);
         currentAction.SetChoosenActionIndex(scenarioNodeNextCodes[choiceIndex]);
         EndAction();
 

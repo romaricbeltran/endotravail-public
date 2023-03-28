@@ -15,10 +15,10 @@ public class BadgeManager : MonoBehaviour
     public void LoadBadge(int badgeIndex)
     {
         mainText.text = badges[badgeIndex];
-        AnalyticsService.Instance.CustomData("badgeCompleted", new Dictionary<string, object>
-        {
-            { "badgeName", badges[badgeIndex] }
-        });
+        // AnalyticsService.Instance.CustomData("badgeCompleted", new Dictionary<string, object>
+        // {
+        //     { "badgeName", badges[badgeIndex] }
+        // });
     }
 
     public void StartBadge()

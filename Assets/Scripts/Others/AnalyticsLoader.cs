@@ -11,10 +11,10 @@ public class AnalyticsLoader : MonoBehaviour
         try
         {
             var options = new InitializationOptions();
-            options.SetEnvironmentName("development");
+            options.SetEnvironmentName("production");
             await UnityServices.InitializeAsync(options);
             List<string> consentIdentifiers = await AnalyticsService.Instance.CheckForRequiredConsents();
-            Debug.Log("StartAnalytics");
+            //Debug.Log("StartAnalytics");
         }
         catch (ConsentCheckException e)
         {

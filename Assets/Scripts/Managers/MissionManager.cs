@@ -79,7 +79,7 @@ public class MissionManager : MonoBehaviour
             // Ajouter aussi l'index de la mission pour pouvoir l'identifier au trigger
             indexMission++;
             AddTriggerEvent(newTriggerEvent);
-            Debug.Log("Add Trigger Event for Target Mission:" + targetMission.GetName() + " on " + targetMission.GetTriggerObject());
+            //Debug.Log("Add Trigger Event for Target Mission:" + targetMission.GetName() + " on " + targetMission.GetTriggerObject());
         }
     }
 
@@ -96,11 +96,10 @@ public class MissionManager : MonoBehaviour
         Destroy(currentTriggerEvent);
 
 
-        Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + currentTargetMissions[indexToSkip].GetTriggerObject().name);
-        Debug.Log(triggerEvents.Count);
+        //Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + currentTargetMissions[indexToSkip].GetTriggerObject().name);
         if (triggerEvents.Count == 0)
         {
-            Debug.Log("End of mission");
+            //Debug.Log("End of mission");
             missionCanvas.SetActive(false);
             currentMission.SetIsAccomplished(true);
             ON_MISSION_END = true;
@@ -129,11 +128,11 @@ public class MissionManager : MonoBehaviour
             Destroy(currentTriggerEvent);
 
 
-            Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + other.gameObject.name);
+            //Debug.Log("Remove Trigger Event for Target Mission:" + currentTargetMissions[currentTriggerMissionIndex].GetName() + " on " + other.gameObject.name);
 
             if (triggerEvents.Count == 0)
             {
-                Debug.Log("End of mission");
+                //Debug.Log("End of mission");
                 missionCanvas.SetActive(false);
                 currentMission.SetIsAccomplished(true);
                 ON_MISSION_END = true;

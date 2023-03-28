@@ -129,7 +129,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (audioSource.clip)
         {
-            Debug.Log("Playing audio clip : " + audioSource.clip);
+            //Debug.Log("Playing audio clip : " + audioSource.clip);
             audioSource.Play();
             while (audioSource.isPlaying)
             {

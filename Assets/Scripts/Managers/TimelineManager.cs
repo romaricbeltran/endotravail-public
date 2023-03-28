@@ -38,11 +38,11 @@ public class TimelineManager : MonoBehaviour
     {
         ScenarioNode node = SearchScenarioNodeByCode(scenarioNodeCode);
         GameManager.GAME_PROGRESSION = node.GetName();
-        AnalyticsService.Instance.CustomData("gameProgress", new Dictionary<string, object>
-        {
-            { "gameProgressStepName", GameManager.GAME_PROGRESSION }
-        });
-        Debug.Log("Playing Node :" + node.GetName());
+        // AnalyticsService.Instance.CustomData("gameProgress", new Dictionary<string, object>
+        // {
+        //     { "gameProgressStepName", GameManager.GAME_PROGRESSION }
+        // });
+        //Debug.Log("Playing Node :" + node.GetName());
 
         PlayableAsset clip = node.GetTimelineClip();
         EventType eventType = node.GetEventType();
@@ -64,35 +64,35 @@ public class TimelineManager : MonoBehaviour
 
     public void LoadEvent(EventType eventType, int eventIndex) {
         // Node Event
-        Debug.Log("EventType + " + eventType.ToString());
+        //Debug.Log("EventType + " + eventType.ToString());
 
         switch (eventType)
         {
             case EventType.Popup:
-                Debug.Log("Load Popup " + eventIndex);
+                //Debug.Log("Load Popup " + eventIndex);
                 popupManager.LoadPopup(eventIndex);
                 gameManager.SwitchPlayerInput(false);
                 break;
             case EventType.Dialogue:
-                Debug.Log("Load Dialogue " + eventIndex);
+                //Debug.Log("Load Dialogue " + eventIndex);
                 dialogueManager.LoadDialogue(eventIndex);
                 gameManager.SwitchPlayerInput(false);
                 break;
             case EventType.Mission:
-                Debug.Log("Load Mission " + eventIndex);
+                //Debug.Log("Load Mission " + eventIndex);
                 missionManager.LoadMission(eventIndex);
                 break;
             case EventType.Action:
-                Debug.Log("Load Action " + eventIndex);
+                //Debug.Log("Load Action " + eventIndex);
                 actionManager.LoadAction(eventIndex);
                 gameManager.SwitchPlayerInput(false);
                 break;
             case EventType.Camera:
-                Debug.Log("Load Camera");
+                //Debug.Log("Load Camera");
                 gameManager.SwitchPlayerInput(true);
                 break;
             case EventType.End:
-                Debug.Log("End of chapter");
+                //Debug.Log("End of chapter");
                 levelLoader.LoadLevel(eventIndex);
                 break;
             default:
