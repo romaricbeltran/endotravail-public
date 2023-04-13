@@ -1453,8 +1453,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 313617271}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: FirstLevel
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2507,30 +2507,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 360356370, guid: 033b8eba01b5d034a8bec71c2d71e9a8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 313617271}
-    - target: {fileID: 561144758, guid: 033b8eba01b5d034a8bec71c2d71e9a8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 313617271}
-    - target: {fileID: 1320093370, guid: 033b8eba01b5d034a8bec71c2d71e9a8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 313617271}
-    - target: {fileID: 1489606950, guid: 033b8eba01b5d034a8bec71c2d71e9a8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 313617271}
-    - target: {fileID: 1878017199, guid: 033b8eba01b5d034a8bec71c2d71e9a8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 313617271}
-    - target: {fileID: 2032850490, guid: 033b8eba01b5d034a8bec71c2d71e9a8, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 313617271}
     - target: {fileID: 6939887274627402716, guid: 033b8eba01b5d034a8bec71c2d71e9a8,
         type: 3}
       propertyPath: m_RootOrder
