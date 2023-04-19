@@ -21,6 +21,8 @@ public class ScenarioNode
     [SerializeField] private DirectorWrapMode directorWrapMode;
     [SerializeField] private EventType eventType;
     [SerializeField] private int eventIndex;
+    [SerializeField] private bool hasBadge;
+    [SerializeField] private int badgeIndex;
 
     public string GetName()
     {
@@ -45,5 +47,15 @@ public class ScenarioNode
     public int GetEventIndex()
     {
         return eventIndex;
+    }
+
+    public bool HasBadge()
+    {
+        return hasBadge;
+    }
+
+    public int GetBadgeIndex()
+    {
+        return badgeIndex;
     }
 }

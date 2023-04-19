@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 // Gère les dialogues pour une scène
@@ -48,6 +49,11 @@ public class DialogueManager : MonoBehaviour
 
     // On précharge le dialogue avec la première phrase
     public void LoadDialogue(int dialogueCode) {
+        // Close in case we skipped dialogue trigger
+        dialogueBoxAnimator.SetBool("IsOpen", false);
+        audioSource.Stop();
+        StopAllCoroutines();
+
         currentDialogue = FindDialogueByCode(dialogueCode);
         indexSentence = 0;
         sentences = currentDialogue.GetSentences();
@@ -98,11 +104,32 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    IEnumerator LoadAudioClip(string url)
+    {
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.WAV))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error while downloading audio clip : " + www.error);
+            }
+            else
+            {
+                AudioClip audioClip = DownloadHandlerAudioClip.GetContent(www);
+                if (audioClip != null)
+                {
+                    audioSource.clip = audioClip;
+                }
+            }
+        }
+    }
+
     IEnumerator PlayAudio()
     {
         if (audioSource.clip)
         {
-            Debug.Log("Playing audio clip : " + audioSource.clip);
+            //Debug.Log("Playing audio clip : " + audioSource.clip);
             audioSource.Play();
             while (audioSource.isPlaying)
             {
