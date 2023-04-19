@@ -497,6 +497,16 @@ PrefabInstance:
       propertyPath: homeScreenTransition
       value: 
       objectReference: {fileID: 889490734697051632}
+    - target: {fileID: 8619902073201743155, guid: 6114d07b9de7151489026755e7ae4f54,
+        type: 3}
+      propertyPath: sceneAddresses.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619902073201743155, guid: 6114d07b9de7151489026755e7ae4f54,
+        type: 3}
+      propertyPath: sceneAddresses.Array.data[4]
+      value: Assets/Scenes/End.unity
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6114d07b9de7151489026755e7ae4f54, type: 3}
 --- !u!1 &1428005686
@@ -991,7 +1001,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6c14f0d21844fab44a0f0480a35c274b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d8974b0dec150524cad2b214cca1e952, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

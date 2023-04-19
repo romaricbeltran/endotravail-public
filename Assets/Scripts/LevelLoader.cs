@@ -90,7 +90,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadAddressableAsynchronously(int addressIndex)
     {
         // Wait for Credits (homeAnimation)
-        if (addressIndex == 1)
+        if (addressIndex == 0)
         {
             yield return new WaitForSeconds(transitionTime * 1.5f);
         }
@@ -131,7 +131,7 @@ public class LevelLoader : MonoBehaviour
             yield return null;
         }
 
-        Debug.Log("Loading Complete");
+        Debug.Log("Scene Loading Complete");
 
         SceneInstance sceneInstance = loadingSceneOperation.Result;
         sceneInstance.ActivateAsync();
