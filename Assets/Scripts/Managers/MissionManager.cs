@@ -1,10 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using UnityEngine.Playables;
-using UnityEngine.Timeline;
 using System;
 
 
@@ -15,7 +12,6 @@ using System;
 public class MissionManager : MonoBehaviour
 {
     public GameManager gameManager;
-    public TimelineManager timelineManager;
     public GameObject player;
     public static bool ON_MISSION_END;
     public static bool WAS_ACTION_MISSION_COMPONENT = false;

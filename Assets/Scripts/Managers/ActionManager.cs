@@ -2,14 +2,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class ActionManager : MonoBehaviour
 {
     public GameManager gameManager;
     public MissionManager missionManager;
-    public GameObject player;
 
     // UI
     public GameObject actionBox;

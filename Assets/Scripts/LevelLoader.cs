@@ -10,6 +10,10 @@ using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour
 {
+    public static LevelLoader instance;
+    public const string PLAYER_PROGRESS = "player_progress";
+    public GameManager gameManager;
+
     // Tableau contenant les adresses des scènes, indexé par numéro de scène
     public string[] sceneAddresses;
 
@@ -25,40 +29,98 @@ public class LevelLoader : MonoBehaviour
     // Home Screen Transition
     public Animator homeScreenTransition;
 
+    private void Start()
+    {
+        AudioSource audio = FindObjectOfType<AudioManager>().GetComponent<AudioSource>();
+        
+        if (SceneManager.GetActiveScene().buildIndex == -1)
+        {
+            audio.Stop();
+        }
+        else if (!audio.isPlaying)
+        {
+            audio.Play();
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            MenuScreenManager.EnableChapters();
+        }
+    }
+
+    public void SaveProgress(int levelIndex)
+    {
+        PlayerPrefs.SetInt(PLAYER_PROGRESS, levelIndex);
+        PlayerPrefs.Save();
+    }
+
+    public int LoadProgress()
+    {
+        return PlayerPrefs.GetInt(PLAYER_PROGRESS, 0);
+    }
+
     public void LoadLevel(int addressIndex)
     {
         // Changement du texte en fonction de la scène chargée
         switch (addressIndex)
         {
+            // Home
             case 0:
                 levelTitleText.text = "";
                 levelSubtitleText.text = "";
                 StartCoroutine(LoadNonAddressableAsynchronously(0));
                 break;
+            // Menu
             case 1:
+                levelTitleText.text = "";
+                levelSubtitleText.text = "";
+                if (SceneManager.GetActiveScene().buildIndex == 0) {
+                    homeScreenTransition.SetTrigger("Start");
+                }
+                if (LoadProgress() == 0)
+                {
+                    SaveProgress(1);
+                }
+                StartCoroutine(LoadNonAddressableAsynchronously(1));
+                break;
+            // Chapitre 1
+            case 2:
                 levelTitleText.text = "CHAPITRE 1";
                 levelSubtitleText.text = "L'absence";
-                homeScreenTransition.SetTrigger("Start");
-                StartCoroutine(LoadAddressableAsynchronously(addressIndex-1));
+                StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
                 break;
-            case 2:
+            // Chapitre 2
+            case 3:
+                if (LoadProgress() > 1)
+                {
                 levelTitleText.text = "CHAPITRE 2";
                 levelSubtitleText.text = "Une journée type dans la peau d'une personne atteinte d'endométriose";
-                StartCoroutine(LoadAddressableAsynchronously(addressIndex-1));
+                StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
+                }
                 break;
-            case 3:
+            // Chapitre 3
+            case 4:
+                if (LoadProgress() > 2)
+                {
                 levelTitleText.text = "CHAPITRE 3";
                 levelSubtitleText.text = "L'annonce au manager";
-                StartCoroutine(LoadAddressableAsynchronously(addressIndex-1));
+                StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
+                
+                }
                 break;
-            case 4:
+            // Chapitre 4
+            case 5:
+                if (LoadProgress() > 3)
+                {
                 levelTitleText.text = "CHAPITRE 4";
                 levelSubtitleText.text = "Le rendez-vous avec la médecine du travail";
-                StartCoroutine(LoadAddressableAsynchronously(addressIndex-1));
+                StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
+                }
                 break;
-            case 5:
+            // End
+            case 6:
                 levelTitleText.text = "";
-                StartCoroutine(LoadNonAddressableAsynchronously(1));
+                StartCoroutine(LoadNonAddressableAsynchronously(2));
                 break;
             default:
                 levelTitleText.text = null;
@@ -70,6 +132,12 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadNonAddressableAsynchronously(int sceneIndex)
     {
+        // Wait for Credits (homeAnimation)
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            yield return new WaitForSeconds(transitionTime * 1.5f);
+        }
+
         // Start CrossFade animation
         loadingScreenTransition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
@@ -89,12 +157,6 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadAddressableAsynchronously(int addressIndex)
     {
-        // Wait for Credits (homeAnimation)
-        if (addressIndex == 0)
-        {
-            yield return new WaitForSeconds(transitionTime * 1.5f);
-        }
-
         // Start CrossFade animation
         loadingScreenTransition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
@@ -120,7 +182,7 @@ public class LevelLoader : MonoBehaviour
         }
 
         AsyncOperationHandle<SceneInstance> loadingSceneOperation = Addressables.LoadSceneAsync(sceneAddresses[addressIndex], LoadSceneMode.Single, false);
-        Debug.Log("Loading Scene " + addressIndex);
+        Debug.Log("Loading Scene " + addressIndex+1);
 
         while (!loadingSceneOperation.IsDone)
         {

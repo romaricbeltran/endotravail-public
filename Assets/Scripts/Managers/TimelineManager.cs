@@ -1,11 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
-using Cinemachine;
 using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
 
 public class TimelineManager : MonoBehaviour
 {
@@ -16,7 +13,6 @@ public class TimelineManager : MonoBehaviour
     public ActionManager actionManager;
     public MissionManager missionManager;
     public BadgeManager badgeManager;
-    public GameObject player;
 
     public List<ScenarioNode> scenario;
     public Dictionary<int, ScenarioNode> scenarioNodeDictionary;
@@ -93,7 +89,21 @@ public class TimelineManager : MonoBehaviour
                 break;
             case EventType.End:
                 //Debug.Log("End of chapter");
-                levelLoader.LoadLevel(eventIndex);
+                if (eventIndex > levelLoader.LoadProgress())
+                {
+                    levelLoader.SaveProgress(eventIndex);
+                }
+                
+                if (eventIndex != 5)
+                {
+                    // Reviens au menu de niveau
+                    levelLoader.LoadLevel(1);
+                }
+                else
+                {
+                    // Charge l'écran de fin
+                    levelLoader.LoadLevel(6);
+                }
                 break;
             default:
                 break;

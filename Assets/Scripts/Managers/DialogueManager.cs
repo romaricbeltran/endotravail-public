@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
 {
     public GameManager gameManager;
     public MissionManager missionManager;
-    public GameObject player;
+    
     public Animator dialogueBoxAnimator;
     public AudioSource audioSource;
     
