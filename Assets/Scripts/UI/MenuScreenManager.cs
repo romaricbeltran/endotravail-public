@@ -14,7 +14,6 @@ public class MenuScreenManager : MonoBehaviour
             GameObject chapter = GameObject.Find("Chapter" + i);
             chapter.transform.Find("Image").GetComponent<Image>().color = Color.white;
             chapter.transform.Find("Lock").gameObject.SetActive(false);
-            chapter.transform.Find("LockTitle").gameObject.SetActive(false);
             chapter.GetComponent<Animator>().SetBool("Unlocked", true);
         }
     }
