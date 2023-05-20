@@ -94,7 +94,7 @@ public class LevelLoader : MonoBehaviour
                 if (LoadProgress() > 1)
                 {
                 levelTitleText.text = "CHAPITRE 2";
-                levelSubtitleText.text = "Une journée type dans la peau d'une personne atteinte d'endométriose";
+                levelSubtitleText.text = "Une journée type";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
                 }
                 break;
@@ -113,7 +113,7 @@ public class LevelLoader : MonoBehaviour
                 if (LoadProgress() > 3)
                 {
                 levelTitleText.text = "CHAPITRE 4";
-                levelSubtitleText.text = "Le rendez-vous avec la médecine du travail";
+                levelSubtitleText.text = "La médecine du travail";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
                 }
                 break;
