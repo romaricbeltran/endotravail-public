@@ -5,8 +5,8 @@ body { height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden; }
 #unity-logo { width: 250px; height: 130px; background: url('logo-endo-white.png') no-repeat center; background-size: contain; }
 #unity-progress-bar-empty { width: 141px; height: 18px; margin: 0 auto; background: url('progress-bar-empty-dark.png') no-repeat center }
 #unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('progress-bar-full-dark.png') no-repeat center }
-#unity-footer { position: relative }
+#unity-fullscreen-overlay { position: relative; width: 100vw; height: 100vh; }
 #unity-fullscreen-button { position: fixed; bottom: 25px; left: 25px; z-index: 999; width: 40px; height: 40px; background: url('fullscreen-button.png') no-repeat center; background-size: contain; }
-#unity-fullscreen-button.disabled { filter: grayscale(100%); }
+#unity-fullscreen-button.disabled { filter: grayscale(100%); display: none; }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
 #loading-text { font-family: arial; font-size: 18px; color: white; text-align: center; margin: 10px 0; position: absolute; white-space: nowrap; right: 50%; transform: translate(50%,50%); };
