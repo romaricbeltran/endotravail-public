@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -26,7 +26,7 @@
 
             function changerTexte() {
               texte.innerHTML = messages[i];
-			        i = (i + 1) % messages.length;
+                                i = (i + 1) % messages.length;
               if (i === 0) {
                 i = 0;
               }
@@ -38,8 +38,8 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-fullscreen-button"></div>
+      <div id="unity-fullscreen-overlay">
+        <!-- <div id="unity-fullscreen-button"></div> -->
       </div>
     </div>
     <script>
@@ -47,7 +47,7 @@
       var canvas = document.querySelector("#unity-canvas");
       var loadingBar = document.querySelector("#unity-loading-bar");
       var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-overlay");
       fullscreenButton.classList.add("disabled");
       var warningBanner = document.querySelector("#unity-warning");
 
@@ -72,11 +72,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/seriousgame-endometriose-travail.dianaportela.fr.loader.js";
+      var loaderUrl = buildUrl + "/build-webgl-endotravail-responsive.loader.js";
       var config = {
-        dataUrl: buildUrl + "/seriousgame-endometriose-travail.dianaportela.fr.data.gz",
-        frameworkUrl: buildUrl + "/seriousgame-endometriose-travail.dianaportela.fr.framework.js.gz",
-        codeUrl: buildUrl + "/seriousgame-endometriose-travail.dianaportela.fr.wasm.gz",
+        dataUrl: buildUrl + "/build-webgl-endotravail-responsive.data.gz",
+        frameworkUrl: buildUrl + "/build-webgl-endotravail-responsive.framework.js.gz",
+        codeUrl: buildUrl + "/build-webgl-endotravail-responsive.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "RomaricB",
         productName: "seriousgame-endometriose-travail.dianaportela.fr",
@@ -105,12 +105,34 @@
         // performance, uncomment the following line:
         // config.devicePixelRatio = 1;
 
-        unityShowBanner('Ce jeu n\'est pour le moment accessible que par ordinateur.');
+        //unityShowBanner('Ce jeu n\'est pour le moment accessible que par ordinateur.');
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
       }
 
       loadingBar.style.display = "block";
+
+      function handleFullscreen(unityInstance) {
+        unityInstance.SetFullscreen(1);
+
+        // Assurez-vous que la demande est déclenchée en réponse à une interaction utilisateur
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+            document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+            document.documentElement.msRequestFullscreen();
+        }
+
+        // Tentez de forcer l'orientation en mode paysage (pour certains navigateurs)
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape');
+        } else if (screen.lockOrientation) {
+            screen.lockOrientation('landscape');
+        }
+      }
 
       var script = document.createElement("script");
       script.src = loaderUrl;
@@ -120,9 +142,40 @@
         }).then((unityInstance) => {
           loadingBar.style.display = "none";
           fullscreenButton.classList.remove("disabled");
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
+          
+          // Fonction pour gérer le changement d'état du plein écran
+          function handleFullscreenChange() {
+            if (
+              !document.fullscreenElement &&
+              !document.mozFullScreenElement &&
+              !document.webkitFullscreenElement &&
+              !document.msFullscreenElement
+            ) {
+              fullscreenButton.style.display = "block"; // Affiche le bouton si hors du plein écran
+            } else {
+              fullscreenButton.style.display = "none"; // Masque le bouton si en plein écran
+            }
+          }
+
+          // Ajoute un écouteur d'événement pour détecter les changements d'état du plein écran
+          document.addEventListener("fullscreenchange", handleFullscreenChange);
+          document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+          document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+          document.addEventListener("msfullscreenchange", handleFullscreenChange);
+
+          fullscreenButton.addEventListener('click', function() {
+            if (
+              !document.fullscreenElement &&
+              !document.mozFullScreenElement &&
+              !document.webkitFullscreenElement &&
+              !document.msFullscreenElement
+            ) {
+              handleFullscreen(unityInstance);
+            } else {
+              fullscreenButton.classList.add("disabled");
+              fullscreenButton.style.display = "none"; // Masque le bouton si déjà en plein écran
+            }
+          });
         }).catch((message) => {
           alert(message);
         });
