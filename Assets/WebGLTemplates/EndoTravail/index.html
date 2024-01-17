@@ -74,7 +74,8 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/build-webgl-endotravail-responsive.loader.js";
       var config = {
-        dataUrl: buildUrl + "/build-webgl-endotravail-responsive.data.gz",
+        dataUrl: buildUrl + (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) ?
+        "/build-webgl-mobile-endotravail-responsive.data.gz" : "/build-webgl-endotravail-responsive.data.gz",
         frameworkUrl: buildUrl + "/build-webgl-endotravail-responsive.framework.js.gz",
         codeUrl: buildUrl + "/build-webgl-endotravail-responsive.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
