@@ -1035,9 +1035,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Pour plus d'informations, rendez-vous sur le site d'EndoFrance, o\xF9
-    vous trouverez des ressources pouvant vous aider : \r\nLe livre blanc \"Endom\xE9triose
+    vous trouverez des ressources pouvant vous aider : le livre blanc \"Endom\xE9triose
     et emploi\" et le \"Guide du parcours de sant\xE9 des personnes atteintes de
-    maladies chroniques\" \xE0 t\xE9l\xE9charger sur la page \"Travailler avec l'endom\xE9triose\".\r"
+    maladies chroniques\" \xE0 t\xE9l\xE9charger sur la page \"Travailler avec l'endom\xE9triose\"
+    :\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
@@ -1065,8 +1066,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1146,6 +1147,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelLoader
+      objectReference: {fileID: 0}
+    - target: {fileID: 4748007672991137008, guid: 6114d07b9de7151489026755e7ae4f54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -1913,8 +1919,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1975,10 +1981,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\rEndoFrance intervient dans les entreprises, sur demande, pour sensibiliser
+  m_text: "EndoFrance intervient dans les entreprises, sur demande, pour sensibiliser
     les employ\xE9s et les managers sur l'impact de l'endom\xE9triose sur le quotidien
-    professionnel.\r\n\r\nPour toute question sur l'endom\xE9triose, vous pourrez
-    contacter les b\xE9n\xE9voles de votre r\xE9gion via ce lien :"
+    professionnel. Pour toute question sur l'endom\xE9triose, vous pourrez contacter
+    les b\xE9n\xE9voles de votre r\xE9gion via ce lien :"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
@@ -2006,8 +2012,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2136,8 +2142,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

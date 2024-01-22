@@ -10,6 +10,24 @@
   <body>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas"></canvas>
+      <style>
+        /* Style for the transparent banner */
+      #speed-banner {
+          position: fixed;
+          top: 10px;
+          right: 10px;
+          background-color: rgba(0, 0, 0, 0.7); /* Transparent black background */
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          display: none;
+      }
+      </style>
+      <div id="speed-banner">
+        <p id="average-speed">Average Speed: </p>
+        <p id="speed-list">Speed List: </p>
+      </div>
+      <script src="./speedtest.js"></script>
       <div id="unity-loading-bar">
         <div id="unity-progress-bar-empty">
           <div id="unity-progress-bar-full"></div>
@@ -33,7 +51,7 @@
             }
 
             changerTexte();
-            setInterval(changerTexte, 15000);
+            var refreshchangerTexte = setInterval(changerTexte, 15000);
           </script>
         </div>
       </div>
@@ -74,8 +92,8 @@
       var buildUrl = "Build";
       var loaderUrl = buildUrl + "/build-webgl-endotravail-responsive.loader.js";
       var config = {
-        dataUrl: buildUrl + (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) ?
-        "/build-webgl-mobile-endotravail-responsive.data.gz" : "/build-webgl-endotravail-responsive.data.gz",
+        dataUrl: buildUrl + ((/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) ?
+        "/build-webgl-mobile-endotravail-responsive.data.gz" : "/build-webgl-endotravail-responsive.data.gz"),
         frameworkUrl: buildUrl + "/build-webgl-endotravail-responsive.framework.js.gz",
         codeUrl: buildUrl + "/build-webgl-endotravail-responsive.wasm.gz",
         streamingAssetsUrl: "StreamingAssets",
@@ -135,53 +153,70 @@
         }
       }
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.classList.remove("disabled");
-          
-          // Fonction pour gérer le changement d'état du plein écran
-          function handleFullscreenChange() {
-            if (
-              !document.fullscreenElement &&
-              !document.mozFullScreenElement &&
-              !document.webkitFullscreenElement &&
-              !document.msFullscreenElement
-            ) {
-              fullscreenButton.style.display = "block"; // Affiche le bouton si hors du plein écran
-            } else {
-              fullscreenButton.style.display = "none"; // Masque le bouton si en plein écran
-            }
+      async function runGame() {
+        try {
+          var isSpeedSufficient = await speedTestAsync();
+
+          if (isSpeedSufficient.value > 100) {
+            var script = document.createElement("script");
+            script.src = loaderUrl;
+            script.onload = () => {
+              createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+              }).then((unityInstance) => {
+                loadingBar.style.display = "none";
+                fullscreenButton.classList.remove("disabled");
+                
+                // Fonction pour gérer le changement d'état du plein écran
+                function handleFullscreenChange() {
+                  if (
+                    !document.fullscreenElement &&
+                    !document.mozFullScreenElement &&
+                    !document.webkitFullscreenElement &&
+                    !document.msFullscreenElement
+                  ) {
+                    fullscreenButton.style.display = "block"; // Affiche le bouton si hors du plein écran
+                  } else {
+                    fullscreenButton.style.display = "none"; // Masque le bouton si en plein écran
+                  }
+                }
+      
+                // Ajoute un écouteur d'événement pour détecter les changements d'état du plein écran
+                document.addEventListener("fullscreenchange", handleFullscreenChange);
+                document.addEventListener("mozfullscreenchange", handleFullscreenChange);
+                document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
+                document.addEventListener("msfullscreenchange", handleFullscreenChange);
+      
+                fullscreenButton.addEventListener('click', function() {
+                  if (
+                    !document.fullscreenElement &&
+                    !document.mozFullScreenElement &&
+                    !document.webkitFullscreenElement &&
+                    !document.msFullscreenElement
+                  ) {
+                    handleFullscreen(unityInstance);
+                  } else {
+                    fullscreenButton.classList.add("disabled");
+                    fullscreenButton.style.display = "none"; // Masque le bouton si déjà en plein écran
+                  }
+                });
+              }).catch((message) => {
+                alert(message);
+              });
+            };
+            document.body.appendChild(script);
+          } else {
+            clearInterval(refreshchangerTexte);
+            texte.innerHTML = "Désolé votre connexion internet n'est pas assez performante pour jouer à ce jeu, veuillez réessayer avec une meilleure connexion.";
           }
+        } catch (error) {
+          // Gérer les erreurs ici
+          texte.innerHTML = "Désolé votre connexion internet n'est pas assez performante pour jouer à ce jeu, veuillez réessayer avec une meilleure connexion.";
+          console.error("Une erreur s'est produite lors du test de vitesse :", error);
+        }
+      }
 
-          // Ajoute un écouteur d'événement pour détecter les changements d'état du plein écran
-          document.addEventListener("fullscreenchange", handleFullscreenChange);
-          document.addEventListener("mozfullscreenchange", handleFullscreenChange);
-          document.addEventListener("webkitfullscreenchange", handleFullscreenChange);
-          document.addEventListener("msfullscreenchange", handleFullscreenChange);
-
-          fullscreenButton.addEventListener('click', function() {
-            if (
-              !document.fullscreenElement &&
-              !document.mozFullScreenElement &&
-              !document.webkitFullscreenElement &&
-              !document.msFullscreenElement
-            ) {
-              handleFullscreen(unityInstance);
-            } else {
-              fullscreenButton.classList.add("disabled");
-              fullscreenButton.style.display = "none"; // Masque le bouton si déjà en plein écran
-            }
-          });
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
+      runGame();
     </script>
   </body>
 </html>

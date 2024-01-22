@@ -94,7 +94,7 @@ public class LevelLoader : MonoBehaviour
                 if (LoadProgress() > 1)
                 {
                 levelTitleText.text = "CHAPITRE 2";
-                levelSubtitleText.text = "Une journée type";
+                levelSubtitleText.text = "Au bureau";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
                 }
                 break;
@@ -103,7 +103,7 @@ public class LevelLoader : MonoBehaviour
                 if (LoadProgress() > 2)
                 {
                 levelTitleText.text = "CHAPITRE 3";
-                levelSubtitleText.text = "L'annonce au manager";
+                levelSubtitleText.text = "L'annonce";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
                 
                 }
@@ -113,14 +113,19 @@ public class LevelLoader : MonoBehaviour
                 if (LoadProgress() > 3)
                 {
                 levelTitleText.text = "CHAPITRE 4";
-                levelSubtitleText.text = "La médecine du travail";
+                levelSubtitleText.text = "L'aménagement";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
                 }
                 break;
-            // End
+            // Form review
             case 6:
                 levelTitleText.text = "";
                 StartCoroutine(LoadNonAddressableAsynchronously(2));
+                break;
+            // End
+            case 7:
+                levelTitleText.text = "";
+                StartCoroutine(LoadNonAddressableAsynchronously(3));
                 break;
             default:
                 levelTitleText.text = null;

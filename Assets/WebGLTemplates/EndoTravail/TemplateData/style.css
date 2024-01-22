@@ -9,4 +9,4 @@ body { height: 100%; width: 100%; margin: 0; padding: 0; overflow: hidden; }
 #unity-fullscreen-button { position: fixed; bottom: 25px; left: 25px; z-index: 999; width: 40px; height: 40px; background: url('fullscreen-button.png') no-repeat center; background-size: contain; }
 #unity-fullscreen-button.disabled { filter: grayscale(100%); display: none; }
 #unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
-#loading-text { font-family: arial; font-size: 18px; color: white; text-align: center; margin: 10px 0; position: absolute; white-space: nowrap; right: 50%; transform: translate(50%,50%); };
+#loading-text { font-family: arial; font-size: 18px; color: white; text-align: center; margin: 10px 0; position: absolute; right: 50%; transform: translate(50%,50%); width: 100vw; };

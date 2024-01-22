@@ -101,7 +101,7 @@ public class TimelineManager : MonoBehaviour
                 }
                 else
                 {
-                    // Charge l'écran de fin
+                    // Charge le formulaire de satisfaction
                     levelLoader.LoadLevel(6);
                 }
                 break;
