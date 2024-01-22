@@ -23,7 +23,7 @@ public class comboBuild
 
       string desktopPath = Path.Combine(dualBuildPath, desktopBuildName);
       string mobilePath  = Path.Combine(dualBuildPath, mobileBuildName);
-      string[] scenes = new string[] {"Assets/Scenes/Home.unity", "Assets/Scenes/Menu.unity", "Assets/Scenes/End.unity"};
+      string[] scenes = new string[] {"Assets/Scenes/Home.unity", "Assets/Scenes/Menu.unity", "Assets/Scenes/Form.unity", "Assets/Scenes/End.unity"};
 
       //EditorUserBuildSettings.webGLBuildSubtarget = WebGLTextureSubtarget.DXT;
       //BuildPipeline.BuildPlayer(scenes, desktopPath, BuildTarget.WebGL, BuildOptions.Development); 
