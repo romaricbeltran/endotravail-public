@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5943536076786547699}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.6930574, y: -0.14025456, z: -0.14025459, w: -0.69305754}
   m_LocalPosition: {x: -12.262, y: 0.831, z: -1.382}
   m_LocalScale: {x: 14839.534, y: 14839.534, z: 14839.534}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 22.881}
 --- !u!33 &7971272021645192940
 MeshFilter:
@@ -106,13 +106,14 @@ VideoPlayer:
   m_RenderMode: 3
   m_AspectRatio: 2
   m_DataSource: 0
+  m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
   m_TargetAudioSources:
   - {fileID: 0}
   m_DirectAudioVolumes:
   - 1
-  m_Url: 
+  m_Url: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/1.1.rappel-telephone.mp4
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1

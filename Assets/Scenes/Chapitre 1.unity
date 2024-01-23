@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4482453, g: 0.49827206, b: 0.5755818, a: 1}
+  m_IndirectSpecularColor: {r: 0.4482475, g: 0.49827462, b: 0.5755831, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -106,7 +106,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -119,7 +119,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -132,7 +132,7 @@ Mesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: pb_Mesh-171986
-  serializedVersion: 10
+  serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -289,6 +289,7 @@ Mesh:
     m_Center: {x: -0.0016047955, y: 0.2794168, z: 0.0018568039}
     m_Extent: {x: 0.36308408, y: 0.27941686, z: 0.13492584}
   m_MeshUsageFlags: 0
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshMetrics[0]: 1
@@ -306,7 +307,7 @@ Mesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: pb_Mesh-171942
-  serializedVersion: 10
+  serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -463,6 +464,7 @@ Mesh:
     m_Center: {x: -0.0016047955, y: 0.2794168, z: 0.0018568039}
     m_Extent: {x: 0.36308408, y: 0.27941686, z: 0.13492584}
   m_MeshUsageFlags: 0
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshMetrics[0]: 1
@@ -480,7 +482,7 @@ Mesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: pb_Mesh-171966
-  serializedVersion: 10
+  serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -637,6 +639,7 @@ Mesh:
     m_Center: {x: -0.0016047955, y: 0.2794168, z: 0.0018568039}
     m_Extent: {x: 0.36308408, y: 0.27941686, z: 0.13492584}
   m_MeshUsageFlags: 0
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshMetrics[0]: 1
@@ -654,7 +657,7 @@ Mesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: pb_Mesh-171976
-  serializedVersion: 10
+  serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
     firstByte: 0
@@ -811,6 +814,7 @@ Mesh:
     m_Center: {x: -0.0016047955, y: 0.2794168, z: 0.0018568039}
     m_Extent: {x: 0.36308408, y: 0.27941686, z: 0.13492584}
   m_MeshUsageFlags: 0
+  m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshMetrics[0]: 1
@@ -826,6 +830,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 245378607853576943, guid: e706a61ce3661324c9b3a4948cfa681d,
@@ -1423,6 +1428,11 @@ PrefabInstance:
       propertyPath: m_Tangents.Array.data[297].z
       value: NaN
       objectReference: {fileID: 0}
+    - target: {fileID: 1865959350031713914, guid: e706a61ce3661324c9b3a4948cfa681d,
+        type: 3}
+      propertyPath: GroundLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2027306750352780428, guid: e706a61ce3661324c9b3a4948cfa681d,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -1643,6 +1653,12 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 5117147072161945676, guid: e706a61ce3661324c9b3a4948cfa681d,
+        type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ed46eac23d5073949bdbaabbb889071f,
+        type: 2}
     - target: {fileID: 5369327980518806328, guid: e706a61ce3661324c9b3a4948cfa681d,
         type: 3}
       propertyPath: m_Mesh
@@ -4032,4 +4048,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e706a61ce3661324c9b3a4948cfa681d, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 8040136115878857997}
