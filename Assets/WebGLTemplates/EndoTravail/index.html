@@ -132,7 +132,7 @@
       loadingBar.style.display = "block";
 
       function handleFullscreen(unityInstance) {
-        unityInstance.SetFullscreen(1);
+        document.documentElement.requestFullscreen();
 
         // Assurez-vous que la demande est déclenchée en réponse à une interaction utilisateur
         if (document.documentElement.requestFullscreen) {

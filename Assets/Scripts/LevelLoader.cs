@@ -13,6 +13,7 @@ public class LevelLoader : MonoBehaviour
     public static LevelLoader instance;
     public const string PLAYER_PROGRESS = "player_progress";
     public GameManager gameManager;
+    public MenuScreenManager menuScreenManager;
 
     // Tableau contenant les adresses des scènes, indexé par numéro de scène
     public string[] sceneAddresses;
@@ -85,6 +86,9 @@ public class LevelLoader : MonoBehaviour
                 break;
             // Chapitre 1
             case 2:
+                if (menuScreenManager) {
+                    menuScreenManager.GetComponent<GraphicRaycaster>().enabled = false;
+                }
                 levelTitleText.text = "CHAPITRE 1";
                 levelSubtitleText.text = "L'absence";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
@@ -93,6 +97,9 @@ public class LevelLoader : MonoBehaviour
             case 3:
                 if (LoadProgress() > 1)
                 {
+                if (menuScreenManager) {
+                    menuScreenManager.GetComponent<GraphicRaycaster>().enabled = false;
+                }
                 levelTitleText.text = "CHAPITRE 2";
                 levelSubtitleText.text = "Au bureau";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
@@ -102,6 +109,9 @@ public class LevelLoader : MonoBehaviour
             case 4:
                 if (LoadProgress() > 2)
                 {
+                if (menuScreenManager) {
+                    menuScreenManager.GetComponent<GraphicRaycaster>().enabled = false;
+                }
                 levelTitleText.text = "CHAPITRE 3";
                 levelSubtitleText.text = "L'annonce";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
@@ -112,6 +122,9 @@ public class LevelLoader : MonoBehaviour
             case 5:
                 if (LoadProgress() > 3)
                 {
+                if (menuScreenManager) {
+                    menuScreenManager.GetComponent<GraphicRaycaster>().enabled = false;
+                }
                 levelTitleText.text = "CHAPITRE 4";
                 levelSubtitleText.text = "L'aménagement";
                 StartCoroutine(LoadAddressableAsynchronously(addressIndex-2));
