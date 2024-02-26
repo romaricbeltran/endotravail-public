@@ -31,7 +31,6 @@ function runTest(iteration, resolve, reject) {
     }
 
     download.onerror = function() {
-      clearInterval(refreshchangerTexte);
       document.getElementById("unity-progress-bar-empty").background = "none";
       document.getElementById("loading-text").innerHTML = "Il vous faut une connection internet pour jouer à ce jeu.";
     };
