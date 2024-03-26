@@ -21,6 +21,7 @@ public class LevelLoader : MonoBehaviour
     public TextMeshProUGUI levelTitleText;
     public TextMeshProUGUI levelSubtitleText;
     public Slider loadingBar;
+    public TextMeshProUGUI waitLoadingText;
 
     // CrossFade transition
     public Animator loadingScreenTransition;
@@ -177,6 +178,10 @@ public class LevelLoader : MonoBehaviour
     {
         // Start CrossFade animation
         loadingScreenTransition.SetTrigger("Start");
+
+        IEnumerator waitLoadingCoroutine = WaitLoadingCoroutine();
+        StartCoroutine(waitLoadingCoroutine);
+
         yield return new WaitForSeconds(transitionTime);
         retardedUI.SetActive(true);
         
@@ -213,6 +218,9 @@ public class LevelLoader : MonoBehaviour
 
         Debug.Log("Scene Loading Complete");
 
+        StopCoroutine(waitLoadingCoroutine);
+        waitLoadingText.text = "";
+
         SceneInstance sceneInstance = loadingSceneOperation.Result;
         sceneInstance.ActivateAsync();
     }
@@ -232,6 +240,32 @@ public class LevelLoader : MonoBehaviour
         }
 
         yield return loadingAssetOperation;
+    }
+
+    public IEnumerator WaitLoadingCoroutine()
+    {
+        float timer = 0;
+        bool message30SecondsShown = false;
+        bool message1MinuteShown = false;
+
+        while (!message30SecondsShown || !message1MinuteShown)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > 30 && !message30SecondsShown)
+            {
+                waitLoadingText.text = "Le serious game peut prendre 1 à 2 minutes à charger, merci pour votre patience.";
+                message30SecondsShown = true;
+            }
+
+            if (timer > 60 && !message1MinuteShown)
+            {
+                waitLoadingText.text = "Merci de patienter, le chargement est plus long que prévu en raison d'une faible connexion internet. Privilégiez une connexion Wifi.";
+                message1MinuteShown = true;
+            }
+
+            yield return null;
+        }
     }
 
     public void OpenLink(string openURL)
