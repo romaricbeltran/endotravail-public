@@ -170,19 +170,32 @@
         }, 5000);
       }
 
+      function waitForIOSValue() {
+        return new Promise((resolve) => {
+            window.addEventListener('message', function(event) {
+                var iosValue = event.data.ios;
+                if (iosValue !== undefined) {
+                  resolve(iosValue);
+                }
+            });
+        });
+      }
+
       async function runGame() {
         try {
-          
-          // if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-          //   loadingText.innerHTML = "Désolé le jeu n'est pas compatible avec votre version d'iOS, veuillez mettre à jour votre appareil ou réessayer avec un appareil Androïd ou sur ordinateur.";
-          //   return;
-          // }
-          
+          let isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+          let isIOSIframe = await waitForIOSValue() === 'true';
+
           if (!isDevicePerformant()) {
             loadingText.innerHTML = "Désolé, votre appareil n'est pas assez performant pour jouer à ce jeu. Veuillez essayer avec un appareil plus récent.";
             return;
           } else if (await speedTestAsync().value < 100) {
             loadingText.innerHTML = "Désolé votre connexion internet n'est pas assez performante pour jouer à ce jeu, veuillez réessayer avec une meilleure connexion.";
+            return;
+          }
+
+          if (isIOS && !isIOSIframe) {
+            loadingText.innerHTML = "<a href=\"https://endofrance.org/la-maladie-endometriose/endotravail-mobile-ios/\" target=\"_blank\" style=\"color: white;\">Votre version d'iOS ne supporte pas le plein écran, cliquez ici (https://endofrance.org/la-maladie-endometriose/endotravail-mobile-ios/) pour lancer le jeu.</a>";
             return;
           }
 
@@ -197,7 +210,7 @@
 
               loadingBar.style.display = "none";
               fullscreenButton.classList.remove("disabled");
-              if (/iPhone/i.test(navigator.userAgent)) {
+              if (isIOS) {
                 fullscreenButton.remove();
               }
               
