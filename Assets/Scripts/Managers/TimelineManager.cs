@@ -78,19 +78,19 @@ public class TimelineManager : MonoBehaviour
 			gameManager.SwitchPlayerInput( false );
 			HandleScenario( popupScenarioNodeManager, popupScenarioNode );
 		}
+		else if ( scenarioNode is EndChapterScenarioNode endChapterScenarioNode )
+		{
+			gameManager.SwitchPlayerInput( false );
+			HandleEndChapter();
+		}
 		else if ( scenarioNode is EndGameScenarioNode endGameScenarioNode )
 		{
 			endGame = true;
 			gameManager.SwitchPlayerInput( false );
 			HandleScenario( endGameScenarioNodeManager, endGameScenarioNode );
 		}
-		else if ( scenarioNode is MenuScenarioNode menuScenarioNode )
-		{
-			HandleEndMenu();
-		}
 		else
 		{
-			HandleEndMenu();
 			Debug.LogWarning( "Unsupported scenario node type." );
 		}
 
@@ -138,8 +138,17 @@ public class TimelineManager : MonoBehaviour
 		{
 			if( returnedNode != null )
 			{
-				//@Todo assigner à currentNodeIndex l'index du nouveau noeud
-				PlayScenarioNode( returnedNode );
+				int returnedNodeIndex = FindNodeIndexInScenario( returnedNode );
+
+				if ( returnedNodeIndex != -1 )
+				{
+					currentNodeIndex = returnedNodeIndex;
+					PlayScenarioNode( scenario[currentNodeIndex] );
+				}
+				else
+				{
+					Debug.LogWarning( "The returned node was not found in the scenario." );
+				}
 			}
 			else if ( currentNodeIndex + 1 < scenario.Length )
 			{
@@ -147,13 +156,26 @@ public class TimelineManager : MonoBehaviour
 			}
 			else
 			{
-				HandleEndMenu();
+				HandleEndChapter();
 				Debug.Log( "End of chapter scenario reached." );
 			}
 		}
 	}
 
-	public void HandleEndMenu()
+	private int FindNodeIndexInScenario(BaseScenarioNode nodeToFind)
+	{
+		for ( int i = 0; i < scenario.Length; i++ )
+		{
+			if ( scenario[i] == nodeToFind )
+			{
+				return i;
+			}
+		}
+
+		return -1;
+	}
+
+	public void HandleEndChapter()
 	{
 		if ( !endGame && chapter > GameManager.LoadProgress() )
 		{

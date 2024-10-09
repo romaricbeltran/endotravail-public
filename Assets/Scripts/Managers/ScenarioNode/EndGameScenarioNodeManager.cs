@@ -31,9 +31,4 @@ public class EndGameScenarioNodeManager : BaseScenarioNodeManager<EndGameScenari
 		retardedUI.SetActive( true );
 		GameManager.ResetProgress();
 	}
-
-	public override void EndNode()
-	{
-		base.EndNode();
-	}
 }
