@@ -8,7 +8,7 @@ public class PauseManager : MonoBehaviour
 
 	public static bool gameIsPaused = false;
 
-    public GameObject pauseMenu;
+    public GameObject menuPanel;
 
 	void Awake()
 	{
@@ -45,14 +45,14 @@ public class PauseManager : MonoBehaviour
 
     void Resume()
     {
-        pauseMenu.SetActive(false);
+        menuPanel.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
     }
 
     void Pause()
     {
-        pauseMenu.SetActive(true);
+        menuPanel.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
     }

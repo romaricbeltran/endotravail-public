@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Unity.Services.Analytics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -38,7 +39,7 @@ public class TimelineManager : MonoBehaviour
         director = GetComponent<PlayableDirector>();
     }
 
-	public void Play()
+	public void PlayScenario()
 	{
 		if ( scenario != null && scenario.Length > 0 )
 		{
@@ -85,11 +86,11 @@ public class TimelineManager : MonoBehaviour
 		}
 		else if ( scenarioNode is MenuScenarioNode menuScenarioNode )
 		{
-			HandleEndChapter();
+			HandleEndMenu();
 		}
 		else
 		{
-			HandleEndChapter();
+			HandleEndMenu();
 			Debug.LogWarning( "Unsupported scenario node type." );
 		}
 
@@ -133,44 +134,43 @@ public class TimelineManager : MonoBehaviour
 
 		BaseScenarioNode returnedNode = previousManager?.GetNextNode();
 
-		if ( endGame )
+		if ( !endGame )
 		{
-			HandleEndGame();
-		}
-		else if( returnedNode != null )
-		{
-			//@Todo assigner à currentNodeIndex l'index du nouveau noeud
-			PlayScenarioNode( returnedNode );
-		}
-		else if ( currentNodeIndex + 1 < scenario.Length )
-		{
-			PlayScenarioNode( scenario[currentNodeIndex++] );
-		}
-		else
-		{
-			HandleEndChapter();
-			Debug.Log( "End of chapter scenario reached." );
+			if( returnedNode != null )
+			{
+				//@Todo assigner à currentNodeIndex l'index du nouveau noeud
+				PlayScenarioNode( returnedNode );
+			}
+			else if ( currentNodeIndex + 1 < scenario.Length )
+			{
+				PlayScenarioNode( scenario[currentNodeIndex++] );
+			}
+			else
+			{
+				HandleEndMenu();
+				Debug.Log( "End of chapter scenario reached." );
+			}
 		}
 	}
 
-	private void HandleEndChapter()
+	public void HandleEndMenu()
 	{
-		if ( chapter > LevelLoader.LoadProgress() )
+		if ( !endGame && chapter > GameManager.LoadProgress() )
 		{
-			LevelLoader.SaveProgress( chapter );
+			GameManager.SaveProgress( chapter );
 		}
 
-		levelLoader.LoadLevel( 1 ); // Charge le menu
+		LevelLoader.LoadMenu();
 	}
 
-	private void HandleEndGame()
+	public void HandleEndForm()
 	{
-		if ( chapter > LevelLoader.LoadProgress() )
+		if ( !endGame && chapter > GameManager.LoadProgress() )
 		{
-			LevelLoader.SaveProgress( chapter );
+			GameManager.SaveProgress( chapter );
 		}
 
-		levelLoader.LoadLevel( 6 ); // Charge le formulaire
+		LevelLoader.LoadForm();
 	}
 
 	private void HandleAnalytics(BaseScenarioNode scenarioNode)

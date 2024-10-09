@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+	public const string LEVEL_PROGRESS = "level_progress";
+
     public TimelineManager timelineManager;
     public MyUICanvasControllerInput myUICanvasControllerInput;
     public GameObject analogicButtons;
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
     {
         playerController = player.GetComponent<ThirdPersonController>();
         playerInput = player.GetComponent<PlayerInput>();
-		timelineManager.Play(); // Start Progression From Beginning
+		timelineManager.PlayScenario(); // Start Progression From Beginning
     }
 
     public void SwitchPlayerInput(bool availability)
@@ -53,4 +55,20 @@ public class GameManager : MonoBehaviour
     {
         playerController.SetCinemachineTargetYaw(targetRotationY);
     }
+
+	public static void SaveProgress(int levelIndex)
+	{
+		PlayerPrefs.SetInt( LEVEL_PROGRESS, levelIndex );
+		PlayerPrefs.Save();
+	}
+
+	public static int LoadProgress()
+	{
+		return PlayerPrefs.GetInt( LEVEL_PROGRESS, 0 );
+	}
+
+	public static void ResetProgress()
+	{
+		PlayerPrefs.DeleteAll();
+	}
 }

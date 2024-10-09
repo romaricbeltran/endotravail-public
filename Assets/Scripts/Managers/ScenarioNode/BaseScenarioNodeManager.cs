@@ -9,7 +9,7 @@ public abstract class BaseScenarioNodeManager<T> : MonoBehaviour, IScenarioNodeM
 	protected T nextNode;
 	protected HashSet<string> temporaryFlags = new HashSet<string>();
 
-	private bool nodeCompletedFlag;
+	private bool loadingNextNode;
 
 	public void LoadData(BaseScenarioNode scenarioNode)
 	{
@@ -20,7 +20,7 @@ public abstract class BaseScenarioNodeManager<T> : MonoBehaviour, IScenarioNodeM
 	{
 		currentNode = currentData;
 		nextNode = null;
-		nodeCompletedFlag = false;
+		loadingNextNode = false;
 		SaveScenarioNodeFlags();
 	}
 
@@ -30,14 +30,11 @@ public abstract class BaseScenarioNodeManager<T> : MonoBehaviour, IScenarioNodeM
 		{
 			foreach ( Flag flag in currentNode.FlagList )
 			{
+				PlayerPrefs.SetInt( flag.FlagName, 1 ); // Active Flag = 1
+
 				if ( flag.PersistedInProgress )
 				{
-					PlayerPrefs.SetInt( flag.FlagName, 1 ); // Sauvegarde 1 comme actif
 					PlayerPrefs.Save();
-				}
-				else
-				{
-					temporaryFlags.Add( flag.FlagName );
 				}
 			}
 		}
@@ -47,9 +44,9 @@ public abstract class BaseScenarioNodeManager<T> : MonoBehaviour, IScenarioNodeM
 
 	public virtual void EndNode()
 	{
-		if ( !nodeCompletedFlag )
+		if ( !loadingNextNode )
 		{
-			nodeCompletedFlag = true;
+			loadingNextNode = true;
 			OnNodeCompleted?.Invoke();
 		}
 	}

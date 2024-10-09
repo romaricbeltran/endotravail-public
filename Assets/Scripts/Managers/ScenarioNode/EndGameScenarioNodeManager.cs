@@ -29,6 +29,7 @@ public class EndGameScenarioNodeManager : BaseScenarioNodeManager<EndGameScenari
 		endGameCanvas.SetActive( true );
 		loadingScreenTransition.SetBool( "Display", true );
 		retardedUI.SetActive( true );
+		GameManager.ResetProgress();
 	}
 
 	public override void EndNode()

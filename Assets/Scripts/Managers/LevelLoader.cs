@@ -11,8 +11,6 @@ using UnityEngine.UI;
 public class LevelLoader : MonoBehaviour
 {
     public static LevelLoader instance;
-    public const string PLAYER_PROGRESS = "player_progress";
-    public GameManager gameManager;
 
     // Tableau contenant les adresses des scènes, indexé par numéro de scène
     public string[] sceneAddresses;
@@ -24,19 +22,17 @@ public class LevelLoader : MonoBehaviour
 
     // CrossFade transition
     public Animator loadingScreenTransition;
-    public float creditTime = 4.5f;
     public float transitionTime = 0.1f;
     public GameObject retardedUI;
 
-    // Home Screen Transition
-    public Animator homeScreenTransition;
-
 	private AudioSource audioTheme;
+	private bool isLevelLoading;
 
 	void Awake()
 	{
 		if ( instance != null )
 		{
+			instance.isLevelLoading = false;
 			Destroy( gameObject );
 		}
 		else
@@ -49,23 +45,45 @@ public class LevelLoader : MonoBehaviour
 	private void Start()
 	{
 		audioTheme = GetComponent<AudioSource>();
-    }
+	}
 
-    public static void SaveProgress(int levelIndex)
-    {
-        PlayerPrefs.SetInt(PLAYER_PROGRESS, levelIndex);
-        PlayerPrefs.Save();
-    }
+	public static void LoadIntro()
+	{
+		if ( !instance.isLevelLoading )
+		{
+			instance.LoadLevel( 0 );
+		}
+	}
 
-    public static int LoadProgress()
-    {
-        return PlayerPrefs.GetInt(PLAYER_PROGRESS, 0);
-    }
+	public static void LoadMenu()
+	{
+		if ( !instance.isLevelLoading )
+		{
+			instance.LoadLevel( 1 );
+		}
+	}
 
-    public void LoadLevel(int addressIndex)
+	public static void LoadForm()
+	{
+		if ( !instance.isLevelLoading )
+		{
+			instance.LoadLevel( 6 );
+		}
+	}
+
+	public static void LoadEnd()
+	{
+		if ( !instance.isLevelLoading )
+		{
+			instance.LoadLevel( 7 );
+		}
+	}
+
+	public void LoadLevel(int addressIndex)
     {
-        // Changement du texte en fonction de la scène chargée
-        switch (addressIndex)
+		instance.isLevelLoading = true;
+		// Changement du texte en fonction de la scène chargée
+		switch (addressIndex)
         {
             // Home
             case 0:
@@ -77,9 +95,6 @@ public class LevelLoader : MonoBehaviour
             case 1:
                 levelTitleText.text = "";
                 levelSubtitleText.text = "";
-                if (SceneManager.GetActiveScene().buildIndex == 0) {
-                    homeScreenTransition.SetTrigger("Start");
-                }
                 StartCoroutine(LoadNonAddressableAsynchronously(1));
                 break;
             // Chapitre 1
@@ -109,12 +124,14 @@ public class LevelLoader : MonoBehaviour
             // Form review
             case 6:
                 levelTitleText.text = "";
-                StartCoroutine(LoadNonAddressableAsynchronously(2));
+				levelSubtitleText.text = "";
+				StartCoroutine(LoadNonAddressableAsynchronously(2));
                 break;
             // End
             case 7:
                 levelTitleText.text = "";
-                StartCoroutine(LoadNonAddressableAsynchronously(3));
+				levelSubtitleText.text = "";
+				StartCoroutine(LoadNonAddressableAsynchronously(3));
                 break;
             default:
                 levelTitleText.text = null;
@@ -124,12 +141,6 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadNonAddressableAsynchronously(int sceneIndex)
     {
-        // Wait for Credits (homeAnimation)
-        if (SceneManager.GetActiveScene().buildIndex == 0)
-        {
-            yield return new WaitForSeconds(creditTime);
-        }
-
 		// Start CrossFade animation
 		loadingScreenTransition.SetBool( "Display", true );
 		yield return new WaitForSeconds( transitionTime );
@@ -205,7 +216,7 @@ public class LevelLoader : MonoBehaviour
 		audioTheme.Stop();
 
 		SceneInstance sceneInstance = loadingSceneOperation.Result;
-        sceneInstance.ActivateAsync();
+        yield return sceneInstance.ActivateAsync();
 
 		loadingScreenTransition.SetBool( "Display", false );
 	}

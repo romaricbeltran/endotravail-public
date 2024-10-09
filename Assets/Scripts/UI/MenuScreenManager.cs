@@ -9,7 +9,7 @@ public class MenuScreenManager : MonoBehaviour
 
 	private void Start()
 	{
-		progress = LevelLoader.LoadProgress();
+		progress = GameManager.LoadProgress();
 
 		EnableChapters();
 	}
@@ -26,7 +26,8 @@ public class MenuScreenManager : MonoBehaviour
 
 	public void LoadLevelButton(int level)
 	{
-		if ( level <= progress )
+		// Pass Home & Menu scene index
+		if ( level - 2 <= progress)
 		{
 			LevelLoader.instance.LoadLevel( level );
 			GetComponent<GraphicRaycaster>().enabled = false;
