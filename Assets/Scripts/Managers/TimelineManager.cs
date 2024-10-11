@@ -1,7 +1,9 @@
+using StarterAssets;
 using System.Collections.Generic;
 using Unity.Services.Analytics;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
@@ -19,187 +21,211 @@ using UnityEngine.SceneManagement;
 */
 public class TimelineManager : MonoBehaviour
 {
+    public Chapter chapter;
     public LevelLoader levelLoader;
     public GameManager gameManager;
 	public BadgeManager badgeManager;
-	public DialogueScenarioNodeManager dialogueScenarioNodeManager;
-	public PopupScenarioNodeManager popupScenarioNodeManager;
-	public EndGameScenarioNodeManager endGameScenarioNodeManager;
-	public int chapter;
-    public BaseScenarioNode[] scenario;
+	public FlagManager flagManager;
+	public ChoiceActionManager choiceActionManager;
+	public DialogueActionManager dialogueActionManager;
+	public PopupActionManager popupActionManager;
+	public EndGameActionManager endGameActionManager;
 
-	private int currentNodeIndex = 0;
-	private IScenarioNodeManager previousManager;
+	private ScenarioNode currentScenarioNode;
+	private IActionManager currentActionManager;
 	private bool endGame = false;
 
-	private PlayableDirector director;
+	private Dictionary<string, ScenarioNode> nodeDictionary;
 
-    private void Awake()
-    {
-        director = GetComponent<PlayableDirector>();
-    }
-
-	public void PlayScenario()
+	private void Awake()
 	{
-		if ( scenario != null && scenario.Length > 0 )
+		nodeDictionary = new Dictionary<string, ScenarioNode>();
+
+		foreach ( ScenarioNode node in chapter.Scenario )
 		{
-			PlayScenarioNode( scenario[currentNodeIndex] );
+			AddNodeAndChildrenToDictionary( node );
+		}
+
+		Debug.Log( $"Node dictionary initialized with {nodeDictionary.Count} nodes." );
+	}
+
+	private void AddNodeAndChildrenToDictionary(ScenarioNode node)
+	{
+		if ( !nodeDictionary.ContainsKey( node.NodeName ) )
+		{
+			nodeDictionary.Add( node.NodeName, node );
+			//Debug.Log( $"Node added: {node.NodeName}" );
 		}
 		else
 		{
-			Debug.LogWarning( "Scenario array is empty!" );
+			Debug.LogWarning( $"Duplicate node name found: {node.NodeName}. Skipping..." );
+		}
+
+		if ( node.Children != null && node.Children.Count > 0 )
+		{
+			foreach ( ScenarioNode childNode in node.Children )
+			{
+				AddNodeAndChildrenToDictionary( childNode );
+			}
 		}
 	}
 
-	public void PlayScenarioNode(BaseScenarioNode scenarioNode)
+	void Start()
+	{
+		PlayScenarioNode( chapter.Scenario[0] ); // Start Progression From Beginning
+	}
+
+	public void PlayScenarioNode(ScenarioNode node)
     {
-		//if (MissionScenarioNode.ON_MISSION_END)
+		//if (MissionNode.ON_MISSION_END)
 		//{
-		//	if (scenarioNode is ActionScenarioNode actionScenarioNode)
+		//	if (node is ActionNode actionNode)
 		//	{
-		//		MissionScenarioNode.WAS_ACTION_MISSION_COMPONENT = true;
+		//		MissionNode.WAS_ACTION_MISSION_COMPONENT = true;
 		//	}
 
-		//	MissionScenarioNode.EndMission();
+		//	MissionNode.EndMission();
 		//}
+		currentScenarioNode = node;
 
-		if ( scenarioNode.TimelineClip )
-		{
-			director.Play( scenarioNode.TimelineClip, scenarioNode.DirectorWrapMode );
-		}
-
-		if ( scenarioNode is DialogueScenarioNode dialogueScenarioNode )
-		{
-			gameManager.SwitchPlayerInput( false );
-			HandleScenario( dialogueScenarioNodeManager, dialogueScenarioNode );
-		}
-		else if ( scenarioNode is PopupScenarioNode popupScenarioNode )
-		{
-			gameManager.SwitchPlayerInput( false );
-			HandleScenario( popupScenarioNodeManager, popupScenarioNode );
-		}
-		else if ( scenarioNode is EndChapterScenarioNode endChapterScenarioNode )
-		{
-			gameManager.SwitchPlayerInput( false );
-			HandleEndChapter();
-		}
-		else if ( scenarioNode is EndGameScenarioNode endGameScenarioNode )
-		{
-			endGame = true;
-			gameManager.SwitchPlayerInput( false );
-			HandleScenario( endGameScenarioNodeManager, endGameScenarioNode );
-		}
-		else
-		{
-			Debug.LogWarning( "Unsupported scenario node type." );
-		}
-
-		HandleBadge( scenarioNode );
-		HandleAnalytics( scenarioNode );
+		HandleAnalytics( currentScenarioNode.NodeName );
+		HandleFlags( currentScenarioNode.Flags );
+		HandleBadge( currentScenarioNode.Badge );
+		HandleAction( currentScenarioNode.Action );
 	}
 
-	private void HandleScenario(IScenarioNodeManager manager, BaseScenarioNode scenarioNode)
+	private void HandleAnalytics(string nodeName)
 	{
-		if ( previousManager != null )
-		{
-			previousManager.OnNodeCompleted -= OnNodeCompletedHandler;
-		}
+		Debug.Log( "Playing Node :" + nodeName );
 
-		manager.OnNodeCompleted -= OnNodeCompletedHandler;
-		manager.OnNodeCompleted += OnNodeCompletedHandler;
-
-		previousManager = manager;
-
-		manager.LoadData( scenarioNode );
+		//AnalyticsService.Instance.CustomData("gameProgress",
+		//	new Dictionary<string, object>{{ "gameProgressStepName", nodeName } });
 	}
 
-	private void HandleBadge(BaseScenarioNode scenarioNode)
+	private void HandleFlags(List<Flag> flags)
 	{
-		if ( scenarioNode.Badge )
+		if ( flags != null )
 		{
-			badgeManager.LoadData( scenarioNode.Badge );
-			badgeManager.StartNode();
+			flagManager.SaveFlags( flags );
 		}
+	}
+
+	private void HandleBadge(Badge badge)
+	{
+		if ( badge != null )
+		{
+			badgeManager.LoadBadge( badge );
+		}
+	}
+
+	private void HandleAction(BaseAction action)
+	{
+		gameManager.SwitchPlayerInput( false );
+
+		if ( action.TimelineClip )
+		{
+			GetComponent<PlayableDirector>().Play( action.TimelineClip, action.DirectorWrapMode );
+		}
+
+		switch ( action )
+		{
+			case ChoiceAction choiceAction:
+				LoadActionManager( choiceActionManager, choiceAction );
+				break;
+			case DialogueAction dialogueAction:
+				LoadActionManager( dialogueActionManager, dialogueAction );
+				break;
+			case PopupAction popupAction:
+				LoadActionManager( popupActionManager, popupAction );
+				break;
+			case EndGameAction endGameAction:
+				endGame = true;
+				LoadActionManager( endGameActionManager, endGameAction );
+				break;
+			default:
+				Debug.LogWarning( "Unsupported node type." );
+				break;
+		}
+	}
+
+	private void LoadActionManager(IActionManager manager, BaseAction action)
+	{
+		currentActionManager = manager;
+
+		if (!endGame)
+		{
+			currentActionManager.OnNodeCompleted += OnNodeCompletedHandler;
+		}
+
+		manager.LoadData( action );
 	}
 
 	private void OnNodeCompletedHandler()
 	{
-		badgeManager.EndNode();
-		PlayNextNode();
+		currentActionManager.OnNodeCompleted -= OnNodeCompletedHandler;
+		PlayNextScenarioNode();
 	}
 
-	private void PlayNextNode()
+	private void PlayNextScenarioNode()
 	{
-		currentNodeIndex++;
+		ScenarioNode activeFlaggedNode = HandleFlaggedNodes( currentScenarioNode.FlaggedNodes );
+		ScenarioNode returnedNextNode = !string.IsNullOrEmpty( currentActionManager.nextScenarioNodeName )
+			? FindScenarioNodeByName( currentActionManager.nextScenarioNodeName )
+			: null;
 
-		BaseScenarioNode returnedNode = previousManager?.GetNextNode();
-
-		if ( !endGame )
+		if ( activeFlaggedNode != null )
 		{
-			if( returnedNode != null )
-			{
-				int returnedNodeIndex = FindNodeIndexInScenario( returnedNode );
-
-				if ( returnedNodeIndex != -1 )
-				{
-					currentNodeIndex = returnedNodeIndex;
-					PlayScenarioNode( scenario[currentNodeIndex] );
-				}
-				else
-				{
-					Debug.LogWarning( "The returned node was not found in the scenario." );
-				}
-			}
-			else if ( currentNodeIndex + 1 < scenario.Length )
-			{
-				PlayScenarioNode( scenario[currentNodeIndex++] );
-			}
-			else
-			{
-				HandleEndChapter();
-				Debug.Log( "End of chapter scenario reached." );
-			}
+			PlayScenarioNode( activeFlaggedNode );
+		}
+		else if ( returnedNextNode != null )
+		{
+			PlayScenarioNode( returnedNextNode );
+		}
+		else if ( currentScenarioNode.Children.Count > 0 )
+		{
+			PlayScenarioNode( currentScenarioNode.Children[0] );
+		}
+		else
+		{
+			HandleEndChapter();
+			Debug.Log( "End of chapter scenario reached." );
 		}
 	}
 
-	private int FindNodeIndexInScenario(BaseScenarioNode nodeToFind)
+	public ScenarioNode HandleFlaggedNodes(List<FlaggedScenarioNode> flaggedNodes)
 	{
-		for ( int i = 0; i < scenario.Length; i++ )
+		if ( flaggedNodes != null )
 		{
-			if ( scenario[i] == nodeToFind )
+			foreach ( FlaggedScenarioNode flaggedNode in flaggedNodes )
 			{
-				return i;
+				if ( flagManager.IsFlagActive( flaggedNode.Flag ) )
+				{
+					return FindScenarioNodeByName( flaggedNode.NodeName );
+				}
 			}
 		}
 
-		return -1;
+		return null;
+	}
+
+	public ScenarioNode FindScenarioNodeByName(string nodeName)
+	{
+		if ( nodeDictionary != null && nodeDictionary.TryGetValue( nodeName, out ScenarioNode node ) )
+		{
+			return node;
+		}
+
+		Debug.LogWarning( $"Node with name {nodeName} not found." );
+		return null;
 	}
 
 	public void HandleEndChapter()
 	{
-		if ( !endGame && chapter > GameManager.LoadProgress() )
+		if ( chapter.Id > GameManager.LoadProgress() )
 		{
-			GameManager.SaveProgress( chapter );
+			GameManager.SaveProgress( chapter.Id );
 		}
 
 		LevelLoader.LoadMenu();
-	}
-
-	public void HandleEndForm()
-	{
-		if ( !endGame && chapter > GameManager.LoadProgress() )
-		{
-			GameManager.SaveProgress( chapter );
-		}
-
-		LevelLoader.LoadForm();
-	}
-
-	private void HandleAnalytics(BaseScenarioNode scenarioNode)
-	{
-		Debug.Log( "Playing Node :" + scenarioNode.ScenarioNodeName );
-
-		//AnalyticsService.Instance.CustomData("gameProgress",
-		//	new Dictionary<string, object>{{ "gameProgressStepName", scenarioNode.ScenarioNodeName } });
 	}
 }

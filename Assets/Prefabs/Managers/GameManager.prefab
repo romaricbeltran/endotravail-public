@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1428642550797392668
+--- !u!1 &5145337969831746175
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6707500630817712812}
-  - component: {fileID: 8438685537658233519}
+  - component: {fileID: 702657869796971874}
+  - component: {fileID: 8048685768532965371}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6707500630817712812
+--- !u!4 &702657869796971874
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428642550797392668}
+  m_GameObject: {fileID: 5145337969831746175}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,19 +32,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8438685537658233519
+--- !u!114 &8048685768532965371
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1428642550797392668}
+  m_GameObject: {fileID: 5145337969831746175}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ea29bb6a0ec5964bab079a8412dd0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timelineManager: {fileID: 0}
-  myUICanvasControllerInput: {fileID: 0}
-  analogicButtons: {fileID: 0}
-  player: {fileID: 0}
+  timelineManager: {fileID: 4650038604874891781, guid: 84c5cb5e91eaac545909dd08462b94b6,
+    type: 3}
+  myUICanvasControllerInput: {fileID: 991102427649137146, guid: 42d866fe8645fcd499a06084d2ad9489,
+    type: 3}
+  analogicButtons: {fileID: 991102427649137125, guid: 42d866fe8645fcd499a06084d2ad9489,
+    type: 3}
+  player: {fileID: 8534731508665650647, guid: b23f5d1d9e932d94589c19a01ee2e8ac, type: 3}

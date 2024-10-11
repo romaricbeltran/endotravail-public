@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
 
 	public const string LEVEL_PROGRESS = "level_progress";
 
-    public TimelineManager timelineManager;
     public MyUICanvasControllerInput myUICanvasControllerInput;
     public GameObject analogicButtons;
     public GameObject player;
@@ -34,9 +33,8 @@ public class GameManager : MonoBehaviour
 
 	void Start()
     {
-        playerController = player.GetComponent<ThirdPersonController>();
+		playerController = player.GetComponent<ThirdPersonController>();
         playerInput = player.GetComponent<PlayerInput>();
-		timelineManager.PlayScenario(); // Start Progression From Beginning
     }
 
     public void SwitchPlayerInput(bool availability)

@@ -9,23 +9,18 @@ public class BadgeManager : MonoBehaviour
 	public GameObject badgeCanvas;
 	public TextMeshProUGUI mainText;
 
-	public void LoadData(Badge currentBadge)
+	public void LoadBadge(Badge badge)
 	{
-		mainText.text = currentBadge.BadgeName;
+		mainText.text = badge.BadgeName;
 
 		AnalyticsService.Instance.CustomData( "badgeCompleted", new Dictionary<string, object>
 		{
-			{ "badgeName", currentBadge.BadgeName }
+			{ "badgeName", badge.BadgeName }
 		} );
 	}
 
-	public void StartNode()
+	public void StartBadge()
 	{
 		badgeCanvas.SetActive( true );
-	}
-
-	public void EndNode()
-	{
-		badgeCanvas.SetActive( false );
 	}
 }

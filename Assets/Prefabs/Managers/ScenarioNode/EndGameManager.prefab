@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 960, y: -225}
-  m_SizeDelta: {x: 264.95, y: 0}
+  m_SizeDelta: {x: 264.95, y: 120}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1109039990284893794
 MonoBehaviour:
@@ -255,10 +255,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4650038604874891781, guid: 84c5cb5e91eaac545909dd08462b94b6,
+      - m_Target: {fileID: 8619902073201743155, guid: 6114d07b9de7151489026755e7ae4f54,
           type: 3}
-        m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: HandleEndMenu
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -453,7 +453,7 @@ CanvasGroup:
   m_GameObject: {fileID: 3238982453667987421}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 0
+  m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!95 &2711596254599892695
@@ -466,7 +466,7 @@ Animator:
   m_GameObject: {fileID: 3238982453667987421}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0f6cb06a20e55cf4fb33190a03353696, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5ef64080557bbcb4face4ffab69a7b5b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -783,10 +783,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9120131687335328525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 132.475, y: 0}
+  m_SizeDelta: {x: 264.95, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &5693165665917011562
 CanvasRenderer:
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Merci
+  m_text: "Tu as \xE9t\xE9 licenci\xE9 pour inaptitude.\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
@@ -906,7 +906,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8073962092220516859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1022,10 +1022,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9120131687335328525}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 132.475, y: -120}
+  m_SizeDelta: {x: 264.95, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &1979205758203522649
 CanvasRenderer:
@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bien jou\xE9"
+  m_text: Comment aurions-nous pu faire autrement ?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
@@ -1388,10 +1388,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4650038604874891781, guid: 84c5cb5e91eaac545909dd08462b94b6,
+      - m_Target: {fileID: 8619902073201743155, guid: 6114d07b9de7151489026755e7ae4f54,
           type: 3}
-        m_TargetAssemblyTypeName: TimelineManager, Assembly-CSharp
-        m_MethodName: HandleEndForm
+        m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
+        m_MethodName: LoadForm
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

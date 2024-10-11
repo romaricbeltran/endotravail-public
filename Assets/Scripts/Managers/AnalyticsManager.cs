@@ -26,7 +26,7 @@ public class AnalyticsManager : MonoBehaviour
         try
         {
             var options = new InitializationOptions();
-            options.SetEnvironmentName("production");
+            options.SetEnvironmentName("development");
             await UnityServices.InitializeAsync(options);
             AnalyticsService.Instance.StartDataCollection();
             //Debug.Log("StartAnalytics");
