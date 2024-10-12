@@ -29,6 +29,7 @@ public class TimelineManager : MonoBehaviour
 	public ChoiceActionManager choiceActionManager;
 	public DialogueActionManager dialogueActionManager;
 	public PopupActionManager popupActionManager;
+	public MissionActionManager missionActionManager;
 	public EndGameActionManager endGameActionManager;
 
 	private ScenarioNode currentScenarioNode;
@@ -137,6 +138,9 @@ public class TimelineManager : MonoBehaviour
 				break;
 			case PopupAction popupAction:
 				LoadActionManager( popupActionManager, popupAction );
+				break;
+			case MissionAction missionAction:
+				LoadActionManager( missionActionManager, missionAction );
 				break;
 			case EndGameAction endGameAction:
 				endGame = true;

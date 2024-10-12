@@ -16,7 +16,7 @@ public class EndGameActionManager : BaseActionManager<EndGameAction>
 	public float transitionTime = 0.1f;
 	public GameObject retardedUI;
 
-	public override void LoadData(EndGameAction currentNode)
+	public override void LoadData(EndGameAction currentAction)
 	{
 		mainText.text = currentAction.MainText;
 		secondaryText.text = currentAction.SecondaryText;

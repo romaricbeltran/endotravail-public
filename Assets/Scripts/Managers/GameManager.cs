@@ -4,6 +4,7 @@ using StarterAssets;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,12 +12,12 @@ public class GameManager : MonoBehaviour
 
 	public const string LEVEL_PROGRESS = "level_progress";
 
-    public MyUICanvasControllerInput myUICanvasControllerInput;
     public GameObject analogicButtons;
     public GameObject player;
 
     private ThirdPersonController playerController;
     private PlayerInput playerInput;
+	private MyUICanvasControllerInput myUICanvasControllerInput;
 
 	void Awake()
 	{
@@ -35,7 +36,8 @@ public class GameManager : MonoBehaviour
     {
 		playerController = player.GetComponent<ThirdPersonController>();
         playerInput = player.GetComponent<PlayerInput>();
-    }
+		myUICanvasControllerInput = analogicButtons.GetComponent<MyUICanvasControllerInput>();
+	}
 
     public void SwitchPlayerInput(bool availability)
     {
@@ -43,10 +45,15 @@ public class GameManager : MonoBehaviour
         {
             playerInput.enabled = availability;
         }
-        
-        EventSystem.current.SetSelectedGameObject(null);
+
+		if ( analogicButtons != null )
+		{
+			analogicButtons.SetActive(availability);
+			analogicButtons.GetComponent<GraphicRaycaster>().enabled = availability;
+		}
+
+		EventSystem.current.SetSelectedGameObject(null);
         myUICanvasControllerInput.VirtualResetMove();
-        analogicButtons.SetActive(availability);
     }
 
     public void ResetPlayerCamera(float targetRotationY)
