@@ -13,12 +13,14 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 	public GameObject actionCanvas;
 	public List<GameObject> actionButtons;
 
-	private List<Button> actionButtonsComponents = new();
+	private List<Button> actionButtonsComponents;
 	private float canvasDelay = 1.75f;
 	private float buttonsDelay = 0.75f;
 
 	public override void LoadData(ChoiceAction currentAction)
 	{
+		actionButtonsComponents = new();
+
 		for ( int i = 0; i < currentAction.Choices.Count; i++ )
 		{
 			actionButtonsComponents.Add(actionButtons[i].GetComponent<Button>());
@@ -67,11 +69,6 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 		}
 
 		EventSystem.current.SetSelectedGameObject( null ); // Resets focus on the button
-
-		for ( int i = 0; i < actionButtons.Count; i++ )
-		{
-			actionButtons[i].SetActive( false );
-		}
 
 		actionCanvas.SetActive( false );
 		base.EndAction();

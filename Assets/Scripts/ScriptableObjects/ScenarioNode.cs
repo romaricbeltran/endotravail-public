@@ -5,14 +5,12 @@ using UnityEngine.Playables;
 [System.Serializable]
 public class ScenarioNode
 {
-	[SerializeField] private string nodeName;
 	[SerializeField] private BaseAction action;
 	[SerializeField] private Badge badge;
 	[SerializeField] private List<Flag> flags;
 	[SerializeField] private List<FlaggedScenarioNode> flaggedNodes;
 	[SerializeField] private List<ScenarioNode> children;
 
-    public global::System.String NodeName { get => nodeName; set => nodeName = value; }
     public BaseAction Action { get => action; set => action = value; }
     public Badge Badge { get => badge; set => badge = value; }
     public List<Flag> Flags { get => flags; set => flags = value; }

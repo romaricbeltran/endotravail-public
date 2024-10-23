@@ -2,131 +2,144 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public class DialogueActionManager : BaseActionManager<DialogueAction>
 {
-    // UI
-    public GameObject dialogueCanvas;
-    public Image characterImage;
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+	// UI
+	public GameObject dialogueCanvas;
+	public Image characterImage;
+	public TextMeshProUGUI nameText;
+	public TextMeshProUGUI dialogueText;
+	public Button skipButton;
 
-    public Animator dialogueBoxAnimator;
-    public float typingLetterInterval = 0.05f;
-    public float timeBeetweenSentencesInterval = 3.0f;
+	public Animator dialogueBoxAnimator;
+	public float typingLetterInterval = 0.05f;
+	public float autoProceedDelay = 1.5f; // Temps de pause avant de passer automatiquement à la prochaine phrase
 
 	public AudioSource audioSource;
 
-    private List<Sentence> sentences;
-    private int indexSentence;
-    private bool isSentenceWritingFinished = false;
-    private bool isAudioPlayingFinished = false;
+	private List<Sentence> sentences;
+	private int indexSentence;
+	private bool isTyping = false;
+	private bool isAudioPlaying = false;
 
-    // On précharge le dialogue avec la première phrase
-    public override void LoadData(DialogueAction currentAction) {
-		// Close in case we skipped dialogue trigger
-		dialogueBoxAnimator.SetBool("IsOpen", false);
-        audioSource.Stop();
-        StopAllCoroutines();
+	// On précharge le dialogue avec la première phrase
+	public override void LoadData(DialogueAction currentAction)
+	{
+		dialogueBoxAnimator.SetBool( "IsOpen", false );
+		audioSource.Stop();
+		StopAllCoroutines();
 
 		indexSentence = 0;
-        sentences = currentAction.Sentences;
+		sentences = currentAction.Sentences;
+
+		skipButton.onClick.RemoveAllListeners();
+		skipButton.onClick.AddListener( OnSkip );
 	}
 
-	public override void StartAction() {
-        dialogueBoxAnimator.SetBool("IsOpen", true);
-        DisplayNextSentence();
-    }
+	public override void StartAction()
+	{
+		dialogueBoxAnimator.SetBool( "IsOpen", true );
+		DisplayNextSentence();
+	}
 
-    public override void EndAction() {
-        dialogueBoxAnimator.SetBool("IsOpen", false);
-        StopAllCoroutines();
+	public override void EndAction()
+	{
+		dialogueBoxAnimator.SetBool( "IsOpen", false );
+		audioSource.Stop();  // On s'assure que l'audio s'arrête
+		StopAllCoroutines(); // Stop toutes les coroutines en cours
 		base.EndAction();
 	}
 
-    public void DisplayNextSentence()
-    {
-        StopAllCoroutines();
-        isAudioPlayingFinished = false;        
-        isSentenceWritingFinished = false;
-
-        if (HasNextSentence())
-        {
-            nameText.text = sentences[indexSentence].Character.CharacterName;
-            characterImage.sprite = sentences[indexSentence].Character.CharacterImage;
-            audioSource.clip = sentences[indexSentence].AudioClip;
-            dialogueText.text = sentences[indexSentence].Text;
-            StartCoroutine(TypeSentence(sentences[indexSentence].Text));
-            StartCoroutine(PlayAudio());
-            indexSentence++;
-        } else
-        {
-			EndAction();
-		}
-    }
-
-	public bool HasNextSentence()
+	public void DisplayNextSentence()
 	{
-		return indexSentence >= 0 && indexSentence < sentences.Count;
+		StopAllCoroutines(); // On stoppe les coroutines en cours
+		audioSource.Stop();   // Arrête l'audio précédent si en cours
+
+		if ( indexSentence < sentences.Count )
+		{
+			var sentence = sentences[indexSentence];
+			nameText.text = sentence.Character.CharacterName;
+			characterImage.sprite = sentence.Character.CharacterImage;
+
+			StartCoroutine( TypeSentence( sentence.Text ) );
+			StartCoroutine( PlayAudio( sentence.AudioClip ) );
+
+			indexSentence++;
+		}
+		else
+		{
+			EndAction(); // On termine si on est à la dernière phrase
+		}
 	}
 
 	IEnumerator TypeSentence(string sentence)
 	{
 		dialogueText.text = "";
-		foreach ( char letter in sentence.ToCharArray() )
+		isTyping = true;
+
+		foreach ( char letter in sentence )
 		{
+			if ( !isTyping ) break;
 			dialogueText.text += letter;
 			yield return new WaitForSeconds( typingLetterInterval );
 		}
-		isSentenceWritingFinished = true;
-		StartCoroutine( CheckIfWeCanDisplayNextSentence() );
+
+		dialogueText.text = sentence; // On affiche le texte en entier si skip
+		isTyping = false;
+
+		CheckIfWeCanProceed(); // Vérifie si on peut avancer après le texte
 	}
 
-	IEnumerator PlayAudio()
+	IEnumerator PlayAudio(AudioClip clip)
 	{
-		if ( audioSource.clip )
+		if ( clip )
 		{
-			//Debug.Log("Playing audio clip : " + audioSource.clip);
+			isAudioPlaying = true;
+			audioSource.clip = clip;
 			audioSource.Play();
-			while ( audioSource.isPlaying )
-			{
-				yield return null;
-			}
+			yield return new WaitWhile( () => audioSource.isPlaying );
 		}
 
-		isAudioPlayingFinished = true;
-		StartCoroutine( CheckIfWeCanDisplayNextSentence() );
+		isAudioPlaying = false;
+		CheckIfWeCanProceed(); // Vérifie si on peut avancer après l'audio
 	}
 
-	IEnumerator CheckIfWeCanDisplayNextSentence()
+	public void OnSkip()
 	{
-		if ( isSentenceWritingFinished && isAudioPlayingFinished )
+		if ( isTyping )
 		{
-			yield return new WaitForSeconds( timeBeetweenSentencesInterval );
-			DisplayNextSentence();
+			// On complète immédiatement le texte en cours de tapage
+			isTyping = false;
+			StopCoroutine( "TypeSentence" );
+			dialogueText.text = sentences[indexSentence - 1].Text;
+		}
+
+		if ( isAudioPlaying )
+		{
+			// On arrête l'audio immédiatement
+			audioSource.Stop();
+			isAudioPlaying = false;
+		}
+
+		// Passe directement à la phrase suivante ou termine si c'est la dernière
+		DisplayNextSentence();
+	}
+
+	private void CheckIfWeCanProceed()
+	{
+		// Si l'audio et le texte sont terminés, on passe automatiquement à la phrase suivante après un délai
+		if ( !isTyping && !isAudioPlaying )
+		{
+			StartCoroutine( WaitBeforeProceeding() );
 		}
 	}
 
-	IEnumerator LoadAudioClip(string url)
-    {
-        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.WAV))
-        {
-            yield return www.SendWebRequest();
-
-            if (www.result == UnityWebRequest.Result.ConnectionError || www.result == UnityWebRequest.Result.ProtocolError)
-            {
-                Debug.LogError("Error while downloading audio clip : " + www.error);
-            }
-            else
-            {
-                AudioClip audioClip = DownloadHandlerAudioClip.GetContent(www);
-                if (audioClip != null)
-                {
-                    audioSource.clip = audioClip;
-                }
-            }
-        }
-    }
+	IEnumerator WaitBeforeProceeding()
+	{
+		// Ajoute une pause avant de passer à la phrase suivante
+		yield return new WaitForSeconds( autoProceedDelay );
+		DisplayNextSentence();
+	}
 }

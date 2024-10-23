@@ -52,14 +52,14 @@ public class TimelineManager : MonoBehaviour
 
 	private void AddNodeAndChildrenToDictionary(ScenarioNode node)
 	{
-		if ( !nodeDictionary.ContainsKey( node.NodeName ) )
+		if ( !nodeDictionary.ContainsKey( node.ToString() ) )
 		{
-			nodeDictionary.Add( node.NodeName, node );
-			//Debug.Log( $"Node added: {node.NodeName}" );
+			nodeDictionary.Add( node.ToString(), node );
+			//Debug.Log( $"Node added: {node.name}" );
 		}
 		else
 		{
-			Debug.LogWarning( $"Duplicate node name found: {node.NodeName}. Skipping..." );
+			Debug.LogWarning( $"Duplicate node name found: {node.ToString()}. Skipping..." );
 		}
 
 		if ( node.Children != null && node.Children.Count > 0 )
@@ -89,7 +89,7 @@ public class TimelineManager : MonoBehaviour
 		//}
 		currentScenarioNode = node;
 
-		HandleAnalytics( currentScenarioNode.NodeName );
+		HandleAnalytics( currentScenarioNode.ToString() );
 		HandleFlags( currentScenarioNode.Flags );
 		HandleBadge( currentScenarioNode.Badge );
 		HandleAction( currentScenarioNode.Action );
@@ -199,10 +199,10 @@ public class TimelineManager : MonoBehaviour
 	public ScenarioNode HandleFlaggedNodes(List<FlaggedScenarioNode> flaggedNodes)
 	{
 		if ( flaggedNodes != null )
-		{
+		{	
 			foreach ( FlaggedScenarioNode flaggedNode in flaggedNodes )
 			{
-				if ( flagManager.IsFlagActive( flaggedNode.Flag ) )
+				if ( flaggedNode.Flag == null || flagManager.IsFlagActive( flaggedNode.Flag ) )
 				{
 					return FindScenarioNodeByName( flaggedNode.NodeName );
 				}
