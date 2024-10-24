@@ -7,9 +7,9 @@ public class MissionAction : BaseAction
 {
 	[SerializeField] [TextArea] private string title;
 	[SerializeField] [TextArea] private string description;
-	[SerializeField] private int managerTargetMissionID;
+	[SerializeField] private int managerTargetMissionListID;
 
     public global::System.String Title { get => title; set => title = value; }
     public global::System.String Description { get => description; set => description = value; }
-    public global::System.Int32 ManagerTargetMissionID { get => managerTargetMissionID; set => managerTargetMissionID = value; }
+    public global::System.Int32 ManagerTargetMissionListID { get => managerTargetMissionListID; set => managerTargetMissionListID = value; }
 }

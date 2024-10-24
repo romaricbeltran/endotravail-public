@@ -30,13 +30,13 @@ public class FlagManager : MonoBehaviour
 
 	public bool IsFlagActive(Flag flag)
 	{
-		if ( PlayerPrefs.GetInt( flag.FlagName, 0 ) == 1 || temporaryFlags.ContainsKey( flag.FlagName ) )
+		bool isActive = PlayerPrefs.GetInt( flag.FlagName, 0 ) == 1 || temporaryFlags.ContainsKey( flag.FlagName );
+
+		if ( isActive )
 		{
-			return true;
+			Debug.Log( $"Flag activated: {flag.FlagName}" );
 		}
-		else
-		{
-			return false;
-		}
+
+		return isActive;
 	}
 }

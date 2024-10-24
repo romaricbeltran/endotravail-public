@@ -7,6 +7,20 @@ using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
+public class NodeLocation
+{
+	public ScenarioNode ParentNode;
+	public int BranchIndex;
+	public int NodeIndexInBranch;
+
+	public NodeLocation(ScenarioNode parentNode, int branchIndex, int nodeIndexInBranch)
+	{
+		ParentNode = parentNode;
+		BranchIndex = branchIndex;
+		NodeIndexInBranch = nodeIndexInBranch;
+	}
+}
+
 /*
  * Les Dialogue, Popup, Action, Menu, EndGame sont des nœuds.
  * Les Badge ne sont pas des nœuds mais se comportent de manière similaire (ils ne renvoient pas de nœuds eux-mêmes et ne sont pas indépendants).
@@ -36,37 +50,37 @@ public class TimelineManager : MonoBehaviour
 	private IActionManager currentActionManager;
 	private bool endGame = false;
 
-	private Dictionary<string, ScenarioNode> nodeDictionary;
+	private Dictionary<string, (ScenarioNode node, NodeLocation location)> nodeDictionary;
 
 	private void Awake()
 	{
-		nodeDictionary = new Dictionary<string, ScenarioNode>();
+		nodeDictionary = new Dictionary<string, (ScenarioNode, NodeLocation)>();
 
 		foreach ( ScenarioNode node in chapter.Scenario )
 		{
-			AddNodeAndChildrenToDictionary( node );
+			AddNodeWithLocationToDictionary( node, null, -1, -1 ); // Depth 0
 		}
 
 		Debug.Log( $"Node dictionary initialized with {nodeDictionary.Count} nodes." );
 	}
 
-	private void AddNodeAndChildrenToDictionary(ScenarioNode node)
+	private void AddNodeWithLocationToDictionary(ScenarioNode node, ScenarioNode parentNode, int branchIndex, int nodeIndexInBranch)
 	{
-		if ( !nodeDictionary.ContainsKey( node.ToString() ) )
+		if ( !nodeDictionary.ContainsKey( node.Action.name ) )
 		{
-			nodeDictionary.Add( node.ToString(), node );
-			//Debug.Log( $"Node added: {node.name}" );
+			var location = new NodeLocation( parentNode, branchIndex, nodeIndexInBranch );
+			nodeDictionary.Add( node.Action.name, (node, location) );
 		}
 		else
 		{
-			Debug.LogWarning( $"Duplicate node name found: {node.ToString()}. Skipping..." );
+			Debug.LogWarning( $"Duplicate node name found: {node.Action.name}. Skipping..." );
 		}
 
-		if ( node.Children != null && node.Children.Count > 0 )
+		for ( int i = 0; i < node.Branches.Count; i++ )
 		{
-			foreach ( ScenarioNode childNode in node.Children )
+			for ( int j = 0; j < node.Branches[i].Nodes.Count; j++ )
 			{
-				AddNodeAndChildrenToDictionary( childNode );
+				AddNodeWithLocationToDictionary( node.Branches[i].Nodes[j], node, i, j );
 			}
 		}
 	}
@@ -78,18 +92,9 @@ public class TimelineManager : MonoBehaviour
 
 	public void PlayScenarioNode(ScenarioNode node)
     {
-		//if (MissionNode.ON_MISSION_END)
-		//{
-		//	if (node is ActionNode actionNode)
-		//	{
-		//		MissionNode.WAS_ACTION_MISSION_COMPONENT = true;
-		//	}
-
-		//	MissionNode.EndMission();
-		//}
 		currentScenarioNode = node;
 
-		HandleAnalytics( currentScenarioNode.ToString() );
+		HandleAnalytics( currentScenarioNode.Action.name );
 		HandleFlags( currentScenarioNode.Flags );
 		HandleBadge( currentScenarioNode.Badge );
 		HandleAction( currentScenarioNode.Action );
@@ -172,28 +177,79 @@ public class TimelineManager : MonoBehaviour
 
 	private void PlayNextScenarioNode()
 	{
-		ScenarioNode activeFlaggedNode = HandleFlaggedNodes( currentScenarioNode.FlaggedNodes );
-		ScenarioNode returnedNextNode = !string.IsNullOrEmpty( currentActionManager.nextScenarioNodeName )
-			? FindScenarioNodeByName( currentActionManager.nextScenarioNodeName )
-			: null;
+		ScenarioNode nextNode = HandleFlaggedNodes( currentScenarioNode.FlaggedNodes )
+			?? FindScenarioNodeByName( currentActionManager.nextScenarioNodeName )
+			?? GetNextNodeInBranchOrScenario( GetLocationOfNode( currentScenarioNode ) );
 
-		if ( activeFlaggedNode != null )
+		if ( nextNode != null )
 		{
-			PlayScenarioNode( activeFlaggedNode );
-		}
-		else if ( returnedNextNode != null )
-		{
-			PlayScenarioNode( returnedNextNode );
-		}
-		else if ( currentScenarioNode.Children.Count > 0 )
-		{
-			PlayScenarioNode( currentScenarioNode.Children[0] );
+			PlayScenarioNode( nextNode );
 		}
 		else
 		{
 			HandleEndChapter();
-			Debug.Log( "End of chapter scenario reached." );
 		}
+	}
+
+	public ScenarioNode FindScenarioNodeByName(string nodeName)
+	{
+		if ( string.IsNullOrEmpty( nodeName ) || nodeDictionary == null )
+		{
+			return null;
+		}
+
+		if ( nodeDictionary.TryGetValue( nodeName, out var nodeData ) )
+		{
+			return nodeData.node;
+		}
+
+		Debug.LogWarning( $"Node with name {nodeName} not found." );
+
+		return null;
+	}
+
+	private NodeLocation GetLocationOfNode(ScenarioNode node)
+	{
+		foreach ( var kvp in nodeDictionary )
+		{
+			if ( kvp.Value.node == node )
+			{
+				return kvp.Value.location;
+			}
+		}
+		return null;
+	}
+
+	private ScenarioNode GetNextNodeInBranchOrScenario(NodeLocation nodeLocation)
+	{
+		// Check if we are in a valid branch
+		if ( nodeLocation.ParentNode != null && nodeLocation.BranchIndex >= 0 && nodeLocation.NodeIndexInBranch >= 0 )
+		{
+			Branch currentBranch = nodeLocation.ParentNode.Branches[nodeLocation.BranchIndex];
+
+			// If there's a next node in the current branch, return it
+			if ( nodeLocation.NodeIndexInBranch + 1 < currentBranch.Nodes.Count )
+			{
+				return currentBranch.Nodes[nodeLocation.NodeIndexInBranch + 1];
+			}
+
+			// If we're at the end of the branch, recursively move up to the parent
+			// This handles nested branches
+			return GetNextNodeInBranchOrScenario( GetLocationOfNode( nodeLocation.ParentNode ) );
+		}
+
+		// If we're not in a branch or we've reached the root,
+		// look for the next node in the main scenario
+		return GetNextNodeInScenario( nodeLocation.ParentNode ?? currentScenarioNode );
+	}
+
+	private ScenarioNode GetNextNodeInScenario(ScenarioNode node)
+	{
+		int nodeIndex = chapter.Scenario.IndexOf( node );
+
+		return (nodeIndex >= 0 && nodeIndex + 1 < chapter.Scenario.Count)
+			? chapter.Scenario[nodeIndex + 1]
+			: null;
 	}
 
 	public ScenarioNode HandleFlaggedNodes(List<FlaggedScenarioNode> flaggedNodes)
@@ -209,17 +265,6 @@ public class TimelineManager : MonoBehaviour
 			}
 		}
 
-		return null;
-	}
-
-	public ScenarioNode FindScenarioNodeByName(string nodeName)
-	{
-		if ( nodeDictionary != null && nodeDictionary.TryGetValue( nodeName, out ScenarioNode node ) )
-		{
-			return node;
-		}
-
-		Debug.LogWarning( $"Node with name {nodeName} not found." );
 		return null;
 	}
 

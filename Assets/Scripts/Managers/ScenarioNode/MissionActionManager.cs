@@ -5,6 +5,12 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 
 [System.Serializable]
+public class TargetMissionList
+{
+	public List<TargetMission> targetMissions;
+}
+
+[System.Serializable]
 public class TargetMission
 {
 	[SerializeField] public GameObject triggerObject;
@@ -30,14 +36,16 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 	public Button tutoSkipButton;
 
 	public bool isFirstMission;
-	public List<TargetMission> currentTargetMissions;
+	public List<TargetMissionList> targetMissionsLists;
 
+	private List<TargetMission> currentTargetMissions;
 	private HashSet<TargetMission> activatedTriggers = new HashSet<TargetMission>();
 
 	public override void LoadData(MissionAction currentAction)
 	{
 		missionTitle.text = currentAction.Title;
 		missionText.text = currentAction.Description;
+		currentTargetMissions = targetMissionsLists[currentAction.ManagerTargetMissionListID].targetMissions;
 
 		foreach ( TargetMission targetMission in currentTargetMissions )
 		{

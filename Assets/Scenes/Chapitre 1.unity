@@ -2683,17 +2683,62 @@ PrefabInstance:
       objectReference: {fileID: 4198845698016960125}
     - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
+      propertyPath: targetMissionsLists.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
       propertyPath: currentTargetMissions.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
       propertyPath: currentTargetMissions.Array.data[0].nodeName
-      value: 
+      value: "Merci pour la pr\xE9sentation"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: currentTargetMissions.Array.data[1].nodeName
+      value: "S\xE9rieux j'ai d\xE9j\xE0 une tonne de travail !"
       objectReference: {fileID: 0}
     - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
       propertyPath: currentTargetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 1825891015}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: currentTargetMissions.Array.data[1].triggerObject
+      value: 
+      objectReference: {fileID: 1825891015}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[0].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[1].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[0].targetMissions.Array.data[0].nodeName
+      value: "Merci pour la pr\xE9sentation"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[1].targetMissions.Array.data[0].nodeName
+      value: "S\xE9rieux j'ai d\xE9j\xE0 une tonne de travail !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[0].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 1825891015}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[1].targetMissions.Array.data[0].triggerObject
       value: 
       objectReference: {fileID: 1825891015}
     - target: {fileID: 5887703404468777368, guid: 0b7733d381ad7b142b7477cf4ab184a4,
@@ -45724,6 +45769,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346448889711952071, guid: 46268db83d14e224a8e2f338be494e66,
+        type: 3}
+      propertyPath: flagManager
+      value: 
+      objectReference: {fileID: 1284603248}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
