@@ -20,7 +20,7 @@ public class Choice
 
     public global::System.String Description { get => description; set => description = value; }
     public List<Flag> Flags { get => flags; set => flags = value; }
-	public List<Flag> HideChoiceFlags { get => HideChoiceFlags; set => HideChoiceFlags = value; }
+	public List<Flag> HideChoiceFlags { get => hideChoiceFlags; set => hideChoiceFlags = value; }
 	public bool ActivateBackToMissionPOV { get => activateBackToMissionPOV; set => activateBackToMissionPOV = value; }
     public global::System.String NodeName { get => nodeName; set => nodeName = value; }
 }
