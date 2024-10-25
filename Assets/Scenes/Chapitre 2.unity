@@ -2423,7 +2423,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2472,8 +2472,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502729133}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 1.0316124, y: 14.911151, z: 19.04554}
+  m_LocalRotation: {x: -0.056614235, y: 0.022730548, z: -0.0012892751, w: -0.9981365}
+  m_LocalPosition: {x: 1.2676125, y: 15.161151, z: 15.830541}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4074,16 +4074,16 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1376949920}
   - {fileID: 1375263449}
+  - {fileID: 1132112325}
   - {fileID: 1847590087}
   - {fileID: 1288583744}
-  - {fileID: 1376949920}
-  - {fileID: 1285470805}
-  - {fileID: 1132112325}
   - {fileID: 1810522384}
+  - {fileID: 1285470805}
+  - {fileID: 1991912742}
   - {fileID: 227933387}
   - {fileID: 1255756084}
-  - {fileID: 1991912742}
   m_Father: {fileID: 1605953462}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &752123928
@@ -4186,7 +4186,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!1 &792343896
 GameObject:
@@ -4706,9 +4706,19 @@ PrefabInstance:
       objectReference: {fileID: 1376949919}
     - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
+      propertyPath: isFirstMission
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
       propertyPath: timelineManager
       value: 
       objectReference: {fileID: 1375263446}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.size
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
       propertyPath: currentTargetMissions.Array.size
@@ -4724,6 +4734,127 @@ PrefabInstance:
       propertyPath: currentTargetMissions.Array.data[0].triggerObject
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[0].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[1].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[2].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[3].targetMissions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[4].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[5].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[6].targetMissions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[0].targetMissions.Array.data[0].nodeName
+      value: "Le dossier que tu m'as envoy\xE9 hier comporte pas mal d'erreurs..."
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[1].targetMissions.Array.data[0].nodeName
+      value: "Discuter apr\xE8s toilettes ou non"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[2].targetMissions.Array.data[0].nodeName
+      value: "C'est de plus en plus compliqu\xE9 pour moi de vous aider lors des
+        \xE9v\xE9nements"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[3].targetMissions.Array.data[0].nodeName
+      value: "Discuter avant appel \xE0 mon amie ou non"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[3].targetMissions.Array.data[1].nodeName
+      value: "Ohlala \xE7a ne va pas du tout ce matin !"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[4].targetMissions.Array.data[0].nodeName
+      value: Attendre que la crise passe ou non
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[5].targetMissions.Array.data[0].nodeName
+      value: "Retourner \xE0 la r\xE9union"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[6].targetMissions.Array.data[0].nodeName
+      value: "O\xF9 \xE9tiez-vous Catherine"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[0].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 2693525033826028358}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[1].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 2693525033826028358}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[2].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 919132148334163830}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[2].targetMissions.Array.data[1].triggerObject
+      value: 
+      objectReference: {fileID: 2693525032888564259}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[3].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 2693525033576709605}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[3].targetMissions.Array.data[1].triggerObject
+      value: 
+      objectReference: {fileID: 2693525032888564259}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[4].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 2693525034107598052}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[5].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 2693525033826028358}
+    - target: {fileID: 3229022784382711228, guid: 0b7733d381ad7b142b7477cf4ab184a4,
+        type: 3}
+      propertyPath: targetMissionsLists.Array.data[6].targetMissions.Array.data[0].triggerObject
+      value: 
+      objectReference: {fileID: 2693525034107598052}
     - target: {fileID: 5887703404468777368, guid: 0b7733d381ad7b142b7477cf4ab184a4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8452,6 +8583,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5346448889711952071, guid: 46268db83d14e224a8e2f338be494e66,
+        type: 3}
+      propertyPath: flagManager
+      value: 
+      objectReference: {fileID: 1255756085}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

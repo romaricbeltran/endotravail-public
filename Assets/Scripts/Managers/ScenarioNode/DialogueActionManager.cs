@@ -15,7 +15,7 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 
 	public Animator dialogueBoxAnimator;
 	public float typingLetterInterval = 0.05f;
-	public float autoProceedDelay = 1.5f; // Temps de pause avant de passer automatiquement à la prochaine phrase
+	public float autoProceedDelay = 1.5f; // Interval between sentences
 
 	public AudioSource audioSource;
 
@@ -24,7 +24,6 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	private bool isTyping = false;
 	private bool isAudioPlaying = false;
 
-	// On précharge le dialogue avec la première phrase
 	public override void LoadData(DialogueAction currentAction)
 	{
 		dialogueBoxAnimator.SetBool( "IsOpen", false );
@@ -34,7 +33,14 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 		indexSentence = 0;
 		sentences = currentAction.Sentences;
 
-		skipButton.onClick.RemoveAllListeners();
+		// Check for null or empty sentences
+		if ( sentences == null || sentences.Count == 0 )
+		{
+			Debug.LogError( "No sentences to display!" );
+			EndAction();
+			return;
+		}
+
 		skipButton.onClick.AddListener( OnSkip );
 	}
 
@@ -47,15 +53,16 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	public override void EndAction()
 	{
 		dialogueBoxAnimator.SetBool( "IsOpen", false );
-		audioSource.Stop();  // On s'assure que l'audio s'arrête
-		StopAllCoroutines(); // Stop toutes les coroutines en cours
+		skipButton.onClick.RemoveAllListeners();
+		audioSource.Stop();
+		StopAllCoroutines();
 		base.EndAction();
 	}
 
 	public void DisplayNextSentence()
 	{
-		StopAllCoroutines(); // On stoppe les coroutines en cours
-		audioSource.Stop();   // Arrête l'audio précédent si en cours
+		audioSource.Stop();
+		StopAllCoroutines();
 
 		if ( indexSentence < sentences.Count )
 		{
@@ -70,7 +77,7 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 		}
 		else
 		{
-			EndAction(); // On termine si on est à la dernière phrase
+			EndAction();
 		}
 	}
 
@@ -86,50 +93,47 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 			yield return new WaitForSeconds( typingLetterInterval );
 		}
 
-		dialogueText.text = sentence; // On affiche le texte en entier si skip
+		dialogueText.text = sentence;
 		isTyping = false;
 
-		CheckIfWeCanProceed(); // Vérifie si on peut avancer après le texte
+		CheckIfWeCanProceed();
 	}
 
 	IEnumerator PlayAudio(AudioClip clip)
 	{
-		if ( clip )
+		if ( clip == null )
 		{
-			isAudioPlaying = true;
-			audioSource.clip = clip;
-			audioSource.Play();
-			yield return new WaitWhile( () => audioSource.isPlaying );
+			isAudioPlaying = false;
+			yield break;
 		}
 
+		isAudioPlaying = true;
+		audioSource.clip = clip;
+		audioSource.Play();
+		yield return new WaitWhile( () => audioSource.isPlaying );
+
 		isAudioPlaying = false;
-		CheckIfWeCanProceed(); // Vérifie si on peut avancer après l'audio
+		CheckIfWeCanProceed();
 	}
 
 	public void OnSkip()
 	{
+		// If typing is in progress, stop and show the full sentence
 		if ( isTyping )
 		{
-			// On complète immédiatement le texte en cours de tapage
-			isTyping = false;
 			StopCoroutine( "TypeSentence" );
 			dialogueText.text = sentences[indexSentence - 1].Text;
+			isTyping = false;
 		}
-
-		if ( isAudioPlaying )
+		// If not, move to the next sentence
+		else
 		{
-			// On arrête l'audio immédiatement
-			audioSource.Stop();
-			isAudioPlaying = false;
+			DisplayNextSentence();
 		}
-
-		// Passe directement à la phrase suivante ou termine si c'est la dernière
-		DisplayNextSentence();
 	}
 
 	private void CheckIfWeCanProceed()
 	{
-		// Si l'audio et le texte sont terminés, on passe automatiquement à la phrase suivante après un délai
 		if ( !isTyping && !isAudioPlaying )
 		{
 			StartCoroutine( WaitBeforeProceeding() );
@@ -138,8 +142,16 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 
 	IEnumerator WaitBeforeProceeding()
 	{
-		// Ajoute une pause avant de passer à la phrase suivante
 		yield return new WaitForSeconds( autoProceedDelay );
 		DisplayNextSentence();
+	}
+
+	void Update()
+	{
+		// Allow skipping dialogue by pressing spacebar
+		if ( Input.GetKeyDown( KeyCode.Space ) )
+		{
+			OnSkip();
+		}
 	}
 }

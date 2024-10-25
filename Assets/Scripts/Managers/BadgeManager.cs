@@ -12,6 +12,7 @@ public class BadgeManager : MonoBehaviour
 	public void LoadBadge(Badge badge)
 	{
 		mainText.text = badge.BadgeName;
+		StartBadge();
 
 		AnalyticsService.Instance.CustomData( "badgeCompleted", new Dictionary<string, object>
 		{
@@ -22,5 +23,10 @@ public class BadgeManager : MonoBehaviour
 	public void StartBadge()
 	{
 		badgeCanvas.SetActive( true );
+	}
+
+	public void EndBadge()
+	{
+		badgeCanvas.SetActive( false );
 	}
 }

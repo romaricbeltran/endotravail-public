@@ -38,8 +38,9 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 	public bool isFirstMission;
 	public List<TargetMissionList> targetMissionsLists;
 
-	private List<TargetMission> currentTargetMissions;
-	private HashSet<TargetMission> activatedTriggers = new HashSet<TargetMission>();
+	public List<TargetMission> currentTargetMissions;
+	public HashSet<TargetMission> activatedTriggers = new HashSet<TargetMission>();
+	private int targetMissionIndex = 0;
 
 	public override void LoadData(MissionAction currentAction)
 	{
@@ -53,33 +54,6 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 			listener.Initialize( this, targetMission );
 
 			Debug.Log( $"Add Trigger Event for Target Mission: {targetMission.nodeName} on {targetMission.triggerObject.name}" );
-		}
-	}
-
-	public void OnTriggerActivated(TargetMission targetMission)
-	{
-		if ( !activatedTriggers.Contains( targetMission ) )
-		{
-			Destroy( targetMission.triggerObject.GetComponent<TriggerObjectListener>() );
-			activatedTriggers.Add( targetMission );
-			Debug.Log( $"Trigger activated: {targetMission.nodeName}" );
-
-			ScenarioNode nextNode = timelineManager.FindScenarioNodeByName( targetMission.nodeName );
-
-			if ( nextNode != null )
-			{
-				timelineManager.PlayScenarioNode( nextNode );
-			}
-			else
-			{
-				Debug.LogWarning( $"No scenario node found for TargetMission: {targetMission.nodeName}" );
-			}
-
-			if ( activatedTriggers.Count == currentTargetMissions.Count )
-			{
-                Debug.Log("All triggers activated, ending mission.");
-                EndAction();
-			}
 		}
 	}
 
@@ -102,6 +76,7 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 		else
 		{
 			shadowBackground.SetActive( false );
+			missionSkip.gameObject.SetActive( true );
 			gameManager.SwitchPlayerInput( true );
 			gameManager.analogicButtons.GetComponent<GraphicRaycaster>().enabled = true;
 
@@ -109,28 +84,71 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 		}
 	}
 
-	public void SkipMission()
+	public void OnTriggerActivated(TargetMission targetMission)
 	{
-		if ( currentTargetMissions.Count > 0 )
+		if ( !activatedTriggers.Contains( targetMission ) )
 		{
-			TargetMission skippedMission = currentTargetMissions[0];
-			currentTargetMissions.RemoveAt( 0 ); // Skip target mission in order
+			Destroy( targetMission.triggerObject.GetComponent<TriggerObjectListener>() );
+			activatedTriggers.Add( targetMission );
 
-			Debug.Log( $"Mission skipped: {skippedMission.nodeName}" );
+			Debug.Log( $"Trigger activated: {targetMission.nodeName}" );
 
-			OnTriggerActivated( skippedMission );
+			// Indeed target missions are triggered by order
+			targetMissionIndex++;
 
-			if ( currentTargetMissions.Count == 0 )
+			if ( targetMissionIndex == currentTargetMissions.Count )
 			{
+				Debug.Log( "All triggers activated, ending mission." );
 				EndAction();
 			}
+
+			ScenarioNode nextNode = timelineManager.FindScenarioNodeByName( targetMission.nodeName );
+
+			if ( nextNode != null )
+			{
+				timelineManager.PlayScenarioNode( nextNode );
+			}
+			else
+			{
+				Debug.LogWarning( $"No scenario node found for TargetMission: {targetMission.nodeName}" );
+			}
+		}
+	}
+
+	public void SkipMission()
+	{
+		if ( targetMissionIndex < currentTargetMissions.Count )
+		{
+			TargetMission skippedMission = currentTargetMissions[targetMissionIndex];
+
+			Debug.Log( $"Target Mission skipped: {skippedMission.nodeName}" );
+
+			OnTriggerActivated( skippedMission );
 		}
 	}
 
 	public override void EndAction()
 	{
+		foreach ( TargetMission targetMission in currentTargetMissions )
+		{
+			if ( !activatedTriggers.Contains( targetMission ) )
+			{
+				Destroy( targetMission.triggerObject.GetComponent<TriggerObjectListener>() );
+			}
+		}
+
 		activatedTriggers.Clear();
+		targetMissionIndex = 0;
+
 		missionCanvas.SetActive( false );
+		shadowBackground.SetActive( true );
+
+		acceptButton.gameObject.SetActive( true );
+		acceptButton.onClick.RemoveAllListeners();
+
+		missionSkip.gameObject.SetActive( false );
+		missionSkip.onClick.RemoveAllListeners();
+
 		EventSystem.current.SetSelectedGameObject( null ); // Resets focus on the button
 	}
 

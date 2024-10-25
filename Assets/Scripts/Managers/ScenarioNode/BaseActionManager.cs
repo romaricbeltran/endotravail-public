@@ -5,6 +5,7 @@ public abstract class BaseActionManager<T> : MonoBehaviour, IActionManager where
 {
 	public event System.Action OnNodeCompleted;
 	public string nextScenarioNodeName { get; set; }
+	public bool activateBackToMissionPOV { get; set; }
 
 	protected T currentAction;
 
@@ -14,6 +15,7 @@ public abstract class BaseActionManager<T> : MonoBehaviour, IActionManager where
 	{
 		currentAction = action as T;
 		nextScenarioNodeName = null;
+		activateBackToMissionPOV = false;
 		loadingNextNode = false;
 
 		LoadData( currentAction ); // Run inherited LoadData

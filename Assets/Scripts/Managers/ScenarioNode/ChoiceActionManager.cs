@@ -14,37 +14,56 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 	public List<GameObject> actionButtons;
 
 	private List<Button> actionButtonsComponents;
-	private float canvasDelay = 1.75f;
-	private float buttonsDelay = 0.75f;
+	private const float canvasDelay = 1.75f;
+	private const float buttonsDelay = 0.75f;
+
+	private void Awake()
+	{
+		actionButtonsComponents = new List<Button>();
+
+		foreach ( GameObject actionButton in actionButtons )
+		{
+			var buttonComponent = actionButton.GetComponent<Button>();
+			if ( buttonComponent != null )
+			{
+				actionButtonsComponents.Add( buttonComponent );
+			}
+			else
+			{
+				Debug.LogWarning( $"Button component not found in {actionButton.name}" );
+			}
+		}
+	}
 
 	public override void LoadData(ChoiceAction currentAction)
 	{
-		actionButtonsComponents = new();
+		if ( currentAction.Choices.Count > actionButtonsComponents.Count )
+		{
+			Debug.LogError( "Not enough action buttons for the number of choices." );
+			return;
+		}
 
 		for ( int i = 0; i < currentAction.Choices.Count; i++ )
 		{
-			actionButtonsComponents.Add(actionButtons[i].GetComponent<Button>());
-			actionButtonsComponents[i].onClick.RemoveAllListeners();
-
+			int index = i;
 			TextMeshProUGUI buttonText = actionButtonsComponents[i].GetComponentInChildren<TextMeshProUGUI>();
 			buttonText.text = currentAction.Choices[i].Description;
+			actionButtonsComponents[i].onClick.AddListener( () => OnActionChoice( currentAction.Choices[index] ) );
 		}
 	}
 
 	public override void StartAction()
 	{
 		actionCanvas.SetActive( true );
-		StartCoroutine( ActiveButtonsWithDelay() );
+		StartCoroutine( ActivateButtonsWithDelay() );
 	}
 
-	private IEnumerator ActiveButtonsWithDelay()
+	private IEnumerator ActivateButtonsWithDelay()
 	{
-		yield return new WaitForSeconds( canvasDelay ); 
-
+		yield return new WaitForSeconds( canvasDelay );
+	
 		for ( int i = 0; i < currentAction.Choices.Count; i++ )
 		{
-			int index = i;
-			actionButtonsComponents[i].onClick.AddListener( () => OnActionChoice( currentAction.Choices[index] ) );
 			actionButtons[i].SetActive( true );
 			yield return new WaitForSeconds( buttonsDelay );
 		}
@@ -52,9 +71,14 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 
 	private void OnActionChoice(Choice choice)
 	{
-		if ( choice.Flags != null )
+		if ( choice.Flags != null && choice.Flags.Count > 0 )
 		{
 			flagManager.SaveFlags( choice.Flags );
+		}
+
+		if (choice.ActivateBackToMissionPOV)
+		{
+			activateBackToMissionPOV = true;
 		}
 
 		nextScenarioNodeName = choice.NodeName;
@@ -63,14 +87,17 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 
 	public override void EndAction()
 	{
-		foreach ( GameObject actionButton in actionButtons )
+		StopAllCoroutines();
+
+		for ( int i = 0; i < currentAction.Choices.Count; i++ )
 		{
-			actionButton.SetActive( false );
+			actionButtonsComponents[i].onClick.RemoveAllListeners();
+			actionButtons[i].SetActive( false );
 		}
 
-		EventSystem.current.SetSelectedGameObject( null ); // Resets focus on the button
-
 		actionCanvas.SetActive( false );
+
+		EventSystem.current.SetSelectedGameObject( null );  // Resets focus on the button
 		base.EndAction();
 	}
 }

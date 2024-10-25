@@ -48,7 +48,7 @@ public class TimelineManager : MonoBehaviour
 
 	private ScenarioNode currentScenarioNode;
 	private IActionManager currentActionManager;
-	private bool endGame = false;
+	private bool endingChapter = false;
 
 	private Dictionary<string, (ScenarioNode node, NodeLocation location)> nodeDictionary;
 
@@ -56,9 +56,9 @@ public class TimelineManager : MonoBehaviour
 	{
 		nodeDictionary = new Dictionary<string, (ScenarioNode, NodeLocation)>();
 
-		foreach ( ScenarioNode node in chapter.Scenario )
+		for ( int i = 0; i < chapter.Scenario.Count; i++ )
 		{
-			AddNodeWithLocationToDictionary( node, null, -1, -1 ); // Depth 0
+			AddNodeWithLocationToDictionary( chapter.Scenario[i], null, -1, i ); // Depth 0
 		}
 
 		Debug.Log( $"Node dictionary initialized with {nodeDictionary.Count} nodes." );
@@ -93,6 +93,11 @@ public class TimelineManager : MonoBehaviour
 	public void PlayScenarioNode(ScenarioNode node)
     {
 		currentScenarioNode = node;
+
+		if (currentScenarioNode.EndOfMission)
+		{
+			missionActionManager.EndAction();
+		}
 
 		HandleAnalytics( currentScenarioNode.Action.name );
 		HandleFlags( currentScenarioNode.Flags );
@@ -148,7 +153,7 @@ public class TimelineManager : MonoBehaviour
 				LoadActionManager( missionActionManager, missionAction );
 				break;
 			case EndGameAction endGameAction:
-				endGame = true;
+				endingChapter = true;
 				LoadActionManager( endGameActionManager, endGameAction );
 				break;
 			default:
@@ -161,7 +166,7 @@ public class TimelineManager : MonoBehaviour
 	{
 		currentActionManager = manager;
 
-		if (!endGame)
+		if (!endingChapter)
 		{
 			currentActionManager.OnNodeCompleted += OnNodeCompletedHandler;
 		}
@@ -171,8 +176,18 @@ public class TimelineManager : MonoBehaviour
 
 	private void OnNodeCompletedHandler()
 	{
+		badgeManager.EndBadge();
+
 		currentActionManager.OnNodeCompleted -= OnNodeCompletedHandler;
-		PlayNextScenarioNode();
+
+		if ( currentScenarioNode.BackToMissionPOV || currentActionManager.activateBackToMissionPOV )
+		{
+			gameManager.SwitchPlayerInput( true );
+		}
+		else
+		{
+			PlayNextScenarioNode();
+		}
 	}
 
 	private void PlayNextScenarioNode()
@@ -181,13 +196,16 @@ public class TimelineManager : MonoBehaviour
 			?? FindScenarioNodeByName( currentActionManager.nextScenarioNodeName )
 			?? GetNextNodeInBranchOrScenario( GetLocationOfNode( currentScenarioNode ) );
 
-		if ( nextNode != null )
+		if ( !endingChapter )
 		{
-			PlayScenarioNode( nextNode );
-		}
-		else
-		{
-			HandleEndChapter();
+			if ( nextNode != null )
+			{
+				PlayScenarioNode( nextNode );
+			}
+			else
+			{
+				HandleEndChapter();
+			}
 		}
 	}
 
@@ -223,7 +241,7 @@ public class TimelineManager : MonoBehaviour
 	private ScenarioNode GetNextNodeInBranchOrScenario(NodeLocation nodeLocation)
 	{
 		// Check if we are in a valid branch
-		if ( nodeLocation.ParentNode != null && nodeLocation.BranchIndex >= 0 && nodeLocation.NodeIndexInBranch >= 0 )
+		if ( nodeLocation.ParentNode != null && nodeLocation.BranchIndex >= 0 )
 		{
 			Branch currentBranch = nodeLocation.ParentNode.Branches[nodeLocation.BranchIndex];
 
@@ -240,15 +258,13 @@ public class TimelineManager : MonoBehaviour
 
 		// If we're not in a branch or we've reached the root,
 		// look for the next node in the main scenario
-		return GetNextNodeInScenario( nodeLocation.ParentNode ?? currentScenarioNode );
+		return GetNextNodeInScenario( nodeLocation );
 	}
 
-	private ScenarioNode GetNextNodeInScenario(ScenarioNode node)
+	private ScenarioNode GetNextNodeInScenario(NodeLocation nodeLocation)
 	{
-		int nodeIndex = chapter.Scenario.IndexOf( node );
-
-		return (nodeIndex >= 0 && nodeIndex + 1 < chapter.Scenario.Count)
-			? chapter.Scenario[nodeIndex + 1]
+		return (nodeLocation.NodeIndexInBranch >= 0 && nodeLocation.NodeIndexInBranch + 1 < chapter.Scenario.Count)
+			? chapter.Scenario[nodeLocation.NodeIndexInBranch + 1]
 			: null;
 	}
 
@@ -260,7 +276,14 @@ public class TimelineManager : MonoBehaviour
 			{
 				if ( flaggedNode.Flag == null || flagManager.IsFlagActive( flaggedNode.Flag ) )
 				{
-					return FindScenarioNodeByName( flaggedNode.NodeName );
+					if ( string.IsNullOrEmpty( flaggedNode.NodeName ) )
+					{
+						HandleEndChapter();
+					}
+					else
+					{
+						return FindScenarioNodeByName( flaggedNode.NodeName );
+					}
 				}
 			}
 		}
@@ -270,6 +293,8 @@ public class TimelineManager : MonoBehaviour
 
 	public void HandleEndChapter()
 	{
+		endingChapter = true;
+
 		if ( chapter.Id > GameManager.LoadProgress() )
 		{
 			GameManager.SaveProgress( chapter.Id );

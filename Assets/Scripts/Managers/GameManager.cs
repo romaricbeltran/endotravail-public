@@ -15,10 +15,6 @@ public class GameManager : MonoBehaviour
     public GameObject analogicButtons;
     public GameObject player;
 
-    private ThirdPersonController playerController;
-    private PlayerInput playerInput;
-	private MyUICanvasControllerInput myUICanvasControllerInput;
-
 	void Awake()
 	{
 		if ( instance != null )
@@ -32,18 +28,11 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	void Start()
+	public void SwitchPlayerInput(bool availability)
     {
-		playerController = player.GetComponent<ThirdPersonController>();
-        playerInput = player.GetComponent<PlayerInput>();
-		myUICanvasControllerInput = analogicButtons.GetComponent<MyUICanvasControllerInput>();
-	}
-
-    public void SwitchPlayerInput(bool availability)
-    {
-        if (playerInput != null)
+        if ( player.GetComponent<PlayerInput>() != null)
         {
-            playerInput.enabled = availability;
+			player.GetComponent<PlayerInput>().enabled = availability;
         }
 
 		if ( analogicButtons != null )
@@ -53,12 +42,12 @@ public class GameManager : MonoBehaviour
 		}
 
 		EventSystem.current.SetSelectedGameObject(null);
-        myUICanvasControllerInput.VirtualResetMove();
+		analogicButtons.GetComponent<MyUICanvasControllerInput>().VirtualResetMove();
     }
 
     public void ResetPlayerCamera(float targetRotationY)
     {
-        playerController.SetCinemachineTargetYaw(targetRotationY);
+		player.GetComponent<ThirdPersonController>().SetCinemachineTargetYaw(targetRotationY);
     }
 
 	public static void SaveProgress(int levelIndex)
