@@ -61,11 +61,28 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 	private IEnumerator ActivateButtonsWithDelay()
 	{
 		yield return new WaitForSeconds( canvasDelay );
-	
+
 		for ( int i = 0; i < currentAction.Choices.Count; i++ )
 		{
-			actionButtons[i].SetActive( true );
-			yield return new WaitForSeconds( buttonsDelay );
+			bool shouldActivateButton = true;
+
+			if ( currentAction.Choices[i].HideChoiceFlags != null )
+			{
+				foreach ( Flag flag in currentAction.Choices[i].HideChoiceFlags )
+				{
+					if ( flagManager.IsFlagValid( flag ) )
+					{
+						shouldActivateButton = false;
+						break;
+					}
+				}
+			}
+
+			if ( shouldActivateButton )
+			{
+				actionButtons[i].SetActive( true );
+				yield return new WaitForSeconds( buttonsDelay );
+			}
 		}
 	}
 

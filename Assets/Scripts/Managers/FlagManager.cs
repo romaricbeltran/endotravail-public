@@ -36,6 +36,20 @@ public class FlagManager : MonoBehaviour
 		}
 	}
 
+	public bool IsFlagValid(Flag flag)
+	{
+		bool isActive = flag == null
+			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) == 1
+			|| temporaryFlags.ContainsKey( flag.FlagName );
+
+		if ( isActive )
+		{
+			Debug.Log( $"Flag activated: {(flag != null ? flag.FlagName : null)}" );
+		}
+
+		return isActive;
+	}
+
 	public bool IsFlagValid(Flag flag, int minimalEndingPoints)
 	{
 		bool isActive = flag == null
