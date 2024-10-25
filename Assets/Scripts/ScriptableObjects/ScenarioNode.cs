@@ -26,9 +26,11 @@ public class ScenarioNode
 public class FlaggedScenarioNode
 {
     [SerializeField] private Flag flag;
+    [SerializeField, Min( 1 )] private int minimalEndingPoints;
 	[SerializeField] private string nodeName;
 
     public Flag Flag { get => flag; set => flag = value; }
+	public int MinimalEndingPoints { get => minimalEndingPoints; set => minimalEndingPoints = value; }
     public global::System.String NodeName { get => nodeName; set => nodeName = value; }
 }
 

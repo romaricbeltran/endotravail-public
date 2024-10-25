@@ -13,7 +13,15 @@ public class FlagManager : MonoBehaviour
 		{
 			if ( flag.PersistedInProgress )
 			{
-				PlayerPrefs.SetInt( flag.FlagName, 1 );
+				if ( PlayerPrefs.GetInt( flag.FlagName, 0 ) != 0 )
+				{
+					PlayerPrefs.SetInt( flag.FlagName, PlayerPrefs.GetInt( flag.FlagName, 0 ) + 1 );
+				}
+				else
+				{
+					PlayerPrefs.SetInt( flag.FlagName, 1 );
+				}
+
 				PlayerPrefs.Save();
 			}
 			else
@@ -28,13 +36,15 @@ public class FlagManager : MonoBehaviour
 		}
 	}
 
-	public bool IsFlagActive(Flag flag)
+	public bool IsFlagValid(Flag flag, int minimalEndingPoints)
 	{
-		bool isActive = PlayerPrefs.GetInt( flag.FlagName, 0 ) == 1 || temporaryFlags.ContainsKey( flag.FlagName );
+		bool isActive = flag == null
+			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) >= minimalEndingPoints
+			|| temporaryFlags.ContainsKey( flag.FlagName );
 
 		if ( isActive )
 		{
-			Debug.Log( $"Flag activated: {flag.FlagName}" );
+			Debug.Log( $"Flag activated: {(flag != null ? flag.FlagName : null)}" );
 		}
 
 		return isActive;

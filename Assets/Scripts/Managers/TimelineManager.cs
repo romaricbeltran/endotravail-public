@@ -274,7 +274,7 @@ public class TimelineManager : MonoBehaviour
 		{	
 			foreach ( FlaggedScenarioNode flaggedNode in flaggedNodes )
 			{
-				if ( flaggedNode.Flag == null || flagManager.IsFlagActive( flaggedNode.Flag ) )
+				if ( flagManager.IsFlagValid( flaggedNode.Flag, flaggedNode.MinimalEndingPoints ) )
 				{
 					if ( string.IsNullOrEmpty( flaggedNode.NodeName ) )
 					{
