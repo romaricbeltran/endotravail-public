@@ -50,10 +50,13 @@ public class TimelineManager : MonoBehaviour
 	private IActionManager currentActionManager;
 	private bool endingChapter = false;
 
+	private PlayableDirector director;
 	private Dictionary<string, (ScenarioNode node, NodeLocation location)> nodeDictionary;
 
 	private void Awake()
 	{
+		director = GetComponent<PlayableDirector>();
+
 		nodeDictionary = new Dictionary<string, (ScenarioNode, NodeLocation)>();
 
 		for ( int i = 0; i < chapter.Scenario.Count; i++ )
@@ -135,7 +138,7 @@ public class TimelineManager : MonoBehaviour
 
 		if ( action.TimelineClip )
 		{
-			GetComponent<PlayableDirector>().Play( action.TimelineClip, action.DirectorWrapMode );
+			director.Play( action.TimelineClip, action.DirectorWrapMode );
 		}
 
 		switch ( action )
@@ -276,13 +279,15 @@ public class TimelineManager : MonoBehaviour
 			{
 				if ( flagManager.IsFlagValid( flaggedNode.Flag, flaggedNode.MinimalEndingPoints ) )
 				{
-					if ( string.IsNullOrEmpty( flaggedNode.NodeName ) )
+					ScenarioNode node = FindScenarioNodeByName( flaggedNode.NodeName );
+
+					if ( node != null )
 					{
-						HandleEndChapter();
+						return node;
 					}
 					else
 					{
-						return FindScenarioNodeByName( flaggedNode.NodeName );
+						HandleEndChapter();
 					}
 				}
 			}
