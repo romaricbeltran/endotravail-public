@@ -386,7 +386,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -77.5}
+  m_AnchoredPosition: {x: 960, y: -107.5}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3475023233856751920
@@ -765,8 +765,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8619902071344497707}
-  - component: {fileID: 3134471566470843391}
   - component: {fileID: 8619902073201743155}
+  - component: {fileID: 3134471566470843391}
   m_Layer: 0
   m_Name: LevelLoader
   m_TagString: Untagged
@@ -790,6 +790,30 @@ Transform:
   - {fileID: 1659645090856042695}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8619902073201743155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4748007672991137008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f80a1c4947ff9448a9449d419465db8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneAddresses:
+  - Assets/Scenes/Chapitre 1.unity
+  - Assets/Scenes/Chapitre 2.unity
+  - Assets/Scenes/Chapitre 3.unity
+  - Assets/Scenes/Chapitre 4.unity
+  levelTitleText: {fileID: 2874394126512436456}
+  levelSubtitleText: {fileID: 7828472471204487408}
+  loadingBar: {fileID: 7320950203274979495}
+  waitLoadingText: {fileID: 5572328027135456449}
+  loadingScreenTransition: {fileID: 3835043042985382529}
+  transitionTime: 4
+  retardedUI: {fileID: 3636807475447358250}
 --- !u!82 &3134471566470843391
 AudioSource:
   m_ObjectHideFlags: 0
@@ -886,34 +910,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8619902073201743155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4748007672991137008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f80a1c4947ff9448a9449d419465db8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 8438685537658233519, guid: 47d34a587b68197468d33cba2bc0da36,
-    type: 3}
-  sceneAddresses:
-  - Assets/Scenes/Chapitre 1.unity
-  - Assets/Scenes/Chapitre 2.unity
-  - Assets/Scenes/Chapitre 3.unity
-  - Assets/Scenes/Chapitre 4.unity
-  levelTitleText: {fileID: 2874394126512436456}
-  levelSubtitleText: {fileID: 7828472471204487408}
-  loadingBar: {fileID: 7320950203274979495}
-  waitLoadingText: {fileID: 5572328027135456449}
-  loadingScreenTransition: {fileID: 3835043042985382529}
-  creditTime: 4.5
-  transitionTime: 4
-  retardedUI: {fileID: 3636807475447358250}
-  homeScreenTransition: {fileID: 0}
 --- !u!1 &8456317584592586535
 GameObject:
   m_ObjectHideFlags: 0

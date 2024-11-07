@@ -78,6 +78,20 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 				}
 			}
 
+			if ( currentAction.Choices[i].ShowChoiceFlags != null )
+			{
+				shouldActivateButton = false;
+
+				foreach ( Flag flag in currentAction.Choices[i].ShowChoiceFlags )
+				{
+					if ( flagManager.IsFlagValid( flag ) )
+					{
+						shouldActivateButton = true;
+						break;
+					}
+				}
+			}
+
 			if ( shouldActivateButton )
 			{
 				actionButtons[i].SetActive( true );
