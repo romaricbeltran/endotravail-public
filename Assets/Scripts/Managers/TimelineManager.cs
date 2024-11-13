@@ -273,8 +273,8 @@ public class TimelineManager : MonoBehaviour
 
 	public ScenarioNode HandleFlaggedNodes(List<FlaggedScenarioNode> flaggedNodes)
 	{
-		if ( flaggedNodes != null )
-		{	
+		if ( flaggedNodes.Count > 0 )
+		{
 			foreach ( FlaggedScenarioNode flaggedNode in flaggedNodes )
 			{
 				if ( flagManager.IsFlagValid( flaggedNode.Flag, flaggedNode.MinimalEndingPoints ) )

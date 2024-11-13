@@ -26,7 +26,14 @@ public class FlagManager : MonoBehaviour
 			}
 			else
 			{
-				temporaryFlags[flag.FlagName] = 1;
+				if ( temporaryFlags.ContainsKey( flag.FlagName ) )
+				{
+					temporaryFlags[flag.FlagName] += 1;
+				}
+				else
+				{
+					temporaryFlags[flag.FlagName] = 1;
+				}
 			}
 
 			AnalyticsService.Instance.CustomData( "flagCompleted", new Dictionary<string, object>
@@ -39,7 +46,7 @@ public class FlagManager : MonoBehaviour
 	public bool IsFlagValid(Flag flag)
 	{
 		bool isActive = flag == null
-			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) == 1
+			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) >= 1
 			|| temporaryFlags.ContainsKey( flag.FlagName );
 
 		if ( isActive )
@@ -54,7 +61,7 @@ public class FlagManager : MonoBehaviour
 	{
 		bool isActive = flag == null
 			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) >= minimalEndingPoints
-			|| temporaryFlags.ContainsKey( flag.FlagName );
+			|| (temporaryFlags.ContainsKey( flag.FlagName ) && temporaryFlags[flag.FlagName] >= minimalEndingPoints);
 
 		if ( isActive )
 		{

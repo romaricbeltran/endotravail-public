@@ -66,7 +66,7 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 		{
 			bool shouldActivateButton = true;
 
-			if ( currentAction.Choices[i].HideChoiceFlags != null )
+			if ( currentAction.Choices[i].HideChoiceFlags.Count > 0 )
 			{
 				foreach ( Flag flag in currentAction.Choices[i].HideChoiceFlags )
 				{
@@ -78,7 +78,7 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 				}
 			}
 
-			if ( currentAction.Choices[i].ShowChoiceFlags != null )
+			if ( currentAction.Choices[i].ShowChoiceFlags.Count > 0 )
 			{
 				shouldActivateButton = false;
 
@@ -102,7 +102,7 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 
 	private void OnActionChoice(Choice choice)
 	{
-		if ( choice.Flags != null && choice.Flags.Count > 0 )
+		if ( choice.Flags.Count > 0 )
 		{
 			flagManager.SaveFlags( choice.Flags );
 		}
