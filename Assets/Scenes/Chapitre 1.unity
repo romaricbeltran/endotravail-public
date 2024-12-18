@@ -3648,12 +3648,12 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 896aa6f1b35166149932a1cfa03c8971, type: 2}
     - {fileID: 11400000, guid: d977438510488094eb56268e49647817, type: 2}
     - {fileID: 11400000, guid: 963a1a5a3e6feea4bad86bb6053477c9, type: 2}
-    - {fileID: 11400000, guid: c2d2e2df3ac0f844786767a77289114f, type: 2}
-    - {fileID: 11400000, guid: 813ad51c819bf8b4dabf9e874a359eb5, type: 2}
     - {fileID: 11400000, guid: 109bc1bcec58ea74a9cda879290060cd, type: 2}
     - {fileID: 11400000, guid: ad6fb1c6543e9604c94d0aa9752e29a1, type: 2}
     - {fileID: 11400000, guid: 77e12db9733387b4ea124961cc891c6e, type: 2}
     - {fileID: 11400000, guid: 054f0b1a3b885164391369e044d13480, type: 2}
+    - {fileID: 11400000, guid: 9a09a636457a38f479e22e685b888c0c, type: 2}
+    - {fileID: 11400000, guid: f834a793a0ebb884e9616ee2fb30e70b, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -3680,7 +3680,7 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/1.1.rappel-telephone.mp4
+            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/V2/Chapitre1.rappel-calendrier-telephone.mp4
             m_BoolArgument: 0
           m_CallState: 2
         - m_Target: {fileID: 7971272021986747876}
@@ -3706,43 +3706,13 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/1.2.invitation-calendrier.mp4
+            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/V2/Chapitre1.invitation-calendrier-ordinateur.mp4
             m_BoolArgument: 0
           m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
         - m_Target: {fileID: 3972098767237495243}
           m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
-          m_MethodName: set_url
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/1.3.email-manager(1).mp4
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3972098767237495243}
-          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
-          m_MethodName: set_url
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/1.4.email-manager(2).mp4
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 3972098767237495243}
-          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
-          m_MethodName: set_url
-          m_Mode: 5
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3757,6 +3727,44 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
           m_MethodName: set_url
           m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/V2/Chapitre1.email-manager-1.mp4
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3972098767237495243}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3972098767237495243}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: set_url
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/V2/Chapitre1.email-manager-2-choix-1.mp4
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3972098767237495243}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3812,6 +3820,58 @@ MonoBehaviour:
         - m_Target: {fileID: 6425957340139188306}
           m_TargetAssemblyTypeName: MissionActionManager, Assembly-CSharp
           m_MethodName: StartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3972098767237495243}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: set_url
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/V2/Chapitre1.email-manager-2-choix-2.mp4
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3972098767237495243}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3972098767237495243}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: set_url
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/V2/Chapitre1.email-manager-2-choix-3.mp4
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 3972098767237495243}
+          m_TargetAssemblyTypeName: UnityEngine.Video.VideoPlayer, UnityEngine
+          m_MethodName: Play
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -49209,7 +49269,7 @@ PrefabInstance:
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 894.56433
       objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
