@@ -122,18 +122,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &705032293 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8619902073201743155, guid: 6114d07b9de7151489026755e7ae4f54,
-    type: 3}
-  m_PrefabInstance: {fileID: 2098324246}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f80a1c4947ff9448a9449d419465db8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1020480527
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +381,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
+    - target: {fileID: 4748007672991137008, guid: 6114d07b9de7151489026755e7ae4f54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -411,7 +404,7 @@ PrefabInstance:
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 960
+      value: 806.5985
       objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -609,11 +602,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 829282029475215061, guid: 381584cb2c3758c47b1651eebc82515b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 705032293}
     - target: {fileID: 2742347213760237342, guid: 381584cb2c3758c47b1651eebc82515b,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -644,11 +632,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2758899062304977955, guid: 381584cb2c3758c47b1651eebc82515b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 705032293}
     - target: {fileID: 3091566744696143030, guid: 381584cb2c3758c47b1651eebc82515b,
         type: 3}
       propertyPath: m_AnchorMax.y

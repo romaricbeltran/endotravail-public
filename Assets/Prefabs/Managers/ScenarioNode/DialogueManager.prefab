@@ -165,8 +165,7 @@ MonoBehaviour:
   dialogueText: {fileID: 6021667637239497349}
   skipButton: {fileID: 5459263158768732835}
   dialogueBoxAnimator: {fileID: 9051962081976976444}
-  typingLetterInterval: 0.05
-  timeBeetweenSentencesInterval: 3
+  typingLetterInterval: 0.03
   audioSource: {fileID: 1764201312702369153}
 --- !u!82 &1764201312702369153
 AudioSource:
@@ -329,8 +328,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Bonjour, je vais devoir annuler notre rendez-vous car une r\xE9union a
-    \xE9t\xE9 planifi\xE9e sur le m\xEAme cr\xE9neau..."
+  m_text: "Bonjour, je suis atteinte d'endom\xE9triose et j'ai de plus en plus de
+    difficult\xE9s \xE0 exercer certaines missions au travail. Je viens donc voir
+    si des am\xE9nagements sont possibles."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
@@ -438,7 +438,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 180, y: 42.502502}
+  m_SizeDelta: {x: 550, y: 42.502502}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &3542914655736023409
 CanvasRenderer:
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Suivant
+  m_text: Passer le dialogue [Espace]
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,

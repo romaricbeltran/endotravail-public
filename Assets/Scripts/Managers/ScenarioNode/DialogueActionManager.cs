@@ -14,8 +14,8 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	public Button skipButton;
 
 	public Animator dialogueBoxAnimator;
-	public float typingLetterInterval = 0.05f;
-	public float autoProceedDelay = 1.5f; // Interval between sentences
+	public float typingLetterInterval = 0.03f;
+	// public float autoProceedDelay = 1.5f; // Interval between sentences
 
 	public AudioSource audioSource;
 
@@ -23,6 +23,29 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	private int indexSentence;
 	private bool isTyping = false;
 	private bool isAudioPlaying = false;
+
+	private void Start()
+	{
+		TextMeshProUGUI skipText = skipButton.GetComponent<TextMeshProUGUI>();
+
+		if ( Application.isMobilePlatform )
+		{
+			skipText.text = "Passer le dialogue";
+		}
+		else
+		{
+			skipText.text = "Passer le dialogue [Espace]";
+		}
+	}
+
+	void Update()
+	{
+		// Allow skipping dialogue by pressing spacebar
+		if ( Input.GetKeyDown( KeyCode.Space ) )
+		{
+			OnSkip();
+		}
+	}
 
 	public override void LoadData(DialogueAction currentAction)
 	{
@@ -96,7 +119,8 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 		dialogueText.text = sentence;
 		isTyping = false;
 
-		CheckIfWeCanProceed();
+		// Disable auto-proceed
+		//CheckIfWeCanProceed();
 	}
 
 	IEnumerator PlayAudio(AudioClip clip)
@@ -113,7 +137,9 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 		yield return new WaitWhile( () => audioSource.isPlaying );
 
 		isAudioPlaying = false;
-		CheckIfWeCanProceed();
+
+		// Disable auto-proceed
+		//CheckIfWeCanProceed();
 	}
 
 	public void OnSkip()
@@ -132,26 +158,18 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 		}
 	}
 
-	private void CheckIfWeCanProceed()
-	{
-		if ( !isTyping && !isAudioPlaying )
-		{
-			StartCoroutine( WaitBeforeProceeding() );
-		}
-	}
+	// Disable auto-proceed
+	//private void CheckIfWeCanProceed()
+	//{
+	//	if ( !isTyping && !isAudioPlaying )
+	//	{
+	//		StartCoroutine( WaitBeforeProceeding() );
+	//	}
+	//}
 
-	IEnumerator WaitBeforeProceeding()
-	{
-		yield return new WaitForSeconds( autoProceedDelay );
-		DisplayNextSentence();
-	}
-
-	void Update()
-	{
-		// Allow skipping dialogue by pressing spacebar
-		if ( Input.GetKeyDown( KeyCode.Space ) )
-		{
-			OnSkip();
-		}
-	}
+	//IEnumerator WaitBeforeProceeding()
+	//{
+	//	yield return new WaitForSeconds( autoProceedDelay );
+	//	DisplayNextSentence();
+	//}
 }
