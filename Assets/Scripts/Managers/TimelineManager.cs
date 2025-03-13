@@ -112,8 +112,19 @@ public class TimelineManager : MonoBehaviour
 	{
 		Debug.Log( "Playing Node :" + nodeName );
 
-		//AnalyticsService.Instance.CustomData("gameProgress",
-		//	new Dictionary<string, object>{{ "gameProgressStepName", nodeName } });
+		if (AnalyticsService.Instance != null)
+		{
+			GameProgressEvent gameProgressEvent = new GameProgressEvent
+			{
+				GameProgressStepName = nodeName
+			};
+			AnalyticsService.Instance.RecordEvent(gameProgressEvent);
+			Debug.Log($"Recorded event: gameProgress with nodeName = {nodeName}");
+		}
+		else
+		{
+			Debug.LogError("AnalyticsService.Instance is null. Ensure Analytics is properly initialized.");
+		}
 	}
 
 	private void HandleFlags(List<Flag> flags)

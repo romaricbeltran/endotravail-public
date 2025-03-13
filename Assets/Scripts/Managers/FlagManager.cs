@@ -36,10 +36,19 @@ public class FlagManager : MonoBehaviour
 				}
 			}
 
-			AnalyticsService.Instance.CustomData( "flagCompleted", new Dictionary<string, object>
+			if (AnalyticsService.Instance != null)
 			{
-				{ "flagName", flag.FlagName }
-			} );
+				FlagCompletedEvent flagEvent = new FlagCompletedEvent
+				{
+					FlagName = flag.FlagName
+				};
+				AnalyticsService.Instance.RecordEvent(flagEvent);
+				Debug.Log($"Recorded event: flagCompleted with flagName = {flag.FlagName}");
+			}
+			else
+			{
+				Debug.LogError("AnalyticsService.Instance is null. Ensure Analytics is properly initialized.");
+			}
 		}
 	}
 

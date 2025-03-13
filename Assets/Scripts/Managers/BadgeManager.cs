@@ -14,10 +14,19 @@ public class BadgeManager : MonoBehaviour
 		mainText.text = badge.BadgeName;
 		StartBadge();
 
-		AnalyticsService.Instance.CustomData( "badgeCompleted", new Dictionary<string, object>
+		if (AnalyticsService.Instance != null)
 		{
-			{ "badgeName", badge.BadgeName }
-		} );
+			BadgeCompletedEvent badgeEvent = new BadgeCompletedEvent
+			{
+				BadgeName = badge.BadgeName
+			};
+			AnalyticsService.Instance.RecordEvent(badgeEvent);
+			Debug.Log($"Recorded event: badgeCompleted with badgeName = {badge.BadgeName}");
+		}
+		else
+		{
+			Debug.LogError("AnalyticsService.Instance is null. Ensure Analytics is properly initialized.");
+		}
 	}
 
 	public void StartBadge()

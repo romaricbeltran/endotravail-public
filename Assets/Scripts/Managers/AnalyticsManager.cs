@@ -2,6 +2,7 @@ using UnityEngine;
 using Unity.Services.Core;
 using Unity.Services.Analytics;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Unity.Services.Core.Environments;
 
 public class AnalyticsManager : MonoBehaviour
@@ -23,18 +24,26 @@ public class AnalyticsManager : MonoBehaviour
 
     async void Start()
     {
-        try
-        {
-            var options = new InitializationOptions();
-            options.SetEnvironmentName("development");
-            await UnityServices.InitializeAsync(options);
-            AnalyticsService.Instance.StartDataCollection();
-            //Debug.Log("StartAnalytics");
-        }
-        catch (ConsentCheckException e)
-        {
-            Debug.Log("Fail to Initialize Analytics");
-          // Something went wrong when checking the GeoIP, check the e.Reason and handle appropriately.
-        }
+	    await InitializeAnalytics();
+    }
+
+    private async Task InitializeAnalytics()
+    {
+	    try
+	    {
+		    var options = new InitializationOptions();
+		    options.SetEnvironmentName("development");
+		    await UnityServices.InitializeAsync(options);
+
+		    if (AnalyticsService.Instance != null)
+		    {
+			    AnalyticsService.Instance.StartDataCollection();
+			    Debug.Log("Analytics initialized and data collection started.");
+		    }
+	    }
+	    catch (System.Exception e)
+	    {
+		    Debug.LogError($"Unexpected error initializing Analytics: {e.Message}");
+	    }
     }
 }
