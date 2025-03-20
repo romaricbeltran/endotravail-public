@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class PopupActionManager : BaseActionManager<PopupAction>
 	public TextMeshProUGUI sourceText;
 	public Button nextButton;
 
+	public Animator popupBoxAnimator;
+
 	private int currentPageIndex = 0;
 
 	public override void LoadData(PopupAction currentAction)
@@ -19,16 +22,20 @@ public class PopupActionManager : BaseActionManager<PopupAction>
 		UpdatePageDisplay();
 		nextButton.onClick.RemoveAllListeners();
 		nextButton.onClick.AddListener( () => OnNextPage() );
+
+		popupBoxAnimator.SetBool( "IsIntroOrOutro", currentAction.IsIntroOrOutro );
+		nextButton.GetComponent<Animator>().SetBool("IsIntroOrOutro", currentAction.IsIntroOrOutro);
+		nextButton.GetComponent<Animator>().SetTrigger( "Normal" );
 	}
 
 	public override void StartAction()
 	{
-		popupCanvas.SetActive( true );
+		popupCanvas.GetComponent<CanvasGroup>().alpha = 1f;
 	}
 
 	public override void EndAction()
 	{
-		popupCanvas.SetActive( false );
+		popupCanvas.GetComponent<CanvasGroup>().alpha = 0f;
 		EventSystem.current.SetSelectedGameObject( null ); // Resets focus on the button
 		base.EndAction();
 	}
@@ -56,5 +63,7 @@ public class PopupActionManager : BaseActionManager<PopupAction>
 		{
 			UpdatePageDisplay();
 		}
+
+		EventSystem.current.SetSelectedGameObject( null );
 	}
 }

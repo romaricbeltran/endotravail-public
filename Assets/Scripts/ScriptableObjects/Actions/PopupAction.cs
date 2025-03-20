@@ -4,8 +4,10 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "PopupAction", menuName = "ScriptableObjects/Actions/PopupAction" )]
 public class PopupAction : BaseAction
 {
+	[SerializeField] private bool isIntroOrOutro;
 	[SerializeField] private List<Page> pages;
 
+	public bool IsIntroOrOutro { get => isIntroOrOutro; set => isIntroOrOutro = value; }
     public List<Page> Pages { get => pages; set => pages = value; }
 }
 
