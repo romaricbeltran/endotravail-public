@@ -18,12 +18,12 @@ function unityShowBanner(msg, type) {
 }
 
 var buildUrl = "Build";
-var loaderUrl = buildUrl + "/build-webgl-endotravail-responsive.loader.js";
+var loaderUrl = buildUrl + "/debugendo.dianaportela.fr.loader.js";
 var config = {
     dataUrl: buildUrl + ((/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) ?
-    "/build-webgl-mobile-endotravail-responsive.data.gz" : "/build-webgl-endotravail-responsive.data.gz"),
-    frameworkUrl: buildUrl + "/build-webgl-endotravail-responsive.framework.js.gz",
-    codeUrl: buildUrl + "/build-webgl-endotravail-responsive.wasm.gz",
+    "/debugendo.dianaportela.fr.data.gz" : "/debugendo.dianaportela.fr.data.gz"),
+    frameworkUrl: buildUrl + "/debugendo.dianaportela.fr.framework.js.gz",
+    codeUrl: buildUrl + "/debugendo.dianaportela.fr.wasm.gz",
     streamingAssetsUrl: "StreamingAssets",
     companyName: "RomaricB",
     productName: "seriousgame-endometriose-travail.dianaportela.fr",
