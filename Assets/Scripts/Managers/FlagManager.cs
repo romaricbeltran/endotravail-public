@@ -67,34 +67,26 @@ public class FlagManager : MonoBehaviour
 		return isActive;
 	}
 
-	public bool IsFlagValid(Flag flag, int minimalEndingPoints)
-	{
-		bool isActive = flag == null
-			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) >= minimalEndingPoints
-			|| (temporaryFlags.ContainsKey( flag.FlagName ) && temporaryFlags[flag.FlagName] >= minimalEndingPoints);
-
-		if ( isActive )
-		{
-			Debug.Log( $"Flag activated: {(flag != null ? flag.FlagName : null)}" );
-		}
-
-		return isActive;
-	}
-
 	public FlaggedScenarioNode GetBestValidFlaggedNode(List<FlaggedScenarioNode> flaggedNodes)
 	{
 		FlaggedScenarioNode bestNode = null;
-		int maxPoints = 0;
+		int maxPoints = -1;
 
 		foreach (FlaggedScenarioNode flaggedNode in flaggedNodes)
 		{
-			if (IsFlagValid(flaggedNode.Flag, flaggedNode.MinimalEndingPoints))
+			if (IsFlagValid(flaggedNode.Flag))
 			{
-				int flagPoints = PlayerPrefs.GetInt(flaggedNode.Flag.FlagName, 0);
+				int flagPoints = 0;
 
-				if (temporaryFlags.ContainsKey(flaggedNode.Flag.FlagName))
+				if ( flaggedNode.Flag != null )
 				{
-					flagPoints = Math.Max(flagPoints, temporaryFlags[flaggedNode.Flag.FlagName]);
+					flagPoints = PlayerPrefs.GetInt(flaggedNode.Flag.FlagName, 0);
+					Debug.Log( $"Flag points: {flagPoints}" );
+
+					if (temporaryFlags.ContainsKey(flaggedNode.Flag.FlagName))
+					{
+						flagPoints = Math.Max(flagPoints, temporaryFlags[flaggedNode.Flag.FlagName]);
+					}
 				}
 
 				if (flagPoints > maxPoints)
