@@ -44,11 +44,10 @@ public class TimelineManager : MonoBehaviour
 	public DialogueActionManager dialogueActionManager;
 	public PopupActionManager popupActionManager;
 	public MissionActionManager missionActionManager;
-	public EndGameActionManager endGameActionManager;
 
 	private ScenarioNode currentScenarioNode;
 	private IActionManager currentActionManager;
-	private bool endingChapter = false;
+	private bool endGame = false;
 
 	private PlayableDirector director;
 	private Dictionary<string, (ScenarioNode node, NodeLocation location)> nodeDictionary;
@@ -161,14 +160,14 @@ public class TimelineManager : MonoBehaviour
 				LoadActionManager( dialogueActionManager, dialogueAction );
 				break;
 			case PopupAction popupAction:
+				if ( popupAction.IsEndGame )
+				{
+					endGame = true;
+				}
 				LoadActionManager( popupActionManager, popupAction );
 				break;
 			case MissionAction missionAction:
 				LoadActionManager( missionActionManager, missionAction );
-				break;
-			case EndGameAction endGameAction:
-				endingChapter = true;
-				LoadActionManager( endGameActionManager, endGameAction );
 				break;
 			default:
 				Debug.LogWarning( "Unsupported node type." );
@@ -180,10 +179,7 @@ public class TimelineManager : MonoBehaviour
 	{
 		currentActionManager = manager;
 
-		if (!endingChapter)
-		{
-			currentActionManager.OnNodeCompleted += OnNodeCompletedHandler;
-		}
+		currentActionManager.OnNodeCompleted += OnNodeCompletedHandler;
 
 		manager.LoadData( action );
 	}
@@ -210,16 +206,13 @@ public class TimelineManager : MonoBehaviour
 			?? FindScenarioNodeByName( currentActionManager.nextScenarioNodeName )
 			?? GetNextNodeInBranchOrScenario( GetLocationOfNode( currentScenarioNode ) );
 
-		if ( !endingChapter )
+		if ( nextNode != null && !endGame )
 		{
-			if ( nextNode != null )
-			{
-				PlayScenarioNode( nextNode );
-			}
-			else
-			{
-				HandleEndChapter();
-			}
+			PlayScenarioNode( nextNode );
+		}
+		else
+		{
+			HandleEndChapter();
 		}
 	}
 
@@ -284,23 +277,18 @@ public class TimelineManager : MonoBehaviour
 
 	public ScenarioNode HandleFlaggedNodes(List<FlaggedScenarioNode> flaggedNodes)
 	{
-		if ( flaggedNodes.Count > 0 )
-		{
-			foreach ( FlaggedScenarioNode flaggedNode in flaggedNodes )
-			{
-				if ( flagManager.IsFlagValid( flaggedNode.Flag, flaggedNode.MinimalEndingPoints ) )
-				{
-					ScenarioNode node = FindScenarioNodeByName( flaggedNode.NodeName );
+		FlaggedScenarioNode bestNode = flagManager.GetBestValidFlaggedNode(flaggedNodes);
 
-					if ( node != null )
-					{
-						return node;
-					}
-					else
-					{
-						HandleEndChapter();
-					}
-				}
+		if (bestNode != null)
+		{
+			ScenarioNode node = FindScenarioNodeByName(bestNode.NodeName);
+			if (node != null)
+			{
+				return node;
+			}
+			else
+			{
+				HandleEndChapter();
 			}
 		}
 
@@ -309,13 +297,19 @@ public class TimelineManager : MonoBehaviour
 
 	public void HandleEndChapter()
 	{
-		endingChapter = true;
-
 		if ( chapter.Id > GameManager.LoadProgress() )
 		{
 			GameManager.SaveProgress( chapter.Id );
 		}
 
-		LevelLoader.LoadMenu();
+		if ( endGame )
+		{
+			GameManager.ResetProgress();
+			LevelLoader.LoadForm();
+		}
+		else
+		{
+			LevelLoader.LoadMenu();
+		}
 	}
 }

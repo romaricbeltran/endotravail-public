@@ -5,9 +5,11 @@ using System.Collections.Generic;
 public class PopupAction : BaseAction
 {
 	[SerializeField] private bool isIntroOrOutro;
+	[SerializeField] private bool isEndGame;
 	[SerializeField] private List<Page> pages;
 
 	public bool IsIntroOrOutro { get => isIntroOrOutro; set => isIntroOrOutro = value; }
+	public bool IsEndGame { get => isEndGame; set => isEndGame = value; }
     public List<Page> Pages { get => pages; set => pages = value; }
 }
 

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Services.Analytics;
@@ -78,5 +79,32 @@ public class FlagManager : MonoBehaviour
 		}
 
 		return isActive;
+	}
+
+	public FlaggedScenarioNode GetBestValidFlaggedNode(List<FlaggedScenarioNode> flaggedNodes)
+	{
+		FlaggedScenarioNode bestNode = null;
+		int maxPoints = 0;
+
+		foreach (FlaggedScenarioNode flaggedNode in flaggedNodes)
+		{
+			if (IsFlagValid(flaggedNode.Flag, flaggedNode.MinimalEndingPoints))
+			{
+				int flagPoints = PlayerPrefs.GetInt(flaggedNode.Flag.FlagName, 0);
+
+				if (temporaryFlags.ContainsKey(flaggedNode.Flag.FlagName))
+				{
+					flagPoints = Math.Max(flagPoints, temporaryFlags[flaggedNode.Flag.FlagName]);
+				}
+
+				if (flagPoints > maxPoints)
+				{
+					maxPoints = flagPoints;
+					bestNode = flaggedNode;
+				}
+			}
+		}
+
+		return bestNode;
 	}
 }
