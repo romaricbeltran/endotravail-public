@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 2705600211955698015}
   - component: {fileID: 590381003064024976}
   - component: {fileID: 3874517278786795193}
+  - component: {fileID: 4619176467363518872}
+  - component: {fileID: 1418690468924772181}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -76,6 +78,39 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &4619176467363518872
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232868427414757125}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
+--- !u!95 &1418690468924772181
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232868427414757125}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 349fdaa08a96a55429476c3f4310cb80, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1488852462852612680
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,8 +123,7 @@ GameObject:
   - component: {fileID: 9086299938419552718}
   - component: {fileID: 6810349896343844222}
   - component: {fileID: 7580515925954528059}
-  - component: {fileID: 764981865196022655}
-  - component: {fileID: 1072182920371889004}
+  - component: {fileID: 8475008283872341489}
   m_Layer: 0
   m_Name: NarrativeScreen
   m_TagString: Untagged
@@ -180,39 +214,28 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!225 &764981865196022655
-CanvasGroup:
+--- !u!114 &8475008283872341489
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488852462852612680}
   m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
---- !u!95 &1072182920371889004
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1488852462852612680}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bf1af500dc8144e4f9b24134ba236663, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb6ba5e9101442f969c51f417d988ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  narrativeText: {fileID: 8602535018050037237}
+  screenAnimator: {fileID: 1418690468924772181}
+  typingLetterInterval: 0.03
+  delayBeforeTyping: 3
+  delayBetweenSentences: 1.5
+  sentences:
+  - "Catherine revient au travail suite \xE0 un arr\xEAt de travail de plusieurs
+    mois cons\xE9cutifs."
+  - "A la fin de son arr\xEAt de travail, elle fait une visite de reprise avec la
+    m\xE9decine du travail."
 --- !u!1 &6747213916360824564
 GameObject:
   m_ObjectHideFlags: 0
@@ -224,6 +247,7 @@ GameObject:
   - component: {fileID: 1836765956399754127}
   - component: {fileID: 1481292318730197527}
   - component: {fileID: 8602535018050037237}
+  - component: {fileID: 1302698837198098803}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -278,9 +302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Catherine revient au travail suite \xE0 un arr\xEAt de travail de plusieurs
-    mois cons\xE9cutifs.\r\nA la fin son arr\xEAt de travail, elle fait une visite
-    de reprise avec la m\xE9decine du travail."
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
@@ -352,3 +374,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!225 &1302698837198098803
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747213916360824564}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
