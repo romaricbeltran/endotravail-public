@@ -14,6 +14,8 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 	public List<GameObject> actionButtons;
 
 	private List<Button> actionButtonsComponents;
+	private List<Choice> validChoices;
+
 	private const float canvasDelay = 1.75f;
 	private const float buttonsDelay = 0.75f;
 
@@ -37,19 +39,105 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 
 	public override void LoadData(ChoiceAction currentAction)
 	{
-		if ( currentAction.Choices.Count > actionButtonsComponents.Count )
+		validChoices = FilterValidChoices( new List<Choice>(currentAction.Choices) );
+
+		if ( validChoices.Count > actionButtonsComponents.Count )
 		{
 			Debug.LogError( "Not enough action buttons for the number of choices." );
 			return;
 		}
 
-		for ( int i = 0; i < currentAction.Choices.Count; i++ )
+		for ( int i = 0; i < validChoices.Count; i++ )
 		{
 			int index = i;
 			TextMeshProUGUI buttonText = actionButtonsComponents[i].GetComponentInChildren<TextMeshProUGUI>();
-			buttonText.text = currentAction.Choices[i].Description;
-			actionButtonsComponents[i].onClick.AddListener( () => OnActionChoice( currentAction.Choices[index] ) );
+			buttonText.text = validChoices[i].Description;
+			actionButtonsComponents[i].onClick.AddListener( () => OnActionChoice( validChoices[index] ) );
 		}
+	}
+
+	/*
+	 * If the choice has valid HideFlag, not valid choice (skip).
+	 * If the choice has valid EndChoiceFlag, only add the choice with the maximum flag points.
+	 * Else, add valid choice.
+	 *
+	 * ForceShowEndChoiceFlag, add the Choice even if it has not the max points.
+	 */
+	private List<Choice> FilterValidChoices(List<Choice> choices)
+	{
+		List<Choice> filteredValidChoices = new List<Choice>();
+
+		int maxPoints = 0;
+		Choice validEndFlagChoice = null;
+
+		foreach (Choice choice in choices)
+		{
+			if ( HasValidHideFlag( choice ) )
+				continue;
+
+			if (choice.EndChoiceFlags.Count > 0)
+			{
+				int maxEndChoiceFlagPoints = GetMaxEndChoiceFlagPoints(choice.EndChoiceFlags);
+
+				if ( maxEndChoiceFlagPoints > maxPoints )
+				{
+					maxPoints = maxEndChoiceFlagPoints;
+					validEndFlagChoice = choice;
+				}
+
+				if ( choice.ForceShowEndChoiceFlag )
+				{
+					filteredValidChoices.Add( choice );
+				}
+			}
+			else
+			{
+				filteredValidChoices.Add( choice );
+			}
+		}
+
+		if ( validEndFlagChoice != null )
+		{
+			filteredValidChoices.Add( validEndFlagChoice );
+		}
+
+		return filteredValidChoices;
+	}
+
+	private bool HasValidHideFlag(Choice choice)
+	{
+		if (choice.HideChoiceFlags.Count > 0)
+		{
+			foreach (Flag flag in choice.HideChoiceFlags)
+			{
+				if (flagManager.IsFlagValid(flag))
+				{
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
+	private int GetMaxEndChoiceFlagPoints(List<Flag> endChoiceFlags)
+	{
+		int maxPoints = 0;
+
+		foreach ( Flag endChoiceFlag in endChoiceFlags )
+		{
+			if (flagManager.IsFlagValid(endChoiceFlag))
+			{
+				int flagPoints = flagManager.GetFlagPoints( endChoiceFlag );
+
+				if ( flagPoints > maxPoints )
+				{
+					maxPoints = flagPoints;
+				}
+			}
+		}
+
+		return maxPoints;
 	}
 
 	public override void StartAction()
@@ -62,41 +150,10 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 	{
 		yield return new WaitForSeconds( canvasDelay );
 
-		for ( int i = 0; i < currentAction.Choices.Count; i++ )
+		for ( int i = 0; i < validChoices.Count; i++ )
 		{
-			bool shouldActivateButton = true;
-
-			if ( currentAction.Choices[i].HideChoiceFlags.Count > 0 )
-			{
-				foreach ( Flag flag in currentAction.Choices[i].HideChoiceFlags )
-				{
-					if ( flagManager.IsFlagValid( flag ) )
-					{
-						shouldActivateButton = false;
-						break;
-					}
-				}
-			}
-
-			if ( currentAction.Choices[i].ShowChoiceFlags.Count > 0 )
-			{
-				shouldActivateButton = false;
-
-				foreach ( Flag flag in currentAction.Choices[i].ShowChoiceFlags )
-				{
-					if ( flagManager.IsFlagValid( flag ) )
-					{
-						shouldActivateButton = true;
-						break;
-					}
-				}
-			}
-
-			if ( shouldActivateButton )
-			{
-				actionButtons[i].SetActive( true );
-				yield return new WaitForSeconds( buttonsDelay );
-			}
+			actionButtons[i].SetActive( true );
+			yield return new WaitForSeconds( buttonsDelay );
 		}
 	}
 
@@ -120,7 +177,7 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 	{
 		StopAllCoroutines();
 
-		for ( int i = 0; i < currentAction.Choices.Count; i++ )
+		for ( int i = 0; i < validChoices.Count; i++ )
 		{
 			actionButtonsComponents[i].onClick.RemoveAllListeners();
 			actionButtons[i].SetActive( false );

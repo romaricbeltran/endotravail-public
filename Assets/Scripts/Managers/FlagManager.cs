@@ -67,6 +67,19 @@ public class FlagManager : MonoBehaviour
 		return isActive;
 	}
 
+	public int GetFlagPoints(Flag flag)
+	{
+		int flagPoints = PlayerPrefs.GetInt(flag.FlagName, 0);
+		if (temporaryFlags.ContainsKey(flag.FlagName))
+		{
+			flagPoints = Math.Max(flagPoints, temporaryFlags[flag.FlagName]);
+		}
+
+		Debug.Log( $"Flag {flag.FlagName} : " + flagPoints );
+
+		return flagPoints;
+	}
+
 	public FlaggedScenarioNode GetBestValidFlaggedNode(List<FlaggedScenarioNode> flaggedNodes)
 	{
 		FlaggedScenarioNode bestNode = null;
@@ -76,18 +89,7 @@ public class FlagManager : MonoBehaviour
 		{
 			if (IsFlagValid(flaggedNode.Flag))
 			{
-				int flagPoints = 0;
-
-				if ( flaggedNode.Flag != null )
-				{
-					flagPoints = PlayerPrefs.GetInt(flaggedNode.Flag.FlagName, 0);
-					Debug.Log( $"Flag points: {flagPoints}" );
-
-					if (temporaryFlags.ContainsKey(flaggedNode.Flag.FlagName))
-					{
-						flagPoints = Math.Max(flagPoints, temporaryFlags[flaggedNode.Flag.FlagName]);
-					}
-				}
+				int flagPoints = GetFlagPoints( flaggedNode.Flag );
 
 				if (flagPoints > maxPoints)
 				{
