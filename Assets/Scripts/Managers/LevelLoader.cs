@@ -268,4 +268,9 @@ public class LevelLoader : MonoBehaviour
     {
         OpenLinks.OpenURL(openURL);
     }
+
+    public void Quit()
+    {
+	    Application.Quit();
+    }
 }

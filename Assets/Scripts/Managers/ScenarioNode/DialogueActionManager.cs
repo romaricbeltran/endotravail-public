@@ -24,20 +24,6 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	private bool isTyping = false;
 	private bool isAudioPlaying = false;
 
-	private void Start()
-	{
-		TextMeshProUGUI skipText = skipButton.GetComponent<TextMeshProUGUI>();
-
-		if ( Application.isMobilePlatform )
-		{
-			skipText.text = "Passer le dialogue";
-		}
-		else
-		{
-			skipText.text = "Passer le dialogue [Espace]";
-		}
-	}
-
 	void Update()
 	{
 		// Allow skipping dialogue by pressing spacebar
