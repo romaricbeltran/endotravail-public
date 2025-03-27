@@ -69,6 +69,12 @@ public class FlagManager : MonoBehaviour
 
 	public int GetFlagPoints(Flag flag)
 	{
+		if (flag == null)
+		{
+			Debug.Log("Flag is null, returning 0 points.");
+			return 0;
+		}
+
 		int flagPoints = PlayerPrefs.GetInt(flag.FlagName, 0);
 		if (temporaryFlags.ContainsKey(flag.FlagName))
 		{
