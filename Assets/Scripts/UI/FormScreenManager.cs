@@ -9,7 +9,6 @@ using Newtonsoft.Json;
 
 public class FormScreenManager : MonoBehaviour
 {
-    public LevelLoader levelLoader;
     public string serverRequestURL = " ";
     public string formId = "";
     public Button[] starButtons;
@@ -87,6 +86,6 @@ public class FormScreenManager : MonoBehaviour
             Debug.Log("Form upload complete!");
         }
         
-        levelLoader.LoadLevel(7);
+        LevelLoader.LoadEnd();
     }
 }

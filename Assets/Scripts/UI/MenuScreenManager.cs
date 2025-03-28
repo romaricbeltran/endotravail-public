@@ -3,18 +3,34 @@ using UnityEngine.UI;
 
 public class MenuScreenManager : MonoBehaviour
 {
-    public LevelLoader levelLoader;
+	public Button [] chapterButtons;
 
-    public static void EnableChapters()
+	public int progress;
+
+	private void Start()
+	{
+		progress = GameManager.LoadProgress();
+
+		EnableChapters();
+	}
+
+	public void EnableChapters()
     {
-        int progress = PlayerPrefs.GetInt(LevelLoader.PLAYER_PROGRESS, 0);
-
-        for (int i = 1; i <= progress && i < 5; i++)
+		for (int i = 0; i <= progress && i < chapterButtons.Length; i++)
         {
-            GameObject chapter = GameObject.Find("Chapter" + i);
-            chapter.transform.Find("Image").GetComponent<Image>().color = Color.white;
-            chapter.transform.Find("Lock").gameObject.SetActive(false);
-            chapter.GetComponent<Animator>().SetBool("Unlocked", true);
-        }
+			chapterButtons[i].transform.Find("Image").GetComponent<Image>().color = Color.white;
+			chapterButtons[i].transform.Find("Lock").gameObject.SetActive(false);
+			chapterButtons[i].GetComponent<Animator>().SetBool( "Unlocked", true );
+		}
     }
+
+	public void LoadLevelButton(int level)
+	{
+		// Pass Home & Menu scene index
+		if ( level - 2 <= progress)
+		{
+			LevelLoader.instance.LoadLevel( level );
+			GetComponent<GraphicRaycaster>().enabled = false;
+		}
+	}
 }

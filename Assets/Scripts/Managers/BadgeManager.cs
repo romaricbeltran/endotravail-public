@@ -1,33 +1,41 @@
 using System.Collections.Generic;
 using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 using Unity.Services.Analytics;
+using UnityEngine;
 
 public class BadgeManager : MonoBehaviour
 {
-    //UI
-    public GameObject badgeCanvas;
-    public TextMeshProUGUI mainText;
+	// UI
+	public GameObject badgeCanvas;
+	public TextMeshProUGUI mainText;
 
-    public List<string> badges;
+	public void LoadBadge(Badge badge)
+	{
+		mainText.text = badge.BadgeName;
+		StartBadge();
 
-    public void LoadBadge(int badgeIndex)
-    {
-        mainText.text = badges[badgeIndex];
-        AnalyticsService.Instance.CustomData("badgeCompleted", new Dictionary<string, object>
-        {
-            { "badgeName", badges[badgeIndex] }
-        });
-    }
+		if (AnalyticsService.Instance != null)
+		{
+			BadgeCompletedEvent badgeEvent = new BadgeCompletedEvent
+			{
+				BadgeName = badge.BadgeName
+			};
+			AnalyticsService.Instance.RecordEvent(badgeEvent);
+			Debug.Log($"Recorded event: badgeCompleted with badgeName = {badge.BadgeName}");
+		}
+		else
+		{
+			Debug.LogError("AnalyticsService.Instance is null. Ensure Analytics is properly initialized.");
+		}
+	}
 
-    public void StartBadge()
-    {
-        badgeCanvas.SetActive(true);
-    }
+	public void StartBadge()
+	{
+		badgeCanvas.SetActive( true );
+	}
 
-    public void EndBadge()
-    {
-        badgeCanvas.SetActive(false);
-    }
+	public void EndBadge()
+	{
+		badgeCanvas.SetActive( false );
+	}
 }
