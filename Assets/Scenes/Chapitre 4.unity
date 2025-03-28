@@ -335,12 +335,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 4376370843409052013}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &105007956 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1072182920371889004, guid: 2527456567627d6468fe223932e1ed9c,
-    type: 3}
-  m_PrefabInstance: {fileID: 4376370843409052013}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &123964405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4630574727722599450, guid: b05ed64e0917c3d41aece5b02d458a91,
@@ -618,6 +612,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 06ae5010792949245a2d3f7843ba8766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &775677694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8475008283872341489, guid: 2527456567627d6468fe223932e1ed9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 4376370843409052013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb6ba5e9101442f969c51f417d988ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &788945371 stripped
@@ -2212,7 +2218,7 @@ PrefabInstance:
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 922.1366
+      value: 931.6984
       objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -17883,7 +17889,6 @@ MonoBehaviour:
   dialogueActionManager: {fileID: 450144856}
   popupActionManager: {fileID: 741817592}
   missionActionManager: {fileID: 1050129798}
-  endGameActionManager: {fileID: 0}
 --- !u!1001 &5401401130656349936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19278,7 +19283,7 @@ PlayableDirector:
   - key: {fileID: 1177600500309637878, guid: 8130702ddcc0b4f41bde049ce63548c4, type: 2}
     value: {fileID: 2763105987207279595}
   - key: {fileID: 6432234592334012743, guid: 8130702ddcc0b4f41bde049ce63548c4, type: 2}
-    value: {fileID: 105007956}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 31549964cfcfe2e4992e4969647f3a51: {fileID: 0}
@@ -20252,6 +20257,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 054f0b1a3b885164391369e044d13480, type: 2}
     - {fileID: 11400000, guid: 109bc1bcec58ea74a9cda879290060cd, type: 2}
     - {fileID: 11400000, guid: ad6fb1c6543e9604c94d0aa9752e29a1, type: 2}
+    - {fileID: 11400000, guid: 59fa14acf8e8746469a44cb5a4b90f67, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -20300,6 +20306,20 @@ MonoBehaviour:
         - m_Target: {fileID: 741817592}
           m_TargetAssemblyTypeName: PopupActionManager, Assembly-CSharp
           m_MethodName: StartAction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 775677694}
+          m_TargetAssemblyTypeName: UI.NarrativeScreenManager, Assembly-CSharp
+          m_MethodName: StartNarrative
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

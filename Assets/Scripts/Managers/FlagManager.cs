@@ -29,11 +29,11 @@ public class FlagManager : MonoBehaviour
 			{
 				if ( temporaryFlags.ContainsKey( flag.FlagName ) )
 				{
-					temporaryFlags[flag.FlagName] += 1;
+					temporaryFlags[flag.FlagName] += 10;
 				}
 				else
 				{
-					temporaryFlags[flag.FlagName] = 1;
+					temporaryFlags[flag.FlagName] = 10;
 				}
 			}
 
