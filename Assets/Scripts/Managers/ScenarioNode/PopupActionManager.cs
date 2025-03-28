@@ -31,11 +31,15 @@ public class PopupActionManager : BaseActionManager<PopupAction>
 	public override void StartAction()
 	{
 		popupCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+		popupCanvas.GetComponent<CanvasGroup>().interactable = true;
+		popupCanvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
 	}
 
 	public override void EndAction()
 	{
 		popupCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+		popupCanvas.GetComponent<CanvasGroup>().interactable = false;
+		popupCanvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
 		EventSystem.current.SetSelectedGameObject( null ); // Resets focus on the button
 		base.EndAction();
 	}

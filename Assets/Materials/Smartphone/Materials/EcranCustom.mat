@@ -15,8 +15,8 @@ Material:
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 2
   stringTagMap: {}
   disabledShaderPasses: []
   m_LockedProperties: 
@@ -49,8 +49,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 0.29, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 1, y: 1.11}
+        m_Offset: {x: 0.07, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -118,7 +118,7 @@ Material:
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _TexPos: {r: -1.06, g: -0.38, b: 0.54, a: 0}
+    - _TexPos: {r: -2.35, g: -0.38, b: 0.54, a: 0}
     - _TexSize: {r: 4.44, g: 3.63, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &7564756147064969879
