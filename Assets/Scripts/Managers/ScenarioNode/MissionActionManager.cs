@@ -31,6 +31,8 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 	public Button missionSkip;
 	public Button acceptButton;
 	public GameObject tutoAnalogicBox;
+	public GameObject tutoAnalogicText;
+	public GameObject tutoJoystickText;
 	public Button tutoAnalogicButton;
 	public GameObject tutoSkipBox;
 	public Button tutoSkipButton;
@@ -78,7 +80,15 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 			shadowBackground.SetActive( false );
 			missionSkip.gameObject.SetActive( true );
 			gameManager.SwitchPlayerInput( true );
-			gameManager.analogicButtons.GetComponent<GraphicRaycaster>().enabled = true;
+
+			if ( Application.isMobilePlatform )
+			{
+				gameManager.joystickMobile.GetComponent<GraphicRaycaster>().enabled = true;
+			}
+			else
+			{
+				gameManager.analogicButtons.GetComponent<GraphicRaycaster>().enabled = true;
+			}
 
 			missionSkip.onClick.AddListener( () => SkipMission() );
 		}
@@ -155,7 +165,16 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 	public void StartTuto()
 	{
 		tutoAnalogicBox.SetActive( true );
-		gameManager.analogicButtons.SetActive( true );
+		if ( Application.isMobilePlatform )
+		{
+			tutoJoystickText.SetActive( true );
+			gameManager.joystickMobile.SetActive( true );
+		}
+		else
+		{
+			tutoAnalogicText.SetActive( true );
+			gameManager.analogicButtons.SetActive( true );
+		}
 
 		tutoAnalogicButton.onClick.AddListener( () => ContinueTuto() );
 	}

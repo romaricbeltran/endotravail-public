@@ -32,6 +32,12 @@ namespace StarterAssets
             starterAssetsInputs.LookInput(virtualMoveRightState ? new Vector2(1, 0) * speedLookRotation : Vector2.zero);
         }
 
+        public void VirtualMoveInput(Vector2 virtualMoveDirection)
+        {
+	        starterAssetsInputs.MoveInput(virtualMoveDirection);
+	        starterAssetsInputs.LookInput(virtualMoveDirection * speedLookRotation);
+        }
+
         public void VirtualResetMove()
         {
             starterAssetsInputs.MoveInput(Vector2.zero);
