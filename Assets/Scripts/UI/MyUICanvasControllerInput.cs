@@ -2,11 +2,10 @@ using UnityEngine;
 
 namespace StarterAssets
 {
-    public class MyUICanvasControllerInput : MonoBehaviour
+    public class MyUICanvasControllerInput : UICanvasControllerInput
     {
-        [Header("Output")]
-        public StarterAssetsInputs starterAssetsInputs;
-        public float speedLookRotation = 1.0f;
+        public float speedLookRotation = 0.25f;
+        public float magnitudeMinToMove = 0.5f;
 
         public void VirtualMoveUpInput(bool virtualMoveUpState)
         {
@@ -32,10 +31,20 @@ namespace StarterAssets
             starterAssetsInputs.LookInput(virtualMoveRightState ? new Vector2(1, 0) * speedLookRotation : Vector2.zero);
         }
 
-        public void VirtualMoveInput(Vector2 virtualMoveDirection)
+        public new void VirtualMoveInput(Vector2 virtualMoveDirection)
         {
-	        starterAssetsInputs.MoveInput(virtualMoveDirection);
-	        starterAssetsInputs.LookInput(virtualMoveDirection * speedLookRotation);
+	        Debug.Log(virtualMoveDirection.magnitude);
+
+	        starterAssetsInputs.LookInput(Vector2.ClampMagnitude(virtualMoveDirection * speedLookRotation, 1f));
+
+	        if (virtualMoveDirection.magnitude > magnitudeMinToMove)
+	        {
+		        starterAssetsInputs.MoveInput(Vector2.ClampMagnitude(virtualMoveDirection, 1f));
+	        }
+	        else
+	        {
+		        starterAssetsInputs.MoveInput(Vector2.zero);
+	        }
         }
 
         public void VirtualResetMove()

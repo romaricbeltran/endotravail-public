@@ -117,7 +117,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starterAssetsInputs: {fileID: 0}
-  speedLookRotation: 1
+  speedLookRotation: 0.25
+  magnitudeMinToMove: 0.5
 --- !u!114 &2519497171649672428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 4630999461367959970}
     - target: {fileID: 191938513, guid: 6eb08bfc0fd869c47b796c42ada099da, type: 3}
       propertyPath: joystickOutputEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: StarterAssets.MyUICanvasControllerInput, Assembly-CSharp
+      value: StarterAssets.UICanvasControllerInput, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1407806550736918862, guid: 6eb08bfc0fd869c47b796c42ada099da,
         type: 3}
