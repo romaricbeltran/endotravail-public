@@ -23,11 +23,12 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	private int indexSentence;
 	private bool isTyping = false;
 	private bool isAudioPlaying = false;
+	private bool skippable = false;
 
 	void Update()
 	{
 		// Allow skipping dialogue by pressing spacebar
-		if ( Input.GetKeyDown( KeyCode.Space ) )
+		if ( skippable && Input.GetKeyDown( KeyCode.Space ) )
 		{
 			OnSkip();
 		}
@@ -79,6 +80,7 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 			nameText.text = sentence.Character.CharacterName;
 			characterImage.sprite = sentence.Character.CharacterImage;
 
+			skippable = true;
 			StartCoroutine( TypeSentence( sentence.Text ) );
 			StartCoroutine( PlayAudio( sentence.AudioClip ) );
 
@@ -86,6 +88,7 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 		}
 		else
 		{
+			skippable = false;
 			EndAction();
 		}
 	}
