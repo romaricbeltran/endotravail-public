@@ -58857,6 +58857,7 @@ MonoBehaviour:
   dialogueActionManager: {fileID: 3663780014232576285}
   popupActionManager: {fileID: 4067820992618625558}
   missionActionManager: {fileID: 7314767722633850651}
+  videoPlayer: {fileID: 257565583197263927}
 --- !u!114 &2874662852996091788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99302,7 +99303,7 @@ PrefabInstance:
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 875.22626
+      value: 852.6554
       objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -102727,6 +102728,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81511336e4d03184aae5c72a451eaab4, type: 3}
+--- !u!328 &257565583197263927 stripped
+VideoPlayer:
+  m_CorrespondingSourceObject: {fileID: 5981928712206086959, guid: 81511336e4d03184aae5c72a451eaab4,
+    type: 3}
+  m_PrefabInstance: {fileID: 5807139866338011928}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3783729287430136768 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7211841136432105688, guid: 81511336e4d03184aae5c72a451eaab4,

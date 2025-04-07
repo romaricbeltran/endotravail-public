@@ -36,7 +36,6 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 
 	public override void LoadData(DialogueAction currentAction)
 	{
-		dialogueBoxAnimator.SetBool( "IsOpen", false );
 		audioSource.Stop();
 		StopAllCoroutines();
 
@@ -56,12 +55,14 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 
 	public override void StartAction()
 	{
+		skippable = true;
 		dialogueBoxAnimator.SetBool( "IsOpen", true );
 		DisplayNextSentence();
 	}
 
 	public override void EndAction()
 	{
+		skippable = false;
 		dialogueBoxAnimator.SetBool( "IsOpen", false );
 		skipButton.onClick.RemoveAllListeners();
 		audioSource.Stop();
@@ -80,7 +81,6 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 			nameText.text = sentence.Character.CharacterName;
 			characterImage.sprite = sentence.Character.CharacterImage;
 
-			skippable = true;
 			StartCoroutine( TypeSentence( sentence.Text ) );
 			StartCoroutine( PlayAudio( sentence.AudioClip ) );
 
@@ -88,7 +88,6 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 		}
 		else
 		{
-			skippable = false;
 			EndAction();
 		}
 	}
@@ -134,16 +133,19 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	public void OnSkip()
 	{
 		// If typing is in progress, stop and show the full sentence
-		if ( isTyping )
+		if ( skippable )
 		{
-			StopCoroutine( "TypeSentence" );
-			dialogueText.text = sentences[indexSentence - 1].Text;
-			isTyping = false;
-		}
-		// If not, move to the next sentence
-		else
-		{
-			DisplayNextSentence();
+			if ( isTyping )
+			{
+				StopCoroutine( "TypeSentence" );
+				dialogueText.text = sentences[indexSentence - 1].Text;
+				isTyping = false;
+			}
+			// If not, move to the next sentence
+			else
+			{
+				DisplayNextSentence();
+			}
 		}
 	}
 

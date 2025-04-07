@@ -56,7 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void ResetPlayerCamera(float targetRotationY)
     {
-		player.GetComponent<ThirdPersonController>().SetCinemachineTargetYaw(targetRotationY);
+		player.GetComponent<MyThirdPersonController>().SetCinemachineTargetYaw(targetRotationY);
     }
 
 	public static void SaveProgress(int levelIndex)

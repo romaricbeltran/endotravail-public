@@ -44,6 +44,8 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 	public HashSet<TargetMission> activatedTriggers = new HashSet<TargetMission>();
 	private int targetMissionIndex = 0;
 
+	public bool missionSkippable = false;
+
 	public override void LoadData(MissionAction currentAction)
 	{
 		missionTitle.text = currentAction.Title;
@@ -96,6 +98,8 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 
 	public void OnTriggerActivated(TargetMission targetMission)
 	{
+		missionSkippable = false;
+
 		if ( !activatedTriggers.Contains( targetMission ) )
 		{
 			Destroy( targetMission.triggerObject.GetComponent<TriggerObjectListener>() );
@@ -127,13 +131,16 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 
 	public void SkipMission()
 	{
-		if ( targetMissionIndex < currentTargetMissions.Count )
+		if ( missionSkippable )
 		{
-			TargetMission skippedMission = currentTargetMissions[targetMissionIndex];
+			if ( targetMissionIndex < currentTargetMissions.Count )
+			{
+				TargetMission skippedMission = currentTargetMissions[targetMissionIndex];
 
-			Debug.Log( $"Target Mission skipped: {skippedMission.nodeName}" );
+				Debug.Log( $"Target Mission skipped: {skippedMission.nodeName}" );
 
-			OnTriggerActivated( skippedMission );
+				OnTriggerActivated( skippedMission );
+			}
 		}
 	}
 

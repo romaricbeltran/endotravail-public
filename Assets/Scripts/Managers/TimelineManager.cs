@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class NodeLocation
 {
@@ -50,6 +51,8 @@ public class TimelineManager : MonoBehaviour
 	private bool endGame = false;
 
 	private PlayableDirector director;
+	public VideoPlayer videoPlayer;
+
 	private Dictionary<string, (ScenarioNode node, NodeLocation location)> nodeDictionary;
 
 	private void Awake()
@@ -64,6 +67,14 @@ public class TimelineManager : MonoBehaviour
 		}
 
 		Debug.Log( $"Node dictionary initialized with {nodeDictionary.Count} nodes." );
+	}
+
+	void Update()
+	{
+		if (videoPlayer.isPlaying && Input.GetKeyDown(KeyCode.Space))
+		{
+			videoPlayer.frame = (long)videoPlayer.frameCount - 1;
+		}
 	}
 
 	private void AddNodeWithLocationToDictionary(ScenarioNode node, ScenarioNode parentNode, int branchIndex, int nodeIndexInBranch)
@@ -98,6 +109,8 @@ public class TimelineManager : MonoBehaviour
 
 		if (currentScenarioNode.EndOfMission)
 		{
+			Debug.Log( "End of mission" );
+			missionActionManager.OnNodeCompleted -= OnNodeCompletedHandler;
 			missionActionManager.EndAction();
 		}
 
@@ -167,6 +180,7 @@ public class TimelineManager : MonoBehaviour
 				LoadActionManager( popupActionManager, popupAction );
 				break;
 			case MissionAction missionAction:
+				missionActionManager.missionSkippable = true;
 				LoadActionManager( missionActionManager, missionAction );
 				break;
 			default:
@@ -192,6 +206,7 @@ public class TimelineManager : MonoBehaviour
 
 		if ( currentScenarioNode.BackToMissionPOV || currentActionManager.activateBackToMissionPOV )
 		{
+			missionActionManager.missionSkippable = true;
 			gameManager.SwitchPlayerInput( true );
 		}
 		else
