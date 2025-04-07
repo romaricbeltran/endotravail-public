@@ -96,7 +96,7 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 			}
 		}
 
-		if ( validEndFlagChoice != null )
+		if ( validEndFlagChoice != null && !filteredValidChoices.Contains(validEndFlagChoice) )
 		{
 			filteredValidChoices.Add( validEndFlagChoice );
 		}
