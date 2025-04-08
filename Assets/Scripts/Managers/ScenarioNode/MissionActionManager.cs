@@ -201,6 +201,7 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 		tutoAnalogicBox.SetActive( false );
 		shadowBackground.SetActive( false );
 
+		gameManager.analogicButtons.SetActive( false );
 		gameManager.SwitchPlayerInput( true );
 
 		missionSkip.onClick.AddListener( () => SkipMission() );

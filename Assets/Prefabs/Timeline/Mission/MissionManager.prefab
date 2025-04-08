@@ -65,8 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pour vous d\xE9placer, utilisez les fl\xE8ches qui s'affichent \xE0 l'\xE9cran
-    ou les touches de votre clavier."
+  m_text: "Pour vous d\xE9placer, utilisez les fl\xE8ches directionnelles de votre
+    clavier."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fe6aa349a463e5149a8685e6c5e7b793, type: 2}
   m_sharedMaterial: {fileID: 8901169968971782399, guid: fe6aa349a463e5149a8685e6c5e7b793,
@@ -2322,6 +2322,7 @@ MonoBehaviour:
   isFirstMission: 0
   targetMissionsLists: []
   currentTargetMissions: []
+  missionSkippable: 0
 --- !u!1 &8000039172094115255
 GameObject:
   m_ObjectHideFlags: 0

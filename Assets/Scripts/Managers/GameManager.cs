@@ -41,14 +41,7 @@ public class GameManager : MonoBehaviour
         if (isMobile && joystickMobile != null)
         {
 	        joystickMobile.SetActive(availability);
-	        joystickMobile.GetComponent<GraphicRaycaster>().enabled = availability;
 	        joystickMobile.GetComponent<MyUICanvasControllerInput>().VirtualResetMove();
-        }
-        else if (!isMobile && analogicButtons != null)
-        {
-	        analogicButtons.SetActive(availability);
-	        analogicButtons.GetComponent<GraphicRaycaster>().enabled = availability;
-	        analogicButtons.GetComponent<MyUICanvasControllerInput>().VirtualResetMove();
         }
 
         EventSystem.current.SetSelectedGameObject(null);
