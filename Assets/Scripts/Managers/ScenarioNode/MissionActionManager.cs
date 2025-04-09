@@ -176,6 +176,7 @@ public class MissionActionManager : BaseActionManager<MissionAction>
 		{
 			tutoJoystickText.SetActive( true );
 			gameManager.joystickMobile.SetActive( true );
+			gameManager.joystickMobile.GetComponent<GraphicRaycaster>().enabled = false;
 		}
 		else
 		{
