@@ -69,13 +69,10 @@ public class TimelineManager : MonoBehaviour
 
 		Debug.Log( $"Node dictionary initialized with {nodeDictionary.Count} nodes." );
 	}
-
-	void Update()
+	
+	public void SkipVideo()
 	{
-		if (videoPlayer != null && videoPlayer.isPlaying && Input.GetKeyDown(KeyCode.Space))
-		{
-			videoPlayer.frame = (long)videoPlayer.frameCount - 1;
-		}
+		videoPlayer.frame = (long)videoPlayer.frameCount - 1;
 	}
 
 	private void AddNodeWithLocationToDictionary(ScenarioNode node, ScenarioNode parentNode, int branchIndex, int nodeIndexInBranch)
@@ -110,7 +107,6 @@ public class TimelineManager : MonoBehaviour
 
 		if (currentScenarioNode.EndOfMission)
 		{
-			Debug.Log( "End of mission" );
 			missionActionManager.OnNodeCompleted -= OnNodeCompletedHandler;
 			missionActionManager.EndAction();
 		}
@@ -123,8 +119,6 @@ public class TimelineManager : MonoBehaviour
 
 	private void HandleAnalytics(string nodeName)
 	{
-		Debug.Log( "Playing Node :" + nodeName );
-
 		if (AnalyticsService.Instance != null)
 		{
 			GameProgressEvent gameProgressEvent = new GameProgressEvent

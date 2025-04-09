@@ -59,11 +59,6 @@ public class FlagManager : MonoBehaviour
 			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) >= 1
 			|| temporaryFlags.ContainsKey( flag.FlagName );
 
-		if ( isActive )
-		{
-			Debug.Log( $"Flag activated: {(flag != null ? flag.FlagName : null)}" );
-		}
-
 		return isActive;
 	}
 
@@ -71,7 +66,6 @@ public class FlagManager : MonoBehaviour
 	{
 		if (flag == null)
 		{
-			Debug.Log("Flag is null, returning 0 points.");
 			return 0;
 		}
 
@@ -80,9 +74,7 @@ public class FlagManager : MonoBehaviour
 		{
 			flagPoints = Math.Max(flagPoints, temporaryFlags[flag.FlagName]);
 		}
-
-		Debug.Log( $"Flag {flag.FlagName} : " + flagPoints );
-
+		
 		return flagPoints;
 	}
 
@@ -103,6 +95,11 @@ public class FlagManager : MonoBehaviour
 					bestNode = flaggedNode;
 				}
 			}
+		}
+
+		if (bestNode != null)
+		{
+			Debug.Log($"Special flaggedNode activated: {bestNode.Flag?.FlagName}");
 		}
 
 		return bestNode;

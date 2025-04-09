@@ -885,8 +885,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 380082792028037463}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.033658564, y: -0.84102005, z: 0.04401051, w: -0.5381594}
-  m_LocalPosition: {x: -8.989999, y: 14.9, z: 4.3999996}
+  m_LocalRotation: {x: 0, y: 0.98823845, z: 0, w: -0.15292087}
+  m_LocalPosition: {x: -8.820405, y: 14.911151, z: 7.0932846}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4018,7 +4018,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 259
+  m_VersionIndex: 292
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -12440,7 +12440,13 @@ Animator:
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'mixamorig4:RightHandMiddle2'\n\tTransform 'mixamorig4:LeftToeBase'\n\tTransform
+    'mixamorig4:LeftHandThumb2'\n\tTransform 'mixamorig4:RightHandRing2'\n\tTransform
+    'mixamorig4:RightToeBase'\n\tTransform 'mixamorig4:RightHandThumb1'\n\tTransform
+    'mixamorig4:RightArm'\n\tTransform 'mixamorig4:LeftHandIndex1'\n\tTransform 'mixamorig4:RightHandIndex3'\n\tTransform
+    'mixamorig4:RightFoot'\n\tand more ..."
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -16566,7 +16572,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.820405
+      value: -8.3907995
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -16576,7 +16582,7 @@ PrefabInstance:
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.0932846
+      value: 7.0932837
       objectReference: {fileID: 0}
     - target: {fileID: 2070925441746177912, guid: a1a802ecaf6775746bb2a929fb554ad8,
         type: 3}
@@ -16697,7 +16703,7 @@ PrefabInstance:
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 698.3607
+      value: 850.2134
       objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -16893,7 +16899,7 @@ PrefabInstance:
     - target: {fileID: 1641506537061889239, guid: a17dde0bddf043949b9e66a556e82c61,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 443
+      value: 476
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17187,7 +17193,7 @@ PrefabInstance:
     - target: {fileID: 3346891490234370677, guid: e059e760f5b945e41bceea36d6fda14f,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 437
+      value: 470
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17489,7 +17495,7 @@ PrefabInstance:
     - target: {fileID: 4630574727722599447, guid: b05ed64e0917c3d41aece5b02d458a91,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 1517
+      value: 1550
       objectReference: {fileID: 0}
     - target: {fileID: 4630574727722599447, guid: b05ed64e0917c3d41aece5b02d458a91,
         type: 3}
@@ -19791,6 +19797,28 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475008283872341489, guid: 2527456567627d6468fe223932e1ed9c,
+        type: 3}
+      propertyPath: sequences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475008283872341489, guid: 2527456567627d6468fe223932e1ed9c,
+        type: 3}
+      propertyPath: sequences.Array.data[0].sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475008283872341489, guid: 2527456567627d6468fe223932e1ed9c,
+        type: 3}
+      propertyPath: sequences.Array.data[0].sentences.Array.data[0]
+      value: "Catherine revient au travail suite \xE0 un arr\xEAt de travail de plusieurs
+        mois cons\xE9cutifs."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8475008283872341489, guid: 2527456567627d6468fe223932e1ed9c,
+        type: 3}
+      propertyPath: sequences.Array.data[0].sentences.Array.data[1]
+      value: "A la fin de son arr\xEAt de travail, elle fait une visite de reprise
+        avec la m\xE9decine du travail."
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

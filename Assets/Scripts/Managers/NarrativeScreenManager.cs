@@ -4,6 +4,13 @@ using UnityEngine;
 
 namespace UI
 {
+	[System.Serializable]
+	public class NarrativeSequence
+	{
+		[TextArea(3, 10)]
+		public string[] sentences;
+	}
+	
 	public class NarrativeScreenManager : MonoBehaviour
 	{
 		public TextMeshProUGUI narrativeText;
@@ -11,29 +18,39 @@ namespace UI
 		public float typingLetterInterval = 0.03f;
 		public float delayBeforeTyping = 3f;
 		public float delayBetweenSentences = 1.5f;
-		public string[] sentences;
+		
+		public NarrativeSequence[] sequences;
 
+		private int currentSequenceIndex = 0;
 		private bool isTyping = false;
 
 		public void StartNarrative()
 		{
-			StartCoroutine(PlayNarrativeSequence());
+			if (currentSequenceIndex >= sequences.Length)
+			{
+				Debug.Log("Toutes les séquences ont été jouées.");
+				return;
+			}
+
+			StartCoroutine(PlayNarrativeSequence(sequences[currentSequenceIndex]));
+			currentSequenceIndex++;
 		}
 
-		private IEnumerator PlayNarrativeSequence()
+		private IEnumerator PlayNarrativeSequence(NarrativeSequence sequence)
 		{
 			screenAnimator.SetBool("IsOpen", true);
+			narrativeText.text = "";
 
 			yield return new WaitForSeconds(delayBeforeTyping);
 
-			for (int i = 0; i < sentences.Length; i++)
+			for (int i = 0; i < sequence.sentences.Length; i++)
 			{
 				if (i > 0)
 				{
 					narrativeText.text += "\n\n";
 				}
 
-				yield return StartCoroutine(TypeText(sentences[i]));
+				yield return StartCoroutine(TypeText(sequence.sentences[i]));
 				yield return new WaitForSeconds(delayBetweenSentences);
 			}
 
