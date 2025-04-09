@@ -90,20 +90,38 @@ function handleFullscreen(unityInstance) {
 
 function exitFullscreen() {
     console.log("→ exitFullscreen() called from Unity");
-    if (document.documentElement.requestFullscreen) {
-        document.exitFullscreen();
-    } else if (document.documentElement.mozRequestFullScreen) {
-        document.mozCancelFullScreen();
-    } else if (document.documentElement.webkitRequestFullscreen) {
-        document.webkitExitFullscreen();
-    } else if (document.documentElement.msRequestFullscreen) {
-        document.msExitFullscreen();
+
+    const isFullscreen = document.fullscreenElement
+        || document.webkitFullscreenElement
+        || document.mozFullScreenElement
+        || document.msFullscreenElement;
+
+    if (isFullscreen) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    } else {
+        console.warn("⚠️ Tried to exit fullscreen, but not in fullscreen mode.");
     }
 
     if (screen.orientation && screen.orientation.unlock) {
-        screen.orientation.unlock();
+        try {
+            screen.orientation.unlock();
+        } catch (err) {
+            console.warn("Could not unlock screen orientation:", err);
+        }
     } else if (screen.unlockOrientation) {
-        screen.unlockOrientation();
+        try {
+            screen.unlockOrientation();
+        } catch (err) {
+            console.warn("Could not unlock screen orientation (legacy):", err);
+        }
     }
 }
 
