@@ -316,6 +316,8 @@ public class TimelineManager : MonoBehaviour
 		{
 			GameManager.SaveProgress( chapter.Id );
 		}
+		
+		flagManager.CommitPersistedFlags();
 
 		if ( endGame )
 		{

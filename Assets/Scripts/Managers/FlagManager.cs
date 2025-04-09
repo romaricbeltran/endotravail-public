@@ -7,6 +7,7 @@ using UnityEngine;
 public class FlagManager : MonoBehaviour
 {
 	private Dictionary<string, int> temporaryFlags = new();
+	private Dictionary<string, int> persistedFlags = new();
 
 	public void SaveFlags(List<Flag> flags)
 	{
@@ -14,16 +15,14 @@ public class FlagManager : MonoBehaviour
 		{
 			if ( flag.PersistedInProgress )
 			{
-				if ( PlayerPrefs.GetInt( flag.FlagName, 0 ) != 0 )
+				if (persistedFlags.ContainsKey(flag.FlagName))
 				{
-					PlayerPrefs.SetInt( flag.FlagName, PlayerPrefs.GetInt( flag.FlagName, 0 ) + 1 );
+					persistedFlags[flag.FlagName]++;
 				}
 				else
 				{
-					PlayerPrefs.SetInt( flag.FlagName, 1 );
+					persistedFlags[flag.FlagName] = 1;
 				}
-
-				PlayerPrefs.Save();
 			}
 			else
 			{
@@ -52,11 +51,23 @@ public class FlagManager : MonoBehaviour
 			}
 		}
 	}
+	
+	public void CommitPersistedFlags()
+	{
+		foreach (var entry in persistedFlags)
+		{
+			int current = PlayerPrefs.GetInt(entry.Key, 0);
+			PlayerPrefs.SetInt(entry.Key, current + entry.Value);
+		}
+		PlayerPrefs.Save();
+		persistedFlags.Clear();
+	}
 
 	public bool IsFlagValid(Flag flag)
 	{
 		bool isActive = flag == null
 			|| PlayerPrefs.GetInt( flag.FlagName, 0 ) >= 1
+			|| persistedFlags.ContainsKey( flag.FlagName )
 			|| temporaryFlags.ContainsKey( flag.FlagName );
 
 		return isActive;
@@ -69,7 +80,8 @@ public class FlagManager : MonoBehaviour
 			return 0;
 		}
 
-		int flagPoints = PlayerPrefs.GetInt(flag.FlagName, 0);
+		int flagPoints = PlayerPrefs.GetInt(flag.FlagName, 0) + persistedFlags.GetValueOrDefault(flag.FlagName);
+		
 		if (temporaryFlags.ContainsKey(flag.FlagName))
 		{
 			flagPoints = Math.Max(flagPoints, temporaryFlags[flag.FlagName]);
