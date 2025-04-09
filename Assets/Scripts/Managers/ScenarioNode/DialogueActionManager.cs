@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueActionManager : BaseActionManager<DialogueAction>
 {
+	public TimelineManager timelineManager;
+
 	// UI
 	public GameObject dialogueCanvas;
 	public Image characterImage;
@@ -27,10 +29,16 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 
 	void Update()
 	{
-		// Allow skipping dialogue by pressing spacebar
-		if ( skippable && Input.GetKeyDown( KeyCode.Space ) )
+		if (skippable && Input.GetKeyDown(KeyCode.Space))
 		{
-			OnSkip();
+			bool canSkip = timelineManager.videoPlayer == null
+			               || !timelineManager.videoPlayer.isPlaying
+			               || indexSentence < sentences.Count;
+
+			if (canSkip)
+			{
+				OnSkip();
+			}
 		}
 	}
 

@@ -49,6 +49,7 @@ public class TimelineManager : MonoBehaviour
 	private ScenarioNode currentScenarioNode;
 	private IActionManager currentActionManager;
 	private bool endGame = false;
+	private bool endChapter = false;
 
 	private PlayableDirector director;
 	public VideoPlayer videoPlayer;
@@ -71,7 +72,7 @@ public class TimelineManager : MonoBehaviour
 
 	void Update()
 	{
-		if (videoPlayer.isPlaying && Input.GetKeyDown(KeyCode.Space))
+		if (videoPlayer != null && videoPlayer.isPlaying && Input.GetKeyDown(KeyCode.Space))
 		{
 			videoPlayer.frame = (long)videoPlayer.frameCount - 1;
 		}
@@ -221,13 +222,16 @@ public class TimelineManager : MonoBehaviour
 			?? FindScenarioNodeByName( currentActionManager.nextScenarioNodeName )
 			?? GetNextNodeInBranchOrScenario( GetLocationOfNode( currentScenarioNode ) );
 
-		if ( nextNode != null && !endGame )
+		if ( !endChapter )
 		{
-			PlayScenarioNode( nextNode );
-		}
-		else
-		{
-			HandleEndChapter();
+			if ( nextNode != null && !endGame )
+            {
+            	PlayScenarioNode( nextNode );
+            }
+            else
+            {
+            	HandleEndChapter();
+            }
 		}
 	}
 
@@ -312,6 +316,8 @@ public class TimelineManager : MonoBehaviour
 
 	public void HandleEndChapter()
 	{
+		endChapter = true;
+
 		if ( chapter.Id > GameManager.LoadProgress() )
 		{
 			GameManager.SaveProgress( chapter.Id );

@@ -271,6 +271,10 @@ public class LevelLoader : MonoBehaviour
 
     public void Quit()
     {
+#if UNITY_WEBGL && !UNITY_EDITOR
+		Exit.QuitFullscreen();
+#else
 	    Application.Quit();
+#endif
     }
 }

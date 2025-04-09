@@ -88,6 +88,25 @@ function handleFullscreen(unityInstance) {
     }
 }
 
+function exitFullscreen() {
+    console.log("→ exitFullscreen() called from Unity");
+    if (document.documentElement.requestFullscreen) {
+        document.exitFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+        document.mozCancelFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+        document.webkitExitFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+        document.msExitFullscreen();
+    }
+
+    if (screen.orientation && screen.orientation.unlock) {
+        screen.orientation.unlock();
+    } else if (screen.unlockOrientation) {
+        screen.unlockOrientation();
+    }
+}
+
 function isDevicePerformant() {
     const cpuCores = navigator.hardwareConcurrency; 
     const ramGB = navigator.deviceMemory; 
