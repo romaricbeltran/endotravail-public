@@ -21,7 +21,8 @@ public class FlagManager : MonoBehaviour
 				}
 				else
 				{
-					persistedFlags[flag.FlagName] = 1;
+					int currentPlayerPrefs = PlayerPrefs.GetInt(flag.FlagName, 0);
+					persistedFlags[flag.FlagName] = currentPlayerPrefs + 1;
 				}
 			}
 			else
