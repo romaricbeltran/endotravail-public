@@ -4,7 +4,7 @@ Shader "Unlit/Unlit UV Rotation in vertex with Texture Position and Size"
 {
     Properties
     {
-        _MainTex ("Texture", 2D) = "white" {}
+        _MainTex ("Texture", 2D) = "black" {}
         _Rotation ("Rotation", Range(0,360)) = 0.0
         _TexPos ("Texture Position", Vector) = (0,0,0,0)
         _TexSize ("Texture Size", Vector) = (1,1,0,0)
