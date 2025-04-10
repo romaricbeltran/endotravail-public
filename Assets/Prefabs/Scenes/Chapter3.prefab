@@ -65831,129 +65831,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &6365368123125560107
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5989088462669490577}
-  - component: {fileID: 7255967146008716852}
-  - component: {fileID: 4852251350136902398}
-  - component: {fileID: 7255967146008716859}
-  m_Layer: 0
-  m_Name: Smartphone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 69
-  m_IsActive: 1
---- !u!4 &5989088462669490577
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6365368123125560107}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.00000019371498, y: 0.00000010058278, z: -0.49667004, w: 0.8679394}
-  m_LocalPosition: {x: -0.000000059604645, y: 0.104000404, z: 0.028000034}
-  m_LocalScale: {x: 14839.537, y: 14839.533, z: 14839.527}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1006166281847082249}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -59.56}
---- !u!33 &7255967146008716852
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6365368123125560107}
-  m_Mesh: {fileID: 2621444598493108001, guid: e66400150b6c1404884b70fb3058f81d, type: 3}
---- !u!23 &4852251350136902398
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6365368123125560107}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: ae99bad06e321464e9a03be55b25d52c, type: 2}
-  - {fileID: 2100000, guid: 97f7911361406834e8401bdb0fae9936, type: 2}
-  - {fileID: 2100000, guid: e551eadb242f54f44af87479f4b31329, type: 2}
-  - {fileID: 2100000, guid: 3526344817ed53a41bbe9fe5c47642c1, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!328 &7255967146008716859
-VideoPlayer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6365368123125560107}
-  m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 89744968522386f488be3adb39baecc4, type: 3}
-  m_TargetCameraAlpha: 1
-  m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 0}
-  m_TimeReference: 0
-  m_TargetMaterialRenderer: {fileID: 0}
-  m_TargetMaterialProperty: <noninit>
-  m_RenderMode: 3
-  m_AspectRatio: 2
-  m_DataSource: 1
-  m_TimeUpdateMode: 2
-  m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
-  m_Url: https://static.dianaportela.fr/seriousgame-endometriose-travail/videos/1.1.rappel-telephone.mp4
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 0
-  m_SkipOnDrop: 1
-  m_Looping: 0
-  m_WaitForFirstFrame: 1
-  m_FrameReadyEventEnabled: 0
-  m_VideoShaders: []
 --- !u!1 &6405610838097576241
 GameObject:
   m_ObjectHideFlags: 0
@@ -84790,22 +84667,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2870451949494390848, guid: 0d7522e920c76304b88fba291d07c68e,
-        type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 5989088462669490577}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d7522e920c76304b88fba291d07c68e, type: 3}
 --- !u!4 &612086801247174556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2476394314037633749, guid: 0d7522e920c76304b88fba291d07c68e,
-    type: 3}
-  m_PrefabInstance: {fileID: 3036404928878239049}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1006166281847082249 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2870451949494390848, guid: 0d7522e920c76304b88fba291d07c68e,
     type: 3}
   m_PrefabInstance: {fileID: 3036404928878239049}
   m_PrefabAsset: {fileID: 0}
@@ -84960,7 +84827,7 @@ PrefabInstance:
     - target: {fileID: 9085987496125930781, guid: 4d6d19b031cd8304bbdf44fe5632b886,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 317
+      value: 326
       objectReference: {fileID: 0}
     - target: {fileID: 9085987496125930782, guid: 4d6d19b031cd8304bbdf44fe5632b886,
         type: 3}
@@ -85094,12 +84961,12 @@ PrefabInstance:
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 821.3722
+      value: 751.30475
       objectReference: {fileID: 0}
     - target: {fileID: 6239154758810578264, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -107.5
+      value: -77.5
       objectReference: {fileID: 0}
     - target: {fileID: 6322453101924203250, guid: 6114d07b9de7151489026755e7ae4f54,
         type: 3}
@@ -85359,7 +85226,7 @@ PrefabInstance:
     - target: {fileID: 4455106812876611779, guid: a41449f1cc79a0f4f8fff5c6df4da3f1,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 326
+      value: 335
       objectReference: {fileID: 0}
     - target: {fileID: 4455106812876611779, guid: a41449f1cc79a0f4f8fff5c6df4da3f1,
         type: 3}
@@ -85888,7 +85755,7 @@ PrefabInstance:
     - target: {fileID: 2079950763033041574, guid: 1c070cc58dd8d84499917db11ed28b8e,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 323
+      value: 332
       objectReference: {fileID: 0}
     - target: {fileID: 2079950763033041574, guid: 1c070cc58dd8d84499917db11ed28b8e,
         type: 3}
@@ -86637,7 +86504,7 @@ PrefabInstance:
     - target: {fileID: 2019088508291900500, guid: e855ab95161083c40a5784baaca8a156,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 323
+      value: 332
       objectReference: {fileID: 0}
     - target: {fileID: 2019088508291900500, guid: e855ab95161083c40a5784baaca8a156,
         type: 3}
@@ -87271,7 +87138,7 @@ PrefabInstance:
     - target: {fileID: 2666391902354363973, guid: aad3c55a8837cf54983d1c199259a8c5,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 323
+      value: 332
       objectReference: {fileID: 0}
     - target: {fileID: 2666391902354363973, guid: aad3c55a8837cf54983d1c199259a8c5,
         type: 3}
@@ -88036,7 +87903,7 @@ PrefabInstance:
     - target: {fileID: 1313558746237531184, guid: 81511336e4d03184aae5c72a451eaab4,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 373
+      value: 382
       objectReference: {fileID: 0}
     - target: {fileID: 1313558746237531184, guid: 81511336e4d03184aae5c72a451eaab4,
         type: 3}
