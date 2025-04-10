@@ -15,15 +15,12 @@ public class FlagManager : MonoBehaviour
 		{
 			if ( flag.PersistedInProgress )
 			{
-				if (persistedFlags.ContainsKey(flag.FlagName))
+				if (!persistedFlags.ContainsKey(flag.FlagName))
 				{
-					persistedFlags[flag.FlagName]++;
+					persistedFlags[flag.FlagName] = PlayerPrefs.GetInt(flag.FlagName, 0);
 				}
-				else
-				{
-					int currentPlayerPrefs = PlayerPrefs.GetInt(flag.FlagName, 0);
-					persistedFlags[flag.FlagName] = currentPlayerPrefs + 1;
-				}
+				
+				persistedFlags[flag.FlagName]++;
 			}
 			else
 			{
