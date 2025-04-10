@@ -21,7 +21,7 @@ var buildUrl = "Build";
 var loaderUrl = buildUrl + "/debugendo.dianaportela.fr.loader.js";
 var config = {
     dataUrl: buildUrl + ((/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) ?
-    "/debugendo.dianaportela.fr.data.gz" : "/debugendo.dianaportela.fr.data.gz"),
+    "/debugendo.dianaportela.fr-mobile.data.gz" : "/debugendo.dianaportela.fr.data.gz"),
     frameworkUrl: buildUrl + "/debugendo.dianaportela.fr.framework.js.gz",
     codeUrl: buildUrl + "/debugendo.dianaportela.fr.wasm.gz",
     streamingAssetsUrl: "StreamingAssets",
