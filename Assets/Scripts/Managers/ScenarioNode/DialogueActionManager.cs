@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class DialogueActionManager : BaseActionManager<DialogueAction>
 {
+	public TimelineManager timelineManager;
+
 	// UI
 	public GameObject dialogueCanvas;
 	public Image characterImage;
@@ -23,19 +25,62 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 	private int indexSentence;
 	private bool isTyping = false;
 	private bool isAudioPlaying = false;
-
+	private bool skippable = false;
+	
 	void Update()
 	{
-		// Allow skipping dialogue by pressing spacebar
-		if ( Input.GetKeyDown( KeyCode.Space ) )
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			OnSkip();
+			HandleSkipRequest();
+		}
+	}
+
+	void HandleSkipRequest()
+	{
+		if (!skippable) return;
+
+		if (ShouldSkipSentence())
+		{
+			SkipSentence();
+		}
+		
+		if (ShouldSkipVideo())
+		{
+			timelineManager.SkipVideo();
+			return;
+		}
+	}
+
+	bool ShouldSkipVideo()
+	{
+		return timelineManager.videoPlayer != null && timelineManager.videoPlayer.isPlaying;
+	}
+
+	bool ShouldSkipSentence()
+	{
+		bool hasVideo = timelineManager.videoPlayer != null;
+		bool isVideoPlaying = hasVideo && timelineManager.videoPlayer.isPlaying;
+		bool isLastSentence = indexSentence >= sentences.Count - 1;
+		
+		return !hasVideo || !isVideoPlaying || !isLastSentence || isTyping;
+	}
+	
+	public void SkipSentence()
+	{
+		if (isTyping)
+		{
+			StopAllCoroutines();
+			dialogueText.text = sentences[indexSentence - 1].Text;
+			isTyping = false;
+		}
+		else
+		{
+			DisplayNextSentence();
 		}
 	}
 
 	public override void LoadData(DialogueAction currentAction)
 	{
-		dialogueBoxAnimator.SetBool( "IsOpen", false );
 		audioSource.Stop();
 		StopAllCoroutines();
 
@@ -50,17 +95,19 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 			return;
 		}
 
-		skipButton.onClick.AddListener( OnSkip );
+		skipButton.onClick.AddListener( HandleSkipRequest );
 	}
 
 	public override void StartAction()
 	{
+		skippable = true;
 		dialogueBoxAnimator.SetBool( "IsOpen", true );
 		DisplayNextSentence();
 	}
 
 	public override void EndAction()
 	{
+		skippable = false;
 		dialogueBoxAnimator.SetBool( "IsOpen", false );
 		skipButton.onClick.RemoveAllListeners();
 		audioSource.Stop();
@@ -126,22 +173,6 @@ public class DialogueActionManager : BaseActionManager<DialogueAction>
 
 		// Disable auto-proceed
 		//CheckIfWeCanProceed();
-	}
-
-	public void OnSkip()
-	{
-		// If typing is in progress, stop and show the full sentence
-		if ( isTyping )
-		{
-			StopCoroutine( "TypeSentence" );
-			dialogueText.text = sentences[indexSentence - 1].Text;
-			isTyping = false;
-		}
-		// If not, move to the next sentence
-		else
-		{
-			DisplayNextSentence();
-		}
 	}
 
 	// Disable auto-proceed

@@ -21,7 +21,7 @@ var buildUrl = "Build";
 var loaderUrl = buildUrl + "/debugendo.dianaportela.fr.loader.js";
 var config = {
     dataUrl: buildUrl + ((/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) ?
-    "/debugendo.dianaportela.fr.data.gz" : "/debugendo.dianaportela.fr.data.gz"),
+    "/debugendo.dianaportela.fr-mobile.data.gz" : "/debugendo.dianaportela.fr.data.gz"),
     frameworkUrl: buildUrl + "/debugendo.dianaportela.fr.framework.js.gz",
     codeUrl: buildUrl + "/debugendo.dianaportela.fr.wasm.gz",
     streamingAssetsUrl: "StreamingAssets",
@@ -85,6 +85,43 @@ function handleFullscreen(unityInstance) {
         screen.orientation.lock('landscape');
     } else if (screen.lockOrientation) {
         screen.lockOrientation('landscape');
+    }
+}
+
+function exitFullscreen() {
+    console.log("→ exitFullscreen() called from Unity");
+
+    const isFullscreen = document.fullscreenElement
+        || document.webkitFullscreenElement
+        || document.mozFullScreenElement
+        || document.msFullscreenElement;
+
+    if (isFullscreen) {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) {
+            document.msExitFullscreen();
+        }
+    } else {
+        console.warn("⚠️ Tried to exit fullscreen, but not in fullscreen mode.");
+    }
+
+    if (screen.orientation && screen.orientation.unlock) {
+        try {
+            screen.orientation.unlock();
+        } catch (err) {
+            console.warn("Could not unlock screen orientation:", err);
+        }
+    } else if (screen.unlockOrientation) {
+        try {
+            screen.unlockOrientation();
+        } catch (err) {
+            console.warn("Could not unlock screen orientation (legacy):", err);
+        }
     }
 }
 

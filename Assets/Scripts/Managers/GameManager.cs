@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
 	public const string LEVEL_PROGRESS = "level_progress";
 
+    public GameObject joystickMobile;
     public GameObject analogicButtons;
     public GameObject player;
 
@@ -35,19 +36,21 @@ public class GameManager : MonoBehaviour
 			player.GetComponent<PlayerInput>().enabled = availability;
         }
 
-		if ( analogicButtons != null )
-		{
-			analogicButtons.SetActive(availability);
-			analogicButtons.GetComponent<GraphicRaycaster>().enabled = availability;
-		}
+        bool isMobile = Application.isMobilePlatform;
 
-		EventSystem.current.SetSelectedGameObject(null);
-		analogicButtons.GetComponent<MyUICanvasControllerInput>().VirtualResetMove();
+        if (isMobile && joystickMobile != null)
+        {
+	        joystickMobile.SetActive(availability);
+	        joystickMobile.GetComponent<GraphicRaycaster>().enabled = availability;
+	        joystickMobile.GetComponent<MyUICanvasControllerInput>().VirtualResetMove();
+        }
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void ResetPlayerCamera(float targetRotationY)
     {
-		player.GetComponent<ThirdPersonController>().SetCinemachineTargetYaw(targetRotationY);
+		player.GetComponent<MyThirdPersonController>().SetCinemachineTargetYaw(targetRotationY);
     }
 
 	public static void SaveProgress(int levelIndex)

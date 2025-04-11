@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 
 public class NodeLocation
 {
@@ -48,8 +49,11 @@ public class TimelineManager : MonoBehaviour
 	private ScenarioNode currentScenarioNode;
 	private IActionManager currentActionManager;
 	private bool endGame = false;
+	private bool endChapter = false;
 
 	private PlayableDirector director;
+	public VideoPlayer videoPlayer;
+
 	private Dictionary<string, (ScenarioNode node, NodeLocation location)> nodeDictionary;
 
 	private void Awake()
@@ -64,6 +68,11 @@ public class TimelineManager : MonoBehaviour
 		}
 
 		Debug.Log( $"Node dictionary initialized with {nodeDictionary.Count} nodes." );
+	}
+	
+	public void SkipVideo()
+	{
+		videoPlayer.frame = (long)videoPlayer.frameCount - 1;
 	}
 
 	private void AddNodeWithLocationToDictionary(ScenarioNode node, ScenarioNode parentNode, int branchIndex, int nodeIndexInBranch)
@@ -98,6 +107,7 @@ public class TimelineManager : MonoBehaviour
 
 		if (currentScenarioNode.EndOfMission)
 		{
+			missionActionManager.OnNodeCompleted -= OnNodeCompletedHandler;
 			missionActionManager.EndAction();
 		}
 
@@ -109,8 +119,6 @@ public class TimelineManager : MonoBehaviour
 
 	private void HandleAnalytics(string nodeName)
 	{
-		Debug.Log( "Playing Node :" + nodeName );
-
 		if (AnalyticsService.Instance != null)
 		{
 			GameProgressEvent gameProgressEvent = new GameProgressEvent
@@ -167,6 +175,7 @@ public class TimelineManager : MonoBehaviour
 				LoadActionManager( popupActionManager, popupAction );
 				break;
 			case MissionAction missionAction:
+				missionActionManager.missionSkippable = true;
 				LoadActionManager( missionActionManager, missionAction );
 				break;
 			default:
@@ -192,6 +201,7 @@ public class TimelineManager : MonoBehaviour
 
 		if ( currentScenarioNode.BackToMissionPOV || currentActionManager.activateBackToMissionPOV )
 		{
+			missionActionManager.missionSkippable = true;
 			gameManager.SwitchPlayerInput( true );
 		}
 		else
@@ -206,13 +216,16 @@ public class TimelineManager : MonoBehaviour
 			?? FindScenarioNodeByName( currentActionManager.nextScenarioNodeName )
 			?? GetNextNodeInBranchOrScenario( GetLocationOfNode( currentScenarioNode ) );
 
-		if ( nextNode != null && !endGame )
+		if ( !endChapter )
 		{
-			PlayScenarioNode( nextNode );
-		}
-		else
-		{
-			HandleEndChapter();
+			if ( nextNode != null && !endGame )
+            {
+            	PlayScenarioNode( nextNode );
+            }
+            else
+            {
+            	HandleEndChapter();
+            }
 		}
 	}
 
@@ -297,10 +310,14 @@ public class TimelineManager : MonoBehaviour
 
 	public void HandleEndChapter()
 	{
+		endChapter = true;
+
 		if ( chapter.Id > GameManager.LoadProgress() )
 		{
 			GameManager.SaveProgress( chapter.Id );
 		}
+		
+		flagManager.CommitPersistedFlags();
 
 		if ( endGame )
 		{

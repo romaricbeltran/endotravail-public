@@ -16,8 +16,8 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 	private List<Button> actionButtonsComponents;
 	private List<Choice> validChoices;
 
-	private const float canvasDelay = 1.75f;
-	private const float buttonsDelay = 0.75f;
+	private const float canvasDelay = 1.25f;
+	private const float buttonsDelay = 0f;
 
 	private void Awake()
 	{
@@ -96,7 +96,7 @@ public class ChoiceActionManager : BaseActionManager<ChoiceAction>
 			}
 		}
 
-		if ( validEndFlagChoice != null )
+		if ( validEndFlagChoice != null && !filteredValidChoices.Contains(validEndFlagChoice) )
 		{
 			filteredValidChoices.Add( validEndFlagChoice );
 		}

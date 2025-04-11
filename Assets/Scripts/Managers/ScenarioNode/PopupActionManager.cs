@@ -15,6 +15,16 @@ public class PopupActionManager : BaseActionManager<PopupAction>
 	public Animator popupBoxAnimator;
 
 	private int currentPageIndex = 0;
+	private bool skippable = false;
+
+	void Update()
+	{
+		// Allow skipping dialogue by pressing spacebar
+		if ( skippable && Input.GetKeyDown( KeyCode.Space ) )
+		{
+			OnNextPage();
+		}
+	}
 
 	public override void LoadData(PopupAction currentAction)
 	{
@@ -33,6 +43,7 @@ public class PopupActionManager : BaseActionManager<PopupAction>
 		popupCanvas.GetComponent<CanvasGroup>().alpha = 1f;
 		popupCanvas.GetComponent<CanvasGroup>().interactable = true;
 		popupCanvas.GetComponent<CanvasGroup>().blocksRaycasts = true;
+		skippable = true;
 	}
 
 	public override void EndAction()
@@ -41,6 +52,7 @@ public class PopupActionManager : BaseActionManager<PopupAction>
 		popupCanvas.GetComponent<CanvasGroup>().interactable = false;
 		popupCanvas.GetComponent<CanvasGroup>().blocksRaycasts = false;
 		EventSystem.current.SetSelectedGameObject( null ); // Resets focus on the button
+		skippable = false;
 		base.EndAction();
 	}
 

@@ -73,19 +73,18 @@ public class FormScreenManager : MonoBehaviour
         form.AddField("submitted[new_1705848622084]", improvementInputField.text);
         form.AddField("submitted[new_1705503390549]", reviewInputField.text);
 
-        UnityWebRequest www = UnityWebRequest.Post(serverRequestURL, form);
         submitButtonText.text = "Envoi en cours...";
-        yield return www.SendWebRequest();
 
-        if (www.result != UnityWebRequest.Result.Success)
+        using (var www = UnityWebRequest.Post(serverRequestURL, form))
         {
-            Debug.Log(www.error);
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+                Debug.LogError("Form submit error: " + www.error);
+            else
+                Debug.Log("Form submitted successfully!");
         }
-        else
-        {
-            Debug.Log("Form upload complete!");
-        }
-        
+
         LevelLoader.LoadEnd();
     }
 }
